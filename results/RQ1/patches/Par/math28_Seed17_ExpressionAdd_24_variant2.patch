@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2017-02-11 13:22:16.000000000 +0000
++++ ./variant2/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2017-02-11 14:15:10.000000000 +0000
+@@ -100,7 +100,7 @@
+                 // check if the entry is strictly equal to the current min ratio
+                 // do not use a ulp/epsilon check
+                 final int cmp = Double.compare(ratio, minRatio);
+-                if (cmp == 0) {
++                if (cmp == 0 && cmp < 0) {
+                     minRatioPositions.add(i);
+                 } else if (cmp < 0) {
+                     minRatio = ratio;

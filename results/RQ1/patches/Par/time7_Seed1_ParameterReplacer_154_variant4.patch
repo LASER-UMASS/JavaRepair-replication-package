@@ -1,0 +1,11 @@
+--- ./original/org/joda/time/format/DateTimeFormatter.java	2017-02-12 17:18:17.000000000 +0000
++++ ./variant4/org/joda/time/format/DateTimeFormatter.java	2017-02-12 17:21:16.000000000 +0000
+@@ -707,7 +707,7 @@
+         Chronology chrono = instant.getChronology();
+         long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
+         chrono = selectChronology(chrono);
+-        int defaultYear = chrono.year().get(instantLocal);
++        int defaultYear = chrono.year().get(instantMillis);
+         
+         DateTimeParserBucket bucket = new DateTimeParserBucket(
+             instantLocal, chrono, iLocale, iPivotYear, defaultYear);
