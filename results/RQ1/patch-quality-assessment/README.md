@@ -12,6 +12,10 @@ where \<technique\> can be:
 - par (Par)
 - trp (TRPAutoRepair)
 
+OR
+
+- defective (defective version of the program)
+
 and \<EvoSuite version\> can be:
 - es3 (EvoSuite version 3)
 - es6 (EvoSuite version 6)
