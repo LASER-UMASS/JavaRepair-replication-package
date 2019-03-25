@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/lang3/math/NumberUtils.java	2016-10-18 21:30:39.000000000 +0000
++++ ./variant222/org/apache/commons/lang3/math/NumberUtils.java	2016-10-18 23:02:21.000000000 +0000
+@@ -449,9 +449,8 @@
+         if (StringUtils.isBlank(str)) {
+             throw new NumberFormatException("A blank string is not a valid number");
+         }  
+-        if (str.startsWith("--")) {
+-            return null;
+-        }
++        {
++		}
+         if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {
+             int hexDigits = str.length() - 2; // drop 0x
+             if (str.startsWith("-")) { // drop -

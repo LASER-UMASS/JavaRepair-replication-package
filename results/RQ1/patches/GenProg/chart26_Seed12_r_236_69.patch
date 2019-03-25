@@ -1,0 +1,33 @@
+--- ./original/org/jfree/chart/axis/Axis.java	2016-10-21 16:28:24.000000000 +0000
++++ ./variant64/org/jfree/chart/axis/Axis.java	2016-10-22 12:49:44.000000000 +0000
+@@ -1110,25 +1110,11 @@
+         Rectangle2D labelBounds = TextUtilities.getTextBounds(label, g2, fm);
+         Shape hotspot = null;
+         
+-        if (edge == RectangleEdge.TOP) {
+-            AffineTransform t = AffineTransform.getRotateInstance(
+-                    getLabelAngle(), labelBounds.getCenterX(), 
+-                    labelBounds.getCenterY());
+-            Shape rotatedLabelBounds = t.createTransformedShape(labelBounds);
+-            labelBounds = rotatedLabelBounds.getBounds2D();
+-            float w = (float) labelBounds.getWidth();
+-            float h = (float) labelBounds.getHeight();
+-            float labelx = (float) dataArea.getCenterX();
+-            float labely = (float) (state.getCursor() - insets.getBottom() 
+-                    - h / 2.0);
+-            TextUtilities.drawRotatedString(label, g2, labelx, labely, 
+-                    TextAnchor.CENTER, getLabelAngle(), TextAnchor.CENTER);
+-            hotspot = new Rectangle2D.Float(labelx - w / 2.0f, 
+-                    labely - h / 2.0f, w, h);
+-            state.cursorUp(insets.getTop() + labelBounds.getHeight() 
+-                    + insets.getBottom());
+-        }
+-        else if (edge == RectangleEdge.BOTTOM) {
++        if (edge == RectangleEdge.TOP)
++			if (!insets.equals(this.labelInsets)) {
++				this.labelInsets = insets;
++				notifyListeners(new AxisChangeEvent(this));
++			} else if (edge == RectangleEdge.BOTTOM) {
+             AffineTransform t = AffineTransform.getRotateInstance(
+                     getLabelAngle(), labelBounds.getCenterX(), 
+                     labelBounds.getCenterY());

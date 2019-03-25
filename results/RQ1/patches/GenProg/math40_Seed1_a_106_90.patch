@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2016-10-18 22:59:34.000000000 +0000
++++ ./variant358/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2016-10-19 00:43:51.000000000 +0000
+@@ -261,8 +261,10 @@
+                         // we have more points before the sign change, drop the lowest point
+                         ++start;
+                     } else {
+-                        // we have more points after sign change, drop the highest point
+-                        --end;
++                        {
++							--end;
++							targetY = -REDUCTION_FACTOR * yA;
++						}
+                     }
+ 
+                     // we need to do one more attempt

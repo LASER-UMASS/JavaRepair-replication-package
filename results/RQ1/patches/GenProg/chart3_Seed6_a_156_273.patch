@@ -1,0 +1,38 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2016-10-18 19:38:26.000000000 +0000
++++ ./variant8/org/jfree/data/time/TimeSeries.java	2016-10-19 02:28:16.000000000 +0000
+@@ -623,21 +623,20 @@
+                 }
+             }
+         }
+-        if (added) {
+-            updateBoundsForAddedItem(item);
+-            // check if this addition will exceed the maximum item count...
+-            if (getItemCount() > this.maximumItemCount) {
+-                TimeSeriesDataItem d = (TimeSeriesDataItem) this.data.remove(0);
+-                updateBoundsForRemovedItem(d);
+-            }
+-
+-            removeAgedItems(false);  // remove old items if necessary, but
+-                                     // don't notify anyone, because that
+-                                     // happens next anyway...
+-            if (notify) {
+-                fireSeriesChanged();
+-            }
+-        }
++        {
++			if (added) {
++				updateBoundsForAddedItem(item);
++				if (getItemCount() > this.maximumItemCount) {
++					TimeSeriesDataItem d = (TimeSeriesDataItem) this.data.remove(0);
++					updateBoundsForRemovedItem(d);
++				}
++				removeAgedItems(false);
++				if (notify) {
++					fireSeriesChanged();
++				}
++			}
++			findBoundsByIteration();
++		}
+ 
+     }
+ 

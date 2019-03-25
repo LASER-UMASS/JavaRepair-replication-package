@@ -1,0 +1,17 @@
+--- ./original/com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2016-10-18 18:50:43.000000000 +0000
++++ ./variant36/com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2016-10-18 20:37:59.000000000 +0000
+@@ -146,7 +146,13 @@
+         // this reduces the cost of getting to a fixed
+         // point in global scope.
+         state.changed = false;
+-        state.traverseChildScopes = false;
++        {
++			ScopeState previous = traversalState.peek();
++			if (!previous.traverseChildScopes) {
++				return false;
++			}
++			traversalState.push();
++		}
+         return true;
+       }
+     }

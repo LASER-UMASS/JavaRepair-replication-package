@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2016-10-18 22:30:22.000000000 +0000
++++ ./variant115/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2016-10-19 07:25:26.000000000 +0000
+@@ -727,8 +727,10 @@
+                 double negcovMax = (1. - negminresidualvariance) /
+                         square(arnormsInv).multiply(weights).getEntry(0, 0);
+                 if (negccov > negcovMax) {
+-                    negccov = negcovMax;
+-                }
++					double tfac = max(diagD) / 1e14 - min(diagD);
++					C = C.add(eye(dimension, dimension).scalarMultiply(tfac));
++					diagD = diagD.add(ones(dimension, 1).scalarMultiply(tfac));
++				}
+                 arzneg = times(arzneg, repmat(arnormsInv, dimension, 1));
+                 RealMatrix artmp = BD.multiply(arzneg);
+                 RealMatrix Cneg = artmp.multiply(diag(weights)).multiply(

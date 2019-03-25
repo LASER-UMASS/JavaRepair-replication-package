@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2016-10-18 22:59:34.000000000 +0000
++++ ./variant25/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2016-10-19 03:02:34.000000000 +0000
+@@ -321,8 +321,10 @@
+ 
+             // update the bracketing interval
+             if (nextY * yA <= 0) {
+-                // the sign change occurs before the inserted point
+-                xB = nextX;
++                {
++					xB = nextX;
++					signChangeIndex++;
++				}
+                 yB = nextY;
+                 absYB = FastMath.abs(yB);
+                 ++agingA;

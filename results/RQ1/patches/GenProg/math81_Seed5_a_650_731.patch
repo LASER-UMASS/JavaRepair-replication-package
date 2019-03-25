@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-19 16:05:15.000000000 +0000
++++ ./variant225/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-19 18:39:56.000000000 +0000
+@@ -1314,7 +1314,13 @@
+         dMin = Math.min(dMin, dN);
+ 
+         work[j4 + 2] = dN;
+-        work[4 * end - pingPong - 1] = eMin;
++        {
++			work[4 * end - pingPong - 1] = eMin;
++			{
++				work[j4] = work[j4p2 + 2] * (work[j4p2] / work[j4 - 2]);
++				dN = work[j4p2 + 2] * (dN1 / work[j4 - 2]);
++			}
++		}
+ 
+     }
+ 

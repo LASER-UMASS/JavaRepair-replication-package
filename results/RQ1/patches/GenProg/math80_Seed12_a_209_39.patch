@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-18 23:18:32.000000000 +0000
++++ ./variant174/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-19 06:39:46.000000000 +0000
+@@ -585,7 +585,10 @@
+             final double radius = ePrevious + eCurrent;
+ 
+             final double lower = dCurrent - radius;
+-            work[lowerStart + i] = lower;
++            {
++				work[lowerStart + i] = lower;
++				findEigenvalues();
++			}
+             lowerSpectra = Math.min(lowerSpectra, lower);
+ 
+             final double upper = dCurrent + radius;
