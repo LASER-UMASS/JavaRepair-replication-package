@@ -1,3 +1,7 @@
+# This script is similar to combineresults.py script. This is used to combine 
+# the patch quality scores obtained using EvoSuite v3 and EvoSuite v6 for 
+# the defective programs 
+
 import sys
 
 f = open(sys.argv[1])
