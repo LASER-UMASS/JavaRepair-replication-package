@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 #The purpose of this script is to set up the environment to run Genprog of a particular defects4j bug.
 
 #Preconditions:
@@ -9,6 +10,7 @@
 #Output
 #The output is a txt file with the output of running the coverage analysis of the test suite on each of the folders indicated. 
 
+#Input
 # 1st param: project name, sentence case (ex: Lang, Chart, Closure, Math, Time)
 # 2nd param: bug number (ex: 1,2,3,4,...)
 # 3th param: testing option (ex: humanMade, generated)
@@ -16,6 +18,10 @@
 # 5th param is the folder where the bug files will be cloned to. Starting from $D4J_HOME (Ex: ExamplesCheckedOut)
 # 6th param is the folder where the java 7 instalation is located
 # 7th param is the folder where the java 8 instalation is located
+# 8th param is set to \"true\" if negative tests are to be specified using sampled tests else set this to \"false\"
+# 9th param is the path to file containing sampled negative tests
+# 10th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\"
+# 11th param is the path to file containing sampled positive tests
 
 # Example usage, VM:
 #./prepareBug.sh Math 2 allHuman 100 ExamplesCheckedOut /usr/lib/jvm/java-7-oracle/ /usr/lib/jvm/java-8-oracle/ true <path to neg.test> true <path to pos.test>
