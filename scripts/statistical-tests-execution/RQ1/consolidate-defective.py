@@ -1,3 +1,6 @@
+# This script is similar to consolidate.py script, this is used to combine 
+# patch quality scores of defective programs on held-out test suites 
+
 import sys
 
 defect = {}
