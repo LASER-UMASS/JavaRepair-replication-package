@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math3/ode/AbstractIntegrator.java	2016-09-13 19:31:00.000000000 +0000
++++ ./variant65/org/apache/commons/math3/ode/AbstractIntegrator.java	2016-09-14 01:56:47.000000000 +0000
+@@ -106,7 +106,7 @@
+ 
+     /** {@inheritDoc} */
+     public void addStepHandler(final StepHandler handler) {
+-        stepHandlers.add(handler);
++        {stepHandlers.add(handler);eventsStates=new ArrayList<EventState>();}
+     }
+ 
+     /** {@inheritDoc} */

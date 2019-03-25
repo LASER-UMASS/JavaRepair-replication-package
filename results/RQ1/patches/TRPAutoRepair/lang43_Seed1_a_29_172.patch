@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/lang/text/ExtendedMessageFormat.java	2016-09-13 02:19:52.000000000 +0000
++++ ./variant108/org/apache/commons/lang/text/ExtendedMessageFormat.java	2016-09-13 02:40:38.000000000 +0000
+@@ -155,7 +155,10 @@
+         while (pos.getIndex() < pattern.length()) {
+             switch (c[pos.getIndex()]) {
+             case QUOTE:
+-                appendQuotedString(pattern, pos, stripCustom, true);
++                {
++					appendQuotedString(pattern, pos, stripCustom, true);
++					next(pos);
++				}
+                 break;
+             case START_FE:
+                 fmtCount++;

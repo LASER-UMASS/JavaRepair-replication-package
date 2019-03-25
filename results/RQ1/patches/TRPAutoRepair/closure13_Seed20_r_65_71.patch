@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2016-09-13 17:25:27.000000000 +0000
++++ ./variant22/com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2016-09-13 19:01:09.000000000 +0000
+@@ -157,7 +157,7 @@
+     if (node.isFunction() || node.isScript()) {
+       ScopeState previous = traversalState.peek();
+       if (!previous.traverseChildScopes) {
+-        return false;
++        traversalState.pop();
+       }
+       traversalState.push();
+     }

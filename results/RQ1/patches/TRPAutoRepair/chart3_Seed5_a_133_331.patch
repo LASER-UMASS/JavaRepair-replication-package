@@ -1,0 +1,14 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2016-09-13 03:29:34.000000000 +0000
++++ ./variant126/org/jfree/data/time/TimeSeries.java	2016-09-13 04:29:38.000000000 +0000
+@@ -596,7 +596,10 @@
+         boolean added = false;
+         int count = getItemCount();
+         if (count == 0) {
+-            this.data.add(item);
++            {
++				this.data.add(item);
++				findBoundsByIteration();
++			}
+             added = true;
+         }
+         else {

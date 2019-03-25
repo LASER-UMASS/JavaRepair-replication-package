@@ -1,0 +1,22 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2016-09-14 12:41:26.000000000 +0000
++++ ./variant61/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2016-09-14 13:50:08.000000000 +0000
+@@ -261,8 +261,17 @@
+                         // we have more points before the sign change, drop the lowest point
+                         ++start;
+                     } else {
+-                        // we have more points after sign change, drop the highest point
+-                        --end;
++                        {
++							--end;
++							if (!((nextX > xA) && (nextX < xB))) {
++								if (signChangeIndex - start >= end - signChangeIndex) {
++									++start;
++								} else {
++									--end;
++								}
++								nextX = Double.NaN;
++							}
++						}
+                     }
+ 
+                     // we need to do one more attempt

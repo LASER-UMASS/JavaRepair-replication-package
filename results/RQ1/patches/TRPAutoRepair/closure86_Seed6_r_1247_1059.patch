@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/NodeUtil.java	2016-09-12 23:47:24.000000000 +0000
++++ ./variant230/com/google/javascript/jscomp/NodeUtil.java	2016-09-13 02:12:27.000000000 +0000
+@@ -2459,10 +2459,9 @@
+             || isToStringMethodCall(value)
+             || locals.apply(value);
+       case Token.NEW:
+-        // TODO(nicksantos): This needs to be changed so that it
+-        // returns true iff we're sure the value was never aliased from inside
+-        // the constructor (similar to callHasLocalResult)
+-        return true;
++        {
++			return false;
++		}
+       case Token.FUNCTION:
+       case Token.REGEXP:
+       case Token.ARRAYLIT:

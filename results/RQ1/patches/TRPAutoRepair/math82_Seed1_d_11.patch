@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/optimization/linear/SimplexSolver.java	2016-09-13 21:30:12.000000000 +0000
++++ ./variant95/org/apache/commons/math/optimization/linear/SimplexSolver.java	2016-09-13 21:35:06.000000000 +0000
+@@ -60,7 +60,8 @@
+         Integer minPos = null;
+         for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getWidth() - 1; i++) {
+             if (MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon) < 0) {
+-                minValue = tableau.getEntry(0, i);
++                {
++				}
+                 minPos = i;
+             }
+         }
