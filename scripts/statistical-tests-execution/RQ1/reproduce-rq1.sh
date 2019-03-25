@@ -45,12 +45,12 @@ rm par_rq1_es6_consolidated.csv
 rm par_rq1_es3_es6_consolidated.csv
 rm par_rq1_es3_es6_consolidated_sorted.csv
 
-python consolidate_defective.py $DIRPATH/defective_rq1_es3_quality.csv > defective_rq1_es3_consolidated.csv 
-python consolidate_defective.py $DIRPATH/defective_rq1_es6_quality.csv > defective_rq1_es6_consolidated.csv 
+python consolidate-defective.py $DIRPATH/defective_rq1_es3_quality.csv > defective_rq1_es3_consolidated.csv 
+python consolidate-defective.py $DIRPATH/defective_rq1_es6_quality.csv > defective_rq1_es6_consolidated.csv 
 cat defective_rq1_es3_consolidated.csv > defective_rq1_es3_es6_consolidated.csv
 cat defective_rq1_es6_consolidated.csv >> defective_rq1_es3_es6_consolidated.csv
 sort defective_rq1_es3_es6_consolidated.csv > defective_rq1_es3_es6_consolidated_sorted.csv
-python combineresults_defective.py defective_rq1_es3_es6_consolidated_sorted.csv
+python combineresults-defective.py defective_rq1_es3_es6_consolidated_sorted.csv
 mv results.csv defective_rq1_overall.csv
 rm defective_rq1_es3_consolidated.csv
 rm defective_rq1_es6_consolidated.csv
