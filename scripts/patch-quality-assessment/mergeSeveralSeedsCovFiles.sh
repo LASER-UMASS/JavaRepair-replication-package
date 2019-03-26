@@ -18,10 +18,8 @@
 #Example of usage:  ./mergeSeveralSeedsCovFiles.sh G /home/mausoto/defects4j/patchesGenerated/JavaRepair-results/PARPatches/ PAR
 #Example of usage:  ./mergeSeveralSeedsCovFiles.sh H /home/mausoto/QualityEvaluationDefects4jGenProg/AllBugsFixedByAllApproaches.csv HUMAN
 
-
 # OUTPUT:
 # This script copies all the folders with results, with xml and ser files to a central folder in D4J_HOME/MergedCoverages/
-
 
 D4JLOCATION="$D4J_HOME"
 HorG="$1"
