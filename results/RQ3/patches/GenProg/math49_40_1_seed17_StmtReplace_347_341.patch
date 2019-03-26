@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/OpenMapRealVector.java	2018-05-10 01:18:14.000000000 -0400
++++ ./variant44/org/apache/commons/math/linear/OpenMapRealVector.java	2018-05-10 03:48:05.000000000 -0400
+@@ -664,7 +664,7 @@
+         if (!isDefaultValue(value)) {
+             entries.put(index, value);
+         } else if (entries.containsKey(index)) {
+-            entries.remove(index);
++            checkIndex(index);
+         }
+     }
+ 

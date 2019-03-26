@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 04:50:19.000000000 -0500
++++ ./variant17/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 04:52:08.000000000 -0500
+@@ -146,7 +146,8 @@
+         final double[] x = new double[maximalOrder + 1];
+         final double[] y = new double[maximalOrder + 1];
+         x[0] = getMin();
+-        x[1] = getStartValue();
++        {
++		}
+         x[2] = getMax();
+         verifySequence(x[0], x[1], x[2]);
+ 

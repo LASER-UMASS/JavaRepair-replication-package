@@ -1,0 +1,19 @@
+--- ./original/org/jfree/chart/block/BorderArrangement.java	2018-01-28 00:50:10.000000000 -0500
++++ ./variant238/org/jfree/chart/block/BorderArrangement.java	2018-01-28 00:59:48.000000000 -0500
+@@ -450,14 +450,8 @@
+             w[2] = size.width;
+         }
+         h[3] = h[2];
+-        if (this.rightBlock != null) {
+-            RectangleConstraint c4 = new RectangleConstraint(0.0,
+-                    new Range(0.0, constraint.getWidth() - w[2]),
+-                    LengthConstraintType.RANGE, h[2], null,
+-                    LengthConstraintType.FIXED);
+-            Size2D size = this.rightBlock.arrange(g2, c4);
+-            w[3] = size.width;
+-        }
++        {
++		}
+         h[4] = h[2];
+         w[4] = constraint.getWidth() - w[3] - w[2];
+         RectangleConstraint c5 = new RectangleConstraint(w[4], h[4]);

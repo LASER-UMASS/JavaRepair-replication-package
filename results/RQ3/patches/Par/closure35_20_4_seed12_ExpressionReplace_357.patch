@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-07-16 11:30:39.000000000 -0400
++++ ./variant40/com/google/javascript/jscomp/TypeInference.java	2018-07-16 17:37:15.000000000 -0400
+@@ -674,7 +674,7 @@
+          name = name.getNext()) {
+       Node value = name.getFirstChild();
+       String memberName = NodeUtil.getObjectLitKeyName(name);
+-      if (memberName != null) {
++      if (objectType == null) {
+         JSType rawValueType =  name.getFirstChild().getJSType();
+         JSType valueType = NodeUtil.getObjectLitKeyTypeFromValueType(
+             name, rawValueType);

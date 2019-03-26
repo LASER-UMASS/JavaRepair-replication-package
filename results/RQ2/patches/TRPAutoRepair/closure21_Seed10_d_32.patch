@@ -1,0 +1,17 @@
+--- ./original/com/google/javascript/jscomp/CheckSideEffects.java	2016-09-14 02:39:03.000000000 +0000
++++ ./variant7/com/google/javascript/jscomp/CheckSideEffects.java	2016-09-14 03:05:17.000000000 +0000
+@@ -115,13 +115,7 @@
+         return;
+       }
+       if (n == parent.getLastChild()) {
+-        for (Node an : parent.getAncestors()) {
+-          int ancestorType = an.getType();
+-          if (ancestorType == Token.COMMA) continue;
+-          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK) return;
+-          else break;
+-        }
+-      }
++	}
+     } else if (parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+       if (! (parent.getType() == Token.FOR && parent.getChildCount() == 4 && (n == parent.getFirstChild() || n == parent.getFirstChild().getNext().getNext()))) {
+         return;

@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:42:50.000000000 -0400
++++ ./variant183/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 04:07:52.000000000 -0400
+@@ -989,7 +989,10 @@
+      */
+     private int goodStep(final int start, final int end) {
+ 
+-        g = 0.0;
++        {
++			g = 0.0;
++			dN2 = 0;
++		}
+ 
+         // step 1: accepting realEigenvalues
+         int deflatedEnd = end;

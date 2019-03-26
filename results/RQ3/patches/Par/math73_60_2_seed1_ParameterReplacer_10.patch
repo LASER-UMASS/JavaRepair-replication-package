@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-07-16 13:20:14.000000000 -0400
++++ ./variant31/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-07-16 13:22:05.000000000 -0400
+@@ -100,7 +100,7 @@
+         throws MaxIterationsExceededException, FunctionEvaluationException {
+ 
+         clearResult();
+-        verifySequence(min, initial, max);
++        verifySequence(min, initial, min);
+ 
+         // return the initial guess if it is good enough
+         double yInitial = f.value(initial);

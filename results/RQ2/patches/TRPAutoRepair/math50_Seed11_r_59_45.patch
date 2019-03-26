@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2016-09-13 12:03:36.000000000 +0000
++++ ./variant16/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2016-09-13 12:14:37.000000000 +0000
+@@ -186,7 +186,7 @@
+                     // Nothing.
+                     if (x == x1) {
+                         x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+-                        f0 = computeObjectiveValue(x0);
++                        f0 = f1;
+                     }
+                     break;
+                 default:

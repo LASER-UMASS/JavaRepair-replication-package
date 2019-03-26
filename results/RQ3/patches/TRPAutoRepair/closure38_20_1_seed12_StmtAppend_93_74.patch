@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/CodeConsumer.java	2018-02-15 14:26:39.000000000 -0500
++++ ./variant3/com/google/javascript/jscomp/CodeConsumer.java	2018-02-15 15:43:00.000000000 -0500
+@@ -227,7 +227,12 @@
+     }
+ 
+     {
+-		appendOp(op, binOp);
++		{
++			appendOp(op, binOp);
++			{
++				append(" ");
++			}
++		}
+ 		if (prev == '-' && first == '>') {
+ 			append(" ");
+ 		}

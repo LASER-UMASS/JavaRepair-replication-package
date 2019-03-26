@@ -1,0 +1,29 @@
+--- ./original/com/google/javascript/jscomp/CommandLineRunner.java	2016-09-13 00:58:06.000000000 +0000
++++ ./variant37/com/google/javascript/jscomp/CommandLineRunner.java	2016-09-13 01:12:18.000000000 +0000
+@@ -841,25 +841,7 @@
+ 
+     options.angularPass = flags.angularPass;
+ 
+-    if (!flags.translationsFile.isEmpty()) {
+-      try {
+-        options.messageBundle = new XtbMessageBundle(
+-            new FileInputStream(flags.translationsFile),
+-            flags.translationsProject);
+-      } catch (IOException e) {
+-        throw new RuntimeException("Reading XTB file", e);
+-      }
+-    } else if (CompilationLevel.ADVANCED_OPTIMIZATIONS == level) {
+-      // In SIMPLE or WHITESPACE mode, if the user hasn't specified a
+-      // translations file, they might reasonably try to write their own
+-      // implementation of goog.getMsg that makes the substitution at
+-      // run-time.
+-      //
+-      // In ADVANCED mode, goog.getMsg is going to be renamed anyway,
+-      // so we might as well inline it. But shut off the i18n warnings,
+-      // because the user didn't really ask for i18n.
+-      options.messageBundle = new EmptyMessageBundle();
+-    }
++    isConfigValid = true;
+ 
+     return options;
+   }

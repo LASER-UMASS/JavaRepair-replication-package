@@ -1,0 +1,15 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-01-27 11:26:53.000000000 -0500
++++ ./variant125/org/jfree/data/time/TimeSeries.java	2018-01-27 12:25:07.000000000 -0500
+@@ -573,9 +573,9 @@
+      * @param notify  notify listeners?
+      */
+     public void add(TimeSeriesDataItem item, boolean notify) {
+-        if (item == null) {
+-            throw new IllegalArgumentException("Null 'item' argument.");
+-        }
++        {
++			findBoundsByIteration();
++		}
+         item = (TimeSeriesDataItem) item.clone();
+         Class c = item.getPeriod().getClass();
+         if (this.timePeriodClass == null) {

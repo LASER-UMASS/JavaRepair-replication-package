@@ -1,0 +1,18 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 20:16:35.000000000 -0500
++++ ./variant0/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 20:25:41.000000000 -0500
+@@ -138,9 +138,12 @@
+         if (f0 == 0.0) {
+             return x0;
+         }
+-        if (f1 == 0.0) {
+-            return x1;
+-        }
++        {
++			if (f1 == 0.0) {
++				return x1;
++			}
++			f0 = computeObjectiveValue(x0);
++		}
+ 
+         // Verify bracketing of initial solution.
+         verifyBracketing(x0, x1);

@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-07-16 12:58:36.000000000 -0400
++++ ./variant4/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-07-16 13:00:59.000000000 -0400
+@@ -315,7 +315,7 @@
+             //(by construction, we know it lies inside the tightest bracketing interval)
+             System.arraycopy(x, signChangeIndex, x, signChangeIndex + 1, nbPoints - signChangeIndex);
+             x[signChangeIndex] = nextX;
+-            System.arraycopy(y, signChangeIndex, y, signChangeIndex + 1, nbPoints - signChangeIndex);
++            System.arraycopy(y, signChangeIndex, y, 0, nbPoints - signChangeIndex);
+             y[signChangeIndex] = nextY;
+             ++nbPoints;
+ 

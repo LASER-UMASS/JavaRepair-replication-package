@@ -1,0 +1,27 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 07:14:18.000000000 -0500
++++ ./variant10/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 08:37:43.000000000 -0500
+@@ -272,12 +272,18 @@
+ 
+             } while (Double.isNaN(nextX) && (end - start > 1));
+ 
+-            if (Double.isNaN(nextX)) {
+-                // fall back to bisection
+-                nextX = xA + 0.5 * (xB - xA);
+-                start = signChangeIndex - 1;
+-                end   = signChangeIndex;
+-            }
++            {
++				if (Double.isNaN(nextX)) {
++					nextX = xA + 0.5 * (xB - xA);
++					start = signChangeIndex - 1;
++					end = signChangeIndex;
++				}
++				if (signChangeIndex - start >= end - signChangeIndex) {
++					++start;
++				} else {
++					--end;
++				}
++			}
+ 
+             // evaluate the function at the guessed root
+             final double nextY = computeObjectiveValue(nextX);

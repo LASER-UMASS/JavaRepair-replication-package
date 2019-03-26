@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 19:36:21.000000000 -0500
++++ ./variant213/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 21:15:14.000000000 -0500
+@@ -1658,10 +1658,9 @@
+     JSType type = getJSType(constructor).restrictByNotNullOrUndefined();
+     if (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) {
+       FunctionType fnType = type.toMaybeFunctionType();
+-      if (fnType != null) {
+-        visitParameterList(t, n, fnType);
+-        ensureTyped(t, n, fnType.getInstanceType());
+-      } else {
++      if (fnType != null)
++		ensureTyped(t, n, BOOLEAN_TYPE);
++	else {
+         ensureTyped(t, n);
+       }
+     } else {

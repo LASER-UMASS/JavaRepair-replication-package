@@ -1,0 +1,11 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-01-27 11:38:56.000000000 -0500
++++ ./variant219/org/jfree/data/time/TimeSeries.java	2018-01-27 12:35:36.000000000 -0500
+@@ -624,7 +624,7 @@
+             }
+         }
+         if (added) {
+-            updateBoundsForAddedItem(item);
++            findBoundsByIteration();
+             // check if this addition will exceed the maximum item count...
+             if (getItemCount() > this.maximumItemCount) {
+                 TimeSeriesDataItem d = (TimeSeriesDataItem) this.data.remove(0);

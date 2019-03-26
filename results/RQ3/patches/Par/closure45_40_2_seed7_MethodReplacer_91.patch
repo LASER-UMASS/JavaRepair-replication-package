@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-07-16 11:39:37.000000000 -0400
++++ ./variant102/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-07-16 13:03:51.000000000 -0400
+@@ -278,7 +278,7 @@
+             // If that var hasn't already been marked referenced, then
+             // start tracking it.  If this is an assign, do nothing
+             // for now.
+-            if (isRemovableVar(var)) {
++            if (equals(var)) {
+               if (!assignsByNode.containsKey(n)) {
+                 markReferencedVar(var);
+               }

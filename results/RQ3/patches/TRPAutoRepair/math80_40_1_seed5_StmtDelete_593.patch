@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:17:28.000000000 -0500
++++ ./variant13/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:30:32.000000000 -0500
+@@ -1230,12 +1230,8 @@
+     private int countEigenValues(final double t, final int index, final int n) {
+         double ratio = main[index] - t;
+         int count = (ratio > 0) ? 0 : 1;
+-        for (int i = 1; i < n; ++i) {
+-            ratio = main[index + i] - squaredSecondary[index + i - 1] / ratio - t;
+-            if (ratio <= 0) {
+-                ++count;
+-            }
+-        }
++        {
++		}
+         return count;
+     }
+ 

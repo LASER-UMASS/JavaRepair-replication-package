@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:43:06.000000000 -0400
++++ ./variant86/com/google/javascript/jscomp/TypeInference.java	2018-05-10 06:02:32.000000000 -0400
+@@ -452,7 +452,7 @@
+     JSType rightType = getJSType(right);
+     n.setJSType(rightType);
+ 
+-    updateScopeForTypeChange(scope, left, leftType, rightType);
++    scope = traverseGetElem(n, scope);
+     return scope;
+   }
+ 

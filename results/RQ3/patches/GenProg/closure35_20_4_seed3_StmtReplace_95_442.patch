@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:42:20.000000000 -0400
++++ ./variant25/com/google/javascript/jscomp/TypeInference.java	2018-05-09 19:01:27.000000000 -0400
+@@ -253,7 +253,9 @@
+         break;
+ 
+       case Token.NAME:
+-        scope = traverseName(n, scope);
++        {
++			n.setJSType(getNativeType(CHECKED_UNKNOWN_TYPE));
++		}
+         break;
+ 
+       case Token.GETPROP:

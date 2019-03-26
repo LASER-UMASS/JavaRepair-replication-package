@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/math/NumberUtils.java	2018-02-03 15:40:58.000000000 -0500
++++ ./variant127/org/apache/commons/lang/math/NumberUtils.java	2018-02-03 15:59:08.000000000 -0500
+@@ -461,7 +461,9 @@
+                         return createBigInteger(numeric);
+ 
+                     }
+-                    throw new NumberFormatException(str + " is not a valid number.");
++				if (StringUtils.isBlank(str)) {
++					throw new NumberFormatException("A blank string is not a valid number");
++				}
+                 case 'f' :
+                 case 'F' :
+                     try {

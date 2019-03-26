@@ -1,0 +1,22 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:00:14.000000000 -0500
++++ ./variant12/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:07:50.000000000 -0500
+@@ -129,10 +129,15 @@
+         Strategy currentStrategy= getStrategy(currentFormatField);
+         for(;;) {
+             patternMatcher.region(patternMatcher.end(), patternMatcher.regionEnd());
+-            if(!patternMatcher.lookingAt()) {
+-                nextStrategy = null;
+-                break;
+-            }
++            {
++				if (!patternMatcher.lookingAt()) {
++					nextStrategy = null;
++					break;
++				}
++				{
++					collector.add(currentStrategy);
++				}
++			}
+             String nextFormatField= patternMatcher.group();
+             nextStrategy = getStrategy(nextFormatField);
+             if(currentStrategy.addRegex(this, regex)) {

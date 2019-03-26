@@ -1,0 +1,17 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-15 09:02:05.000000000 -0500
++++ ./variant114/com/google/javascript/jscomp/TypeInference.java	2018-02-15 09:27:23.000000000 -0500
+@@ -693,9 +693,11 @@
+                 valueType : oldType.getLeastSupertype(oldType));
+           }
+ 
+-          scope.inferQualifiedSlot(name, qKeyName,
+-              oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,
+-              valueType);
++          {
++			scope.inferQualifiedSlot(name, qKeyName, oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,
++					valueType);
++			scope = traverseGetProp(n, scope);
++		}
+         }
+       } else {
+         n.setJSType(getNativeType(UNKNOWN_TYPE));

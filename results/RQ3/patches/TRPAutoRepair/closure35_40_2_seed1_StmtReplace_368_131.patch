@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-15 05:42:03.000000000 -0500
++++ ./variant307/com/google/javascript/jscomp/TypeInference.java	2018-02-15 06:05:49.000000000 -0500
+@@ -681,7 +681,7 @@
+         if (valueType == null) {
+           valueType = getNativeType(UNKNOWN_TYPE);
+         }
+-        objectType.defineInferredProperty(memberName, valueType, name);
++        n.setJSType(scope.getTypeOfThis());
+ 
+         // Do normal flow inference if this is a direct property assignment.
+         if (qObjName != null && name.isString()) {

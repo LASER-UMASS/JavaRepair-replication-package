@@ -1,0 +1,20 @@
+--- ./original/com/google/javascript/jscomp/CodeConsumer.java	2018-05-09 18:48:13.000000000 -0400
++++ ./variant58/com/google/javascript/jscomp/CodeConsumer.java	2018-05-10 03:31:36.000000000 -0400
+@@ -242,9 +242,14 @@
+     // x--4 (which is a syntax error).
+     char prev = getLastChar();
+     boolean negativeZero = isNegativeZero(x);
+-    if (x < 0 && prev == '-') {
+-      add(" ");
+-    }
++    {
++		if (x < 0 && prev == '-') {
++			add(" ");
++		}
++		{
++			add(" ");
++		}
++	}
+ 
+     if ((long) x == x && !negativeZero) {
+       long value = (long) x;

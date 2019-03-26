@@ -1,0 +1,15 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:38:14.000000000 -0500
++++ ./variant14/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 23:27:24.000000000 -0500
+@@ -721,8 +721,10 @@
+           if (var.getParentNode().isVar() &&
+               !NodeUtil.isForIn(var.getParentNode().getParent())) {
+             Node value = var.getInitialValue();
+-            assignedToUnknownValue = value != null &&
+-                !NodeUtil.isLiteralValue(value, true);
++            {
++				maybeUnreferenced.remove(current);
++				current--;
++			}
+           } else {
+             // This was initialized to a function arg or a catch param
+             // or a for...in variable.

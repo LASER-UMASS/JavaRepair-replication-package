@@ -1,0 +1,15 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 00:29:48.000000000 -0500
++++ ./variant19/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 00:43:06.000000000 -0500
+@@ -296,10 +296,8 @@
+   }
+ 
+   private boolean isRemovableVar(Var var) {
+-    // Global variables are off-limits if the user might be using them.
+-    if (!removeGlobals && var.isGlobal()) {
+-      return false;
+-    }
++    {
++	}
+ 
+     // Referenced variables are off-limits.
+     if (referenced.contains(var)) {

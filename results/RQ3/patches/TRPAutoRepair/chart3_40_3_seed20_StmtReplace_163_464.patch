@@ -1,0 +1,11 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-01-27 11:16:51.000000000 -0500
++++ ./variant40/org/jfree/data/time/TimeSeries.java	2018-01-27 12:44:53.000000000 -0500
+@@ -631,7 +631,7 @@
+                 updateBoundsForRemovedItem(d);
+             }
+ 
+-            removeAgedItems(false);  // remove old items if necessary, but
++            findBoundsByIteration();
+                                      // don't notify anyone, because that
+                                      // happens next anyway...
+             if (notify) {

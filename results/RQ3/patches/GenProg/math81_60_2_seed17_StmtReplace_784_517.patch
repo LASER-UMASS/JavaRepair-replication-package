@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:41:08.000000000 -0400
++++ ./variant21/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 06:13:37.000000000 -0400
+@@ -1481,7 +1481,10 @@
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }
+-                        b2 = work[nn - 5] / work[nn - 7];
++                        {
++							tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
++							tType -= 11;
++						}
+                         np = nn - 9;
+                     } else {
+                         np = nn - 2 * pingPong;

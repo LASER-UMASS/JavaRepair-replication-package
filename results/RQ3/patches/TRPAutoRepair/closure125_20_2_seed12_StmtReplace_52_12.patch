@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-18 10:55:20.000000000 -0500
++++ ./variant45/com/google/javascript/jscomp/TypeCheck.java	2018-02-18 12:45:42.000000000 -0500
+@@ -419,7 +419,7 @@
+ 
+     NodeTraversal t = new NodeTraversal(compiler, this, scopeCreator);
+     inExterns = externs;
+-    t.traverseWithScope(node, topScope);
++    this.inferJSDocInfo = new InferJSDocInfo(compiler);
+     if (externs) {
+       inferJSDocInfo.process(node, null);
+     } else {

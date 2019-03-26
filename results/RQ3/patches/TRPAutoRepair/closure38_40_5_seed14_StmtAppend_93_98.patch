@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/CodeConsumer.java	2018-02-15 16:55:24.000000000 -0500
++++ ./variant68/com/google/javascript/jscomp/CodeConsumer.java	2018-02-15 18:30:32.000000000 -0500
+@@ -229,7 +229,12 @@
+     // Allow formating around the operator.
+     appendOp(op, binOp);
+ 
+-    maybeEndStatement();
++    {
++		maybeEndStatement();
++		{
++			add(" ");
++		}
++	}
+   }
+ 
+   void addNumber(double x) {

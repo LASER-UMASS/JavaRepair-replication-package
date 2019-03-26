@@ -1,0 +1,19 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 18:21:52.000000000 -0400
++++ ./variant132/com/google/javascript/jscomp/TypeCheck.java	2018-05-10 14:36:18.000000000 -0400
+@@ -1311,12 +1311,10 @@
+ 
+     if (childType.isDict()) {
+       report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, "'.'", "dict");
+-    } else if (n.getJSType() != null && parent.isAssign()) {
+-      return;
+-    } else if (validator.expectNotNullOrUndefined(t, n, childType,
+-        "No properties on this expression", getNativeType(OBJECT_TYPE))) {
+-      checkPropertyAccess(childType, property.getString(), t, n);
+-    }
++    } else if (validator.expectNotNullOrUndefined(t, n, childType, "No properties on this expression",
++			getNativeType(OBJECT_TYPE))) {
++		checkPropertyAccess(childType, property.getString(), t, n);
++	}
+     ensureTyped(t, n);
+   }
+ 

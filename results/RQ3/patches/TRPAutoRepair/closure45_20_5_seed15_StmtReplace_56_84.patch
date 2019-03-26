@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:07:35.000000000 -0500
++++ ./variant0/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:26:56.000000000 -0500
+@@ -215,7 +215,12 @@
+           var = scope.getVar(maybeAssign.nameNode.getString());
+           if (var != null) {
+             assignsByVar.put(var, maybeAssign);
+-            assignsByNode.put(maybeAssign.nameNode, maybeAssign);
++            {
++				Node lp = scope.getRootNode().getFirstChild().getNext();
++				for (Node a = lp.getFirstChild(); a != null; a = a.getNext()) {
++					markReferencedVar(scope.getVar(a.getString()));
++				}
++			}
+ 
+             if (isRemovableVar(var) &&
+                 !maybeAssign.mayHaveSecondarySideEffects) {

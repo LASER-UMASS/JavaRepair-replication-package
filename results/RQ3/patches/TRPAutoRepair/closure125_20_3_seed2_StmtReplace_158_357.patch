@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 17:21:38.000000000 -0500
++++ ./variant43/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 17:42:01.000000000 -0500
+@@ -588,7 +588,9 @@
+         break;
+ 
+       case Token.NEW:
+-        visitNew(t, n);
++        {
++			ensureTyped(t, n);
++		}
+         break;
+ 
+       case Token.CALL:

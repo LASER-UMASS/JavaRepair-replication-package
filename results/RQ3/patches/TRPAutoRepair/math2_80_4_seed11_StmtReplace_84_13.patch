@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-02-04 21:34:13.000000000 -0500
++++ ./variant47/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-02-04 21:48:18.000000000 -0500
+@@ -277,7 +277,10 @@
+      */
+     public double getNumericalVariance() {
+         if (!numericalVarianceIsCalculated) {
+-            numericalVariance = calculateNumericalVariance();
++            if (numberOfSuccesses > populationSize) {
++				throw new NumberIsTooLargeException(LocalizedFormats.NUMBER_OF_SUCCESS_LARGER_THAN_POPULATION_SIZE,
++						numberOfSuccesses, populationSize, true);
++			}
+             numericalVarianceIsCalculated = true;
+         }
+         return numericalVariance;

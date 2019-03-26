@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 18:26:34.000000000 -0400
++++ ./variant99/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 20:37:44.000000000 -0400
+@@ -1658,10 +1658,9 @@
+     JSType type = getJSType(constructor).restrictByNotNullOrUndefined();
+     if (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) {
+       FunctionType fnType = type.toMaybeFunctionType();
+-      if (fnType != null) {
+-        visitParameterList(t, n, fnType);
+-        ensureTyped(t, n, fnType.getInstanceType());
+-      } else {
++      if (fnType != null)
++		scopeCreator = new MemoizedScopeCreator(new TypedScopeCreator(compiler));
++	else {
+         ensureTyped(t, n);
+       }
+     } else {

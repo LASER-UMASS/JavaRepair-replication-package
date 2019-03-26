@@ -1,0 +1,51 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 01:19:20.000000000 -0500
++++ ./variant16/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 01:58:00.000000000 -0500
+@@ -287,29 +287,25 @@
+                 return nextX;
+             }
+ 
+-            if ((nbPoints > 2) && (end - start != nbPoints)) {
+-
+-                // we have been forced to ignore some points to keep bracketing,
+-                // they are probably too far from the root, drop them from now on
+-                nbPoints = end - start;
+-                System.arraycopy(x, start, x, 0, nbPoints);
+-                System.arraycopy(y, start, y, 0, nbPoints);
+-                signChangeIndex -= start;
+-
+-            } else  if (nbPoints == x.length) {
+-
+-                // we have to drop one point in order to insert the new one
+-                nbPoints--;
+-
+-                // keep the tightest bracketing interval as centered as possible
+-                if (signChangeIndex >= (x.length + 1) / 2) {
+-                    // we drop the lowest point, we have to shift the arrays and the index
+-                    System.arraycopy(x, 1, x, 0, nbPoints);
+-                    System.arraycopy(y, 1, y, 0, nbPoints);
+-                    --signChangeIndex;
+-                }
+-
+-            }
++            {
++				if ((nbPoints > 2) && (end - start != nbPoints)) {
++					nbPoints = end - start;
++					System.arraycopy(x, start, x, 0, nbPoints);
++					System.arraycopy(y, start, y, 0, nbPoints);
++					signChangeIndex -= start;
++				} else if (nbPoints == x.length) {
++					nbPoints--;
++					if (signChangeIndex >= (x.length + 1) / 2) {
++						System.arraycopy(x, 1, x, 0, nbPoints);
++						System.arraycopy(y, 1, y, 0, nbPoints);
++						--signChangeIndex;
++					}
++				}
++				{
++					nbPoints = 3;
++					signChangeIndex = 2;
++				}
++			}
+ 
+             // insert the last computed point
+             //(by construction, we know it lies inside the tightest bracketing interval)

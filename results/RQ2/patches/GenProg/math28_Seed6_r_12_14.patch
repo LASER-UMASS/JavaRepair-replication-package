@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2016-10-18 22:45:33.000000000 +0000
++++ ./variant39/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2016-10-18 23:24:37.000000000 +0000
+@@ -73,10 +73,8 @@
+             final double entry = tableau.getEntry(0, i);
+             // check if the entry is strictly smaller than the current minimum
+             // do not use a ulp/epsilon check
+-            if (entry < minValue) {
+-                minValue = entry;
+-                minPos = i;
+-            }
++            if (entry < minValue)
++				minPos = i;
+         }
+         return minPos;
+     }

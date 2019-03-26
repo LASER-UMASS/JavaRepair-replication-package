@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-05-09 19:44:01.000000000 -0400
++++ ./variant323/org/apache/commons/lang/NumberUtils.java	2018-05-09 22:55:21.000000000 -0400
+@@ -182,7 +182,7 @@
+             if (expPos > -1 && expPos < val.length() - 1) {
+                 exp = val.substring(expPos + 1, val.length() - 1);
+             } else {
+-                exp = null;
++                return Long.valueOf(val);
+             }
+             //Requesting a specific type..
+             String numeric = val.substring(0, val.length() - 1);

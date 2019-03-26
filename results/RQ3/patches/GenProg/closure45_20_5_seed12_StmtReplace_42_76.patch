@@ -1,0 +1,21 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 18:51:08.000000000 -0400
++++ ./variant36/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 19:24:35.000000000 -0400
+@@ -200,11 +200,13 @@
+           var = scope.getVar(n.getFirstChild().getString());
+         }
+ 
+-        if (var != null && isRemovableVar(var)) {
+-          continuations.put(var, new Continuation(n, scope));
+-        } else {
+-          traverseFunction(n, scope);
+-        }
++        {
++			Node value = n.getFirstChild();
++			if (value != null && var != null && isRemovableVar(var) && !NodeUtil.mayHaveSideEffects(value)) {
++				continuations.put(var, new Continuation(n, scope));
++				return;
++			}
++		}
+         return;
+ 
+       case Token.ASSIGN:

@@ -1,0 +1,24 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-02-02 00:18:28.000000000 -0500
++++ ./variant8/org/apache/commons/lang/NumberUtils.java	2018-02-02 00:25:46.000000000 -0500
+@@ -179,11 +179,16 @@
+             dec = null;
+         }
+         if (!Character.isDigit(lastChar)) {
+-            if (expPos > -1 && expPos < val.length() - 1) {
+-                exp = val.substring(expPos + 1, val.length() - 1);
+-            } else {
+-                exp = null;
+-            }
++            {
++				if (expPos > -1 && expPos < val.length() - 1) {
++					exp = val.substring(expPos + 1, val.length() - 1);
++				} else {
++					exp = null;
++				}
++				{
++					exp = val.substring(expPos + 1, val.length() - 1);
++				}
++			}
+             //Requesting a specific type..
+             String numeric = val.substring(0, val.length() - 1);
+             boolean allZeros = isAllZeros(mant) && isAllZeros(exp);

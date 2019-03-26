@@ -1,0 +1,29 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:16:45.000000000 -0400
++++ ./variant417/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 12:49:31.000000000 -0400
+@@ -230,16 +230,16 @@
+ 
+             // target for the next evaluation point
+             double targetY;
+-            if (agingA >= MAXIMAL_AGING) {
+-                // we keep updating the high bracket, try to compensate this
+-                targetY = -REDUCTION_FACTOR * yB;
+-            } else if (agingB >= MAXIMAL_AGING) {
+-                // we keep updating the low bracket, try to compensate this
+-                targetY = -REDUCTION_FACTOR * yA;
+-            } else {
+-                // bracketing is balanced, try to find the root itself
+-                targetY = 0;
+-            }
++            {
++				if (agingA >= MAXIMAL_AGING) {
++					targetY = -REDUCTION_FACTOR * yB;
++				} else if (agingB >= MAXIMAL_AGING) {
++					targetY = -REDUCTION_FACTOR * yA;
++				} else {
++					targetY = 0;
++				}
++				signChangeIndex = 2;
++			}
+ 
+             // make a few attempts to guess a root,
+             double nextX;

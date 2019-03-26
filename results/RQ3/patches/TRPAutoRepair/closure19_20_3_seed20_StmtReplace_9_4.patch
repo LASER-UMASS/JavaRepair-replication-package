@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java	2018-02-18 15:21:59.000000000 -0500
++++ ./variant3/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java	2018-02-18 15:33:53.000000000 -0500
+@@ -80,7 +80,7 @@
+       ChainableReverseAbstractInterpreter lastLink) {
+     Preconditions.checkArgument(lastLink.nextLink == null);
+     this.nextLink = lastLink;
+-    lastLink.firstLink = this.firstLink;
++    firstLink = this;
+     return lastLink;
+   }
+ 

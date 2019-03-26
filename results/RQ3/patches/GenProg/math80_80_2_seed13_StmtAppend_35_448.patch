@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:29:40.000000000 -0400
++++ ./variant67/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 07:33:43.000000000 -0400
+@@ -235,7 +235,10 @@
+     private void decompose() {
+ 
+         cachedV  = null;
+-        cachedD  = null;
++        {
++			cachedD = null;
++			pingPong = 1 - pingPong;
++		}
+         cachedVt = null;
+         work     = new double[6 * main.length];
+ 

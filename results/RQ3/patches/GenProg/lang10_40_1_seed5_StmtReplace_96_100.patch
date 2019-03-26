@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-05-09 19:15:26.000000000 -0400
++++ ./variant1/org/apache/commons/lang3/time/FastDateParser.java	2018-05-09 19:18:21.000000000 -0400
+@@ -311,7 +311,12 @@
+                 }
+                 continue;
+             }
+-            wasWhite= false;
++            {
++				if (++i == value.length()) {
++					return regex;
++				}
++				c = value.charAt(i);
++			}
+             switch(c) {
+             case '\'':
+                 if(unquote) {

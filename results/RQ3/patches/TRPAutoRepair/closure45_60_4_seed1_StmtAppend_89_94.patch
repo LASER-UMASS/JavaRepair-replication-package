@@ -1,0 +1,37 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 00:25:45.000000000 -0500
++++ ./variant201/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 00:41:57.000000000 -0500
+@@ -272,20 +272,20 @@
+             }
+           }
+ 
+-          // All name references that aren't declarations or assigns
+-          // are references to other vars.
+-          if (var != null) {
+-            // If that var hasn't already been marked referenced, then
+-            // start tracking it.  If this is an assign, do nothing
+-            // for now.
+-            if (isRemovableVar(var)) {
+-              if (!assignsByNode.containsKey(n)) {
+-                markReferencedVar(var);
+-              }
+-            } else {
+-              markReferencedVar(var);
+-            }
+-          }
++          {
++			if (var != null) {
++				if (isRemovableVar(var)) {
++					if (!assignsByNode.containsKey(n)) {
++						markReferencedVar(var);
++					}
++				} else {
++					markReferencedVar(var);
++				}
++			}
++			{
++				markReferencedVar(var);
++			}
++		}
+         }
+         break;
+     }

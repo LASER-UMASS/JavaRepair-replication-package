@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/FunctionInjector.java	2016-09-22 06:21:51.000000000 +0000
++++ ./variant17/com/google/javascript/jscomp/FunctionInjector.java	2016-09-22 06:53:14.000000000 +0000
+@@ -696,12 +696,7 @@
+ 
+     boolean hasSideEffects = false;
+     if (block.hasChildren()) {
+-      Preconditions.checkState(block.hasOneChild());
+-      Node stmt = block.getFirstChild();
+-      if (stmt.isReturn()) {
+-        hasSideEffects = NodeUtil.mayHaveSideEffects(stmt.getFirstChild(), compiler);
+-      }
+-    }
++	}
+     // CALL NODE: [ NAME, ARG1, ARG2, ... ]
+     Node cArg = callNode.getFirstChild().getNext();
+ 

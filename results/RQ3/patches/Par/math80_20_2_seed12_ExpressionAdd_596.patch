@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-07-16 13:26:56.000000000 -0400
++++ ./variant51/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-07-16 13:46:41.000000000 -0400
+@@ -1232,7 +1232,7 @@
+         int count = (ratio > 0) ? 0 : 1;
+         for (int i = 1; i < n; ++i) {
+             ratio = main[index + i] - squaredSecondary[index + i - 1] / ratio - t;
+-            if (ratio <= 0) {
++            if (ratio <= 0 && ratio > 0) {
+                 ++count;
+             }
+         }

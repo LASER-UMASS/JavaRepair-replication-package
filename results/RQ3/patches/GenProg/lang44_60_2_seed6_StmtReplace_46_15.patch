@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-05-09 19:44:57.000000000 -0400
++++ ./variant276/org/apache/commons/lang/NumberUtils.java	2018-05-09 22:37:50.000000000 -0400
+@@ -176,7 +176,9 @@
+             } else {
+                 mant = val;
+             }
+-            dec = null;
++            {
++				throw new NumberFormatException("\"\" is not a valid number.");
++			}
+         }
+         if (!Character.isDigit(lastChar)) {
+             if (expPos > -1 && expPos < val.length() - 1) {

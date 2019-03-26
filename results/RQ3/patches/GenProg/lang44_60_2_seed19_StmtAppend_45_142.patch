@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-05-09 19:44:57.000000000 -0400
++++ ./variant21/org/apache/commons/lang/NumberUtils.java	2018-05-10 03:05:10.000000000 -0400
+@@ -174,7 +174,10 @@
+             if (expPos > -1) {
+                 mant = val.substring(0, expPos);
+             } else {
+-                mant = val;
++                {
++					mant = val;
++					return Long.valueOf(val);
++				}
+             }
+             dec = null;
+         }

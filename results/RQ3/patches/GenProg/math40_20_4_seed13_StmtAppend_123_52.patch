@@ -1,0 +1,37 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:13:43.000000000 -0400
++++ ./variant57/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 02:26:36.000000000 -0400
+@@ -296,20 +296,20 @@
+                 System.arraycopy(y, start, y, 0, nbPoints);
+                 signChangeIndex -= start;
+ 
+-            } else  if (nbPoints == x.length) {
+-
+-                // we have to drop one point in order to insert the new one
+-                nbPoints--;
+-
+-                // keep the tightest bracketing interval as centered as possible
+-                if (signChangeIndex >= (x.length + 1) / 2) {
+-                    // we drop the lowest point, we have to shift the arrays and the index
+-                    System.arraycopy(x, 1, x, 0, nbPoints);
+-                    System.arraycopy(y, 1, y, 0, nbPoints);
+-                    --signChangeIndex;
+-                }
+-
+-            }
++            } else {
++				if (nbPoints == x.length) {
++					nbPoints--;
++					if (signChangeIndex >= (x.length + 1) / 2) {
++						System.arraycopy(x, 1, x, 0, nbPoints);
++						System.arraycopy(y, 1, y, 0, nbPoints);
++						--signChangeIndex;
++					}
++				}
++				{
++					nbPoints = 3;
++					signChangeIndex = 2;
++				}
++			}
+ 
+             // insert the last computed point
+             //(by construction, we know it lies inside the tightest bracketing interval)

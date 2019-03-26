@@ -1,0 +1,23 @@
+--- ./original/com/google/javascript/jscomp/MinimizeExitPoints.java	2016-10-18 20:34:39.000000000 +0000
++++ ./variant104/com/google/javascript/jscomp/MinimizeExitPoints.java	2016-10-19 03:22:05.000000000 +0000
+@@ -138,10 +138,16 @@
+        * can cause problems if it changes the completion type of the finally
+        * block. See ECMA 262 Sections 8.9 & 12.14
+        */
+-      if (NodeUtil.hasFinally(n)) {
+-        Node finallyBlock = n.getLastChild();
+-        tryMinimizeExits(finallyBlock, exitType, labelName);
+-      }
++      if (NodeUtil.hasFinally(n))
++		if (n.isIf()) {
++			Node ifBlock = n.getFirstChild().getNext();
++			tryMinimizeExits(ifBlock, exitType, labelName);
++			Node elseBlock = ifBlock.getNext();
++			if (elseBlock != null) {
++				tryMinimizeExits(elseBlock, exitType, labelName);
++			}
++			return;
++		}
+     }
+ 
+     // Just a 'label'.

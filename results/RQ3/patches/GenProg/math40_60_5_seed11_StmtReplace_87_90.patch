@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:15:32.000000000 -0400
++++ ./variant0/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 02:13:31.000000000 -0400
+@@ -231,8 +231,7 @@
+             // target for the next evaluation point
+             double targetY;
+             if (agingA >= MAXIMAL_AGING) {
+-                // we keep updating the high bracket, try to compensate this
+-                targetY = -REDUCTION_FACTOR * yB;
++                targetY = -REDUCTION_FACTOR * yA;
+             } else if (agingB >= MAXIMAL_AGING) {
+                 // we keep updating the low bracket, try to compensate this
+                 targetY = -REDUCTION_FACTOR * yA;

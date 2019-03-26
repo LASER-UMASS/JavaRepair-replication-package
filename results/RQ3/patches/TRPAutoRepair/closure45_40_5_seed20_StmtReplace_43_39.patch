@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 23:33:40.000000000 -0500
++++ ./variant118/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 00:51:41.000000000 -0500
+@@ -200,9 +200,10 @@
+           var = scope.getVar(n.getFirstChild().getString());
+         }
+ 
+-        if (var != null && isRemovableVar(var)) {
+-          continuations.put(var, new Continuation(n, scope));
+-        } else {
++        if (var != null && isRemovableVar(var))
++			if (NodeUtil.isFunctionDeclaration(n)) {
++				var = scope.getVar(n.getFirstChild().getString());
++			} else {
+           traverseFunction(n, scope);
+         }
+         return;

@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-07-16 12:04:11.000000000 -0400
++++ ./variant5/org/apache/commons/lang3/time/FastDateParser.java	2018-07-16 12:08:18.000000000 -0400
+@@ -275,7 +275,7 @@
+     public Date parse(String source, ParsePosition pos) {
+         int offset= pos.getIndex();
+         Matcher matcher= parsePattern.matcher(source.substring(offset));
+-        if(!matcher.lookingAt()) {
++        if(locale.equals(JAPANESE_IMPERIAL)) {
+             return null;
+         }
+         // timing tests indicate getting new instance is 19% faster than cloning

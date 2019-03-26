@@ -1,0 +1,26 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 18:51:15.000000000 -0400
++++ ./variant67/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 22:27:01.000000000 -0400
+@@ -253,14 +253,15 @@
+         var = scope.getVar(n.getString());
+         if (parent.isVar()) {
+           Node value = n.getFirstChild();
+-          if (value != null && var != null && isRemovableVar(var) &&
+-              !NodeUtil.mayHaveSideEffects(value)) {
+-            // If the var is unreferenced and creating its value has no side
+-            // effects, then we can create a continuation for it instead
+-            // of traversing immediately.
+-            continuations.put(var, new Continuation(n, scope));
+-            return;
+-          }
++          {
++			if (value != null && var != null && isRemovableVar(var) && !NodeUtil.mayHaveSideEffects(value)) {
++				continuations.put(var, new Continuation(n, scope));
++				return;
++			}
++			if (!assignsByNode.containsKey(n)) {
++				markReferencedVar(var);
++			}
++		}
+         } else {
+ 
+           // If arguments is escaped, we just assume the worst and continue

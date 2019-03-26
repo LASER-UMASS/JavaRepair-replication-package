@@ -1,0 +1,12 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-18 14:47:34.000000000 -0500
++++ ./variant62/com/google/javascript/jscomp/TypeInference.java	2018-02-18 16:00:44.000000000 -0500
+@@ -689,8 +689,7 @@
+           Var var = syntacticScope.getVar(qKeyName);
+           JSType oldType = var == null ? null : var.getType();
+           if (var != null && var.isTypeInferred()) {
+-            var.setType(oldType == null ?
+-                valueType : oldType.getLeastSupertype(oldType));
++            n.setJSType(scope.getTypeOfThis());
+           }
+ 
+           scope.inferQualifiedSlot(name, qKeyName,

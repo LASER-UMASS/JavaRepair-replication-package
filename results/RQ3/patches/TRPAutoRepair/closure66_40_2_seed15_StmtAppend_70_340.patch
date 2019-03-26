@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-16 23:08:40.000000000 -0500
++++ ./variant50/com/google/javascript/jscomp/TypeCheck.java	2018-02-17 00:18:22.000000000 -0500
+@@ -422,7 +422,7 @@
+ 
+   public boolean shouldTraverse(
+       NodeTraversal t, Node n, Node parent) {
+-    checkNoTypeCheckSection(n, true);
++    {checkNoTypeCheckSection(n,true);if (n.getType() == Token.OBJECTLIT){for (Node key:n.children()){visitObjLitKey(t,key,n);}}}
+     switch (n.getType()) {
+       case Token.FUNCTION:
+         // normal type checking

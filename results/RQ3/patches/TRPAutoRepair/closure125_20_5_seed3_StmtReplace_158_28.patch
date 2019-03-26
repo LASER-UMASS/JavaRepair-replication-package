@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 17:29:58.000000000 -0500
++++ ./variant68/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 18:08:31.000000000 -0500
+@@ -588,7 +588,7 @@
+         break;
+ 
+       case Token.NEW:
+-        visitNew(t, n);
++        Preconditions.checkNotNull(scopeCreator);
+         break;
+ 
+       case Token.CALL:

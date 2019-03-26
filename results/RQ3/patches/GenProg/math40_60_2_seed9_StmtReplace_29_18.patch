@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:15:00.000000000 -0400
++++ ./variant8/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:41:46.000000000 -0400
+@@ -146,7 +146,9 @@
+         final double[] x = new double[maximalOrder + 1];
+         final double[] y = new double[maximalOrder + 1];
+         x[0] = getMin();
+-        x[1] = getStartValue();
++        if (maximalOrder < 2) {
++			throw new NumberIsTooSmallException(maximalOrder, 2, true);
++		}
+         x[2] = getMax();
+         verifySequence(x[0], x[1], x[2]);
+ 

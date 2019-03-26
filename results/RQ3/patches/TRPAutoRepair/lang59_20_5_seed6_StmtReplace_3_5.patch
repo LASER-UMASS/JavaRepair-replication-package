@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2018-02-03 20:31:09.000000000 -0500
++++ ./variant121/org/apache/commons/lang/text/StrBuilder.java	2018-02-03 20:59:02.000000000 -0500
+@@ -104,7 +104,9 @@
+      * @param initialCapacity  the initial capacity, zero or less will be converted to 32
+      */
+     public StrBuilder(int initialCapacity) {
+-        super();
++        {
++			initialCapacity = CAPACITY;
++		}
+         if (initialCapacity <= 0) {
+             initialCapacity = CAPACITY;
+         }

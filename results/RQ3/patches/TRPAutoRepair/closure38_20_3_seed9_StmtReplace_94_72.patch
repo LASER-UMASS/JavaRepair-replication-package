@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/CodeConsumer.java	2018-02-18 13:29:21.000000000 -0500
++++ ./variant12/com/google/javascript/jscomp/CodeConsumer.java	2018-02-18 14:33:01.000000000 -0500
+@@ -232,9 +232,8 @@
+     // Line breaking after an operator is always safe. Line breaking before an
+     // operator on the other hand is not. We only line break after a bin op
+     // because it looks strange.
+-    if (binOp) {
+-      maybeCutLine();
+-    }
++    if (binOp)
++		append(" ");
+   }
+ 
+   void addNumber(double x) {

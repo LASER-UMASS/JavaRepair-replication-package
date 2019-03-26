@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2018-05-09 20:24:31.000000000 -0400
++++ ./variant82/org/apache/commons/lang/text/StrBuilder.java	2018-05-10 02:16:15.000000000 -0400
+@@ -877,7 +877,10 @@
+      */
+     public StrBuilder appendFixedWidthPadRight(Object obj, int width, char padChar) {
+         if (width > 0) {
+-            ensureCapacity(size + width);
++            {
++				ensureCapacity(size + width);
++				buffer = new char[CAPACITY];
++			}
+             String str = (obj == null ? getNullText() : obj.toString());
+             int strLen = str.length();
+             if (strLen >= width) {

@@ -1,0 +1,36 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-18 14:16:39.000000000 -0500
++++ ./variant147/com/google/javascript/jscomp/TypeInference.java	2018-02-18 15:29:10.000000000 -0500
+@@ -683,20 +683,19 @@
+         }
+         objectType.defineInferredProperty(memberName, valueType, name);
+ 
+-        // Do normal flow inference if this is a direct property assignment.
+-        if (qObjName != null && name.isString()) {
+-          String qKeyName = qObjName + "." + memberName;
+-          Var var = syntacticScope.getVar(qKeyName);
+-          JSType oldType = var == null ? null : var.getType();
+-          if (var != null && var.isTypeInferred()) {
+-            var.setType(oldType == null ?
+-                valueType : oldType.getLeastSupertype(oldType));
+-          }
+-
+-          scope.inferQualifiedSlot(name, qKeyName,
+-              oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,
+-              valueType);
+-        }
++        {
++			if (qObjName != null && name.isString()) {
++				String qKeyName = qObjName + "." + memberName;
++				Var var = syntacticScope.getVar(qKeyName);
++				JSType oldType = var == null ? null : var.getType();
++				if (var != null && var.isTypeInferred()) {
++					var.setType(oldType == null ? valueType : oldType.getLeastSupertype(oldType));
++				}
++				scope.inferQualifiedSlot(name, qKeyName, oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,
++						valueType);
++			}
++			scope = traverseAssign(n, scope);
++		}
+       } else {
+         n.setJSType(getNativeType(UNKNOWN_TYPE));
+       }

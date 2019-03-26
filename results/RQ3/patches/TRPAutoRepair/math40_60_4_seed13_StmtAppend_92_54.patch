@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 05:36:19.000000000 -0500
++++ ./variant91/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 06:20:50.000000000 -0500
+@@ -237,8 +237,10 @@
+                 // we keep updating the low bracket, try to compensate this
+                 targetY = -REDUCTION_FACTOR * yA;
+             } else {
+-                // bracketing is balanced, try to find the root itself
+-                targetY = 0;
++                {
++					targetY = 0;
++					signChangeIndex = 2;
++				}
+             }
+ 
+             // make a few attempts to guess a root,

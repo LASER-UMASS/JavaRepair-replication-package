@@ -1,0 +1,48 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:07:35.000000000 -0500
++++ ./variant13/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:11:26.000000000 -0500
+@@ -251,42 +251,9 @@
+ 
+       case Token.NAME:
+         var = scope.getVar(n.getString());
+-        if (parent.isVar()) {
+-          Node value = n.getFirstChild();
+-          if (value != null && var != null && isRemovableVar(var) &&
+-              !NodeUtil.mayHaveSideEffects(value)) {
+-            // If the var is unreferenced and creating its value has no side
+-            // effects, then we can create a continuation for it instead
+-            // of traversing immediately.
+-            continuations.put(var, new Continuation(n, scope));
+-            return;
+-          }
+-        } else {
+-
+-          // If arguments is escaped, we just assume the worst and continue
+-          // on all the parameters.
+-          if ("arguments".equals(n.getString()) && scope.isLocal()) {
+-            Node lp = scope.getRootNode().getFirstChild().getNext();
+-            for (Node a = lp.getFirstChild(); a != null; a = a.getNext()) {
+-              markReferencedVar(scope.getVar(a.getString()));
+-            }
+-          }
+-
+-          // All name references that aren't declarations or assigns
+-          // are references to other vars.
+-          if (var != null) {
+-            // If that var hasn't already been marked referenced, then
+-            // start tracking it.  If this is an assign, do nothing
+-            // for now.
+-            if (isRemovableVar(var)) {
+-              if (!assignsByNode.containsKey(n)) {
+-                markReferencedVar(var);
+-              }
+-            } else {
+-              markReferencedVar(var);
+-            }
+-          }
+-        }
++        if (!assignsByNode.containsKey(n)) {
++			markReferencedVar(var);
++		}
+         break;
+     }
+ 

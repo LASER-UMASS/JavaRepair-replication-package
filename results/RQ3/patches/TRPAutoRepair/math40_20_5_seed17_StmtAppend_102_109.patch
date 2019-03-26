@@ -1,0 +1,31 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 02:09:19.000000000 -0500
++++ ./variant111/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 02:46:22.000000000 -0500
+@@ -254,16 +254,18 @@
+                 if (!((nextX > xA) && (nextX < xB))) {
+                     // the guessed root is not strictly inside of the tightest bracketing interval
+ 
+-                    // the guessed root is either not strictly inside the interval or it
+-                    // is a NaN (which occurs when some sampling points share the same y)
+-                    // we try again with a lower interpolation order
+-                    if (signChangeIndex - start >= end - signChangeIndex) {
+-                        // we have more points before the sign change, drop the lowest point
+-                        ++start;
+-                    } else {
+-                        // we have more points after sign change, drop the highest point
+-                        --end;
+-                    }
++                    {
++						if (signChangeIndex - start >= end - signChangeIndex) {
++							++start;
++						} else {
++							--end;
++						}
++						{
++							nextX = xA + 0.5 * (xB - xA);
++							start = signChangeIndex - 1;
++							end = signChangeIndex;
++						}
++					}
+ 
+                     // we need to do one more attempt
+                     nextX = Double.NaN;

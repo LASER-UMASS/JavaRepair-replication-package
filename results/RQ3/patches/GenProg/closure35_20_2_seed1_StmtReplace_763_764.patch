@@ -1,0 +1,21 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:41:54.000000000 -0400
++++ ./variant85/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:58:34.000000000 -0400
+@@ -1396,15 +1396,9 @@
+    */
+   private JSType getJSType(Node n) {
+     JSType jsType = n.getJSType();
+-    if (jsType == null) {
+-      // TODO(nicksantos): This branch indicates a compiler bug, not worthy of
+-      // halting the compilation but we should log this and analyze to track
+-      // down why it happens. This is not critical and will be resolved over
+-      // time as the type checker is extended.
+-      return getNativeType(UNKNOWN_TYPE);
+-    } else {
+-      return jsType;
+-    }
++    {
++		return getNativeType(UNKNOWN_TYPE);
++	}
+   }
+ 
+   private JSType getNativeType(JSTypeNative typeId) {

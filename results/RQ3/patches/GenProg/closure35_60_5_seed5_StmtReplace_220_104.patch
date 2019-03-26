@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:43:58.000000000 -0400
++++ ./variant292/com/google/javascript/jscomp/TypeInference.java	2018-05-10 04:20:59.000000000 -0400
+@@ -415,7 +415,7 @@
+    * Traverse a return value.
+    */
+   private FlowScope traverseReturn(Node n, FlowScope scope) {
+-    scope = traverseChildren(n, scope);
++    scope = traverseOr(n, scope).getJoinedFlowScope().createChildFlowScope();
+ 
+     Node retValue = n.getFirstChild();
+     if (retValue != null) {

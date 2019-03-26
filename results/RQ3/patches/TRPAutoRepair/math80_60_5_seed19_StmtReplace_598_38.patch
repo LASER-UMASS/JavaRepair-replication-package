@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:59:19.000000000 -0500
++++ ./variant17/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 09:00:31.000000000 -0500
+@@ -1233,7 +1233,7 @@
+         for (int i = 1; i < n; ++i) {
+             ratio = main[index + i] - squaredSecondary[index + i - 1] / ratio - t;
+             if (ratio <= 0) {
+-                ++count;
++                computeGershgorinCircles();
+             }
+         }
+         return count;

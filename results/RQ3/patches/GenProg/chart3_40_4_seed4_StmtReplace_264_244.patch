@@ -1,0 +1,25 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-05-09 04:04:59.000000000 -0400
++++ ./variant25/org/jfree/data/time/TimeSeries.java	2018-05-09 04:32:50.000000000 -0400
+@@ -875,20 +875,8 @@
+         // check if there are any values earlier than specified by the history
+         // count...
+         if (getItemCount() > 1) {
+-            long latest = getTimePeriod(getItemCount() - 1).getSerialIndex();
+-            boolean removed = false;
+-            while ((latest - getTimePeriod(0).getSerialIndex())
+-                    > this.maximumItemAge) {
+-                this.data.remove(0);
+-                removed = true;
+-            }
+-            if (removed) {
+-                findBoundsByIteration();
+-                if (notify) {
+-                    fireSeriesChanged();
+-                }
+-            }
+-        }
++			findBoundsByIteration();
++		}
+     }
+ 
+     /**

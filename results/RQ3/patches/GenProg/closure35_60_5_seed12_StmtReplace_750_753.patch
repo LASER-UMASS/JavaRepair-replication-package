@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:43:58.000000000 -0400
++++ ./variant412/com/google/javascript/jscomp/TypeInference.java	2018-05-10 14:44:23.000000000 -0400
+@@ -1373,7 +1373,9 @@
+ 
+   private void redeclareSimpleVar(
+       FlowScope scope, Node nameNode, JSType varType) {
+-    Preconditions.checkState(nameNode.isName());
++    {
++		varType = getNativeType(JSTypeNative.UNKNOWN_TYPE);
++	}
+     String varName = nameNode.getString();
+     if (varType == null) {
+       varType = getNativeType(JSTypeNative.UNKNOWN_TYPE);

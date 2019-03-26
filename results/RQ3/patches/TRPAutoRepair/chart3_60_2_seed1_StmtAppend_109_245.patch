@@ -1,0 +1,14 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-01-28 15:06:45.000000000 -0500
++++ ./variant259/org/jfree/data/time/TimeSeries.java	2018-01-28 15:15:25.000000000 -0500
+@@ -561,7 +561,10 @@
+      *              permitted).
+      */
+     public void add(TimeSeriesDataItem item) {
+-        add(item, true);
++        {
++			add(item, true);
++			findBoundsByIteration();
++		}
+     }
+ 
+     /**

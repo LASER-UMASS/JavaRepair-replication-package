@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-07-16 11:40:32.000000000 -0400
++++ ./variant2/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-07-16 15:11:14.000000000 -0400
+@@ -738,7 +738,7 @@
+             }
+           }
+ 
+-          if (assignedToUnknownValue && hasPropertyAssign) {
++          if (assignedToUnknownValue && hasPropertyAssign || hasPropertyAssign) {
+             changes = markReferencedVar(var) || changes;
+             maybeUnreferenced.remove(current);
+             current--;

@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/CodeConsumer.java	2018-05-09 18:47:43.000000000 -0400
++++ ./variant304/com/google/javascript/jscomp/CodeConsumer.java	2018-05-09 19:56:12.000000000 -0400
+@@ -233,7 +233,9 @@
+     // operator on the other hand is not. We only line break after a bin op
+     // because it looks strange.
+     if (binOp) {
+-      maybeCutLine();
++      {
++		append(" ");
++	}
+     }
+   }
+ 

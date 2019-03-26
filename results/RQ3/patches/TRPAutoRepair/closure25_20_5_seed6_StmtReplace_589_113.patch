@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-13 13:28:23.000000000 -0500
++++ ./variant81/com/google/javascript/jscomp/TypeInference.java	2018-02-13 14:50:53.000000000 -0500
+@@ -1050,9 +1050,8 @@
+           // interface, precisely because it can validly construct objects.
+           ct = (FunctionType) constructorType;
+         }
+-        if (ct != null && ct.isConstructor()) {
+-          type = ct.getInstanceType();
+-        }
++        if (ct != null && ct.isConstructor())
++			scope = traverseCall(n, scope);
+       }
+     }
+     n.setJSType(type);

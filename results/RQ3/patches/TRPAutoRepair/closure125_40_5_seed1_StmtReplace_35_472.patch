@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 18:17:48.000000000 -0500
++++ ./variant348/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 18:47:56.000000000 -0500
+@@ -388,7 +388,9 @@
+         externsRoot == null || externsAndJs.hasChild(externsRoot));
+ 
+     if (externsRoot != null) {
+-      check(externsRoot, true);
++      {
++		return;
++	}
+     }
+     check(jsRoot, false);
+   }

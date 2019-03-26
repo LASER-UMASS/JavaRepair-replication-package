@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/lang3/math/Fraction.java	2018-05-09 19:26:33.000000000 -0400
++++ ./variant4/org/apache/commons/lang3/math/Fraction.java	2018-05-10 14:24:39.000000000 -0400
+@@ -773,10 +773,10 @@
+ 
+         // result is (t/d2) / (u'/d1)(v'/d2)
+         BigInteger w = t.divide(BigInteger.valueOf(d2));
+-        if (w.bitLength() > 31) {
+-            throw new ArithmeticException
+-                ("overflow: numerator too large after multiply");
+-        }
++        if (w.bitLength() > 31)
++			if (numerator < 0) {
++				throw new ArithmeticException("The numerator must not be negative");
++			}
+         return new Fraction
+             (w.intValue(),
+              mulPosAndCheck(denominator/d1, fraction.denominator/d2));

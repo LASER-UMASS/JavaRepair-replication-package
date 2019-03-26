@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-07-16 12:04:23.000000000 -0400
++++ ./variant2/org/apache/commons/lang3/time/FastDateParser.java	2018-07-16 12:09:58.000000000 -0400
+@@ -465,7 +465,7 @@
+         if(values!=null) {
+             for(int i= 0; i<values.length; ++i) {
+                 String value= values[i];
+-                if(value.length()>0) {
++                if(value.length()>0 || values!=null) {
+                     fieldKeyValues[offset++]= new KeyValue(value, i);
+                 }
+             }

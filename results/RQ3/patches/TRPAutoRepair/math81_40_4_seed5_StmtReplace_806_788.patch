@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 16:11:11.000000000 -0500
++++ ./variant156/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 16:42:46.000000000 -0500
+@@ -1505,9 +1505,7 @@
+                             break;
+                         }
+                         b1 = b2;
+-                        if (work[i4]  >  work[i4 - 2]) {
+-                            return;
+-                        }
++                        b2 = work[np - 2];
+                         b2 = b2 * (work[i4] / work[i4 - 2]);
+                         a2 = a2 + b2;
+                         if (100 * Math.max(b2, b1) < a2 || cnst1 < a2) {

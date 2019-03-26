@@ -1,0 +1,18 @@
+--- ./original/org/jfree/data/time/TimePeriodValues.java	2018-01-28 13:11:58.000000000 -0500
++++ ./variant230/org/jfree/data/time/TimePeriodValues.java	2018-01-28 13:25:24.000000000 -0500
+@@ -302,9 +302,12 @@
+             long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
+                 .getTime();
+             long maxMiddle = s + (e - s) / 2;
+-            if (middle > maxMiddle) {
+-                this.maxMiddleIndex = index;           
+-            }
++            {
++				if (middle > maxMiddle) {
++					this.maxMiddleIndex = index;
++				}
++				this.minMiddleIndex = -1;
++			}
+         }
+         else {
+             this.maxMiddleIndex = index;

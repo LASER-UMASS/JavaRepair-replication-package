@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-07-16 12:57:22.000000000 -0400
++++ ./variant0/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-07-16 12:58:03.000000000 -0400
+@@ -289,7 +289,7 @@
+      * @return the variance of this distribution
+      */
+     protected double calculateNumericalVariance() {
+-        final double N = getPopulationSize();
++        final double N = getSampleSize();
+         final double m = getNumberOfSuccesses();
+         final double n = getSampleSize();
+         return (n * m * (N - n) * (N - m)) / (N * N * (N - 1));

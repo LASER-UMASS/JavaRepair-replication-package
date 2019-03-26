@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-17 03:18:16.000000000 -0500
++++ ./variant248/com/google/javascript/jscomp/TypeCheck.java	2018-02-17 06:48:19.000000000 -0500
+@@ -819,7 +819,7 @@
+   private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+     JSType type = n.getJSType();
+     if (type == null) {
+-      nullCount++;
++      scopeCreator = new MemoizedScopeCreator(new TypedScopeCreator(compiler));
+     } else if (type.isUnknownType()) {
+       if (reportUnknownTypes.isOn()) {
+         compiler.report(

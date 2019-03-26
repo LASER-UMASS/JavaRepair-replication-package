@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 18:26:04.000000000 -0400
++++ ./variant2/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 19:43:40.000000000 -0400
+@@ -408,7 +408,9 @@
+         reverseInterpreter, topScope, scopeCreator);
+ 
+     inference.process(externsRoot, jsRoot);
+-    process(externsRoot, jsRoot);
++    {
++		editDistance = null;
++	}
+ 
+     return topScope;
+   }

@@ -1,0 +1,15 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:43:58.000000000 -0400
++++ ./variant324/com/google/javascript/jscomp/TypeInference.java	2018-05-11 02:03:26.000000000 -0400
+@@ -1378,9 +1378,9 @@
+     if (varType == null) {
+       varType = getNativeType(JSTypeNative.UNKNOWN_TYPE);
+     }
+-    if (isUnflowable(syntacticScope.getVar(varName))) {
+-      return;
+-    }
++    {
++		varType = getNativeType(JSTypeNative.UNKNOWN_TYPE);
++	}
+     scope.inferSlotType(varName, varType);
+   }
+ 

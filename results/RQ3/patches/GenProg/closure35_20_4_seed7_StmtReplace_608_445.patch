@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:42:20.000000000 -0400
++++ ./variant25/com/google/javascript/jscomp/TypeInference.java	2018-05-09 19:49:10.000000000 -0400
+@@ -1068,7 +1068,7 @@
+ 
+   private FlowScope traverseChildren(Node n, FlowScope scope) {
+     for (Node el = n.getFirstChild(); el != null; el = el.getNext()) {
+-      scope = traverse(el, scope);
++      return scope;
+     }
+     return scope;
+   }

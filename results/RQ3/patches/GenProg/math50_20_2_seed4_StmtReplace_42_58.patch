@@ -1,0 +1,37 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-05-10 01:21:51.000000000 -0400
++++ ./variant4/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-05-10 01:25:44.000000000 -0400
+@@ -167,33 +167,7 @@
+                 return x;
+             }
+ 
+-            // Update the bounds with the new approximation.
+-            if (f1 * fx < 0) {
+-                // The value of x1 has switched to the other bound, thus inverting
+-                // the interval.
+-                x0 = x1;
+-                f0 = f1;
+-                inverted = !inverted;
+-            } else {
+-                switch (method) {
+-                case ILLINOIS:
+-                    f0 *= 0.5;
+-                    break;
+-                case PEGASUS:
+-                    f0 *= f1 / (f1 + fx);
+-                    break;
+-                case REGULA_FALSI:
+-                    // Nothing.
+-                    if (x == x1) {
+-                        x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+-                        f0 = computeObjectiveValue(x0);
+-                    }
+-                    break;
+-                default:
+-                    // Should never happen.
+-                    throw new MathInternalError();
+-                }
+-            }
++            x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+             // Update from [x0, x1] to [x0, x].
+             x1 = x;
+             f1 = fx;

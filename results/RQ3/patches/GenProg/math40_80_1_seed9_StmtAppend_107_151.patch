@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:15:43.000000000 -0400
++++ ./variant141/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 03:37:06.000000000 -0400
+@@ -265,8 +265,15 @@
+                         --end;
+                     }
+ 
+-                    // we need to do one more attempt
+-                    nextX = Double.NaN;
++                    {
++						nextX = Double.NaN;
++						for (int i = start; i < end - 1; ++i) {
++							final int delta = i + 1 - start;
++							for (int j = end - 1; j > i; --j) {
++								x[j] = (x[j] - x[j - 1]) / (y[j] - y[j - delta]);
++							}
++						}
++					}
+ 
+                 }
+ 

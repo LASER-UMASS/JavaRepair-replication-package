@@ -1,0 +1,32 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:41:54.000000000 -0400
++++ ./variant5/com/google/javascript/jscomp/TypeInference.java	2018-05-09 22:45:05.000000000 -0400
+@@ -393,19 +393,16 @@
+     }
+     if (!n.isFunction()) {
+       JSDocInfo info = n.getJSDocInfo();
+-      if (info != null && info.hasType()) {
+-        JSType castType = info.getType().evaluate(syntacticScope, registry);
+-
+-        // A stubbed type cast on a qualified name should take
+-        // effect for all subsequent accesses of that name,
+-        // so treat it the same as an assign to that name.
+-        if (n.isQualifiedName() &&
+-            n.getParent().isExprResult()) {
+-          updateScopeForTypeChange(scope, n, n.getJSType(), castType);
+-        }
+-
+-        n.setJSType(castType);
+-      }
++      {
++		if (info != null && info.hasType()) {
++			JSType castType = info.getType().evaluate(syntacticScope, registry);
++			if (n.isQualifiedName() && n.getParent().isExprResult()) {
++				updateScopeForTypeChange(scope, n, n.getJSType(), castType);
++			}
++			n.setJSType(castType);
++		}
++		scope = traverseChildren(n, scope);
++	}
+     }
+ 
+     return scope;

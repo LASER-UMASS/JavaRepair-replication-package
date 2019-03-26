@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:35:47.000000000 -0500
++++ ./variant22/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:48:01.000000000 -0500
+@@ -651,8 +651,10 @@
+ 
+                 tau = (range[1] - range[0]) * MathUtils.EPSILON * n + 2 * minPivot;
+ 
+-                // decompose T-&lambda;I as LDL<sup>T</sup>
+-                ldlTDecomposition(lambda, begin, n);
++                {
++					ldlTDecomposition(lambda, begin, n);
++					pingPong = 1 - pingPong;
++				}
+ 
+                 // apply general dqd/dqds method
+                 processGeneralBlock(n);

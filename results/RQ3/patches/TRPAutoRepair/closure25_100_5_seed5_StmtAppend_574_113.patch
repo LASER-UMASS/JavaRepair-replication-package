@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-13 20:09:44.000000000 -0500
++++ ./variant155/com/google/javascript/jscomp/TypeInference.java	2018-02-13 22:21:14.000000000 -0500
+@@ -1035,7 +1035,10 @@
+   private FlowScope traverseNew(Node n, FlowScope scope) {
+ 
+     Node constructor = n.getFirstChild();
+-    scope = traverse(constructor, scope);
++    {
++		scope = traverse(constructor, scope);
++		scope = traverseCall(n, scope);
++	}
+     JSType constructorType = constructor.getJSType();
+     JSType type = null;
+     if (constructorType != null) {

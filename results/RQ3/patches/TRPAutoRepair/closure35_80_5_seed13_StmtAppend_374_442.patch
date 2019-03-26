@@ -1,0 +1,21 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-18 15:06:15.000000000 -0500
++++ ./variant195/com/google/javascript/jscomp/TypeInference.java	2018-02-18 19:19:33.000000000 -0500
+@@ -688,10 +688,14 @@
+           String qKeyName = qObjName + "." + memberName;
+           Var var = syntacticScope.getVar(qKeyName);
+           JSType oldType = var == null ? null : var.getType();
+-          if (var != null && var.isTypeInferred()) {
+-            var.setType(oldType == null ?
+-                valueType : oldType.getLeastSupertype(oldType));
+-          }
++          {
++			if (var != null && var.isTypeInferred()) {
++				var.setType(oldType == null ? valueType : oldType.getLeastSupertype(oldType));
++			}
++			{
++				n.setJSType(getNativeType(CHECKED_UNKNOWN_TYPE));
++			}
++		}
+ 
+           scope.inferQualifiedSlot(name, qKeyName,
+               oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,

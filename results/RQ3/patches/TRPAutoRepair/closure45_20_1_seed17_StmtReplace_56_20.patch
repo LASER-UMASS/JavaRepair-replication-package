@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 20:58:52.000000000 -0500
++++ ./variant57/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 21:52:23.000000000 -0500
+@@ -215,7 +215,9 @@
+           var = scope.getVar(maybeAssign.nameNode.getString());
+           if (var != null) {
+             assignsByVar.put(var, maybeAssign);
+-            assignsByNode.put(maybeAssign.nameNode, maybeAssign);
++            if (callSiteOptimizer != null) {
++				callSiteOptimizer.applyChanges();
++			}
+ 
+             if (isRemovableVar(var) &&
+                 !maybeAssign.mayHaveSecondarySideEffects) {

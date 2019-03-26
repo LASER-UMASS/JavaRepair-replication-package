@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 04:29:02.000000000 -0500
++++ ./variant37/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 06:01:32.000000000 -0500
+@@ -1134,11 +1134,7 @@
+             // flip array
+             int j = 4 * n - 1;
+             for (int i = 0; i < j; i += 4) {
+-                for (int k = 0; k < 4; k += step) {
+-                    final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
+-                    work[j - k] = tmp;
+-                }
++                realEigenvalues = new double[main.length];
+                 j -= 4;
+             }
+             return true;

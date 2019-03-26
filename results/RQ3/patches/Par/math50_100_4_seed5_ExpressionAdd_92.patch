@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-07-16 13:09:46.000000000 -0400
++++ ./variant2/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-07-16 13:11:51.000000000 -0400
+@@ -242,7 +242,7 @@
+                 case RIGHT_SIDE:
+                     return inverted ? x0 : x1;
+                 case BELOW_SIDE:
+-                    return (f1 <= 0) ? x1 : x0;
++                    return (f1 <= 0) && f1 >= 0 ? x1 : x0;
+                 case ABOVE_SIDE:
+                     return (f1 >= 0) ? x1 : x0;
+                 default:

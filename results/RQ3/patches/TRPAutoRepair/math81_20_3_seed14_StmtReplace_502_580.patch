@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 15:34:10.000000000 -0500
++++ ./variant19/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 17:09:21.000000000 -0500
+@@ -1077,11 +1077,9 @@
+                 dqds(start, deflatedEnd);
+ 
+                 // check result of the dqds step
+-                if ((dMin >= 0) && (dMin1 > 0)) {
+-                    // the shift was good
+-                    updateSigma(tau);
+-                    return deflatedEnd;
+-                } else if ((dMin < 0.0) &&
++                if ((dMin >= 0) && (dMin1 > 0))
++					break;
++				else if ((dMin < 0.0) &&
+                            (dMin1 > 0.0) &&
+                            (work[4 * deflatedEnd - 5 - pingPong] < TOLERANCE * (sigma + dN1)) &&
+                            (Math.abs(dN) < TOLERANCE * sigma)) {

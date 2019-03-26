@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:31:52.000000000 -0400
++++ ./variant6/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 04:01:38.000000000 -0400
+@@ -1481,7 +1481,7 @@
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }
+-                        b2 = work[nn - 5] / work[nn - 7];
++                        eMin = work[4 * start + pingPong + 4];
+                         np = nn - 9;
+                     } else {
+                         np = nn - 2 * pingPong;

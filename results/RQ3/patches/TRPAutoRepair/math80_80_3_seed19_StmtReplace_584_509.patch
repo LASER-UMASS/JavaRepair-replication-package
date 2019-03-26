@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 12:44:13.000000000 -0500
++++ ./variant148/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 13:56:46.000000000 -0500
+@@ -1207,9 +1207,9 @@
+             }
+ 
+             final double middle = 0.5 * (left + right);
+-            if (countEigenValues(middle, index, n) >= n) {
+-                right = middle;
+-            } else {
++            if (countEigenValues(middle, index, n) >= n)
++				dMin = 0.0;
++			else {
+                 left = middle;
+             }
+ 

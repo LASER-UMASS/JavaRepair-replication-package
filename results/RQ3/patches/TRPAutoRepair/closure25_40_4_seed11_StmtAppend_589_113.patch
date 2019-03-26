@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-13 13:52:50.000000000 -0500
++++ ./variant178/com/google/javascript/jscomp/TypeInference.java	2018-02-13 15:50:13.000000000 -0500
+@@ -1051,8 +1051,11 @@
+           ct = (FunctionType) constructorType;
+         }
+         if (ct != null && ct.isConstructor()) {
+-          type = ct.getInstanceType();
+-        }
++			{
++				type = ct.getInstanceType();
++			}
++			scope = traverseCall(n, scope);
++		}
+       }
+     }
+     n.setJSType(type);

@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:07:35.000000000 -0500
++++ ./variant2/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:27:24.000000000 -0500
+@@ -214,7 +214,7 @@
+           // but we won't know that until we have an index of all assigns.
+           var = scope.getVar(maybeAssign.nameNode.getString());
+           if (var != null) {
+-            assignsByVar.put(var, maybeAssign);
++            markReferencedVar(var);
+             assignsByNode.put(maybeAssign.nameNode, maybeAssign);
+ 
+             if (isRemovableVar(var) &&

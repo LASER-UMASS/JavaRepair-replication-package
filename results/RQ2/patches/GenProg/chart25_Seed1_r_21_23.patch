@@ -1,0 +1,18 @@
+--- ./original/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2016-10-21 16:04:08.000000000 +0000
++++ ./variant34/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2016-10-21 16:16:13.000000000 +0000
+@@ -204,11 +204,10 @@
+         StatisticalCategoryDataset statData = (StatisticalCategoryDataset) data;
+ 
+         PlotOrientation orientation = plot.getOrientation();
+-        if (orientation == PlotOrientation.HORIZONTAL) {
+-            drawHorizontalItem(g2, state, dataArea, plot, domainAxis, 
+-                    rangeAxis, statData, row, column);
+-        }
+-        else if (orientation == PlotOrientation.VERTICAL) {
++        if (orientation == PlotOrientation.HORIZONTAL)
++			if (orientation == PlotOrientation.VERTICAL) {
++				drawVerticalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, statData, row, column);
++			} else if (orientation == PlotOrientation.VERTICAL) {
+             drawVerticalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, 
+                     statData, row, column);
+         }

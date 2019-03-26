@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-07-16 13:31:49.000000000 -0400
++++ ./variant18/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-07-16 14:33:25.000000000 -0400
+@@ -1289,7 +1289,7 @@
+                 work[j4 - 3] = d + work[j4];
+                 final double tmp = work[j4 + 2] / work[j4 - 3];
+                 d = d * tmp - tau;
+-                dMin = Math.min(dMin, d);
++                dMin = Math.min(d, d);
+                 work[j4 - 1] = work[j4] * tmp;
+                 eMin = Math.min(work[j4 - 1], eMin);
+             }

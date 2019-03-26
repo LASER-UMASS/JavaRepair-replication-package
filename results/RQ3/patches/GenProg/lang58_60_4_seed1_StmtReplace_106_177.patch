@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/math/NumberUtils.java	2018-05-13 13:52:28.000000000 -0400
++++ ./variant100/org/apache/commons/lang/math/NumberUtils.java	2018-05-13 13:58:52.000000000 -0400
+@@ -461,7 +461,9 @@
+                         return createBigInteger(numeric);
+ 
+                     }
+-                    throw new NumberFormatException(str + " is not a valid number.");
++				{
++					return null;
++				}
+                 case 'f' :
+                 case 'F' :
+                     try {

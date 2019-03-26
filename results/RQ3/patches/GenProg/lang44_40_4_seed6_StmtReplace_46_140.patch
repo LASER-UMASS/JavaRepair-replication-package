@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-05-09 19:44:23.000000000 -0400
++++ ./variant111/org/apache/commons/lang/NumberUtils.java	2018-05-09 21:53:54.000000000 -0400
+@@ -176,7 +176,7 @@
+             } else {
+                 mant = val;
+             }
+-            dec = null;
++            return Integer.decode(val);
+         }
+         if (!Character.isDigit(lastChar)) {
+             if (expPos > -1 && expPos < val.length() - 1) {

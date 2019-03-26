@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 18:50:16.000000000 -0400
++++ ./variant1/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 21:13:03.000000000 -0400
+@@ -297,9 +297,7 @@
+ 
+   private boolean isRemovableVar(Var var) {
+     // Global variables are off-limits if the user might be using them.
+-    if (!removeGlobals && var.isGlobal()) {
+-      return false;
+-    }
++    if (!removeGlobals && var.isGlobal())for (Scope fnScope:allFunctionScopes){removeUnreferencedFunctionArgs(fnScope);}
+ 
+     // Referenced variables are off-limits.
+     if (referenced.contains(var)) {

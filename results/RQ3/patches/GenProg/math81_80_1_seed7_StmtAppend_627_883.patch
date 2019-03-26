@@ -1,0 +1,28 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:41:39.000000000 -0400
++++ ./variant223/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 04:31:28.000000000 -0400
+@@ -1286,13 +1286,18 @@
+             }
+         } else {
+             for (int j4 = 4 * start + 3; j4 <= 4 * (end - 3); j4 += 4) {
+-                work[j4 - 3] = d + work[j4];
+-                final double tmp = work[j4 + 2] / work[j4 - 3];
+-                d = d * tmp - tau;
+-                dMin = Math.min(dMin, d);
+-                work[j4 - 1] = work[j4] * tmp;
+-                eMin = Math.min(work[j4 - 1], eMin);
+-            }
++				{
++					work[j4 - 3] = d + work[j4];
++					final double tmp = work[j4 + 2] / work[j4 - 3];
++					d = d * tmp - tau;
++					dMin = Math.min(dMin, d);
++					work[j4 - 1] = work[j4] * tmp;
++					eMin = Math.min(work[j4 - 1], eMin);
++				}
++				{
++					return;
++				}
++			}
+         }
+ 
+         // unroll last two steps.

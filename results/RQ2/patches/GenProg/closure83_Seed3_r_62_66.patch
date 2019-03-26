@@ -1,0 +1,17 @@
+--- ./original/com/google/javascript/jscomp/CommandLineRunner.java	2016-10-18 19:49:11.000000000 +0000
++++ ./variant280/com/google/javascript/jscomp/CommandLineRunner.java	2016-10-19 02:25:20.000000000 +0000
+@@ -430,9 +430,11 @@
+     try {
+       parser.parseArgument(processedArgs.toArray(new String[] {}));
+     } catch (CmdLineException e) {
+-      err.println(e.getMessage());
+-      isConfigValid = false;
+-    }
++		ResourceBundle config = ResourceBundle.getBundle(configResource);
++		err.println("Closure Compiler (http://code.google.com/closure/compiler)\n" + "Version: "
++				+ config.getString("compiler.version") + "\n" + "Built on: " + config.getString("compiler.date"));
++		err.flush();
++	}
+ 
+     if (flags.version) {
+       ResourceBundle config = ResourceBundle.getBundle(configResource);

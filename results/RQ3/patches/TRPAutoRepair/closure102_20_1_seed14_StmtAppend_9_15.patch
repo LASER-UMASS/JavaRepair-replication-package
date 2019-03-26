@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/Normalize.java	2018-02-09 19:20:27.000000000 -0500
++++ ./variant53/com/google/javascript/jscomp/Normalize.java	2018-02-09 20:10:02.000000000 -0500
+@@ -85,7 +85,10 @@
+ 
+   @Override
+   public void process(Node externs, Node root) {
+-    NodeTraversal.traverse(compiler, root, this);
++    {
++		NodeTraversal.traverse(compiler, root, this);
++		removeDuplicateDeclarations(root);
++	}
+     if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);

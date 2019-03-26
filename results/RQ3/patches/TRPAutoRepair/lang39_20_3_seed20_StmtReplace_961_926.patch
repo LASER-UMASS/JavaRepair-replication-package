@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/lang3/StringUtils.java	2018-02-17 16:23:09.000000000 -0500
++++ ./variant69/org/apache/commons/lang3/StringUtils.java	2018-02-17 17:00:49.000000000 -0500
+@@ -3672,12 +3672,11 @@
+         int increase = 0;
+ 
+         // count the replacement text elements that are larger than their corresponding text being replaced
+-        for (int i = 0; i < searchList.length; i++) {
+-            int greater = replacementList[i].length() - searchList[i].length();
+-            if (greater > 0) {
+-                increase += 3 * greater; // assume 3 matches
+-            }
+-        }
++        for (int i = 0; i < searchList.length; i++)
++			if (text == null || text.length() == 0 || searchList == null || searchList.length == 0
++					|| replacementList == null || replacementList.length == 0) {
++				return text;
++			}
+         // have upper-bound at 20% increase, then let Java take over
+         increase = Math.min(increase, text.length() / 5);
+ 

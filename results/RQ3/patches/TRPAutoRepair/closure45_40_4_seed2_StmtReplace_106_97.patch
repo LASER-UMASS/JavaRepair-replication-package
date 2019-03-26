@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:38:14.000000000 -0500
++++ ./variant74/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:47:21.000000000 -0500
+@@ -301,10 +301,7 @@
+       return false;
+     }
+ 
+-    // Referenced variables are off-limits.
+-    if (referenced.contains(var)) {
+-      return false;
+-    }
++    markReferencedVar(var);
+ 
+     // Exported variables are off-limits.
+     if (codingConvention.isExported(var.getName())) {

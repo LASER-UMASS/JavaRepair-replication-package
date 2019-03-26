@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-13 14:36:34.000000000 -0500
++++ ./variant168/com/google/javascript/jscomp/TypeInference.java	2018-02-13 17:59:39.000000000 -0500
+@@ -1057,7 +1057,10 @@
+     }
+     n.setJSType(type);
+     for (Node arg = constructor.getNext(); arg != null; arg = arg.getNext()) {
+-      scope = traverse(arg, scope);
++      {
++		scope = traverse(arg, scope);
++		scope = traverseCall(n, scope);
++	}
+     }
+     return scope;
+   }

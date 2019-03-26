@@ -1,0 +1,11 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-01-27 11:40:54.000000000 -0500
++++ ./variant237/org/jfree/data/time/TimeSeries.java	2018-01-27 12:41:09.000000000 -0500
+@@ -576,7 +576,7 @@
+         if (item == null) {
+             throw new IllegalArgumentException("Null 'item' argument.");
+         }
+-        item = (TimeSeriesDataItem) item.clone();
++        findBoundsByIteration();
+         Class c = item.getPeriod().getClass();
+         if (this.timePeriodClass == null) {
+             this.timePeriodClass = c;

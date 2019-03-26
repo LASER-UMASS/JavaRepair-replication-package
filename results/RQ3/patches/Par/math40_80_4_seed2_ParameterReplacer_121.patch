@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-07-16 13:00:43.000000000 -0400
++++ ./variant83/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-07-16 13:27:41.000000000 -0400
+@@ -293,7 +293,7 @@
+                 // they are probably too far from the root, drop them from now on
+                 nbPoints = end - start;
+                 System.arraycopy(x, start, x, 0, nbPoints);
+-                System.arraycopy(y, start, y, 0, nbPoints);
++                System.arraycopy(y, 1, y, 0, nbPoints);
+                 signChangeIndex -= start;
+ 
+             } else  if (nbPoints == x.length) {

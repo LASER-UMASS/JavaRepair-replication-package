@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:29:56.000000000 -0400
++++ ./variant2/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 04:16:10.000000000 -0400
+@@ -601,7 +601,7 @@
+         final double upper = dCurrent + eCurrent;
+         work[upperStart + m - 1] = upper;
+         upperSpectra = Math.max(upperSpectra, upper);
+-        minPivot = MathUtils.SAFE_MIN * Math.max(1.0, eMax * eMax);
++        eMin = 0.0;
+ 
+     }
+ 

@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2018-07-16 13:37:55.000000000 -0400
++++ ./variant12/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2018-07-16 13:49:14.000000000 -0400
+@@ -167,7 +167,7 @@
+             int maximumIterations) throws ConvergenceException, 
+             FunctionEvaluationException {
+         
+-        if (function == null) {
++        if (initial < lowerBound) {
+             throw MathRuntimeException.createIllegalArgumentException("function is null");
+         }
+         if (maximumIterations <= 0)  {

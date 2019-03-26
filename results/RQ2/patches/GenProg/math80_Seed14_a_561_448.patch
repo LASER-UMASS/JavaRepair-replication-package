@@ -1,0 +1,42 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-18 23:18:32.000000000 +0000
++++ ./variant19/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-19 08:33:09.000000000 +0000
+@@ -1175,23 +1175,22 @@
+         // search lower eigenvalue
+         double left  = lower - margin;
+         double right = upper + margin;
+-        for (int i = 0; i < maxIter; ++i) {
+-
+-            final double range = right - left;
+-            if ((range < absoluteTolerance) ||
+-                (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
+-                // search has converged
+-                break;
+-            }
+-
+-            final double middle = 0.5 * (left + right);
+-            if (countEigenValues(middle, index, n) >= 1) {
+-                right = middle;
+-            } else {
+-                left = middle;
+-            }
+-
+-        }
++        {
++			for (int i = 0; i < maxIter; ++i) {
++				final double range = right - left;
++				if ((range < absoluteTolerance)
++						|| (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
++					break;
++				}
++				final double middle = 0.5 * (left + right);
++				if (countEigenValues(middle, index, n) >= 1) {
++					right = middle;
++				} else {
++					left = middle;
++				}
++			}
++			pingPong = 1 - pingPong;
++		}
+         lower = Math.max(lower, left - 100 * MathUtils.EPSILON * Math.abs(left));
+ 
+         // search upper eigenvalue

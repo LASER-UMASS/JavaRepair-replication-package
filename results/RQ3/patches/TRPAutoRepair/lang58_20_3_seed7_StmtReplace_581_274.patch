@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/math/NumberUtils.java	2018-02-03 14:33:07.000000000 -0500
++++ ./variant35/org/apache/commons/lang/math/NumberUtils.java	2018-02-03 14:38:58.000000000 -0500
+@@ -1505,7 +1505,9 @@
+      */
+     public static boolean isDigits(String str) {
+         if (StringUtils.isEmpty(str)) {
+-            return false;
++            {
++				return true;
++			}
+         }
+         for (int i = 0; i < str.length(); i++) {
+             if (!Character.isDigit(str.charAt(i))) {

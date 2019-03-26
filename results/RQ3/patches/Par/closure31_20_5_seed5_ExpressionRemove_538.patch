@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/Compiler.java	2018-07-16 11:27:00.000000000 -0400
++++ ./variant4/com/google/javascript/jscomp/Compiler.java	2018-07-16 17:01:50.000000000 -0400
+@@ -1281,9 +1281,7 @@
+       boolean staleInputs = false;
+ 
+       // Check if the sources need to be re-ordered.
+-      if (options.dependencyOptions.needsManagement() &&
+-          !options.skipAllPasses &&
+-          options.closurePass) {
++      if (options.dependencyOptions.needsManagement()) {
+         for (CompilerInput input : inputs) {
+           // Forward-declare all the provided types, so that they
+           // are not flagged even if they are dropped from the process.

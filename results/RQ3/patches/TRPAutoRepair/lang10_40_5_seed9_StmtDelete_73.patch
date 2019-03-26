@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:00:14.000000000 -0500
++++ ./variant23/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:08:55.000000000 -0500
+@@ -275,9 +275,8 @@
+     public Date parse(String source, ParsePosition pos) {
+         int offset= pos.getIndex();
+         Matcher matcher= parsePattern.matcher(source.substring(offset));
+-        if(!matcher.lookingAt()) {
+-            return null;
+-        }
++        {
++		}
+         // timing tests indicate getting new instance is 19% faster than cloning
+         Calendar cal= Calendar.getInstance(timeZone, locale);
+         cal.clear();

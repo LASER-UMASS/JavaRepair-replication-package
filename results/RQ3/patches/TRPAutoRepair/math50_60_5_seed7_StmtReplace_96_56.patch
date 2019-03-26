@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 21:11:27.000000000 -0500
++++ ./variant0/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 21:17:40.000000000 -0500
+@@ -236,7 +236,10 @@
+                                                      atol)) {
+                 switch (allowed) {
+                 case ANY_SIDE:
+-                    return x1;
++                    if (x == x1) {
++						x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
++						f0 = computeObjectiveValue(x0);
++					}
+                 case LEFT_SIDE:
+                     return inverted ? x1 : x0;
+                 case RIGHT_SIDE:

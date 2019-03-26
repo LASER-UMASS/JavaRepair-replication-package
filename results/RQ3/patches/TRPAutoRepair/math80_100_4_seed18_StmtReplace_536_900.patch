@@ -1,0 +1,22 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 21:49:52.000000000 -0500
++++ ./variant78/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 23:36:10.000000000 -0500
+@@ -1134,13 +1134,12 @@
+             // flip array
+             int j = 4 * n - 1;
+             for (int i = 0; i < j; i += 4) {
+-                for (int k = 0; k < 4; k += step) {
+-                    final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
+-                    work[j - k] = tmp;
+-                }
+-                j -= 4;
+-            }
++				tau = 0.25 * dMin1;
++				if (dMin1 == dN1) {
++					tau = 0.5 * dMin1;
++				}
++				tType = -9;
++			}
+             return true;
+         }
+         return false;

@@ -1,0 +1,32 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 19:07:36.000000000 -0400
++++ ./variant235/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 23:18:20.000000000 -0400
+@@ -423,28 +423,7 @@
+   public boolean shouldTraverse(
+       NodeTraversal t, Node n, Node parent) {
+     checkNoTypeCheckSection(n, true);
+-    switch (n.getType()) {
+-      case Token.FUNCTION:
+-        // normal type checking
+-        final TypeCheck outerThis = this;
+-        final Scope outerScope = t.getScope();
+-        final FunctionType functionType = (FunctionType) n.getJSType();
+-        final String functionPrivateName = n.getFirstChild().getString();
+-        if (functionPrivateName != null && functionPrivateName.length() > 0 &&
+-            outerScope.isDeclared(functionPrivateName, false) &&
+-            // Ideally, we would want to check whether the type in the scope
+-            // differs from the type being defined, but then the extern
+-            // redeclarations of built-in types generates spurious warnings.
+-            !(outerScope.getVar(
+-                functionPrivateName).getType() instanceof FunctionType)) {
+-          report(t, n, FUNCTION_MASKS_VARIABLE, functionPrivateName);
+-        }
+-
+-        // TODO(user): Only traverse the function's body. The function's
+-        // name and arguments are traversed by the scope creator, and ideally
+-        // should not be traversed by the type checker.
+-        break;
+-    }
++    if (n.getType() == Token.OBJECTLIT){for (Node key:n.children()){visitObjLitKey(t,key,n);}}
+     return true;
+   }
+ 

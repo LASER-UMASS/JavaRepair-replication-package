@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-02-01 23:48:04.000000000 -0500
++++ ./variant45/org/apache/commons/lang/NumberUtils.java	2018-02-01 23:54:27.000000000 -0500
+@@ -299,7 +299,9 @@
+         }
+         for (int i = s.length() - 1; i >= 0; i--) {
+             if (s.charAt(i) != '0') {
+-                return false;
++                {
++					throw new NumberFormatException("\"\" is not a valid number.");
++				}
+             }
+         }
+         return s.length() > 0;

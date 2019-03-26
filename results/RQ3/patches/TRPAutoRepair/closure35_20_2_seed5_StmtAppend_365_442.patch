@@ -1,0 +1,20 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-18 13:38:04.000000000 -0500
++++ ./variant128/com/google/javascript/jscomp/TypeInference.java	2018-02-18 14:14:48.000000000 -0500
+@@ -678,9 +678,14 @@
+         JSType rawValueType =  name.getFirstChild().getJSType();
+         JSType valueType = NodeUtil.getObjectLitKeyTypeFromValueType(
+             name, rawValueType);
+-        if (valueType == null) {
+-          valueType = getNativeType(UNKNOWN_TYPE);
+-        }
++        {
++			if (valueType == null) {
++				valueType = getNativeType(UNKNOWN_TYPE);
++			}
++			{
++				n.setJSType(getNativeType(CHECKED_UNKNOWN_TYPE));
++			}
++		}
+         objectType.defineInferredProperty(memberName, valueType, name);
+ 
+         // Do normal flow inference if this is a direct property assignment.

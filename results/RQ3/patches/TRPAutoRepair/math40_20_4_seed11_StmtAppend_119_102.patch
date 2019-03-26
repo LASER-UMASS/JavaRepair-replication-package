@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 02:00:19.000000000 -0500
++++ ./variant71/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 02:17:31.000000000 -0500
+@@ -289,9 +289,14 @@
+ 
+             if ((nbPoints > 2) && (end - start != nbPoints)) {
+ 
+-                // we have been forced to ignore some points to keep bracketing,
+-                // they are probably too far from the root, drop them from now on
+-                nbPoints = end - start;
++                {
++					nbPoints = end - start;
++					if (signChangeIndex - start >= end - signChangeIndex) {
++						++start;
++					} else {
++						--end;
++					}
++				}
+                 System.arraycopy(x, start, x, 0, nbPoints);
+                 System.arraycopy(y, start, y, 0, nbPoints);
+                 signChangeIndex -= start;

@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:29:08.000000000 -0400
++++ ./variant48/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 03:27:07.000000000 -0400
+@@ -239,8 +239,10 @@
+         cachedVt = null;
+         work     = new double[6 * main.length];
+ 
+-        // compute the Gershgorin circles
+-        computeGershgorinCircles();
++        {
++			computeGershgorinCircles();
++			pingPong = 1 - pingPong;
++		}
+ 
+         // find all the realEigenvalues
+         findEigenvalues();

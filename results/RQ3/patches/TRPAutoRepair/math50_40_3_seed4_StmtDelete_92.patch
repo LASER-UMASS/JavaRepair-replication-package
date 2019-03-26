@@ -1,0 +1,30 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 20:23:33.000000000 -0500
++++ ./variant12/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 20:27:00.000000000 -0500
+@@ -230,25 +230,8 @@
+                 }
+             }
+ 
+-            // If the current interval is within the given accuracies, we
+-            // are satisfied with the current approximation.
+-            if (FastMath.abs(x1 - x0) < FastMath.max(rtol * FastMath.abs(x1),
+-                                                     atol)) {
+-                switch (allowed) {
+-                case ANY_SIDE:
+-                    return x1;
+-                case LEFT_SIDE:
+-                    return inverted ? x1 : x0;
+-                case RIGHT_SIDE:
+-                    return inverted ? x0 : x1;
+-                case BELOW_SIDE:
+-                    return (f1 <= 0) ? x1 : x0;
+-                case ABOVE_SIDE:
+-                    return (f1 >= 0) ? x1 : x0;
+-                default:
+-                    throw new MathInternalError();
+-                }
+-            }
++            {
++			}
+         }
+     }
+ 

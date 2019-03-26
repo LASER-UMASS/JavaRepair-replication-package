@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:44:59.000000000 -0400
++++ ./variant129/com/google/javascript/jscomp/TypeInference.java	2018-05-09 22:35:14.000000000 -0400
+@@ -379,7 +379,7 @@
+         break;
+ 
+       case Token.RETURN:
+-        scope = traverseReturn(n, scope);
++        scope = traverseOr(n, scope).getJoinedFlowScope().createChildFlowScope();
+         break;
+ 
+       case Token.VAR:

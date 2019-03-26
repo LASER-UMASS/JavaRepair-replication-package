@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:32:06.000000000 -0500
++++ ./variant25/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 08:16:39.000000000 -0500
+@@ -1135,10 +1135,13 @@
+             int j = 4 * n - 1;
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+-                    final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
+-                    work[j - k] = tmp;
+-                }
++					{
++						final double tmp = work[i + k];
++						work[i + k] = work[j - k];
++						work[j - k] = tmp;
++					}
++					work[i + k] = work[j - k];
++				}
+                 j -= 4;
+             }
+             return true;

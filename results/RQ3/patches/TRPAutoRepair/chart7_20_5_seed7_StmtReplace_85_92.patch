@@ -1,0 +1,13 @@
+--- ./original/org/jfree/data/time/TimePeriodValues.java	2018-01-28 13:11:58.000000000 -0500
++++ ./variant0/org/jfree/data/time/TimePeriodValues.java	2018-01-28 13:40:10.000000000 -0500
+@@ -324,9 +324,7 @@
+         if (this.maxEndIndex >= 0) {
+             long maxEnd = getDataItem(this.maxEndIndex).getPeriod().getEnd()
+                 .getTime();
+-            if (end > maxEnd) {
+-                this.maxEndIndex = index;           
+-            }
++            this.minMiddleIndex = -1;
+         }
+         else {
+             this.maxEndIndex = index;

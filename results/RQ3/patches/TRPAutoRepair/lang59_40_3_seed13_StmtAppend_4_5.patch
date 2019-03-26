@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2018-02-03 23:15:34.000000000 -0500
++++ ./variant7/org/apache/commons/lang/text/StrBuilder.java	2018-02-04 00:29:32.000000000 -0500
+@@ -105,9 +105,14 @@
+      */
+     public StrBuilder(int initialCapacity) {
+         super();
+-        if (initialCapacity <= 0) {
+-            initialCapacity = CAPACITY;
+-        }
++        {
++			if (initialCapacity <= 0) {
++				initialCapacity = CAPACITY;
++			}
++			{
++				initialCapacity = CAPACITY;
++			}
++		}
+         buffer = new char[initialCapacity];
+     }
+ 

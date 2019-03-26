@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-07-16 12:58:26.000000000 -0400
++++ ./variant6/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-07-16 13:44:33.000000000 -0400
+@@ -272,7 +272,7 @@
+ 
+             } while (Double.isNaN(nextX) && (end - start > 1));
+ 
+-            if (Double.isNaN(nextX)) {
++            if (Double.isNaN(nextX) || nbPoints > 2) {
+                 // fall back to bisection
+                 nextX = xA + 0.5 * (xB - xA);
+                 start = signChangeIndex - 1;

@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-18 10:55:20.000000000 -0500
++++ ./variant73/com/google/javascript/jscomp/TypeCheck.java	2018-02-18 12:20:16.000000000 -0500
+@@ -408,7 +408,9 @@
+         reverseInterpreter, topScope, scopeCreator);
+ 
+     inference.process(externsRoot, jsRoot);
+-    process(externsRoot, jsRoot);
++    {
++		check(externsRoot, true);
++	}
+ 
+     return topScope;
+   }

@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:35:47.000000000 -0500
++++ ./variant267/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 08:16:30.000000000 -0500
+@@ -201,7 +201,10 @@
+             squaredSecondary[i] = s * s;
+         }
+ 
+-        this.splitTolerance = splitTolerance;
++        {
++			this.splitTolerance = splitTolerance;
++			pingPong = 1 - pingPong;
++		}
+         decompose();
+ 
+     }

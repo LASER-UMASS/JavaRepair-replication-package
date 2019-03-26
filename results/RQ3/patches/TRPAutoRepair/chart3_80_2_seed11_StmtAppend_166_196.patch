@@ -1,0 +1,16 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-01-28 15:06:57.000000000 -0500
++++ ./variant16/org/jfree/data/time/TimeSeries.java	2018-01-28 16:04:47.000000000 -0500
+@@ -635,7 +635,12 @@
+                                      // don't notify anyone, because that
+                                      // happens next anyway...
+             if (notify) {
+-                fireSeriesChanged();
++                {
++					fireSeriesChanged();
++					{
++						findBoundsByIteration();
++					}
++				}
+             }
+         }
+ 

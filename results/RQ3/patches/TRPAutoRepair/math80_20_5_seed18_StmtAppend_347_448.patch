@@ -1,0 +1,19 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 06:37:10.000000000 -0500
++++ ./variant26/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:14:34.000000000 -0500
+@@ -831,10 +831,12 @@
+             sumOffDiag += ei;
+         }
+ 
+-        if (sumOffDiag == 0) {
+-            // matrix is already diagonal
+-            return;
+-        }
++        {
++			if (sumOffDiag == 0) {
++				return;
++			}
++			pingPong = 1 - pingPong;
++		}
+ 
+         // initial checks for splits (see Parlett & Marques section 3.3)
+         flipIfWarranted(n, 2);

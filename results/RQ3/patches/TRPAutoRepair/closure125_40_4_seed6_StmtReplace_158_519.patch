@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 18:13:40.000000000 -0500
++++ ./variant92/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 19:19:45.000000000 -0500
+@@ -588,7 +588,9 @@
+         break;
+ 
+       case Token.NEW:
+-        visitNew(t, n);
++        {
++			rightType = getNativeType(UNKNOWN_TYPE);
++		}
+         break;
+ 
+       case Token.CALL:

@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/lang/WordUtils.java	2018-02-03 02:29:48.000000000 -0500
++++ ./variant33/org/apache/commons/lang/WordUtils.java	2018-02-03 02:30:54.000000000 -0500
+@@ -620,7 +620,12 @@
+         }
+         // if upper is less than lower, raise it to lower
+         if (upper < lower) {
+-            upper = lower;
++            {
++				upper = lower;
++				if (upper == -1 || upper > str.length()) {
++					upper = str.length();
++				}
++			}
+         }
+ 
+         StringBuffer result = new StringBuffer();

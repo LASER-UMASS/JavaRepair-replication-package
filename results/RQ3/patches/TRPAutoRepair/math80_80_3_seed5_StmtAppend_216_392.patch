@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 12:44:13.000000000 -0500
++++ ./variant6/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 12:57:25.000000000 -0500
+@@ -596,7 +596,10 @@
+ 
+         final double dCurrent = main[m - 1];
+         final double lower = dCurrent - eCurrent;
+-        work[lowerStart + m - 1] = lower;
++        {
++			work[lowerStart + m - 1] = lower;
++			pingPong = 1 - pingPong;
++		}
+         lowerSpectra = Math.min(lowerSpectra, lower);
+         final double upper = dCurrent + eCurrent;
+         work[upperStart + m - 1] = upper;

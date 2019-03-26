@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-07-16 12:24:30.000000000 -0400
++++ ./variant3/org/apache/commons/lang/NumberUtils.java	2018-07-16 12:34:03.000000000 -0400
+@@ -179,7 +179,7 @@
+             dec = null;
+         }
+         if (!Character.isDigit(lastChar)) {
+-            if (expPos > -1 && expPos < val.length() - 1) {
++            if (expPos < val.length() - 1) {
+                 exp = val.substring(expPos + 1, val.length() - 1);
+             } else {
+                 exp = null;

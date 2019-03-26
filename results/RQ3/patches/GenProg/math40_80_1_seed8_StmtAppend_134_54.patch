@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:15:43.000000000 -0400
++++ ./variant159/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 03:15:22.000000000 -0400
+@@ -316,7 +316,10 @@
+             System.arraycopy(x, signChangeIndex, x, signChangeIndex + 1, nbPoints - signChangeIndex);
+             x[signChangeIndex] = nextX;
+             System.arraycopy(y, signChangeIndex, y, signChangeIndex + 1, nbPoints - signChangeIndex);
+-            y[signChangeIndex] = nextY;
++            {
++				y[signChangeIndex] = nextY;
++				signChangeIndex = 2;
++			}
+             ++nbPoints;
+ 
+             // update the bracketing interval

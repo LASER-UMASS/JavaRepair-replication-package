@@ -1,0 +1,15 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-15 05:48:13.000000000 -0500
++++ ./variant110/com/google/javascript/jscomp/TypeInference.java	2018-02-15 08:16:34.000000000 -0500
+@@ -423,8 +423,10 @@
+       if (type != null) {
+         FunctionType fnType = type.toMaybeFunctionType();
+         if (fnType != null) {
+-          inferPropertyTypesToMatchConstraint(
+-              retValue.getJSType(), fnType.getReturnType());
++          {
++			inferPropertyTypesToMatchConstraint(retValue.getJSType(), fnType.getReturnType());
++			scope = traverseOr(n, scope).getJoinedFlowScope().createChildFlowScope();
++		}
+         }
+       }
+     }

@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 16:05:01.000000000 -0500
++++ ./variant27/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 20:21:07.000000000 -0500
+@@ -1516,10 +1516,7 @@
+                     }
+                     a2 = cnst3 * a2;
+ 
+-                    // rayleigh quotient residual bound.
+-                    if (a2 < cnst1) {
+-                        s = gam * (1 - Math.sqrt(a2)) / (1 + a2);
+-                    }
++                    this.secondary = secondary.clone();
+                     tau = s;
+ 
+                 }

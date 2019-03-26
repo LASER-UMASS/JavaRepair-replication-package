@@ -1,0 +1,41 @@
+--- ./original/org/joda/time/DateTimeZone.java	2018-02-17 16:39:59.000000000 -0500
++++ ./variant180/org/joda/time/DateTimeZone.java	2018-02-17 20:40:39.000000000 -0500
+@@ -897,16 +897,28 @@
+                     return offsetLocal;
+                 }
+             }
+-        } else if (offsetLocal > 0) {
+-            long prev = previousTransition(instantAdjusted);
+-            if (prev < instantAdjusted) {
+-                int offsetPrev = getOffset(prev);
+-                int diff = offsetPrev - offsetLocal;
+-                if (instantAdjusted - prev <= diff) {
+-                    return offsetPrev;
+-                }
+-            }
+-        }
++        } else {
++			if (offsetLocal > 0) {
++				long prev = previousTransition(instantAdjusted);
++				if (prev < instantAdjusted) {
++					int offsetPrev = getOffset(prev);
++					int diff = offsetPrev - offsetLocal;
++					if (instantAdjusted - prev <= diff) {
++						return offsetPrev;
++					}
++				}
++			}
++			{
++				long prev = previousTransition(instantAdjusted);
++				if (prev < instantAdjusted) {
++					int offsetPrev = getOffset(prev);
++					int diff = offsetPrev - offsetLocal;
++					if (instantAdjusted - prev <= diff) {
++						return offsetPrev;
++					}
++				}
++			}
++		}
+         return offsetAdjusted;
+     }
+ 

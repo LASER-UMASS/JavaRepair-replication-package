@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 04:29:02.000000000 -0500
++++ ./variant82/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 05:11:08.000000000 -0500
+@@ -836,8 +836,7 @@
+             return;
+         }
+ 
+-        // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
++        dMin = Math.min(dMin, dN);
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);

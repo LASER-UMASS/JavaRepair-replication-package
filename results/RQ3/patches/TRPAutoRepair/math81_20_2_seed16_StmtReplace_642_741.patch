@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 15:28:01.000000000 -0500
++++ ./variant28/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 16:13:42.000000000 -0500
+@@ -1305,7 +1305,11 @@
+         dN1 = work[j4p2 + 2] * (dN2 / work[j4 - 2]) - tau;
+         dMin = Math.min(dMin, dN1);
+ 
+-        dMin1 = dMin;
++        if (dMin <= 0.0) {
++			tau = -dMin;
++			tType = -1;
++			return;
++		}
+         j4 = j4 + 4;
+         j4p2 = j4 + 2 * pingPong - 1;
+         work[j4 - 2] = dN1 + work[j4p2];

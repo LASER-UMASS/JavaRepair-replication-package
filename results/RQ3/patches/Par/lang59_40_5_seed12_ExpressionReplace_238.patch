@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2018-07-16 12:42:16.000000000 -0400
++++ ./variant183/org/apache/commons/lang/text/StrBuilder.java	2018-07-16 18:03:10.000000000 -0400
+@@ -636,7 +636,7 @@
+      * @return this, to enable chaining
+      */
+     public StrBuilder append(char[] chars, int startIndex, int length) {
+-        if (chars == null) {
++        if (startIndex > chars.length) {
+             return appendNull();
+         }
+         if (startIndex < 0 || startIndex > chars.length) {

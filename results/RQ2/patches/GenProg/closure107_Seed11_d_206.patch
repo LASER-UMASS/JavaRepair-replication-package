@@ -1,0 +1,20 @@
+--- ./original/com/google/javascript/jscomp/CommandLineRunner.java	2016-10-18 20:14:34.000000000 +0000
++++ ./variant48/com/google/javascript/jscomp/CommandLineRunner.java	2016-10-18 23:40:09.000000000 +0000
+@@ -850,15 +850,8 @@
+         throw new RuntimeException("Reading XTB file", e);
+       }
+     } else if (CompilationLevel.ADVANCED_OPTIMIZATIONS == level) {
+-      // In SIMPLE or WHITESPACE mode, if the user hasn't specified a
+-      // translations file, they might reasonably try to write their own
+-      // implementation of goog.getMsg that makes the substitution at
+-      // run-time.
+-      //
+-      // In ADVANCED mode, goog.getMsg is going to be renamed anyway,
+-      // so we might as well inline it. But shut off the i18n warnings,
+-      // because the user didn't really ask for i18n.
+-      options.messageBundle = new EmptyMessageBundle();
++      {
++	}
+     }
+ 
+     return options;

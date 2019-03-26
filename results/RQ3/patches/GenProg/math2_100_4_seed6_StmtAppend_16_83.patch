@@ -1,0 +1,23 @@
+--- ./original/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-05-10 01:12:45.000000000 -0400
++++ ./variant58/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-05-10 01:32:21.000000000 -0400
+@@ -100,10 +100,16 @@
+             throw new NumberIsTooLargeException(LocalizedFormats.NUMBER_OF_SUCCESS_LARGER_THAN_POPULATION_SIZE,
+                                                 numberOfSuccesses, populationSize, true);
+         }
+-        if (sampleSize > populationSize) {
+-            throw new NumberIsTooLargeException(LocalizedFormats.SAMPLE_SIZE_LARGER_THAN_POPULATION_SIZE,
+-                                                sampleSize, populationSize, true);
+-        }
++        {
++			if (sampleSize > populationSize) {
++				throw new NumberIsTooLargeException(LocalizedFormats.SAMPLE_SIZE_LARGER_THAN_POPULATION_SIZE,
++						sampleSize, populationSize, true);
++			}
++			{
++				numericalVariance = calculateNumericalVariance();
++				numericalVarianceIsCalculated = true;
++			}
++		}
+ 
+         this.numberOfSuccesses = numberOfSuccesses;
+         this.populationSize = populationSize;

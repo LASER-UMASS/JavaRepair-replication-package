@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 22:05:55.000000000 -0500
++++ ./variant31/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 22:30:31.000000000 -0500
+@@ -1067,8 +1067,7 @@
+             (MathUtils.SAFE_MIN * qMax < Math.min(work[l - 1],
+                                                   Math.min(work[l - 9],
+                                                            dMin2 + work[l - 2 * pingPong])))) {
+-            // step 3: choose a shift
+-            computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
++            computeGershgorinCircles();
+ 
+             // step 4a: dqds
+             for (boolean loop = true; loop;) {

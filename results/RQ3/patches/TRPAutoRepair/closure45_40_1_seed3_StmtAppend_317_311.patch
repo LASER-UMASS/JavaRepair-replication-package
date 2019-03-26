@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:17:43.000000000 -0500
++++ ./variant124/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:34:07.000000000 -0500
+@@ -731,7 +731,12 @@
+ 
+           for (Assign assign : assignsByVar.get(var)) {
+             if (assign.isPropertyAssign) {
+-              hasPropertyAssign = true;
++              {
++				hasPropertyAssign = true;
++				{
++					assignedToUnknownValue = true;
++				}
++			}
+             } else if (!NodeUtil.isLiteralValue(
+                 assign.assignNode.getLastChild(), true)) {
+               assignedToUnknownValue = true;

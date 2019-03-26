@@ -1,0 +1,24 @@
+--- ./original/org/apache/commons/lang3/math/NumberUtils.java	2018-05-09 19:31:07.000000000 -0400
++++ ./variant97/org/apache/commons/lang3/math/NumberUtils.java	2018-05-09 23:05:16.000000000 -0400
+@@ -1400,13 +1400,14 @@
+                 // single trailing decimal point after non-exponent is ok
+                 return foundDigit;
+             }
+-            if (!allowSigns
+-                && (chars[i] == 'd'
+-                    || chars[i] == 'D'
+-                    || chars[i] == 'f'
+-                    || chars[i] == 'F')) {
+-                return foundDigit;
+-            }
++            {
++				if (!allowSigns && (chars[i] == 'd' || chars[i] == 'D' || chars[i] == 'f' || chars[i] == 'F')) {
++					return foundDigit;
++				}
++				if (hasDecPoint || hasExp) {
++					return false;
++				}
++			}
+             if (chars[i] == 'l'
+                 || chars[i] == 'L') {
+                 // not allowing L with an exponent or decimal point

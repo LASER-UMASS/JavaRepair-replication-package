@@ -1,0 +1,69 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-02-01 23:29:46.000000000 -0500
++++ ./variant27/org/apache/commons/lang/NumberUtils.java	2018-02-01 23:37:57.000000000 -0500
+@@ -179,64 +179,8 @@
+             dec = null;
+         }
+         if (!Character.isDigit(lastChar)) {
+-            if (expPos > -1 && expPos < val.length() - 1) {
+-                exp = val.substring(expPos + 1, val.length() - 1);
+-            } else {
+-                exp = null;
+-            }
+-            //Requesting a specific type..
+-            String numeric = val.substring(0, val.length() - 1);
+-            boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+-            switch (lastChar) {
+-                case 'l' :
+-                case 'L' :
+-                    if (dec == null
+-                        && exp == null
+-                        && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {
+-                        try {
+-                            return createLong(numeric);
+-                        } catch (NumberFormatException nfe) {
+-                            //Too big for a long
+-                        }
+-                        return createBigInteger(numeric);
+-
+-                    }
+-                    throw new NumberFormatException(val + " is not a valid number.");
+-                case 'f' :
+-                case 'F' :
+-                    try {
+-                        Float f = NumberUtils.createFloat(numeric);
+-                        if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {
+-                            //If it's too big for a float or the float value = 0 and the string
+-                            //has non-zeros in it, then float does not have the precision we want
+-                            return f;
+-                        }
+-
+-                    } catch (NumberFormatException e) {
+-                        // ignore the bad number
+-                    }
+-                    //Fall through
+-                case 'd' :
+-                case 'D' :
+-                    try {
+-                        Double d = NumberUtils.createDouble(numeric);
+-                        if (!(d.isInfinite() || (d.floatValue() == 0.0D && !allZeros))) {
+-                            return d;
+-                        }
+-                    } catch (NumberFormatException nfe) {
+-                        // empty catch
+-                    }
+-                    try {
+-                        return createBigDecimal(numeric);
+-                    } catch (NumberFormatException e) {
+-                        // empty catch
+-                    }
+-                    //Fall through
+-                default :
+-                    throw new NumberFormatException(val + " is not a valid number.");
+-
+-            }
+-        } else {
++			return createInteger(val);
++		} else {
+             //User doesn't have a preference on the return type, so let's start
+             //small and go from there...
+             if (expPos > -1 && expPos < val.length() - 1) {

@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-05-10 01:22:01.000000000 -0400
++++ ./variant9/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-05-10 01:27:02.000000000 -0400
+@@ -194,8 +194,10 @@
+                     throw new MathInternalError();
+                 }
+             }
+-            // Update from [x0, x1] to [x0, x].
+-            x1 = x;
++            {
++				x1 = x;
++				f0 = computeObjectiveValue(x0);
++			}
+             f1 = fx;
+ 
+             // If the function value of the last approximation is too small,

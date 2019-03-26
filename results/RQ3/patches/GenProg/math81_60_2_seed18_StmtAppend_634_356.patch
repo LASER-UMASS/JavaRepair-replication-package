@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:41:08.000000000 -0400
++++ ./variant128/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 06:27:05.000000000 -0400
+@@ -1295,8 +1295,10 @@
+             }
+         }
+ 
+-        // unroll last two steps.
+-        dN2 = d;
++        {
++			dN2 = d;
++			dN2 = 0;
++		}
+         dMin2 = dMin;
+         int j4 = 4 * (end - 2) - pingPong - 1;
+         int j4p2 = j4 + 2 * pingPong - 1;

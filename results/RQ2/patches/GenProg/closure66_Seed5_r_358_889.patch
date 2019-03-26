@@ -1,0 +1,15 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2016-10-18 19:39:09.000000000 +0000
++++ ./variant366/com/google/javascript/jscomp/TypeCheck.java	2016-10-19 08:29:15.000000000 +0000
+@@ -818,9 +818,9 @@
+    */
+   private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+     JSType type = n.getJSType();
+-    if (type == null) {
+-      nullCount++;
+-    } else if (type.isUnknownType()) {
++    if (type == null)
++		Preconditions.checkState(n.getType() != Token.FUNCTION || type instanceof FunctionType || type.isUnknownType());
++	else if (type.isUnknownType()) {
+       if (reportUnknownTypes.isOn()) {
+         compiler.report(
+             t.makeError(n, reportUnknownTypes, UNKNOWN_EXPR_TYPE));

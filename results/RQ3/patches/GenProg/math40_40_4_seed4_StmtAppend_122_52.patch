@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:14:35.000000000 -0400
++++ ./variant44/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:22:31.000000000 -0400
+@@ -294,7 +294,13 @@
+                 nbPoints = end - start;
+                 System.arraycopy(x, start, x, 0, nbPoints);
+                 System.arraycopy(y, start, y, 0, nbPoints);
+-                signChangeIndex -= start;
++                {
++					signChangeIndex -= start;
++					{
++						nbPoints = 3;
++						signChangeIndex = 2;
++					}
++				}
+ 
+             } else  if (nbPoints == x.length) {
+ 

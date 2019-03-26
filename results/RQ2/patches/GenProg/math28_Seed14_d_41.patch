@@ -1,0 +1,18 @@
+--- ./original/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2016-10-18 22:45:33.000000000 +0000
++++ ./variant11/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2016-10-19 00:04:31.000000000 +0000
+@@ -117,14 +117,7 @@
+ 
+             // 1. check if there's an artificial variable that can be forced out of the basis
+                 for (Integer row : minRatioPositions) {
+-                    for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {
+-                        int column = i + tableau.getArtificialVariableOffset();
+-                        final double entry = tableau.getEntry(row, column);
+-                        if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {
+-                            return row;
+-                        }
+-                    }
+-                }
++				}
+ 
+             // 2. apply Bland's rule to prevent cycling:
+             //    take the row for which the corresponding basic variable has the smallest index

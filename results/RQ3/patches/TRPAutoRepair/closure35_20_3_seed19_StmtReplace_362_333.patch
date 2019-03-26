@@ -1,0 +1,37 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-18 13:50:10.000000000 -0500
++++ ./variant32/com/google/javascript/jscomp/TypeInference.java	2018-02-18 15:45:42.000000000 -0500
+@@ -674,30 +674,10 @@
+          name = name.getNext()) {
+       Node value = name.getFirstChild();
+       String memberName = NodeUtil.getObjectLitKeyName(name);
+-      if (memberName != null) {
+-        JSType rawValueType =  name.getFirstChild().getJSType();
+-        JSType valueType = NodeUtil.getObjectLitKeyTypeFromValueType(
+-            name, rawValueType);
+-        if (valueType == null) {
+-          valueType = getNativeType(UNKNOWN_TYPE);
+-        }
+-        objectType.defineInferredProperty(memberName, valueType, name);
+-
+-        // Do normal flow inference if this is a direct property assignment.
+-        if (qObjName != null && name.isString()) {
+-          String qKeyName = qObjName + "." + memberName;
+-          Var var = syntacticScope.getVar(qKeyName);
+-          JSType oldType = var == null ? null : var.getType();
+-          if (var != null && var.isTypeInferred()) {
+-            var.setType(oldType == null ?
+-                valueType : oldType.getLeastSupertype(oldType));
+-          }
+-
+-          scope.inferQualifiedSlot(name, qKeyName,
+-              oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,
+-              valueType);
+-        }
+-      } else {
++      if (memberName != null)
++		if (type == null) {
++			type = getNativeType(UNKNOWN_TYPE);
++		} else {
+         n.setJSType(getNativeType(UNKNOWN_TYPE));
+       }
+     }

@@ -1,0 +1,19 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:09:12.000000000 -0500
++++ ./variant115/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:14:33.000000000 -0500
+@@ -337,7 +337,15 @@
+             case '.':
+                 regex.append('\\');
+             }
+-            regex.append(c);
++            {
++				regex.append(c);
++				{
++					if (++i == value.length()) {
++						return regex;
++					}
++					c = value.charAt(i);
++				}
++			}
+         }
+         return regex;
+     }

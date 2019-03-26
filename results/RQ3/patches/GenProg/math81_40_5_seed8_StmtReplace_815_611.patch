@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:40:36.000000000 -0400
++++ ./variant92/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 04:06:18.000000000 -0400
+@@ -1516,10 +1516,7 @@
+                     }
+                     a2 = cnst3 * a2;
+ 
+-                    // rayleigh quotient residual bound.
+-                    if (a2 < cnst1) {
+-                        s = gam * (1 - Math.sqrt(a2)) / (1 + a2);
+-                    }
++                    eMin = work[4 * start + pingPong + 4];
+                     tau = s;
+ 
+                 }

@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:28:47.000000000 -0400
++++ ./variant192/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 06:17:03.000000000 -0400
+@@ -190,7 +190,10 @@
+             final double splitTolerance)
+         throws InvalidMatrixException {
+ 
+-        this.main      = main.clone();
++        {
++			this.main = main.clone();
++			pingPong = 1 - pingPong;
++		}
+         this.secondary = secondary.clone();
+         transformer    = null;
+ 

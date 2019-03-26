@@ -1,0 +1,18 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-09-13 10:06:23.000000000 +0000
++++ ./variant71/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-09-13 11:43:58.000000000 +0000
+@@ -1133,14 +1133,7 @@
+         if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
+             // flip array
+             int j = 4 * n - 1;
+-            for (int i = 0; i < j; i += 4) {
+-                for (int k = 0; k < 4; k += step) {
+-                    final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
+-                    work[j - k] = tmp;
+-                }
+-                j -= 4;
+-            }
++            this.main = main.clone();
+             return true;
+         }
+         return false;

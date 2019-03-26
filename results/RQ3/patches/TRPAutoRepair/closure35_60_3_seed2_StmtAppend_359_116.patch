@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-15 09:02:05.000000000 -0500
++++ ./variant15/com/google/javascript/jscomp/TypeInference.java	2018-02-15 09:18:40.000000000 -0500
+@@ -672,7 +672,10 @@
+         NodeUtil.getBestLValue(n));
+     for (Node name = n.getFirstChild(); name != null;
+          name = name.getNext()) {
+-      Node value = name.getFirstChild();
++      {
++		Node value = name.getFirstChild();
++		scope = traverseNew(n, scope);
++	}
+       String memberName = NodeUtil.getObjectLitKeyName(name);
+       if (memberName != null) {
+         JSType rawValueType =  name.getFirstChild().getJSType();

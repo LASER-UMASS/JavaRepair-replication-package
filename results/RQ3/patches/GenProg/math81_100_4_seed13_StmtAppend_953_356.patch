@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:47:25.000000000 -0400
++++ ./variant172/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 07:06:46.000000000 -0400
+@@ -1687,7 +1687,10 @@
+         } else {
+             final double t = sigma + shift;
+             sigmaLow += sigma - (t - shift);
+-            sigma = t;
++            {
++				sigma = t;
++				dN2 = 0;
++			}
+         }
+     }
+ 

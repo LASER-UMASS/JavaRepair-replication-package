@@ -1,0 +1,18 @@
+--- ./original/org/apache/commons/lang/BooleanUtils.java	2018-05-09 20:08:50.000000000 -0400
++++ ./variant231/org/apache/commons/lang/BooleanUtils.java	2018-05-10 03:32:33.000000000 -0400
+@@ -674,11 +674,10 @@
+                         (str.charAt(1) == 'e' || str.charAt(1) == 'E') &&
+                         (str.charAt(2) == 's' || str.charAt(2) == 'S');
+                 }
+-                if (ch == 'Y') {
+-                    return 
+-                        (str.charAt(1) == 'E' || str.charAt(1) == 'e') &&
+-                        (str.charAt(2) == 'S' || str.charAt(2) == 's');
+-                }
++                {
++					return (str.charAt(1) == 'e' || str.charAt(1) == 'E')
++							&& (str.charAt(2) == 's' || str.charAt(2) == 'S');
++				}
+             }
+             case 4: {
+                 char ch = str.charAt(0);

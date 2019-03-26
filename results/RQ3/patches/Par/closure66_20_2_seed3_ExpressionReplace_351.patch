@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-07-16 11:55:18.000000000 -0400
++++ ./variant44/com/google/javascript/jscomp/TypeCheck.java	2018-07-16 12:37:01.000000000 -0400
+@@ -805,7 +805,7 @@
+     // Don't count externs since the user's code may not even use that part.
+     typeable = typeable && !inExterns;
+ 
+-    if (typeable) {
++    if (n.getType() == Token.OBJECTLIT) {
+       doPercentTypedAccounting(t, n);
+     }
+ 

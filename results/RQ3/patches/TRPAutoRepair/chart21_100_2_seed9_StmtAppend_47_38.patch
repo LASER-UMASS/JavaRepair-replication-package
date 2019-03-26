@@ -1,0 +1,19 @@
+--- ./original/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java	2018-01-28 10:32:58.000000000 -0500
++++ ./variant92/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java	2018-01-28 11:22:20.000000000 -0500
+@@ -186,8 +186,14 @@
+                 this.minimumRangeValueColumn = c;
+             }
+         
+-        this.rangeBounds = new Range(this.minimumRangeValue,
+-              this.maximumRangeValue);
++        {
++			this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);
++			{
++				this.minimumRangeValue = minval;
++				this.minimumRangeValueRow = r;
++				this.minimumRangeValueColumn = c;
++			}
++		}
+         fireDatasetChanged();
+ 
+     }

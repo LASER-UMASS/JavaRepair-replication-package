@@ -1,0 +1,20 @@
+--- ./original/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java	2018-05-08 21:06:01.000000000 -0400
++++ ./variant304/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java	2018-05-09 00:40:18.000000000 -0400
+@@ -290,9 +290,14 @@
+         Number result = null;
+         BoxAndWhiskerItem item = (BoxAndWhiskerItem) this.data.getObject(row, 
+                 column);
+-        if (item != null) {
+-            result = item.getMedian();
+-        }
++        {
++			if (item != null) {
++				result = item.getMedian();
++			}
++			{
++				result = item.getQ3();
++			}
++		}
+         return result;
+     }
+ 

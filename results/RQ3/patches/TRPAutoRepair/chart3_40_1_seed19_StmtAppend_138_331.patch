@@ -1,0 +1,19 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-01-27 11:12:54.000000000 -0500
++++ ./variant103/org/jfree/data/time/TimeSeries.java	2018-01-27 12:29:15.000000000 -0500
+@@ -602,10 +602,12 @@
+         else {
+             RegularTimePeriod last = getTimePeriod(getItemCount() - 1);
+             if (item.getPeriod().compareTo(last) > 0) {
+-                this.data.add(item);
+-                added = true;
+-            }
+-            else {
++				{
++					this.data.add(item);
++					added = true;
++				}
++				findBoundsByIteration();
++			} else {
+                 int index = Collections.binarySearch(this.data, item);
+                 if (index < 0) {
+                     this.data.add(-index - 1, item);

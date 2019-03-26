@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:43:39.000000000 -0400
++++ ./variant487/com/google/javascript/jscomp/TypeInference.java	2018-05-09 20:51:23.000000000 -0400
+@@ -693,9 +693,7 @@
+                 valueType : oldType.getLeastSupertype(oldType));
+           }
+ 
+-          scope.inferQualifiedSlot(name, qKeyName,
+-              oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,
+-              valueType);
++          scope = traverseAnd(n, scope).getJoinedFlowScope().createChildFlowScope();
+         }
+       } else {
+         n.setJSType(getNativeType(UNKNOWN_TYPE));

@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:28:47.000000000 -0400
++++ ./variant142/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 04:45:35.000000000 -0400
+@@ -572,7 +572,10 @@
+         final int lowerStart = 4 * m;
+         final int upperStart = 5 * m;
+         lowerSpectra = Double.POSITIVE_INFINITY;
+-        upperSpectra = Double.NEGATIVE_INFINITY;
++        {
++			upperSpectra = Double.NEGATIVE_INFINITY;
++			pingPong = 1 - pingPong;
++		}
+         double eMax = 0;
+ 
+         double eCurrent = 0;
