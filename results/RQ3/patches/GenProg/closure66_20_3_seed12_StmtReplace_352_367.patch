@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 19:06:44.000000000 -0400
++++ ./variant147/com/google/javascript/jscomp/TypeCheck.java	2018-05-10 00:29:39.000000000 -0400
+@@ -805,9 +805,8 @@
+     // Don't count externs since the user's code may not even use that part.
+     typeable = typeable && !inExterns;
+ 
+-    if (typeable) {
+-      doPercentTypedAccounting(t, n);
+-    }
++    if (typeable)
++		typedCount++;
+ 
+     checkNoTypeCheckSection(n, false);
+   }

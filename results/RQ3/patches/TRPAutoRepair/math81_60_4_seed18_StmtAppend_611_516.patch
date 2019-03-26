@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 22:05:55.000000000 -0500
++++ ./variant3/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-18 00:03:55.000000000 -0500
+@@ -1270,7 +1270,16 @@
+      */
+     private void dqds(final int start, final int end) {
+ 
+-        eMin = work[4 * start + pingPong + 4];
++        {
++			eMin = work[4 * start + pingPong + 4];
++			if (dMin1 > 0.0) {
++				tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
++				tType -= 11;
++			} else {
++				tau *= 0.25;
++				tType -= 12;
++			}
++		}
+         double d = work[4 * start + pingPong] - tau;
+         dMin = d;
+         dMin1 = -work[4 * start + pingPong];

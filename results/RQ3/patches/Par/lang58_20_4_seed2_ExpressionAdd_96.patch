@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang/math/NumberUtils.java	2018-07-16 12:37:07.000000000 -0400
++++ ./variant8/org/apache/commons/lang/math/NumberUtils.java	2018-07-16 12:38:27.000000000 -0400
+@@ -452,7 +452,7 @@
+                     if (dec == null
+                         && exp == null
+                         && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0))) || numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0))) {
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {

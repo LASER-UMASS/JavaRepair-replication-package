@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-07-16 13:20:46.000000000 -0400
++++ ./variant21/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-07-16 13:38:08.000000000 -0400
+@@ -130,7 +130,7 @@
+ 
+         // reduce interval if initial and max bracket the root
+         if (yInitial * yMax < 0) {
+-            return solve(f, initial, yInitial, max, yMax, initial, yInitial);
++            return solve(f, initial, yInitial, yMax, yMax, initial, yInitial);
+         }
+ 
+ 

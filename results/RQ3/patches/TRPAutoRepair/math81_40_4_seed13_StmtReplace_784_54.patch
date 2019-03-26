@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 16:11:11.000000000 -0500
++++ ./variant18/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 17:15:49.000000000 -0500
+@@ -1481,7 +1481,9 @@
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }
+-                        b2 = work[nn - 5] / work[nn - 7];
++                        if (cachedD == null) {
++							cachedD = MatrixUtils.createRealDiagonalMatrix(realEigenvalues);
++						}
+                         np = nn - 9;
+                     } else {
+                         np = nn - 2 * pingPong;

@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:04:54.000000000 -0400
++++ ./variant17/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 04:16:00.000000000 -0400
+@@ -836,8 +836,7 @@
+             return;
+         }
+ 
+-        // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
++        upperSpectra = Double.NEGATIVE_INFINITY;
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);

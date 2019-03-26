@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:43:06.000000000 -0400
++++ ./variant227/com/google/javascript/jscomp/TypeInference.java	2018-05-10 04:43:18.000000000 -0400
+@@ -645,7 +645,12 @@
+ 
+   private FlowScope traverseObjectLiteral(Node n, FlowScope scope) {
+     JSType type = n.getJSType();
+-    Preconditions.checkNotNull(type);
++    {
++		Preconditions.checkNotNull(type);
++		{
++			n.setJSType(getNativeType(CHECKED_UNKNOWN_TYPE));
++		}
++	}
+ 
+     for (Node name = n.getFirstChild(); name != null; name = name.getNext()) {
+       scope = traverse(name.getFirstChild(), scope);

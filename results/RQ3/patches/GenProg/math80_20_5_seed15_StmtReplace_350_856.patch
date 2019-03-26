@@ -1,0 +1,22 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:05:13.000000000 -0400
++++ ./variant10/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 03:33:47.000000000 -0400
+@@ -836,8 +836,17 @@
+             return;
+         }
+ 
+-        // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
++        {
++			if (tType == -6) {
++				g += 0.333 * (1 - g);
++			} else if (tType == -18) {
++				g = 0.25 * 0.333;
++			} else {
++				g = 0.25;
++			}
++			tau = g * dMin;
++			tType = -6;
++		}
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);

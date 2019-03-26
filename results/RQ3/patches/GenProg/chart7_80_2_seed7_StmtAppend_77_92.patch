@@ -1,0 +1,18 @@
+--- ./original/org/jfree/data/time/TimePeriodValues.java	2018-05-09 18:14:50.000000000 -0400
++++ ./variant309/org/jfree/data/time/TimePeriodValues.java	2018-05-09 21:09:32.000000000 -0400
+@@ -313,9 +313,12 @@
+         if (this.minEndIndex >= 0) {
+             long minEnd = getDataItem(this.minEndIndex).getPeriod().getEnd()
+                 .getTime();
+-            if (end < minEnd) {
+-                this.minEndIndex = index;           
+-            }
++            {
++				if (end < minEnd) {
++					this.minEndIndex = index;
++				}
++				this.minMiddleIndex = -1;
++			}
+         }
+         else {
+             this.minEndIndex = index;

@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-05-10 01:12:14.000000000 -0400
++++ ./variant19/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-05-10 01:47:25.000000000 -0400
+@@ -276,10 +276,10 @@
+      * {@code [n * m * (N - n) * (N - m)] / [N^2 * (N - 1)]}.
+      */
+     public double getNumericalVariance() {
+-        if (!numericalVarianceIsCalculated) {
+-            numericalVariance = calculateNumericalVariance();
+-            numericalVarianceIsCalculated = true;
+-        }
++        if (!numericalVarianceIsCalculated)
++			if (sampleSize < 0) {
++				throw new NotPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
++			}
+         return numericalVariance;
+     }
+ 

@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/lang/math/NumberUtils.java	2018-02-03 14:20:46.000000000 -0500
++++ ./variant17/org/apache/commons/lang/math/NumberUtils.java	2018-02-03 14:31:08.000000000 -0500
+@@ -435,7 +435,12 @@
+             } else {
+                 mant = str;
+             }
+-            dec = null;
++            {
++				dec = null;
++				{
++					return null;
++				}
++			}
+         }
+         if (!Character.isDigit(lastChar)) {
+             if (expPos > -1 && expPos < str.length() - 1) {

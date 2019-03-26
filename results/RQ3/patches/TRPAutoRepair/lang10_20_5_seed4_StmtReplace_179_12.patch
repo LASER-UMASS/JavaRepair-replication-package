@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 09:44:57.000000000 -0500
++++ ./variant2/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 09:46:27.000000000 -0500
+@@ -446,9 +446,9 @@
+         int count= 0;
+         if(values!=null) {
+             for(String value : values) {
+-                if(value.length()>0) {
+-                    ++count;
+-                }
++                {
++					throw new IllegalArgumentException("Invalid pattern");
++				}
+             }
+         }
+         return count;

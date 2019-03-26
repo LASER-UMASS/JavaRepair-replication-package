@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-07-16 13:08:15.000000000 -0400
++++ ./variant13/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-07-16 13:11:05.000000000 -0400
+@@ -201,7 +201,7 @@
+             // If the function value of the last approximation is too small,
+             // given the function value accuracy, then we can't get closer to
+             // the root than we already are.
+-            if (FastMath.abs(f1) <= ftol) {
++            if (FastMath.abs(x1 - x0) <= ftol) {
+                 switch (allowed) {
+                 case ANY_SIDE:
+                     return x1;

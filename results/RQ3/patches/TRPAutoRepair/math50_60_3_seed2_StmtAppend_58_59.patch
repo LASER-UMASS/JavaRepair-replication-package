@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 20:55:38.000000000 -0500
++++ ./variant7/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 20:56:42.000000000 -0500
+@@ -185,7 +185,10 @@
+                 case REGULA_FALSI:
+                     // Nothing.
+                     if (x == x1) {
+-                        x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
++                        {
++							x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
++							f0 = computeObjectiveValue(x0);
++						}
+                         f0 = computeObjectiveValue(x0);
+                     }
+                     break;

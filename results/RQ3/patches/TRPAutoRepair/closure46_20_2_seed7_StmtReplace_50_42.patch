@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/rhino/jstype/RecordType.java	2018-02-16 06:17:57.000000000 -0500
++++ ./variant39/com/google/javascript/rhino/jstype/RecordType.java	2018-02-16 07:09:12.000000000 -0500
+@@ -151,7 +151,9 @@
+             getPropertyNode(property));
+       }
+     }
+-    return builder.build();
++    {
++		return super.getLeastSupertype(that);
++	}
+   }
+   JSType getGreatestSubtypeHelper(JSType that) {
+     if (that.isRecordType()) {

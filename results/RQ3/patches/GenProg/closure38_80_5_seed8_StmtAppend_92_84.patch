@@ -1,0 +1,17 @@
+--- ./original/com/google/javascript/jscomp/CodeConsumer.java	2018-05-09 18:48:59.000000000 -0400
++++ ./variant91/com/google/javascript/jscomp/CodeConsumer.java	2018-05-09 21:29:30.000000000 -0400
+@@ -226,8 +226,12 @@
+       append(" ");
+     }
+ 
+-    // Allow formating around the operator.
+-    appendOp(op, binOp);
++    {
++		appendOp(op, binOp);
++		{
++			append(" ");
++		}
++	}
+ 
+     // Line breaking after an operator is always safe. Line breaking before an
+     // operator on the other hand is not. We only line break after a bin op

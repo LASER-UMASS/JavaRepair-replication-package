@@ -1,0 +1,68 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 16:11:11.000000000 -0500
++++ ./variant151/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 17:44:24.000000000 -0500
+@@ -1129,19 +1129,52 @@
+      * @return true if qd array was flipped
+      */
+     private boolean flipIfWarranted(final int n, final int step) {
+-        if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
+-            // flip array
+-            int j = 4 * n - 1;
+-            for (int i = 0; i < j; i += 4) {
+-                for (int k = 0; k < 4; k += step) {
+-                    final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
+-                    work[j - k] = tmp;
+-                }
+-                j -= 4;
+-            }
+-            return true;
+-        }
++        {
++			if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
++				int j = 4 * n - 1;
++				for (int i = 0; i < j; i += 4) {
++					for (int k = 0; k < 4; k += step) {
++						final double tmp = work[i + k];
++						work[i + k] = work[j - k];
++						work[j - k] = tmp;
++					}
++					j -= 4;
++				}
++				return true;
++			}
++			{
++				double d = work[4 * (n - 1) + pingPong];
++				for (int i = 4 * (n - 2) + pingPong; i >= 0; i -= 4) {
++					if (work[i + 2] <= TOLERANCE_2 * d) {
++						work[i + 2] = -0.0;
++						d = work[i];
++					} else {
++						d *= work[i] / (d + work[i + 2]);
++					}
++				}
++				d = work[pingPong];
++				for (int i = 2 + pingPong; i < 4 * n - 2; i += 4) {
++					final int j = i - 2 * pingPong - 1;
++					work[j] = d + work[i];
++					if (work[i] <= TOLERANCE_2 * d) {
++						work[i] = -0.0;
++						work[j] = d;
++						work[j + 2] = 0.0;
++						d = work[i + 2];
++					} else if ((MathUtils.SAFE_MIN * work[i + 2] < work[j])
++							&& (MathUtils.SAFE_MIN * work[j] < work[i + 2])) {
++						final double tmp = work[i + 2] / work[j];
++						work[j + 2] = work[i] * tmp;
++						d *= tmp;
++					} else {
++						work[j + 2] = work[i + 2] * (work[i] / work[j]);
++						d *= work[i + 2] / work[j];
++					}
++				}
++				work[4 * n - 3 - pingPong] = d;
++				pingPong = 1 - pingPong;
++			}
++		}
+         return false;
+     }
+ 

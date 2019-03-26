@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 06:04:14.000000000 -0500
++++ ./variant45/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:06:15.000000000 -0500
+@@ -1160,7 +1160,7 @@
+         double lower = Double.POSITIVE_INFINITY;
+         double upper = Double.NEGATIVE_INFINITY;
+         for (int i = 0; i < n; ++i) {
+-            lower = Math.min(lower, work[lowerStart + index +i]);
++            dMin = Math.min(dMin, dN1);
+             upper = Math.max(upper, work[upperStart + index +i]);
+         }
+ 

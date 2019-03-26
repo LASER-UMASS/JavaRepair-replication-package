@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-07-16 11:12:31.000000000 -0400
++++ ./variant318/com/google/javascript/jscomp/TypeCheck.java	2018-07-16 13:32:12.000000000 -0400
+@@ -516,7 +516,7 @@
+         break;
+ 
+       case Token.GETPROP:
+-        visitGetProp(t, n, parent);
++        visitGetProp(t, n, n);
+         typeable = !(parent.isAssign() &&
+                      parent.getFirstChild() == n);
+         break;

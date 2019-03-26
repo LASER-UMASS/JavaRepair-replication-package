@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:33:48.000000000 -0400
++++ ./variant108/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 04:09:22.000000000 -0400
+@@ -1067,8 +1067,7 @@
+             (MathUtils.SAFE_MIN * qMax < Math.min(work[l - 1],
+                                                   Math.min(work[l - 9],
+                                                            dMin2 + work[l - 2 * pingPong])))) {
+-            // step 3: choose a shift
+-            computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
++            tType = -1;
+ 
+             // step 4a: dqds
+             for (boolean loop = true; loop;) {

@@ -1,0 +1,35 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:41:50.000000000 -0400
++++ ./variant83/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 03:39:22.000000000 -0400
+@@ -1676,19 +1676,19 @@
+      * @param shift shift to apply to sigma
+      */
+     private void updateSigma(final double shift) {
+-        // BEWARE: do NOT attempt to simplify the following statements
+-        // the expressions below take care to accumulate the part of sigma
+-        // that does not fit within a double variable into sigmaLow
+-        if (shift < sigma) {
+-            sigmaLow += shift;
+-            final double t = sigma + sigmaLow;
+-            sigmaLow -= t - sigma;
+-            sigma = t;
+-        } else {
+-            final double t = sigma + shift;
+-            sigmaLow += sigma - (t - shift);
+-            sigma = t;
+-        }
++        {
++			if (shift < sigma) {
++				sigmaLow += shift;
++				final double t = sigma + sigmaLow;
++				sigmaLow -= t - sigma;
++				sigma = t;
++			} else {
++				final double t = sigma + shift;
++				sigmaLow += sigma - (t - shift);
++				sigma = t;
++			}
++			dN2 = 0;
++		}
+     }
+ 
+     /**

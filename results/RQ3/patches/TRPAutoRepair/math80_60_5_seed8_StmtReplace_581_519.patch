@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 07:59:19.000000000 -0500
++++ ./variant72/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 08:27:09.000000000 -0500
+@@ -1202,8 +1202,7 @@
+             final double range = right - left;
+             if ((range < absoluteTolerance) ||
+                 (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
+-                // search has converged
+-                break;
++                tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
+             }
+ 
+             final double middle = 0.5 * (left + right);

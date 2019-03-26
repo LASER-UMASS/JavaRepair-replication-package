@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/math/NumberUtils.java	2018-02-03 14:20:46.000000000 -0500
++++ ./variant1/org/apache/commons/lang/math/NumberUtils.java	2018-02-03 14:24:41.000000000 -0500
+@@ -441,7 +441,9 @@
+             if (expPos > -1 && expPos < str.length() - 1) {
+                 exp = str.substring(expPos + 1, str.length() - 1);
+             } else {
+-                exp = null;
++                {
++					return null;
++				}
+             }
+             //Requesting a specific type..
+             String numeric = str.substring(0, str.length() - 1);

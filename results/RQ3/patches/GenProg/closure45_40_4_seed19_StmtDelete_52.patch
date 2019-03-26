@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 18:51:14.000000000 -0400
++++ ./variant4/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 19:36:37.000000000 -0400
+@@ -210,9 +210,8 @@
+       case Token.ASSIGN:
+         Assign maybeAssign = Assign.maybeCreateAssign(n);
+         if (maybeAssign != null) {
+-          // Put this in the assign map. It might count as a reference,
+-          // but we won't know that until we have an index of all assigns.
+-          var = scope.getVar(maybeAssign.nameNode.getString());
++          {
++		}
+           if (var != null) {
+             assignsByVar.put(var, maybeAssign);
+             assignsByNode.put(maybeAssign.nameNode, maybeAssign);

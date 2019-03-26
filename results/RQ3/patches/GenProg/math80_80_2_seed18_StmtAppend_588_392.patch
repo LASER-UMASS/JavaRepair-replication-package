@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:29:40.000000000 -0400
++++ ./variant325/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 09:01:41.000000000 -0400
+@@ -1214,7 +1214,10 @@
+             }
+ 
+         }
+-        upper = Math.min(upper, right + 100 * MathUtils.EPSILON * Math.abs(right));
++        {
++			upper = Math.min(upper, right + 100 * MathUtils.EPSILON * Math.abs(right));
++			pingPong = 1 - pingPong;
++		}
+ 
+         return new double[] { lower, upper };
+ 

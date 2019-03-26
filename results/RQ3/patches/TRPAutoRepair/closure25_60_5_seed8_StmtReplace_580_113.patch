@@ -1,0 +1,24 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-13 14:36:34.000000000 -0500
++++ ./variant199/com/google/javascript/jscomp/TypeInference.java	2018-02-13 17:19:24.000000000 -0500
+@@ -1040,20 +1040,7 @@
+     JSType type = null;
+     if (constructorType != null) {
+       constructorType = constructorType.restrictByNotNullOrUndefined();
+-      if (constructorType.isUnknownType()) {
+-        type = getNativeType(UNKNOWN_TYPE);
+-      } else {
+-        FunctionType ct = constructorType.toMaybeFunctionType();
+-        if (ct == null && constructorType instanceof FunctionType) {
+-          // If constructorType is a NoObjectType, then toMaybeFunctionType will
+-          // return null. But NoObjectType implements the FunctionType
+-          // interface, precisely because it can validly construct objects.
+-          ct = (FunctionType) constructorType;
+-        }
+-        if (ct != null && ct.isConstructor()) {
+-          type = ct.getInstanceType();
+-        }
+-      }
++      scope = traverseCall(n, scope);
+     }
+     n.setJSType(type);
+     for (Node arg = constructor.getNext(); arg != null; arg = arg.getNext()) {

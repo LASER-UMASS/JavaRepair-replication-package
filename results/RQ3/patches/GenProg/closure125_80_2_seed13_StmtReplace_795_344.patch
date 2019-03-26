@@ -1,0 +1,21 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 18:27:35.000000000 -0400
++++ ./variant452/com/google/javascript/jscomp/TypeCheck.java	2018-05-10 14:19:28.000000000 -0400
+@@ -1658,12 +1658,12 @@
+     JSType type = getJSType(constructor).restrictByNotNullOrUndefined();
+     if (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) {
+       FunctionType fnType = type.toMaybeFunctionType();
+-      if (fnType != null) {
+-        visitParameterList(t, n, fnType);
+-        ensureTyped(t, n, fnType.getInstanceType());
+-      } else {
+-        ensureTyped(t, n);
+-      }
++      if (NodeUtil.isForIn(n)) {
++		Node obj = n.getChildAtIndex(1);
++		if (getJSType(obj).isStruct()) {
++			report(t, obj, IN_USED_WITH_STRUCT);
++		}
++	}
+     } else {
+       report(t, n, NOT_A_CONSTRUCTOR);
+       ensureTyped(t, n);

@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 22:12:14.000000000 -0500
++++ ./variant40/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-18 00:12:59.000000000 -0500
+@@ -1504,7 +1504,10 @@
+                         if(b2 == 0.0) {
+                             break;
+                         }
+-                        b1 = b2;
++                        {
++							b1 = b2;
++							b2 = work[np - 2];
++						}
+                         if (work[i4]  >  work[i4 - 2]) {
+                             return;
+                         }

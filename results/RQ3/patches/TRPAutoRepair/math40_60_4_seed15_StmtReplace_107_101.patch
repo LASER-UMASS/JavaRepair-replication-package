@@ -1,0 +1,19 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 05:36:19.000000000 -0500
++++ ./variant6/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 06:23:57.000000000 -0500
+@@ -265,8 +265,14 @@
+                         --end;
+                     }
+ 
+-                    // we need to do one more attempt
+-                    nextX = Double.NaN;
++                    {
++						if (signChangeIndex - start >= end - signChangeIndex) {
++							++start;
++						} else {
++							--end;
++						}
++						nextX = Double.NaN;
++					}
+ 
+                 }
+ 

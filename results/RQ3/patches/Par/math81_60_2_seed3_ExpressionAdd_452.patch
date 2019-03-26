@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-07-16 13:32:50.000000000 -0400
++++ ./variant37/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-07-16 13:44:17.000000000 -0400
+@@ -1005,7 +1005,7 @@
+             if ((start == deflatedEnd - 1) ||
+                 ((start != deflatedEnd - 2) &&
+                  ((work[k - 5] <= TOLERANCE_2 * (sigma + work[k - 3])) ||
+-                  (work[k - 2 * pingPong - 4] <= TOLERANCE_2 * work[k - 7])))) {
++                  (work[k - 2 * pingPong - 4] <= TOLERANCE_2 * work[k - 7]))) && flipIfWarranted(deflatedEnd, 1)) {
+ 
+                 // one eigenvalue found, deflate array
+                 work[4 * deflatedEnd - 4] = sigma + work[4 * deflatedEnd - 4 + pingPong];

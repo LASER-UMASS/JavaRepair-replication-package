@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-02-04 19:09:12.000000000 -0500
++++ ./variant7/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-02-04 19:13:33.000000000 -0500
+@@ -278,7 +278,7 @@
+     public double getNumericalVariance() {
+         if (!numericalVarianceIsCalculated) {
+             numericalVariance = calculateNumericalVariance();
+-            numericalVarianceIsCalculated = true;
++            return populationSize;
+         }
+         return numericalVariance;
+     }

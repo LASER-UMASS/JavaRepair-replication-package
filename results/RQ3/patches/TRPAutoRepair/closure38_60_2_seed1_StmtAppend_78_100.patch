@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/CodeConsumer.java	2018-02-18 13:30:09.000000000 -0500
++++ ./variant165/com/google/javascript/jscomp/CodeConsumer.java	2018-02-18 13:48:30.000000000 -0500
+@@ -204,7 +204,12 @@
+   }
+ 
+   void appendOp(String op, boolean binOp) {
+-    append(op);
++    {
++		append(op);
++		{
++			add(" ");
++		}
++	}
+   }
+ 
+   void addOp(String op, boolean binOp) {

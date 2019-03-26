@@ -1,0 +1,375 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 17:29:58.000000000 -0500
++++ ./variant72/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 17:36:38.000000000 -0500
+@@ -500,370 +500,8 @@
+     // To be explicitly set to false if the node is not typeable.
+     boolean typeable = true;
+ 
+-    switch (n.getType()) {
+-      case Token.CAST:
+-        Node expr = n.getFirstChild();
+-        JSType exprType = getJSType(expr);
+-        JSType castType = getJSType(n);
+-
+-        // TODO(johnlenz): determine if we can limit object literals in some
+-        // way.
+-        if (!expr.isObjectLit()) {
+-          validator.expectCanCast(t, n, castType, exprType);
+-        }
+-        ensureTyped(t, n, castType);
+-
+-        if (castType.isSubtype(exprType) || expr.isObjectLit()) {
+-          expr.setJSType(castType);
+-        }
+-        break;
+-
+-      case Token.NAME:
+-        typeable = visitName(t, n, parent);
+-        break;
+-
+-      case Token.PARAM_LIST:
+-        typeable = false;
+-        break;
+-
+-      case Token.COMMA:
+-        ensureTyped(t, n, getJSType(n.getLastChild()));
+-        break;
+-
+-      case Token.TRUE:
+-      case Token.FALSE:
+-        ensureTyped(t, n, BOOLEAN_TYPE);
+-        break;
+-
+-      case Token.THIS:
+-        ensureTyped(t, n, t.getScope().getTypeOfThis());
+-        break;
+-
+-      case Token.NULL:
+-        ensureTyped(t, n, NULL_TYPE);
+-        break;
+-
+-      case Token.NUMBER:
+-        ensureTyped(t, n, NUMBER_TYPE);
+-        break;
+-
+-      case Token.STRING:
+-        ensureTyped(t, n, STRING_TYPE);
+-        break;
+-
+-      case Token.STRING_KEY:
+-        typeable = false;
+-        break;
+-
+-      case Token.GETTER_DEF:
+-      case Token.SETTER_DEF:
+-        // Object literal keys are handled with OBJECTLIT
+-        break;
+-
+-      case Token.ARRAYLIT:
+-        ensureTyped(t, n, ARRAY_TYPE);
+-        break;
+-
+-      case Token.REGEXP:
+-        ensureTyped(t, n, REGEXP_TYPE);
+-        break;
+-
+-      case Token.GETPROP:
+-        visitGetProp(t, n, parent);
+-        typeable = !(parent.isAssign() &&
+-                     parent.getFirstChild() == n);
+-        break;
+-
+-      case Token.GETELEM:
+-        visitGetElem(t, n);
+-        // The type of GETELEM is always unknown, so no point counting that.
+-        // If that unknown leaks elsewhere (say by an assignment to another
+-        // variable), then it will be counted.
+-        typeable = false;
+-        break;
+-
+-      case Token.VAR:
+-        visitVar(t, n);
+-        typeable = false;
+-        break;
+-
+-      case Token.NEW:
+-        visitNew(t, n);
+-        break;
+-
+-      case Token.CALL:
+-        visitCall(t, n);
+-        typeable = !parent.isExprResult();
+-        break;
+-
+-      case Token.RETURN:
+-        visitReturn(t, n);
+-        typeable = false;
+-        break;
+-
+-      case Token.DEC:
+-      case Token.INC:
+-        left = n.getFirstChild();
+-        checkPropCreation(t, left);
+-        validator.expectNumber(t, left, getJSType(left), "increment/decrement");
+-        ensureTyped(t, n, NUMBER_TYPE);
+-        break;
+-
+-      case Token.NOT:
+-        ensureTyped(t, n, BOOLEAN_TYPE);
+-        break;
+-
+-      case Token.VOID:
+-        ensureTyped(t, n, VOID_TYPE);
+-        break;
+-
+-      case Token.TYPEOF:
+-        ensureTyped(t, n, STRING_TYPE);
+-        break;
+-
+-      case Token.BITNOT:
+-        childType = getJSType(n.getFirstChild());
+-        if (!childType.matchesInt32Context()) {
+-          report(t, n, BIT_OPERATION, NodeUtil.opToStr(n.getType()),
+-              childType.toString());
+-        }
+-        ensureTyped(t, n, NUMBER_TYPE);
+-        break;
+-
+-      case Token.POS:
+-      case Token.NEG:
+-        left = n.getFirstChild();
+-        validator.expectNumber(t, left, getJSType(left), "sign operator");
+-        ensureTyped(t, n, NUMBER_TYPE);
+-        break;
+-
+-      case Token.EQ:
+-      case Token.NE:
+-      case Token.SHEQ:
+-      case Token.SHNE: {
+-        left = n.getFirstChild();
+-        right = n.getLastChild();
+-
+-        if (left.isTypeOf()) {
+-          if (right.isString()) {
+-            checkTypeofString(t, right, right.getString());
+-          }
+-        } else if (right.isTypeOf() && left.isString()) {
+-          checkTypeofString(t, left, left.getString());
+-        }
+-
+-        leftType = getJSType(left);
+-        rightType = getJSType(right);
+-
+-        // We do not want to warn about explicit comparisons to VOID. People
+-        // often do this if they think their type annotations screwed up.
+-        //
+-        // We do want to warn about cases where people compare things like
+-        // (Array|null) == (Function|null)
+-        // because it probably means they screwed up.
+-        //
+-        // This heuristic here is not perfect, but should catch cases we
+-        // care about without too many false negatives.
+-        JSType leftTypeRestricted = leftType.restrictByNotNullOrUndefined();
+-        JSType rightTypeRestricted = rightType.restrictByNotNullOrUndefined();
+-
+-        TernaryValue result = TernaryValue.UNKNOWN;
+-        if (n.getType() == Token.EQ || n.getType() == Token.NE) {
+-          result = leftTypeRestricted.testForEquality(rightTypeRestricted);
+-          if (n.isNE()) {
+-            result = result.not();
+-          }
+-        } else {
+-          // SHEQ or SHNE
+-          if (!leftTypeRestricted.canTestForShallowEqualityWith(
+-                  rightTypeRestricted)) {
+-            result = n.getType() == Token.SHEQ ?
+-                TernaryValue.FALSE : TernaryValue.TRUE;
+-          }
+-        }
+-
+-        if (result != TernaryValue.UNKNOWN) {
+-          report(t, n, DETERMINISTIC_TEST, leftType.toString(),
+-              rightType.toString(), result.toString());
+-        }
+-        ensureTyped(t, n, BOOLEAN_TYPE);
+-        break;
+-      }
+-
+-      case Token.LT:
+-      case Token.LE:
+-      case Token.GT:
+-      case Token.GE:
+-        leftType = getJSType(n.getFirstChild());
+-        rightType = getJSType(n.getLastChild());
+-        if (rightType.isNumber()) {
+-          validator.expectNumber(
+-              t, n, leftType, "left side of numeric comparison");
+-        } else if (leftType.isNumber()) {
+-          validator.expectNumber(
+-              t, n, rightType, "right side of numeric comparison");
+-        } else if (leftType.matchesNumberContext() &&
+-                   rightType.matchesNumberContext()) {
+-          // OK.
+-        } else {
+-          // Whether the comparison is numeric will be determined at runtime
+-          // each time the expression is evaluated. Regardless, both operands
+-          // should match a string context.
+-          String message = "left side of comparison";
+-          validator.expectString(t, n, leftType, message);
+-          validator.expectNotNullOrUndefined(
+-              t, n, leftType, message, getNativeType(STRING_TYPE));
+-          message = "right side of comparison";
+-          validator.expectString(t, n, rightType, message);
+-          validator.expectNotNullOrUndefined(
+-              t, n, rightType, message, getNativeType(STRING_TYPE));
+-        }
+-        ensureTyped(t, n, BOOLEAN_TYPE);
+-        break;
+-
+-      case Token.IN:
+-        left = n.getFirstChild();
+-        right = n.getLastChild();
+-        rightType = getJSType(right);
+-        validator.expectString(t, left, getJSType(left), "left side of 'in'");
+-        validator.expectObject(t, n, rightType, "'in' requires an object");
+-        if (rightType.isStruct()) {
+-          report(t, right, IN_USED_WITH_STRUCT);
+-        }
+-        ensureTyped(t, n, BOOLEAN_TYPE);
+-        break;
+-
+-      case Token.INSTANCEOF:
+-        left = n.getFirstChild();
+-        right = n.getLastChild();
+-        rightType = getJSType(right).restrictByNotNullOrUndefined();
+-        validator.expectAnyObject(
+-            t, left, getJSType(left), "deterministic instanceof yields false");
+-        validator.expectActualObject(
+-            t, right, rightType, "instanceof requires an object");
+-        ensureTyped(t, n, BOOLEAN_TYPE);
+-        break;
+-
+-      case Token.ASSIGN:
+-        visitAssign(t, n);
+-        typeable = false;
+-        break;
+-
+-      case Token.ASSIGN_LSH:
+-      case Token.ASSIGN_RSH:
+-      case Token.ASSIGN_URSH:
+-      case Token.ASSIGN_DIV:
+-      case Token.ASSIGN_MOD:
+-      case Token.ASSIGN_BITOR:
+-      case Token.ASSIGN_BITXOR:
+-      case Token.ASSIGN_BITAND:
+-      case Token.ASSIGN_SUB:
+-      case Token.ASSIGN_ADD:
+-      case Token.ASSIGN_MUL:
+-        checkPropCreation(t, n.getFirstChild());
+-        // fall through
+-
+-      case Token.LSH:
+-      case Token.RSH:
+-      case Token.URSH:
+-      case Token.DIV:
+-      case Token.MOD:
+-      case Token.BITOR:
+-      case Token.BITXOR:
+-      case Token.BITAND:
+-      case Token.SUB:
+-      case Token.ADD:
+-      case Token.MUL:
+-        visitBinaryOperator(n.getType(), t, n);
+-        break;
+-
+-      case Token.DELPROP:
+-        ensureTyped(t, n, BOOLEAN_TYPE);
+-        break;
+-
+-      case Token.CASE:
+-        JSType switchType = getJSType(parent.getFirstChild());
+-        JSType caseType = getJSType(n.getFirstChild());
+-        validator.expectSwitchMatchesCase(t, n, switchType, caseType);
+-        typeable = false;
+-        break;
+-
+-      case Token.WITH: {
+-        Node child = n.getFirstChild();
+-        childType = getJSType(child);
+-        validator.expectObject(t, child, childType, "with requires an object");
+-        typeable = false;
+-        break;
+-      }
+-
+-      case Token.FUNCTION:
+-        visitFunction(t, n);
+-        break;
+-
+-      // These nodes have no interesting type behavior.
+-      case Token.LABEL:
+-      case Token.LABEL_NAME:
+-      case Token.SWITCH:
+-      case Token.BREAK:
+-      case Token.CATCH:
+-      case Token.TRY:
+-      case Token.SCRIPT:
+-      case Token.EXPR_RESULT:
+-      case Token.BLOCK:
+-      case Token.EMPTY:
+-      case Token.DEFAULT_CASE:
+-      case Token.CONTINUE:
+-      case Token.DEBUGGER:
+-      case Token.THROW:
+-        typeable = false;
+-        break;
+-
+-      // These nodes require data flow analysis.
+-      case Token.DO:
+-      case Token.IF:
+-      case Token.WHILE:
+-        typeable = false;
+-        break;
+-
+-      case Token.FOR:
+-        if (NodeUtil.isForIn(n)) {
+-          Node obj = n.getChildAtIndex(1);
+-          if (getJSType(obj).isStruct()) {
+-            report(t, obj, IN_USED_WITH_STRUCT);
+-          }
+-        }
+-        typeable = false;
+-        break;
+-
+-      // These nodes are typed during the type inference.
+-      case Token.AND:
+-      case Token.HOOK:
+-      case Token.OBJECTLIT:
+-      case Token.OR:
+-        if (n.getJSType() != null) { // If we didn't run type inference.
+-          ensureTyped(t, n);
+-        } else {
+-          // If this is an enum, then give that type to the objectlit as well.
+-          if ((n.isObjectLit())
+-              && (parent.getJSType() instanceof EnumType)) {
+-            ensureTyped(t, n, parent.getJSType());
+-          } else {
+-            ensureTyped(t, n);
+-          }
+-        }
+-        if (n.isObjectLit()) {
+-          JSType typ = getJSType(n);
+-          for (Node key : n.children()) {
+-            visitObjLitKey(t, key, n, typ);
+-          }
+-        }
+-        break;
+-
+-      default:
+-        report(t, n, UNEXPECTED_TOKEN, Token.name(n.getType()));
+-        ensureTyped(t, n);
+-        break;
+-    }
++    {
++	}
+ 
+     // Don't count externs since the user's code may not even use that part.
+     typeable = typeable && !inExterns;

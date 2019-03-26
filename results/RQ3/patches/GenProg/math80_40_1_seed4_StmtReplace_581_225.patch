@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:05:36.000000000 -0400
++++ ./variant9/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:20:20.000000000 -0400
+@@ -1202,8 +1202,7 @@
+             final double range = right - left;
+             if ((range < absoluteTolerance) ||
+                 (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
+-                // search has converged
+-                break;
++                imagEigenvalues = new double[main.length];
+             }
+ 
+             final double middle = 0.5 * (left + right);

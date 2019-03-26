@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-16 23:08:40.000000000 -0500
++++ ./variant10/com/google/javascript/jscomp/TypeCheck.java	2018-02-17 00:11:40.000000000 -0500
+@@ -819,7 +819,10 @@
+   private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+     JSType type = n.getJSType();
+     if (type == null) {
+-      nullCount++;
++      {
++		String propName = n.getType() == Token.GETPROP ? n.getLastChild().getString() : "(missing)";
++		compiler.report(t.makeError(n, ILLEGAL_IMPLICIT_CAST, propName));
++	}
+     } else if (type.isUnknownType()) {
+       if (reportUnknownTypes.isOn()) {
+         compiler.report(

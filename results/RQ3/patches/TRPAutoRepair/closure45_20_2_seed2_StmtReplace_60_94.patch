@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 21:05:18.000000000 -0500
++++ ./variant15/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 21:10:45.000000000 -0500
+@@ -223,7 +223,9 @@
+               // no secondary side effects, then we can create a continuation
+               // for it instead of traversing immediately.
+               continuations.put(var, new Continuation(n, scope));
+-              return;
++              {
++				markReferencedVar(var);
++			}
+             }
+           }
+         }

@@ -1,0 +1,51 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:15:32.000000000 -0400
++++ ./variant35/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 02:20:21.000000000 -0400
+@@ -319,26 +319,28 @@
+             y[signChangeIndex] = nextY;
+             ++nbPoints;
+ 
+-            // update the bracketing interval
+-            if (nextY * yA <= 0) {
+-                // the sign change occurs before the inserted point
+-                xB = nextX;
+-                yB = nextY;
+-                absYB = FastMath.abs(yB);
+-                ++agingA;
+-                agingB = 0;
+-            } else {
+-                // the sign change occurs after the inserted point
+-                xA = nextX;
+-                yA = nextY;
+-                absYA = FastMath.abs(yA);
+-                agingA = 0;
+-                ++agingB;
+-
+-                // update the sign change index
+-                signChangeIndex++;
+-
+-            }
++            {
++				if (nextY * yA <= 0) {
++					xB = nextX;
++					yB = nextY;
++					absYB = FastMath.abs(yB);
++					++agingA;
++					agingB = 0;
++				} else {
++					xA = nextX;
++					yA = nextY;
++					absYA = FastMath.abs(yA);
++					agingA = 0;
++					++agingB;
++					signChangeIndex++;
++				}
++				for (int i = start; i < end - 1; ++i) {
++					final int delta = i + 1 - start;
++					for (int j = end - 1; j > i; --j) {
++						x[j] = (x[j] - x[j - 1]) / (y[j] - y[j - delta]);
++					}
++				}
++			}
+ 
+         }
+ 

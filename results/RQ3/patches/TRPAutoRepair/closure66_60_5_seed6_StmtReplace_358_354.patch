@@ -1,0 +1,15 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-17 00:37:01.000000000 -0500
++++ ./variant32/com/google/javascript/jscomp/TypeCheck.java	2018-02-17 01:37:27.000000000 -0500
+@@ -818,9 +818,9 @@
+    */
+   private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+     JSType type = n.getJSType();
+-    if (type == null) {
+-      nullCount++;
+-    } else if (type.isUnknownType()) {
++    if (type == null)
++		checkNoTypeCheckSection(n, false);
++	else if (type.isUnknownType()) {
+       if (reportUnknownTypes.isOn()) {
+         compiler.report(
+             t.makeError(n, reportUnknownTypes, UNKNOWN_EXPR_TYPE));

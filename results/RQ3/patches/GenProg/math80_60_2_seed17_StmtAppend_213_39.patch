@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:28:49.000000000 -0400
++++ ./variant359/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 11:18:53.000000000 -0400
+@@ -590,7 +590,10 @@
+ 
+             final double upper = dCurrent + radius;
+             work[upperStart + i] = upper;
+-            upperSpectra = Math.max(upperSpectra, upper);
++            {
++				upperSpectra = Math.max(upperSpectra, upper);
++				findEigenvalues();
++			}
+ 
+         }
+ 

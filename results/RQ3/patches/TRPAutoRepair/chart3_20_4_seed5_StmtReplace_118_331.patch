@@ -1,0 +1,11 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2018-01-27 11:08:53.000000000 -0500
++++ ./variant56/org/jfree/data/time/TimeSeries.java	2018-01-27 11:41:19.000000000 -0500
+@@ -579,7 +579,7 @@
+         item = (TimeSeriesDataItem) item.clone();
+         Class c = item.getPeriod().getClass();
+         if (this.timePeriodClass == null) {
+-            this.timePeriodClass = c;
++            findBoundsByIteration();
+         }
+         else if (!this.timePeriodClass.equals(c)) {
+             StringBuffer b = new StringBuffer();

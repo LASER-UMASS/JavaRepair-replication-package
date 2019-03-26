@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 23:33:40.000000000 -0500
++++ ./variant83/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 00:12:33.000000000 -0500
+@@ -215,7 +215,10 @@
+           var = scope.getVar(maybeAssign.nameNode.getString());
+           if (var != null) {
+             assignsByVar.put(var, maybeAssign);
+-            assignsByNode.put(maybeAssign.nameNode, maybeAssign);
++            if (isRemovableVar(var) && !maybeAssign.mayHaveSecondarySideEffects) {
++				continuations.put(var, new Continuation(n, scope));
++				return;
++			}
+ 
+             if (isRemovableVar(var) &&
+                 !maybeAssign.mayHaveSecondarySideEffects) {

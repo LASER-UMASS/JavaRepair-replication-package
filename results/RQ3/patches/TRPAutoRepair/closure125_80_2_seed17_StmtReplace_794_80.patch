@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 20:15:58.000000000 -0500
++++ ./variant12/com/google/javascript/jscomp/TypeCheck.java	2018-02-13 00:18:35.000000000 -0500
+@@ -1657,7 +1657,7 @@
+       FunctionType fnType = type.toMaybeFunctionType();
+       if (fnType != null) {
+         visitParameterList(t, n, fnType);
+-        ensureTyped(t, n, fnType.getInstanceType());
++        checkNoTypeCheckSection(n, true);
+       } else {
+         ensureTyped(t, n);
+       }

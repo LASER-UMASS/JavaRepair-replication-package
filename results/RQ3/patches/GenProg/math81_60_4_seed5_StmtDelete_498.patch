@@ -1,0 +1,52 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:41:19.000000000 -0400
++++ ./variant102/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 03:40:46.000000000 -0400
+@@ -1070,47 +1070,8 @@
+             // step 3: choose a shift
+             computeShiftIncrement(start, deflatedEnd, end - deflatedEnd);
+ 
+-            // step 4a: dqds
+-            for (boolean loop = true; loop;) {
+-
+-                // perform one dqds step with the chosen shift
+-                dqds(start, deflatedEnd);
+-
+-                // check result of the dqds step
+-                if ((dMin >= 0) && (dMin1 > 0)) {
+-                    // the shift was good
+-                    updateSigma(tau);
+-                    return deflatedEnd;
+-                } else if ((dMin < 0.0) &&
+-                           (dMin1 > 0.0) &&
+-                           (work[4 * deflatedEnd - 5 - pingPong] < TOLERANCE * (sigma + dN1)) &&
+-                           (Math.abs(dN) < TOLERANCE * sigma)) {
+-                   // convergence hidden by negative DN.
+-                    work[4 * deflatedEnd - 3 - pingPong] = 0.0;
+-                    dMin = 0.0;
+-                    updateSigma(tau);
+-                    return deflatedEnd;
+-                } else if (dMin < 0.0) {
+-                    // tau too big. Select new tau and try again.
+-                    if (tType < -22) {
+-                        // failed twice. Play it safe.
+-                        tau = 0.0;
+-                    } else if (dMin1 > 0.0) {
+-                        // late failure. Gives excellent shift.
+-                        tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
+-                        tType -= 11;
+-                    } else {
+-                        // early failure. Divide by 4.
+-                        tau *= 0.25;
+-                        tType -= 12;
+-                    }
+-                } else if (Double.isNaN(dMin)) {
+-                    tau = 0.0;
+-                } else {
+-                    // possible underflow. Play it safe.
+-                    loop = false;
+-                }
+-            }
++            {
++			}
+ 
+         }
+ 

@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:43:48.000000000 -0400
++++ ./variant101/com/google/javascript/jscomp/TypeInference.java	2018-05-09 22:09:39.000000000 -0400
+@@ -249,7 +249,10 @@
+   private FlowScope traverse(Node n, FlowScope scope) {
+     switch (n.getType()) {
+       case Token.ASSIGN:
+-        scope = traverseAssign(n, scope);
++        {
++			scope = traverseAssign(n, scope);
++			scope = traverseReturn(n, scope);
++		}
+         break;
+ 
+       case Token.NAME:

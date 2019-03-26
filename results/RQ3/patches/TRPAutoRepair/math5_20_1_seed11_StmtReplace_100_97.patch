@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/math3/complex/Complex.java	2018-02-08 12:43:30.000000000 -0500
++++ ./variant8/org/apache/commons/math3/complex/Complex.java	2018-02-08 13:08:42.000000000 -0500
+@@ -340,14 +340,9 @@
+         if (this == other) {
+             return true;
+         }
+-        if (other instanceof Complex){
+-            Complex c = (Complex)other;
+-            if (c.isNaN) {
+-                return isNaN;
+-            } else {
+-                return (real == c.real) && (imaginary == c.imaginary);
+-            }
+-        }
++        if (other instanceof Complex) {
++			return true;
++		}
+         return false;
+     }
+ 

@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:30:19.000000000 -0400
++++ ./variant98/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 12:55:14.000000000 -0400
+@@ -836,8 +836,7 @@
+             return;
+         }
+ 
+-        // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
++        squaredSecondary = new double[secondary.length];
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);

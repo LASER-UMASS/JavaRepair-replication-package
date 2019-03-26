@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/Compiler.java	2018-05-09 18:37:30.000000000 -0400
++++ ./variant156/com/google/javascript/jscomp/Compiler.java	2018-05-10 06:12:10.000000000 -0400
+@@ -321,9 +321,10 @@
+       List<T2> inputs,
+       CompilerOptions options) {
+     JSModule module = new JSModule(SINGLETON_MODULE_NAME);
+-    for (SourceFile input : inputs) {
+-      module.add(input);
+-    }
++    for (SourceFile input : inputs)
++		if (options.checkGlobalThisLevel.isOn() && !options.disables(DiagnosticGroups.GLOBAL_THIS)) {
++			options.setWarningLevel(DiagnosticGroups.GLOBAL_THIS, options.checkGlobalThisLevel);
++		}
+ 
+     initModules(externs, Lists.newArrayList(module), options);
+   }

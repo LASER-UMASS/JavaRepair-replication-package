@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:13:43.000000000 -0400
++++ ./variant21/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 02:14:46.000000000 -0400
+@@ -261,8 +261,15 @@
+                         // we have more points before the sign change, drop the lowest point
+                         ++start;
+                     } else {
+-                        // we have more points after sign change, drop the highest point
+-                        --end;
++                        {
++							--end;
++							for (int i = start; i < end - 1; ++i) {
++								final int delta = i + 1 - start;
++								for (int j = end - 1; j > i; --j) {
++									x[j] = (x[j] - x[j - 1]) / (y[j] - y[j - delta]);
++								}
++							}
++						}
+                     }
+ 
+                     // we need to do one more attempt

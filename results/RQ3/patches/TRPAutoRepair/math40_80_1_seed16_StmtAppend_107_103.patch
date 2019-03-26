@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 06:35:19.000000000 -0500
++++ ./variant24/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 07:46:13.000000000 -0500
+@@ -265,8 +265,12 @@
+                         --end;
+                     }
+ 
+-                    // we need to do one more attempt
+-                    nextX = Double.NaN;
++                    {
++						nextX = Double.NaN;
++						{
++							++start;
++						}
++					}
+ 
+                 }
+ 

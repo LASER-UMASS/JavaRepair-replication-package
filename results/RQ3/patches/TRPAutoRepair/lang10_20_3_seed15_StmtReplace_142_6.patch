@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 09:41:08.000000000 -0500
++++ ./variant34/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 09:48:35.000000000 -0500
+@@ -392,7 +392,7 @@
+                 fieldKeyValues= createKeyValues(longEras, shortEras);
+                 break;
+             case Calendar.DAY_OF_WEEK:
+-                fieldKeyValues= createKeyValues(symbols.getWeekdays(), symbols.getShortWeekdays());
++                thisYear = Calendar.getInstance(timeZone, locale).get(Calendar.YEAR);
+                 break;
+             case Calendar.AM_PM:
+                 fieldKeyValues= createKeyValues(symbols.getAmPmStrings(), null);

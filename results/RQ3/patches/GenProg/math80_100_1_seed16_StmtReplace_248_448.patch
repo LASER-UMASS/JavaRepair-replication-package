@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:30:19.000000000 -0400
++++ ./variant123/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 10:53:34.000000000 -0400
+@@ -649,7 +649,7 @@
+                 final boolean chooseLeft   = (oneFourthCount - 1) >= (n - threeFourthCount);
+                 final double lambda        = chooseLeft ? range[0] : range[1];
+ 
+-                tau = (range[1] - range[0]) * MathUtils.EPSILON * n + 2 * minPivot;
++                pingPong = 1 - pingPong;
+ 
+                 // decompose T-&lambda;I as LDL<sup>T</sup>
+                 ldlTDecomposition(lambda, begin, n);

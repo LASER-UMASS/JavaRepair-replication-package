@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:14:57.000000000 -0500
++++ ./variant46/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:16:27.000000000 -0500
+@@ -552,7 +552,9 @@
+         case 'D':
+             return DAY_OF_YEAR_STRATEGY;
+         case 'E':
+-            return DAY_OF_WEEK_STRATEGY;
++            if (formatField.length() > 2) {
++				formatField = formatField.substring(1, formatField.length() - 1);
++			}
+         case 'F':
+             return DAY_OF_WEEK_IN_MONTH_STRATEGY;
+         case 'G':

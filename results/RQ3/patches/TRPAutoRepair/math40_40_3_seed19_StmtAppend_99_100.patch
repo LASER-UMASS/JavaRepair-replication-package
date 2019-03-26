@@ -1,0 +1,21 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 03:27:19.000000000 -0500
++++ ./variant113/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 04:07:34.000000000 -0500
+@@ -249,7 +249,17 @@
+ 
+                 // guess a value for current target, using inverse polynomial interpolation
+                 System.arraycopy(x, start, tmpX, start, end - start);
+-                nextX = guessX(targetY, tmpX, y, start, end);
++                {
++					nextX = guessX(targetY, tmpX, y, start, end);
++					if (!((nextX > xA) && (nextX < xB))) {
++						if (signChangeIndex - start >= end - signChangeIndex) {
++							++start;
++						} else {
++							--end;
++						}
++						nextX = Double.NaN;
++					}
++				}
+ 
+                 if (!((nextX > xA) && (nextX < xB))) {
+                     // the guessed root is not strictly inside of the tightest bracketing interval

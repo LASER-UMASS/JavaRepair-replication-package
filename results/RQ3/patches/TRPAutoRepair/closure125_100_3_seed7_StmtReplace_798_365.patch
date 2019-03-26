@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-18 10:58:57.000000000 -0500
++++ ./variant37/com/google/javascript/jscomp/TypeCheck.java	2018-02-18 15:54:56.000000000 -0500
+@@ -1660,7 +1660,7 @@
+       FunctionType fnType = type.toMaybeFunctionType();
+       if (fnType != null) {
+         visitParameterList(t, n, fnType);
+-        ensureTyped(t, n, fnType.getInstanceType());
++        if (n.isObjectLit()){JSType typ=getJSType(n);for (Node key:n.children()){visitObjLitKey(t,key,n,typ);}}
+       } else {
+         ensureTyped(t, n);
+       }

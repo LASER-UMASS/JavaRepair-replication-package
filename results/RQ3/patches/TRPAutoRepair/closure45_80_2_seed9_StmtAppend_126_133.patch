@@ -1,0 +1,20 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 00:53:27.000000000 -0500
++++ ./variant129/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 01:50:10.000000000 -0500
+@@ -345,9 +345,14 @@
+   private void collectMaybeUnreferencedVars(Scope scope) {
+     for (Iterator<Var> it = scope.getVars(); it.hasNext(); ) {
+       Var var = it.next();
+-      if (isRemovableVar(var)) {
+-        maybeUnreferenced.add(var);
+-      }
++      {
++		if (isRemovableVar(var)) {
++			maybeUnreferenced.add(var);
++		}
++		{
++			return;
++		}
++	}
+     }
+   }
+ 

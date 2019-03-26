@@ -1,0 +1,28 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:06:29.000000000 -0400
++++ ./variant48/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 03:53:12.000000000 -0400
+@@ -1198,22 +1198,9 @@
+         left  = lower - margin;
+         right = upper + margin;
+         for (int i = 0; i < maxIter; ++i) {
+-
+-            final double range = right - left;
+-            if ((range < absoluteTolerance) ||
+-                (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
+-                // search has converged
+-                break;
+-            }
+-
+-            final double middle = 0.5 * (left + right);
+-            if (countEigenValues(middle, index, n) >= n) {
+-                right = middle;
+-            } else {
+-                left = middle;
+-            }
+-
+-        }
++			tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
++			tType -= 11;
++		}
+         upper = Math.min(upper, right + 100 * MathUtils.EPSILON * Math.abs(right));
+ 
+         return new double[] { lower, upper };

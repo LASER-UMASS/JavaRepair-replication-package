@@ -1,0 +1,24 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:07:35.000000000 -0500
++++ ./variant1/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:16:57.000000000 -0500
+@@ -213,19 +213,8 @@
+           // Put this in the assign map. It might count as a reference,
+           // but we won't know that until we have an index of all assigns.
+           var = scope.getVar(maybeAssign.nameNode.getString());
+-          if (var != null) {
+-            assignsByVar.put(var, maybeAssign);
+-            assignsByNode.put(maybeAssign.nameNode, maybeAssign);
+-
+-            if (isRemovableVar(var) &&
+-                !maybeAssign.mayHaveSecondarySideEffects) {
+-              // If the var is unreferenced and performing this assign has
+-              // no secondary side effects, then we can create a continuation
+-              // for it instead of traversing immediately.
+-              continuations.put(var, new Continuation(n, scope));
+-              return;
+-            }
+-          }
++          {
++		}
+         }
+         break;
+ 

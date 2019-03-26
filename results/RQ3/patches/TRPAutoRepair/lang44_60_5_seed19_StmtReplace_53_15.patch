@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-02-02 00:54:58.000000000 -0500
++++ ./variant18/org/apache/commons/lang/NumberUtils.java	2018-02-02 01:32:05.000000000 -0500
+@@ -182,7 +182,9 @@
+             if (expPos > -1 && expPos < val.length() - 1) {
+                 exp = val.substring(expPos + 1, val.length() - 1);
+             } else {
+-                exp = null;
++                {
++					throw new NumberFormatException("\"\" is not a valid number.");
++				}
+             }
+             //Requesting a specific type..
+             String numeric = val.substring(0, val.length() - 1);

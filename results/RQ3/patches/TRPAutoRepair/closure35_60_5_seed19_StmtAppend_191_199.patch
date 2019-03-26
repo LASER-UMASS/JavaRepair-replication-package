@@ -1,0 +1,18 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-15 09:41:27.000000000 -0500
++++ ./variant102/com/google/javascript/jscomp/TypeInference.java	2018-02-15 14:26:33.000000000 -0500
+@@ -369,9 +369,12 @@
+ 
+       case Token.EXPR_RESULT:
+         scope = traverseChildren(n, scope);
+-        if (n.getFirstChild().isGetProp()) {
+-          ensurePropertyDeclared(n.getFirstChild());
+-        }
++        {
++			if (n.getFirstChild().isGetProp()) {
++				ensurePropertyDeclared(n.getFirstChild());
++			}
++			scope = traverseReturn(n, scope);
++		}
+         break;
+ 
+       case Token.SWITCH:

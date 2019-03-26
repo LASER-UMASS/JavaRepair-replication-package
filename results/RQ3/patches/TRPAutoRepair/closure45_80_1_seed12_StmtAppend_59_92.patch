@@ -1,0 +1,21 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 00:48:48.000000000 -0500
++++ ./variant22/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-16 01:57:16.000000000 -0500
+@@ -219,10 +219,14 @@
+ 
+             if (isRemovableVar(var) &&
+                 !maybeAssign.mayHaveSecondarySideEffects) {
+-              // If the var is unreferenced and performing this assign has
+-              // no secondary side effects, then we can create a continuation
+-              // for it instead of traversing immediately.
+-              continuations.put(var, new Continuation(n, scope));
++              {
++				continuations.put(var, new Continuation(n, scope));
++				{
++					if (!assignsByNode.containsKey(n)) {
++						markReferencedVar(var);
++					}
++				}
++			}
+               return;
+             }
+           }

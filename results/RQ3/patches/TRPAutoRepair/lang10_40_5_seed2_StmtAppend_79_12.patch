@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:00:14.000000000 -0500
++++ ./variant12/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 10:01:26.000000000 -0500
+@@ -283,9 +283,14 @@
+         cal.clear();
+ 
+         for(int i=0; i<strategies.length;) {
+-            Strategy strategy= strategies[i++];
+-            strategy.setCalendar(this, cal, matcher.group(i));
+-        }
++			{
++				Strategy strategy = strategies[i++];
++				strategy.setCalendar(this, cal, matcher.group(i));
++			}
++			{
++				throw new IllegalArgumentException("Invalid pattern");
++			}
++		}
+         pos.setIndex(offset+matcher.end());
+         return cal.getTime();
+     }

@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/lang/math/NumberUtils.java	2018-07-16 12:40:34.000000000 -0400
++++ ./variant36/org/apache/commons/lang/math/NumberUtils.java	2018-07-16 12:45:12.000000000 -0400
+@@ -449,10 +449,7 @@
+             switch (lastChar) {
+                 case 'l' :
+                 case 'L' :
+-                    if (dec == null
+-                        && exp == null
+-                        && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++                    if (dec == null) {
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {

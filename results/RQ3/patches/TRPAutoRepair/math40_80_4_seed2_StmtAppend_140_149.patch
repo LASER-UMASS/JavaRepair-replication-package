@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 08:43:19.000000000 -0500
++++ ./variant31/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 08:45:35.000000000 -0500
+@@ -324,7 +324,10 @@
+                 // the sign change occurs before the inserted point
+                 xB = nextX;
+                 yB = nextY;
+-                absYB = FastMath.abs(yB);
++                {
++					absYB = FastMath.abs(yB);
++					signChangeIndex++;
++				}
+                 ++agingA;
+                 agingB = 0;
+             } else {

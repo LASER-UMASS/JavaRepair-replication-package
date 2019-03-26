@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 09:54:12.000000000 -0500
++++ ./variant7/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 09:59:46.000000000 -0500
+@@ -432,7 +432,8 @@
+      */
+     private static KeyValue[] createKeyValues(String[] longValues, String[] shortValues) {
+         KeyValue[] fieldKeyValues= new KeyValue[count(longValues)+count(shortValues)];
+-        copy(fieldKeyValues, copy(fieldKeyValues, 0, longValues), shortValues);
++        {
++		}
+         Arrays.sort(fieldKeyValues, IGNORE_CASE_COMPARATOR);
+         return fieldKeyValues;
+     }

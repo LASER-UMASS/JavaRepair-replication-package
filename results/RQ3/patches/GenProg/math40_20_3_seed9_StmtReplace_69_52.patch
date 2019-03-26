@@ -1,0 +1,30 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:13:33.000000000 -0400
++++ ./variant50/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 03:15:06.000000000 -0400
+@@ -210,23 +210,10 @@
+             // check convergence of bracketing interval
+             final double xTol = getAbsoluteAccuracy() +
+                                 getRelativeAccuracy() * FastMath.max(FastMath.abs(xA), FastMath.abs(xB));
+-            if (((xB - xA) <= xTol) || (FastMath.max(absYA, absYB) < getFunctionValueAccuracy())) {
+-                switch (allowed) {
+-                case ANY_SIDE :
+-                    return absYA < absYB ? xA : xB;
+-                case LEFT_SIDE :
+-                    return xA;
+-                case RIGHT_SIDE :
+-                    return xB;
+-                case BELOW_SIDE :
+-                    return (yA <= 0) ? xA : xB;
+-                case ABOVE_SIDE :
+-                    return (yA <  0) ? xB : xA;
+-                default :
+-                    // this should never happen
+-                    throw new MathInternalError(null);
+-                }
+-            }
++            {
++				nbPoints = 3;
++				signChangeIndex = 2;
++			}
+ 
+             // target for the next evaluation point
+             double targetY;

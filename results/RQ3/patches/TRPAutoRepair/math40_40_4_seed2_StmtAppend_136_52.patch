@@ -1,0 +1,49 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 03:45:19.000000000 -0500
++++ ./variant20/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 03:56:22.000000000 -0500
+@@ -319,26 +319,26 @@
+             y[signChangeIndex] = nextY;
+             ++nbPoints;
+ 
+-            // update the bracketing interval
+-            if (nextY * yA <= 0) {
+-                // the sign change occurs before the inserted point
+-                xB = nextX;
+-                yB = nextY;
+-                absYB = FastMath.abs(yB);
+-                ++agingA;
+-                agingB = 0;
+-            } else {
+-                // the sign change occurs after the inserted point
+-                xA = nextX;
+-                yA = nextY;
+-                absYA = FastMath.abs(yA);
+-                agingA = 0;
+-                ++agingB;
+-
+-                // update the sign change index
+-                signChangeIndex++;
+-
+-            }
++            {
++				if (nextY * yA <= 0) {
++					xB = nextX;
++					yB = nextY;
++					absYB = FastMath.abs(yB);
++					++agingA;
++					agingB = 0;
++				} else {
++					xA = nextX;
++					yA = nextY;
++					absYA = FastMath.abs(yA);
++					agingA = 0;
++					++agingB;
++					signChangeIndex++;
++				}
++				{
++					nbPoints = 3;
++					signChangeIndex = 2;
++				}
++			}
+ 
+         }
+ 

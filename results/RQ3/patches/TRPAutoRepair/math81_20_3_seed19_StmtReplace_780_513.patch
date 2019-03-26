@@ -1,0 +1,19 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 15:34:10.000000000 -0500
++++ ./variant44/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 17:34:32.000000000 -0500
+@@ -1477,7 +1477,15 @@
+                     int np;
+                     if (dMin == dN) {
+                         gam = dN;
+-                        a2 = 0.0;
++                        if (tType < -22) {
++							tau = 0.0;
++						} else if (dMin1 > 0.0) {
++							tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
++							tType -= 11;
++						} else {
++							tau *= 0.25;
++							tType -= 12;
++						}
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }

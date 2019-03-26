@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-18 10:56:12.000000000 -0500
++++ ./variant18/com/google/javascript/jscomp/TypeCheck.java	2018-02-18 12:02:52.000000000 -0500
+@@ -588,7 +588,7 @@
+         break;
+ 
+       case Token.NEW:
+-        visitNew(t, n);
++        this.topScope = topScope;
+         break;
+ 
+       case Token.CALL:

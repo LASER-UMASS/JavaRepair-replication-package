@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-02-02 00:06:18.000000000 -0500
++++ ./variant51/org/apache/commons/lang/NumberUtils.java	2018-02-02 00:38:27.000000000 -0500
+@@ -174,7 +174,10 @@
+             if (expPos > -1) {
+                 mant = val.substring(0, expPos);
+             } else {
+-                mant = val;
++                {
++					mant = val;
++					return Integer.decode(val);
++				}
+             }
+             dec = null;
+         }

@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:16:25.000000000 -0400
++++ ./variant39/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 03:03:49.000000000 -0400
+@@ -261,8 +261,10 @@
+                         // we have more points before the sign change, drop the lowest point
+                         ++start;
+                     } else {
+-                        // we have more points after sign change, drop the highest point
+-                        --end;
++                        {
++							--end;
++							signChangeIndex++;
++						}
+                     }
+ 
+                     // we need to do one more attempt

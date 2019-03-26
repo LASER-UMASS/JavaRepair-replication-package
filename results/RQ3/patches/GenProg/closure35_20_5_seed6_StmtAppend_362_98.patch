@@ -1,0 +1,52 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:42:28.000000000 -0400
++++ ./variant264/com/google/javascript/jscomp/TypeInference.java	2018-05-10 01:32:39.000000000 -0400
+@@ -675,29 +675,26 @@
+       Node value = name.getFirstChild();
+       String memberName = NodeUtil.getObjectLitKeyName(name);
+       if (memberName != null) {
+-        JSType rawValueType =  name.getFirstChild().getJSType();
+-        JSType valueType = NodeUtil.getObjectLitKeyTypeFromValueType(
+-            name, rawValueType);
+-        if (valueType == null) {
+-          valueType = getNativeType(UNKNOWN_TYPE);
+-        }
+-        objectType.defineInferredProperty(memberName, valueType, name);
+-
+-        // Do normal flow inference if this is a direct property assignment.
+-        if (qObjName != null && name.isString()) {
+-          String qKeyName = qObjName + "." + memberName;
+-          Var var = syntacticScope.getVar(qKeyName);
+-          JSType oldType = var == null ? null : var.getType();
+-          if (var != null && var.isTypeInferred()) {
+-            var.setType(oldType == null ?
+-                valueType : oldType.getLeastSupertype(oldType));
+-          }
+-
+-          scope.inferQualifiedSlot(name, qKeyName,
+-              oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,
+-              valueType);
+-        }
+-      } else {
++		{
++			JSType rawValueType = name.getFirstChild().getJSType();
++			JSType valueType = NodeUtil.getObjectLitKeyTypeFromValueType(name, rawValueType);
++			if (valueType == null) {
++				valueType = getNativeType(UNKNOWN_TYPE);
++			}
++			objectType.defineInferredProperty(memberName, valueType, name);
++			if (qObjName != null && name.isString()) {
++				String qKeyName = qObjName + "." + memberName;
++				Var var = syntacticScope.getVar(qKeyName);
++				JSType oldType = var == null ? null : var.getType();
++				if (var != null && var.isTypeInferred()) {
++					var.setType(oldType == null ? valueType : oldType.getLeastSupertype(oldType));
++				}
++				scope.inferQualifiedSlot(name, qKeyName, oldType == null ? getNativeType(UNKNOWN_TYPE) : oldType,
++						valueType);
++			}
++		}
++		scope = traverseGetProp(n, scope);
++	} else {
+         n.setJSType(getNativeType(UNKNOWN_TYPE));
+       }
+     }

@@ -1,0 +1,20 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 19:07:08.000000000 -0400
++++ ./variant150/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 22:44:58.000000000 -0400
+@@ -510,11 +510,12 @@
+         break;
+ 
+       case Token.STRING:
+-        // Object literal keys are handled with OBJECTLIT
+-        if (!NodeUtil.isObjectLitKey(n, n.getParent())) {
+-          ensureTyped(t, n, STRING_TYPE);
+-          // Object literal keys are not typeable
+-        }
++        {
++			if (!NodeUtil.isObjectLitKey(n, n.getParent())) {
++				ensureTyped(t, n, STRING_TYPE);
++			}
++			ensureTyped(t, n, NUMBER_TYPE);
++		}
+         break;
+ 
+       case Token.GET:

@@ -1,0 +1,46 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:04:42.000000000 -0400
++++ ./variant5/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 03:44:33.000000000 -0400
+@@ -651,8 +651,41 @@
+ 
+                 tau = (range[1] - range[0]) * MathUtils.EPSILON * n + 2 * minPivot;
+ 
+-                // decompose T-&lambda;I as LDL<sup>T</sup>
+-                ldlTDecomposition(lambda, begin, n);
++                {
++					ldlTDecomposition(lambda, begin, n);
++					{
++						double d = work[4 * (n - 1) + pingPong];
++						for (int i = 4 * (n - 2) + pingPong; i >= 0; i -= 4) {
++							if (work[i + 2] <= TOLERANCE_2 * d) {
++								work[i + 2] = -0.0;
++								d = work[i];
++							} else {
++								d *= work[i] / (d + work[i + 2]);
++							}
++						}
++						d = work[pingPong];
++						for (int i = 2 + pingPong; i < 4 * n - 2; i += 4) {
++							final int j = i - 2 * pingPong - 1;
++							work[j] = d + work[i];
++							if (work[i] <= TOLERANCE_2 * d) {
++								work[i] = -0.0;
++								work[j] = d;
++								work[j + 2] = 0.0;
++								d = work[i + 2];
++							} else if ((MathUtils.SAFE_MIN * work[i + 2] < work[j])
++									&& (MathUtils.SAFE_MIN * work[j] < work[i + 2])) {
++								final double tmp = work[i + 2] / work[j];
++								work[j + 2] = work[i] * tmp;
++								d *= tmp;
++							} else {
++								work[j + 2] = work[i + 2] * (work[i] / work[j]);
++								d *= work[i + 2] / work[j];
++							}
++						}
++						work[4 * n - 3 - pingPong] = d;
++						pingPong = 1 - pingPong;
++					}
++				}
+ 
+                 // apply general dqd/dqds method
+                 processGeneralBlock(n);

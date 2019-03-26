@@ -1,0 +1,28 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 18:51:31.000000000 -0400
++++ ./variant48/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 23:06:14.000000000 -0400
+@@ -263,14 +263,17 @@
+           }
+         } else {
+ 
+-          // If arguments is escaped, we just assume the worst and continue
+-          // on all the parameters.
+-          if ("arguments".equals(n.getString()) && scope.isLocal()) {
+-            Node lp = scope.getRootNode().getFirstChild().getNext();
+-            for (Node a = lp.getFirstChild(); a != null; a = a.getNext()) {
+-              markReferencedVar(scope.getVar(a.getString()));
+-            }
+-          }
++          {
++			if ("arguments".equals(n.getString()) && scope.isLocal()) {
++				Node lp = scope.getRootNode().getFirstChild().getNext();
++				for (Node a = lp.getFirstChild(); a != null; a = a.getNext()) {
++					markReferencedVar(scope.getVar(a.getString()));
++				}
++			}
++			{
++				markReferencedVar(var);
++			}
++		}
+ 
+           // All name references that aren't declarations or assigns
+           // are references to other vars.

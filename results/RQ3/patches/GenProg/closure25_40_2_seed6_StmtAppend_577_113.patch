@@ -1,0 +1,43 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:34:26.000000000 -0400
++++ ./variant261/com/google/javascript/jscomp/TypeInference.java	2018-05-10 04:23:59.000000000 -0400
+@@ -1038,23 +1038,23 @@
+     scope = traverse(constructor, scope);
+     JSType constructorType = constructor.getJSType();
+     JSType type = null;
+-    if (constructorType != null) {
+-      constructorType = constructorType.restrictByNotNullOrUndefined();
+-      if (constructorType.isUnknownType()) {
+-        type = getNativeType(UNKNOWN_TYPE);
+-      } else {
+-        FunctionType ct = constructorType.toMaybeFunctionType();
+-        if (ct == null && constructorType instanceof FunctionType) {
+-          // If constructorType is a NoObjectType, then toMaybeFunctionType will
+-          // return null. But NoObjectType implements the FunctionType
+-          // interface, precisely because it can validly construct objects.
+-          ct = (FunctionType) constructorType;
+-        }
+-        if (ct != null && ct.isConstructor()) {
+-          type = ct.getInstanceType();
+-        }
+-      }
+-    }
++    {
++		if (constructorType != null) {
++			constructorType = constructorType.restrictByNotNullOrUndefined();
++			if (constructorType.isUnknownType()) {
++				type = getNativeType(UNKNOWN_TYPE);
++			} else {
++				FunctionType ct = constructorType.toMaybeFunctionType();
++				if (ct == null && constructorType instanceof FunctionType) {
++					ct = (FunctionType) constructorType;
++				}
++				if (ct != null && ct.isConstructor()) {
++					type = ct.getInstanceType();
++				}
++			}
++		}
++		scope = traverseCall(n, scope);
++	}
+     n.setJSType(type);
+     for (Node arg = constructor.getNext(); arg != null; arg = arg.getNext()) {
+       scope = traverse(arg, scope);

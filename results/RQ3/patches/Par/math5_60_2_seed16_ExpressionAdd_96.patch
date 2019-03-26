@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math3/complex/Complex.java	2018-07-16 13:16:15.000000000 -0400
++++ ./variant55/org/apache/commons/math3/complex/Complex.java	2018-07-16 14:39:12.000000000 -0400
+@@ -337,7 +337,7 @@
+      */
+     @Override
+     public boolean equals(Object other) {
+-        if (this == other) {
++        if (this == other || isNaN) {
+             return true;
+         }
+         if (other instanceof Complex){

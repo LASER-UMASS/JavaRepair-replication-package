@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2018-07-16 13:35:19.000000000 -0400
++++ ./variant0/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2018-07-16 13:46:02.000000000 -0400
+@@ -190,7 +190,7 @@
+             b = Math.min(b + 1.0, upperBound);
+             fa = function.value(a);
+             
+-            fb = function.value(b);
++            fb = function.value(b + 1.0);
+             numIterations++ ;
+         } while ((fa * fb > 0.0) && (numIterations < maximumIterations) && 
+                 ((a > lowerBound) || (b < upperBound)));

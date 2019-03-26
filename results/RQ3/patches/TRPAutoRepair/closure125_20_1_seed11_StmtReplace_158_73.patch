@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 17:13:18.000000000 -0500
++++ ./variant20/com/google/javascript/jscomp/TypeCheck.java	2018-02-12 19:05:30.000000000 -0500
+@@ -588,7 +588,7 @@
+         break;
+ 
+       case Token.NEW:
+-        visitNew(t, n);
++        validator.setShouldReport(noTypeCheckSection == 0);
+         break;
+ 
+       case Token.CALL:

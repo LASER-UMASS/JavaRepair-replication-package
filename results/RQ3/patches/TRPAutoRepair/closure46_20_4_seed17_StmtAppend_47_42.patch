@@ -1,0 +1,24 @@
+--- ./original/com/google/javascript/rhino/jstype/RecordType.java	2018-02-16 07:11:18.000000000 -0500
++++ ./variant6/com/google/javascript/rhino/jstype/RecordType.java	2018-02-16 08:29:10.000000000 -0500
+@@ -144,12 +144,15 @@
+     }
+     RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+     for (String property : properties.keySet()) {
+-      if (that.toMaybeRecordType().hasProperty(property) &&
+-          that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(
+-              getPropertyType(property))) {
+-        builder.addProperty(property, getPropertyType(property),
+-            getPropertyNode(property));
+-      }
++      {
++		if (that.toMaybeRecordType().hasProperty(property)
++				&& that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(getPropertyType(property))) {
++			builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
++		}
++		{
++			return super.getLeastSupertype(that);
++		}
++	}
+     }
+     return builder.build();
+   }

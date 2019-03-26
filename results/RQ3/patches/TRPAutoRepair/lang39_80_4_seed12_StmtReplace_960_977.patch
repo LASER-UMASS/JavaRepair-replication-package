@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/lang3/StringUtils.java	2018-02-01 22:45:34.000000000 -0500
++++ ./variant14/org/apache/commons/lang3/StringUtils.java	2018-02-02 00:09:12.000000000 -0500
+@@ -3671,13 +3671,7 @@
+         // get a good guess on the size of the result buffer so it doesnt have to double if it goes over a bit
+         int increase = 0;
+ 
+-        // count the replacement text elements that are larger than their corresponding text being replaced
+-        for (int i = 0; i < searchList.length; i++) {
+-            int greater = replacementList[i].length() - searchList[i].length();
+-            if (greater > 0) {
+-                increase += 3 * greater; // assume 3 matches
+-            }
+-        }
++        tempIndex = -1;
+         // have upper-bound at 20% increase, then let Java take over
+         increase = Math.min(increase, text.length() / 5);
+ 

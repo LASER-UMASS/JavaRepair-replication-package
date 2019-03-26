@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 22:15:41.000000000 -0500
++++ ./variant36/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 23:17:02.000000000 -0500
+@@ -1073,8 +1073,10 @@
+             // step 4a: dqds
+             for (boolean loop = true; loop;) {
+ 
+-                // perform one dqds step with the chosen shift
+-                dqds(start, deflatedEnd);
++                {
++					dqds(start, deflatedEnd);
++					dN = 0;
++				}
+ 
+                 // check result of the dqds step
+                 if ((dMin >= 0) && (dMin1 > 0)) {

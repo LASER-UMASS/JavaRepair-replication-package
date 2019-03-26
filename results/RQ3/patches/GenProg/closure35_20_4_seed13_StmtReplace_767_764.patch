@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:42:20.000000000 -0400
++++ ./variant42/com/google/javascript/jscomp/TypeInference.java	2018-05-09 20:43:20.000000000 -0400
+@@ -1403,7 +1403,9 @@
+       // time as the type checker is extended.
+       return getNativeType(UNKNOWN_TYPE);
+     } else {
+-      return jsType;
++      {
++		return getNativeType(UNKNOWN_TYPE);
++	}
+     }
+   }
+ 

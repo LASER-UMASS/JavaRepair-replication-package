@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 11:00:20.000000000 -0500
++++ ./variant71/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 11:28:18.000000000 -0500
+@@ -247,8 +247,10 @@
+             int end   = nbPoints;
+             do {
+ 
+-                // guess a value for current target, using inverse polynomial interpolation
+-                System.arraycopy(x, start, tmpX, start, end - start);
++                {
++					System.arraycopy(x, start, tmpX, start, end - start);
++					signChangeIndex = 2;
++				}
+                 nextX = guessX(targetY, tmpX, y, start, end);
+ 
+                 if (!((nextX > xA) && (nextX < xB))) {

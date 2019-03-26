@@ -1,0 +1,22 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:41:39.000000000 -0400
++++ ./variant425/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 05:48:34.000000000 -0400
+@@ -1680,11 +1680,14 @@
+         // the expressions below take care to accumulate the part of sigma
+         // that does not fit within a double variable into sigmaLow
+         if (shift < sigma) {
+-            sigmaLow += shift;
+-            final double t = sigma + sigmaLow;
+-            sigmaLow -= t - sigma;
+-            sigma = t;
+-        } else {
++			{
++				sigmaLow += shift;
++				final double t = sigma + sigmaLow;
++				sigmaLow -= t - sigma;
++				sigma = t;
++			}
++			dN = 0;
++		} else {
+             final double t = sigma + shift;
+             sigmaLow += sigma - (t - shift);
+             sigma = t;

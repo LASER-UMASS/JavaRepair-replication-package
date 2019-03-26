@@ -1,0 +1,15 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-05-09 18:42:37.000000000 -0400
++++ ./variant235/com/google/javascript/jscomp/TypeInference.java	2018-05-09 23:55:12.000000000 -0400
+@@ -664,9 +664,9 @@
+ 
+     boolean hasLendsName = n.getJSDocInfo() != null &&
+         n.getJSDocInfo().getLendsName() != null;
+-    if (objectType.hasReferenceName() && !hasLendsName) {
+-      return scope;
+-    }
++    {
++		n.setJSType(getNativeType(CHECKED_UNKNOWN_TYPE));
++	}
+ 
+     String qObjName = NodeUtil.getBestLValueName(
+         NodeUtil.getBestLValue(n));

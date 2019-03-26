@@ -1,0 +1,18 @@
+--- ./original/org/apache/commons/lang/math/NumberUtils.java	2018-06-29 17:42:00.000000000 -0400
++++ ./variant6/org/apache/commons/lang/math/NumberUtils.java	2018-06-29 17:44:46.000000000 -0400
+@@ -461,7 +461,14 @@
+                         return createBigInteger(numeric);
+ 
+                     }
+-                    throw new NumberFormatException(str + " is not a valid number.");
++				if (dec == null && exp == null && isDigits(numeric.substring(1))
++						&& (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++					try {
++						return createLong(numeric);
++					} catch (NumberFormatException nfe) {
++					}
++					return createBigInteger(numeric);
++				}
+                 case 'f' :
+                 case 'F' :
+                     try {

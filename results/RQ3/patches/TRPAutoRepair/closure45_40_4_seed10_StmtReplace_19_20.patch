@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 22:38:14.000000000 -0500
++++ ./variant12/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-02-15 23:04:01.000000000 -0500
+@@ -156,7 +156,9 @@
+       Preconditions.checkNotNull(defFinder);
+       callSiteOptimizer = new CallSiteOptimizer(compiler, defFinder);
+     }
+-    traverseAndRemoveUnusedReferences(root);
++    if (callSiteOptimizer != null) {
++		callSiteOptimizer.applyChanges();
++	}
+     if (callSiteOptimizer != null) {
+       callSiteOptimizer.applyChanges();
+     }

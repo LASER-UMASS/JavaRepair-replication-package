@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:29:29.000000000 -0400
++++ ./variant189/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 05:59:49.000000000 -0400
+@@ -580,7 +580,10 @@
+ 
+             final double dCurrent = main[i];
+             final double ePrevious = eCurrent;
+-            eCurrent = Math.abs(secondary[i]);
++            {
++				eCurrent = Math.abs(secondary[i]);
++				findEigenvalues();
++			}
+             eMax = Math.max(eMax, eCurrent);
+             final double radius = ePrevious + eCurrent;
+ 

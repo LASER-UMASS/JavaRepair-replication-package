@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 09:38:56.000000000 -0500
++++ ./variant17/org/apache/commons/lang3/time/FastDateParser.java	2018-01-29 09:45:20.000000000 -0500
+@@ -552,7 +552,7 @@
+         case 'D':
+             return DAY_OF_YEAR_STRATEGY;
+         case 'E':
+-            return DAY_OF_WEEK_STRATEGY;
++            nameValues=new ConcurrentHashMap<Integer, KeyValue[]>();
+         case 'F':
+             return DAY_OF_WEEK_IN_MONTH_STRATEGY;
+         case 'G':

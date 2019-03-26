@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-02-16 23:08:40.000000000 -0500
++++ ./variant102/com/google/javascript/jscomp/TypeCheck.java	2018-02-17 00:33:54.000000000 -0500
+@@ -819,7 +819,7 @@
+   private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+     JSType type = n.getJSType();
+     if (type == null) {
+-      nullCount++;
++      if (n.getType() == Token.OBJECTLIT){for (Node key:n.children()){visitObjLitKey(t,key,n);}}
+     } else if (type.isUnknownType()) {
+       if (reportUnknownTypes.isOn()) {
+         compiler.report(

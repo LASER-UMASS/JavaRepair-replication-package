@@ -1,0 +1,24 @@
+--- ./original/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 18:50:16.000000000 -0400
++++ ./variant77/com/google/javascript/jscomp/RemoveUnusedVars.java	2018-05-09 21:10:27.000000000 -0400
+@@ -291,8 +291,19 @@
+     }
+ 
+     for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {
+-      traverseNode(c, n, scope);
+-    }
++		{
++			traverseNode(c, n, scope);
++		}
++		if (var != null) {
++			if (isRemovableVar(var)) {
++				if (!assignsByNode.containsKey(n)) {
++					markReferencedVar(var);
++				}
++			} else {
++				markReferencedVar(var);
++			}
++		}
++	}
+   }
+ 
+   private boolean isRemovableVar(Var var) {

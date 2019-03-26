@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 04:20:20.000000000 -0500
++++ ./variant137/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 04:44:38.000000000 -0500
+@@ -1233,7 +1233,13 @@
+         for (int i = 1; i < n; ++i) {
+             ratio = main[index + i] - squaredSecondary[index + i - 1] / ratio - t;
+             if (ratio <= 0) {
+-                ++count;
++                if (dMin1 > 0.0) {
++					tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
++					tType -= 11;
++				} else {
++					tau *= 0.25;
++					tType -= 12;
++				}
+             }
+         }
+         return count;

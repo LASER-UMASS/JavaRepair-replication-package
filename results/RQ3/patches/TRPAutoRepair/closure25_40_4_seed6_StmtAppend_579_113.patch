@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-13 13:52:50.000000000 -0500
++++ ./variant166/com/google/javascript/jscomp/TypeInference.java	2018-02-13 14:53:11.000000000 -0500
+@@ -1039,7 +1039,10 @@
+     JSType constructorType = constructor.getJSType();
+     JSType type = null;
+     if (constructorType != null) {
+-      constructorType = constructorType.restrictByNotNullOrUndefined();
++      {
++		constructorType = constructorType.restrictByNotNullOrUndefined();
++		scope = traverseCall(n, scope);
++	}
+       if (constructorType.isUnknownType()) {
+         type = getNativeType(UNKNOWN_TYPE);
+       } else {

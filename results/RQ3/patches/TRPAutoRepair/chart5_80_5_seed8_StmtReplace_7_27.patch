@@ -1,0 +1,13 @@
+--- ./original/org/jfree/data/xy/XYSeries.java	2018-01-28 15:09:41.000000000 -0500
++++ ./variant142/org/jfree/data/xy/XYSeries.java	2018-01-28 15:33:18.000000000 -0500
+@@ -152,7 +152,9 @@
+                     boolean allowDuplicateXValues) {
+         super(key);
+         this.data = new java.util.ArrayList();
+-        this.autoSort = autoSort;
++        {
++			fireSeriesChanged();
++		}
+         this.allowDuplicateXValues = allowDuplicateXValues;
+     }
+ 

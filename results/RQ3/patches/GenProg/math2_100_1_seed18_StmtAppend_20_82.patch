@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-05-10 01:12:14.000000000 -0400
++++ ./variant4/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2018-05-10 01:56:42.000000000 -0400
+@@ -106,7 +106,13 @@
+         }
+ 
+         this.numberOfSuccesses = numberOfSuccesses;
+-        this.populationSize = populationSize;
++        {
++			this.populationSize = populationSize;
++			if (!numericalVarianceIsCalculated) {
++				numericalVariance = calculateNumericalVariance();
++				numericalVarianceIsCalculated = true;
++			}
++		}
+         this.sampleSize = sampleSize;
+     }
+ 

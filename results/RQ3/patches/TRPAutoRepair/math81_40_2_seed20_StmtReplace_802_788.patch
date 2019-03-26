@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 15:58:51.000000000 -0500
++++ ./variant33/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 17:21:47.000000000 -0500
+@@ -1501,9 +1501,7 @@
+                     // approximate contribution to norm squared from i < nn-1.
+                     a2 = a2 + b2;
+                     for (int i4 = np; i4 >= 4 * start + 2 + pingPong; i4 -= 4) {
+-                        if(b2 == 0.0) {
+-                            break;
+-                        }
++                        b2 = work[np - 2];
+                         b1 = b2;
+                         if (work[i4]  >  work[i4 - 2]) {
+                             return;

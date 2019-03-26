@@ -1,0 +1,19 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-05-09 19:15:16.000000000 -0400
++++ ./variant7/org/apache/commons/lang3/time/FastDateParser.java	2018-05-09 19:21:30.000000000 -0400
+@@ -306,7 +306,15 @@
+             char c= value.charAt(i);
+             if(Character.isWhitespace(c)) {
+                 if(!wasWhite) {
+-                    wasWhite= true;
++                    {
++						wasWhite = true;
++						if (unquote) {
++							if (++i == value.length()) {
++								return regex;
++							}
++							c = value.charAt(i);
++						}
++					}
+                     regex.append("\\s*+");
+                 }
+                 continue;

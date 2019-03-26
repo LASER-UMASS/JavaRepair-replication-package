@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 19:49:54.000000000 -0500
++++ ./variant1/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-02-07 19:54:17.000000000 -0500
+@@ -169,12 +169,7 @@
+ 
+             // Update the bounds with the new approximation.
+             if (f1 * fx < 0) {
+-                // The value of x1 has switched to the other bound, thus inverting
+-                // the interval.
+-                x0 = x1;
+-                f0 = f1;
+-                inverted = !inverted;
+-            } else {
++			} else {
+                 switch (method) {
+                 case ILLINOIS:
+                     f0 *= 0.5;

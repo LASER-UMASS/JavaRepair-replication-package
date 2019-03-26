@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-07-16 13:33:11.000000000 -0400
++++ ./variant17/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-07-16 14:43:13.000000000 -0400
+@@ -1583,7 +1583,7 @@
+             break;
+ 
+         case 1 : // one eigenvalue just deflated. use dMin1, dN1 for dMin and dN.
+-            if (dMin1 == dN1 && dMin2 == dN2) {
++            if (dMin1 == dN1 && dMin2 == dN2 || 2 * work[nn - 5] < work[nn - 7]) {
+ 
+                 // cases 7 and 8.
+                 tType = -7;

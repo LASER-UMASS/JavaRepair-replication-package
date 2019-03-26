@@ -1,0 +1,13 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-18 13:51:31.000000000 -0500
++++ ./variant13/com/google/javascript/jscomp/TypeInference.java	2018-02-18 14:54:45.000000000 -0500
+@@ -128,7 +128,9 @@
+     }
+ 
+     FlowScope output = input.createChildFlowScope();
+-    output = traverse(n, output);
++    if (input == bottomScope) {
++		return input;
++	}
+     return output;
+   }
+ 

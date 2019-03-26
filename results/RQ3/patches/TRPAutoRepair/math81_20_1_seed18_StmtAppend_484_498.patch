@@ -1,0 +1,42 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 15:21:50.000000000 -0500
++++ ./variant241/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 17:27:06.000000000 -0500
+@@ -1039,8 +1039,37 @@
+                 deflatedEnd -= 2;
+             } else {
+ 
+-                // no more realEigenvalues found, we need to iterate
+-                deflating = false;
++                {
++					deflating = false;
++					for (boolean loop = true; loop;) {
++						dqds(start, deflatedEnd);
++						if ((dMin >= 0) && (dMin1 > 0)) {
++							updateSigma(tau);
++							return deflatedEnd;
++						} else if ((dMin < 0.0) && (dMin1 > 0.0)
++								&& (work[4 * deflatedEnd - 5 - pingPong] < TOLERANCE * (sigma + dN1))
++								&& (Math.abs(dN) < TOLERANCE * sigma)) {
++							work[4 * deflatedEnd - 3 - pingPong] = 0.0;
++							dMin = 0.0;
++							updateSigma(tau);
++							return deflatedEnd;
++						} else if (dMin < 0.0) {
++							if (tType < -22) {
++								tau = 0.0;
++							} else if (dMin1 > 0.0) {
++								tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
++								tType -= 11;
++							} else {
++								tau *= 0.25;
++								tType -= 12;
++							}
++						} else if (Double.isNaN(dMin)) {
++							tau = 0.0;
++						} else {
++							loop = false;
++						}
++					}
++				}
+ 
+             }
+ 

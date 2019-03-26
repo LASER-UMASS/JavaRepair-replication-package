@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 21:56:36.000000000 -0500
++++ ./variant100/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-17 22:56:50.000000000 -0500
+@@ -1477,7 +1477,10 @@
+                     int np;
+                     if (dMin == dN) {
+                         gam = dN;
+-                        a2 = 0.0;
++                        {
++							a2 = 0.0;
++							a2 = a2 + b2;
++						}
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }

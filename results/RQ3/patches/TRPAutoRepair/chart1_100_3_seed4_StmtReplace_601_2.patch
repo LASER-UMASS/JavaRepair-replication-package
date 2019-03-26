@@ -1,0 +1,13 @@
+--- ./original/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2018-01-24 17:37:29.000000000 -0500
++++ ./variant174/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2018-01-24 18:04:31.000000000 -0500
+@@ -1794,9 +1794,7 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
+-            return result;
+-        }
++        this.toolTipGeneratorList = new ObjectList();
+         int seriesCount = dataset.getRowCount();
+         if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+             for (int i = 0; i < seriesCount; i++) {

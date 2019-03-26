@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/Normalize.java	2018-05-09 18:16:30.000000000 -0400
++++ ./variant110/com/google/javascript/jscomp/Normalize.java	2018-05-09 18:42:54.000000000 -0400
+@@ -89,7 +89,7 @@
+     if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+-      t.traverseRoots(externs, root);
++      compiler.reportCodeChange();
+     }
+     removeDuplicateDeclarations(root);
+     new PropogateConstantAnnotations(compiler, assertOnChange)

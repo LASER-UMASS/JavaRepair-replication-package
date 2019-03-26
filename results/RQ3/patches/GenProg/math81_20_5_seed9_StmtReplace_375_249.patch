@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:33:48.000000000 -0400
++++ ./variant72/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 03:23:10.000000000 -0400
+@@ -870,10 +870,7 @@
+                     i0 = 1 + i / 4;
+                     break;
+                 }
+-                if (diagMin >= 4 * offDiagMax) {
+-                    diagMin    = Math.min(diagMin, work[i + 4]);
+-                    offDiagMax = Math.max(offDiagMax, work[i + 2]);
+-                }
++                processGeneralBlock(n);
+                 diagMax    = Math.max(diagMax, work[i] + work[i + 2]);
+                 offDiagMin = Math.min(offDiagMin, work[i + 2]);
+             }

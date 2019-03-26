@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 02:09:19.000000000 -0500
++++ ./variant1/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-02-05 02:49:53.000000000 -0500
+@@ -281,11 +281,9 @@
+ 
+             // evaluate the function at the guessed root
+             final double nextY = computeObjectiveValue(nextX);
+-            if (Precision.equals(nextY, 0.0, 1)) {
+-                // we have found an exact root, since it is not an approximation
+-                // we don't need to bother about the allowed solutions setting
+-                return nextX;
+-            }
++            {
++				++start;
++			}
+ 
+             if ((nbPoints > 2) && (end - start != nbPoints)) {
+ 

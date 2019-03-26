@@ -1,0 +1,17 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 04:59:04.000000000 -0500
++++ ./variant14/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-02-09 06:27:35.000000000 -0500
+@@ -1136,7 +1136,13 @@
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
++                    if (dMin1 > 0.0) {
++						tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
++						tType -= 11;
++					} else {
++						tau *= 0.25;
++						tType -= 12;
++					}
+                     work[j - k] = tmp;
+                 }
+                 j -= 4;

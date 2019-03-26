@@ -1,0 +1,11 @@
+--- ./original/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2018-07-16 10:41:18.000000000 -0400
++++ ./variant86/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2018-07-16 11:18:34.000000000 -0400
+@@ -1794,7 +1794,7 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++        if (dataset != null && this.plot == null) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();

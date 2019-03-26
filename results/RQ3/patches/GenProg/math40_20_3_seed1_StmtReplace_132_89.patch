@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:13:33.000000000 -0400
++++ ./variant129/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-05-10 01:26:02.000000000 -0400
+@@ -314,7 +314,9 @@
+             // insert the last computed point
+             //(by construction, we know it lies inside the tightest bracketing interval)
+             System.arraycopy(x, signChangeIndex, x, signChangeIndex + 1, nbPoints - signChangeIndex);
+-            x[signChangeIndex] = nextX;
++            {
++				targetY = -REDUCTION_FACTOR * yA;
++			}
+             System.arraycopy(y, signChangeIndex, y, signChangeIndex + 1, nbPoints - signChangeIndex);
+             y[signChangeIndex] = nextY;
+             ++nbPoints;

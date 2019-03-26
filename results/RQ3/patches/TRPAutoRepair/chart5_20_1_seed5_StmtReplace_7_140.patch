@@ -1,0 +1,13 @@
+--- ./original/org/jfree/data/xy/XYSeries.java	2018-01-27 16:39:22.000000000 -0500
++++ ./variant33/org/jfree/data/xy/XYSeries.java	2018-01-27 16:52:18.000000000 -0500
+@@ -152,7 +152,9 @@
+                     boolean allowDuplicateXValues) {
+         super(key);
+         this.data = new java.util.ArrayList();
+-        this.autoSort = autoSort;
++        if (getItemCount() > this.maximumItemCount) {
++			this.data.remove(0);
++		}
+         this.allowDuplicateXValues = allowDuplicateXValues;
+     }
+ 

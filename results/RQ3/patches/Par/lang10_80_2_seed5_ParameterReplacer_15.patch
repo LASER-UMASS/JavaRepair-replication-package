@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/lang3/time/FastDateParser.java	2018-07-16 12:05:54.000000000 -0400
++++ ./variant1/org/apache/commons/lang3/time/FastDateParser.java	2018-07-16 12:10:08.000000000 -0400
+@@ -126,7 +126,7 @@
+         }
+ 
+         currentFormatField= patternMatcher.group();
+-        Strategy currentStrategy= getStrategy(currentFormatField);
++        Strategy currentStrategy= getStrategy(pattern);
+         for(;;) {
+             patternMatcher.region(patternMatcher.end(), patternMatcher.regionEnd());
+             if(!patternMatcher.lookingAt()) {

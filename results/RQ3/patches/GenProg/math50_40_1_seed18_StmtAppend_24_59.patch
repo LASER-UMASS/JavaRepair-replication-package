@@ -1,0 +1,21 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-05-10 01:22:28.000000000 -0400
++++ ./variant5/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-05-10 01:46:40.000000000 -0400
+@@ -132,12 +132,12 @@
+         double f0 = computeObjectiveValue(x0);
+         double f1 = computeObjectiveValue(x1);
+ 
+-        // If one of the bounds is the exact root, return it. Since these are
+-        // not under-approximations or over-approximations, we can return them
+-        // regardless of the allowed solutions.
+-        if (f0 == 0.0) {
+-            return x0;
+-        }
++        {
++			if (f0 == 0.0) {
++				return x0;
++			}
++			f0 = computeObjectiveValue(x0);
++		}
+         if (f1 == 0.0) {
+             return x1;
+         }

@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 18:26:25.000000000 -0400
++++ ./variant52/com/google/javascript/jscomp/TypeCheck.java	2018-05-09 21:37:39.000000000 -0400
+@@ -1659,9 +1659,8 @@
+     if (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) {
+       FunctionType fnType = type.toMaybeFunctionType();
+       if (fnType != null) {
+-        visitParameterList(t, n, fnType);
+-        ensureTyped(t, n, fnType.getInstanceType());
+-      } else {
++		return;
++	} else {
+         ensureTyped(t, n);
+       }
+     } else {

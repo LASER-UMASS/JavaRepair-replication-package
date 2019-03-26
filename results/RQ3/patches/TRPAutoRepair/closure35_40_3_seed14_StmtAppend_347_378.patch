@@ -1,0 +1,16 @@
+--- ./original/com/google/javascript/jscomp/TypeInference.java	2018-02-15 05:48:13.000000000 -0500
++++ ./variant21/com/google/javascript/jscomp/TypeInference.java	2018-02-15 08:50:52.000000000 -0500
+@@ -648,7 +648,12 @@
+     Preconditions.checkNotNull(type);
+ 
+     for (Node name = n.getFirstChild(); name != null; name = name.getNext()) {
+-      scope = traverse(name.getFirstChild(), scope);
++      {
++		scope = traverse(name.getFirstChild(), scope);
++		{
++			n.setJSType(getNativeType(UNKNOWN_TYPE));
++		}
++	}
+     }
+ 
+     // Object literals can be reflected on other types, or changed with

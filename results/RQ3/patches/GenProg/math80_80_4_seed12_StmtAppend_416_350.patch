@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 02:29:56.000000000 -0400
++++ ./variant73/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-05-10 03:53:03.000000000 -0400
+@@ -934,7 +934,10 @@
+      */
+     private void initialSplits(final int n) {
+ 
+-        pingPong = 0;
++        {
++			pingPong = 0;
++			flipIfWarranted(n, 2);
++		}
+         for (int k = 0; k < 2; ++k) {
+ 
+             // apply Li's reverse test
