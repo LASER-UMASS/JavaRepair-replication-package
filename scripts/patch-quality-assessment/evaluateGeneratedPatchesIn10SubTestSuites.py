@@ -19,7 +19,6 @@
 # OUTPUT:
 # File QualityAssessmentForGeneratedTSGenProgRQ2.csv is generated in the folder D4J_HOME/<dir to store the data inside D4J_HOME> 
 
-
 import os
 import subprocess
 import sys
