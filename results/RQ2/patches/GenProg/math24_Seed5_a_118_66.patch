@@ -1,0 +1,31 @@
+--- ./original/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java	2016-10-18 22:37:55.000000000 +0000
++++ ./variant75/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java	2016-10-19 08:16:48.000000000 +0000
+@@ -238,7 +238,27 @@
+                     } else {
+                         a = x;
+                     }
+-                    v = w;
++                    {
++						v = w;
++						if (p > q * (a - x) && p < q * (b - x) && FastMath.abs(p) < FastMath.abs(0.5 * q * r)) {
++							d = p / q;
++							u = x + d;
++							if (u - a < tol2 || b - u < tol2) {
++								if (x <= m) {
++									d = tol1;
++								} else {
++									d = -tol1;
++								}
++							}
++						} else {
++							if (x < m) {
++								e = b - x;
++							} else {
++								e = a - x;
++							}
++							d = GOLDEN_SECTION * e;
++						}
++					}
+                     fv = fw;
+                     w = x;
+                     fw = fx;

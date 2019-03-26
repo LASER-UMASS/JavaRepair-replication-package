@@ -1,0 +1,12 @@
+--- ./original/com/google/javascript/jscomp/CheckSideEffects.java	2017-02-13 16:54:39.000000000 +0000
++++ ./variant4/com/google/javascript/jscomp/CheckSideEffects.java	2017-02-13 17:49:50.000000000 +0000
+@@ -113,7 +113,8 @@
+           int ancestorType = an.getType();
+           if (ancestorType == Token.COMMA)
+             continue;
+-          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK)
++          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK && n == parent.getFirstChild() ||
++		       n == parent.getFirstChild().getNext().getNext())
+             return;
+           else
+             break;

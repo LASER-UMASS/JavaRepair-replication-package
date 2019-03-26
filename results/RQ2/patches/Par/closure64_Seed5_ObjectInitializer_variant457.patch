@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/Compiler.java	2017-02-14 02:42:07.000000000 +0000
++++ ./variant457/com/google/javascript/jscomp/Compiler.java	2017-02-14 13:30:04.000000000 +0000
+@@ -1291,7 +1291,10 @@
+             for (Node scriptNode = jsRoot.getFirstChild();
+                  scriptNode != null;
+                  scriptNode = scriptNode.getNext()) {
+-              toSource(cb, i++, scriptNode);
++              {
++				cb = new com.google.javascript.jscomp.Compiler.CodeBuilder();
++				toSource(cb, i++, scriptNode);
++			}
+             }
+           }
+           return cb.toString();

@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/text/ExtendedMessageFormat.java	2016-09-13 02:19:52.000000000 +0000
++++ ./variant21/org/apache/commons/lang/text/ExtendedMessageFormat.java	2016-09-13 08:44:06.000000000 +0000
+@@ -418,9 +418,7 @@
+             StringBuffer appendTo, boolean escapingOn) {
+         int start = pos.getIndex();
+         char[] c = pattern.toCharArray();
+-        if (escapingOn && c[start] == QUOTE) {
+-            return appendTo == null ? null : appendTo.append(QUOTE);
+-        }
++        next(pos);
+         int lastHold = start;
+         for (int i = pos.getIndex(); i < pattern.length(); i++) {
+             if (escapingOn && pattern.substring(i).startsWith(ESCAPED_QUOTE)) {

@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-18 23:18:32.000000000 +0000
++++ ./variant103/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-19 03:03:09.000000000 +0000
+@@ -1136,7 +1136,7 @@
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
++                    tType = -8;
+                     work[j - k] = tmp;
+                 }
+                 j -= 4;

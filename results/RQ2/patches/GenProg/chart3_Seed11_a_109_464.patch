@@ -1,0 +1,14 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2016-10-18 19:38:26.000000000 +0000
++++ ./variant160/org/jfree/data/time/TimeSeries.java	2016-10-19 07:00:05.000000000 +0000
+@@ -561,7 +561,10 @@
+      *              permitted).
+      */
+     public void add(TimeSeriesDataItem item) {
+-        add(item, true);
++        {
++			add(item, true);
++			findBoundsByIteration();
++		}
+     }
+ 
+     /**

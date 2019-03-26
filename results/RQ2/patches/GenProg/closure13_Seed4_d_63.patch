@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2016-10-18 18:50:43.000000000 +0000
++++ ./variant54/com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2016-10-18 20:10:26.000000000 +0000
+@@ -156,9 +156,8 @@
+   private boolean shouldVisit(Node node) {
+     if (node.isFunction() || node.isScript()) {
+       ScopeState previous = traversalState.peek();
+-      if (!previous.traverseChildScopes) {
+-        return false;
+-      }
++      {
++	}
+       traversalState.push();
+     }
+     return true;

@@ -1,0 +1,17 @@
+--- ./original/com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2016-09-13 17:25:27.000000000 +0000
++++ ./variant29/com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2016-09-13 17:40:19.000000000 +0000
+@@ -111,13 +111,7 @@
+   }
+ 
+   private void traverse(Node node) {
+-    // The goal here is to avoid retraversing
+-    // the entire AST to catch newly created opportunities.
+-    // So we track whether a "unit of code" has changed,
+-    // and revisit immediately.
+-    if (!shouldVisit(node)) {
+-      return;
+-    }
++    traversalState.push();
+ 
+     int visits = 0;
+     do {

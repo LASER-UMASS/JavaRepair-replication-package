@@ -1,0 +1,13 @@
+--- ./original/org/jfree/data/time/TimeSeries.java	2016-10-18 19:38:26.000000000 +0000
++++ ./variant334/org/jfree/data/time/TimeSeries.java	2016-10-19 12:09:18.000000000 +0000
+@@ -597,7 +597,9 @@
+         int count = getItemCount();
+         if (count == 0) {
+             this.data.add(item);
+-            added = true;
++            {
++				findBoundsByIteration();
++			}
+         }
+         else {
+             RegularTimePeriod last = getTimePeriod(getItemCount() - 1);

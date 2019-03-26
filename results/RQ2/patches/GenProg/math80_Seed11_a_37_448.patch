@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-18 23:18:32.000000000 +0000
++++ ./variant185/org/apache/commons/math/linear/EigenDecompositionImpl.java	2016-10-19 06:01:03.000000000 +0000
+@@ -237,7 +237,10 @@
+         cachedV  = null;
+         cachedD  = null;
+         cachedVt = null;
+-        work     = new double[6 * main.length];
++        {
++			work = new double[6 * main.length];
++			pingPong = 1 - pingPong;
++		}
+ 
+         // compute the Gershgorin circles
+         computeGershgorinCircles();

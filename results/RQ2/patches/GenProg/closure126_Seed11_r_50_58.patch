@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/MinimizeExitPoints.java	2016-10-18 20:34:39.000000000 +0000
++++ ./variant313/com/google/javascript/jscomp/MinimizeExitPoints.java	2016-10-19 11:22:09.000000000 +0000
+@@ -139,9 +139,8 @@
+        * block. See ECMA 262 Sections 8.9 & 12.14
+        */
+       if (NodeUtil.hasFinally(n)) {
+-        Node finallyBlock = n.getLastChild();
+-        tryMinimizeExits(finallyBlock, exitType, labelName);
+-      }
++		return;
++	}
+     }
+ 
+     // Just a 'label'.

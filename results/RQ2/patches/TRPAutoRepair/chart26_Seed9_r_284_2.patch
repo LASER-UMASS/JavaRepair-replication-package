@@ -1,0 +1,19 @@
+--- ./original/org/jfree/chart/axis/Axis.java	2016-09-13 19:22:52.000000000 +0000
++++ ./variant41/org/jfree/chart/axis/Axis.java	2016-09-13 21:09:08.000000000 +0000
+@@ -1187,14 +1187,8 @@
+                     + insets.getRight());
+ 
+         }
+-        if (plotState != null && hotspot != null) {
+-            ChartRenderingInfo owner = plotState.getOwner();
+-                EntityCollection entities = owner.getEntityCollection();
+-                if (entities != null) {
+-                    entities.add(new AxisLabelEntity(this, hotspot, 
+-                            this.labelToolTip, this.labelURL));
+-                }
+-        }
++        if (plotState != null && hotspot != null)
++			this.visible = DEFAULT_AXIS_VISIBLE;
+         return state;
+ 
+     }
