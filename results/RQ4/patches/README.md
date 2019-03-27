@@ -9,6 +9,6 @@ For each defect, we have 5 data-points uniformly distributed between 1 and #fail
 and for each data-point we have 5 sets of failing tests sampled randomly. Following are 
 the details of data-points for each defect. 
 
-Chart 26, total #failing tests = 22, data-points = 4, 8, 13, 17, 22
-Closure 86, total #failing tests = 7, data-points = 1, 2, 4, 5, 7
-Closure 115, total #failing tests = 7, data-points = 1, 2, 4, 5, 7
+- Chart 26, total #failing tests = 22, data-points = 4, 8, 13, 17, 22
+- Closure 86, total #failing tests = 7, data-points = 1, 2, 4, 5, 7
+- Closure 115, total #failing tests = 7, data-points = 1, 2, 4, 5, 7
