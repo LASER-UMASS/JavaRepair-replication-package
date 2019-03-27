@@ -1,3 +1,3 @@
-To reproduce the results for RQ1, execute the command:
+To reproduce the results for RQ2, execute the command:
 
-`bash reproduce-rq1.sh ../../../results/RQ1/patch-quality-assessment/`
+`bash reproduce-rq2.sh ../../../results/RQ2/patch-quality-assessment/`
