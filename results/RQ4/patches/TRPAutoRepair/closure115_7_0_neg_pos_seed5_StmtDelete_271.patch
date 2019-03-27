@@ -1,0 +1,12 @@
+--- ./original/com/google/javascript/jscomp/FunctionInjector.java	2017-12-18 02:41:50.000000000 -0500
++++ ./variant56/com/google/javascript/jscomp/FunctionInjector.java	2017-12-18 03:45:39.000000000 -0500
+@@ -728,8 +728,7 @@
+       if (fnParam != null) {
+         if (cArg != null) {
+           if (hasSideEffects && NodeUtil.canBeSideEffected(cArg)) {
+-            return CanInlineResult.NO;
+-          }
++		}
+           // Check for arguments that are evaluated more than once.
+           // Note: Unlike block inlining, there it is not possible that a
+           // parameter reference will be in a loop.

@@ -1,0 +1,21 @@
+--- ./original/com/google/javascript/jscomp/NodeUtil.java	2017-12-21 16:03:04.000000000 -0500
++++ ./variant188/com/google/javascript/jscomp/NodeUtil.java	2017-12-21 22:45:45.000000000 -0500
+@@ -759,7 +759,17 @@
+ 
+       if (callNode.isOnlyModifiesThisCall()
+           && evaluatesToLocalValue(nameNode.getFirstChild())) {
+-        return false;
++        if (compiler != null && !compiler.hasRegExpGlobalReferences()) {
++			if (nameNode.getFirstChild().getType() == Token.REGEXP
++					&& REGEXP_METHODS.contains(nameNode.getLastChild().getString())) {
++				return false;
++			} else if (nameNode.getFirstChild().getType() == Token.STRING
++					&& STRING_REGEXP_METHODS.contains(nameNode.getLastChild().getString())) {
++				Node param = nameNode.getNext();
++				if (param != null && (param.getType() == Token.STRING || param.getType() == Token.REGEXP))
++					return false;
++			}
++		}
+       }
+ 
+       // Functions in the "Math" namespace have no side effects.

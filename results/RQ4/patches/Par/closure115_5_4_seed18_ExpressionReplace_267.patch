@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/FunctionInjector.java	2018-07-12 12:27:52.000000000 -0400
++++ ./variant24/com/google/javascript/jscomp/FunctionInjector.java	2018-07-14 16:34:32.000000000 -0400
+@@ -726,7 +726,7 @@
+     while (cArg != null || fnParam != null) {
+       // For each named parameter check if a mutable argument use more than one.
+       if (fnParam != null) {
+-        if (cArg != null) {
++        if (NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1) {
+           if (hasSideEffects && NodeUtil.canBeSideEffected(cArg)) {
+             return CanInlineResult.NO;
+           }

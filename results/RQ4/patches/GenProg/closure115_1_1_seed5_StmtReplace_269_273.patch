@@ -1,0 +1,27 @@
+--- ./original/com/google/javascript/jscomp/FunctionInjector.java	2018-05-20 20:39:30.000000000 -0400
++++ ./variant286/com/google/javascript/jscomp/FunctionInjector.java	2018-05-21 02:09:55.000000000 -0400
+@@ -726,19 +726,11 @@
+     while (cArg != null || fnParam != null) {
+       // For each named parameter check if a mutable argument use more than one.
+       if (fnParam != null) {
+-        if (cArg != null) {
+-          if (hasSideEffects && NodeUtil.canBeSideEffected(cArg)) {
+-            return CanInlineResult.NO;
+-          }
+-          // Check for arguments that are evaluated more than once.
+-          // Note: Unlike block inlining, there it is not possible that a
+-          // parameter reference will be in a loop.
+-          if (NodeUtil.mayEffectMutableState(cArg, compiler)
+-              && NodeUtil.getNameReferenceCount(
+-                  block, fnParam.getString()) > 1) {
+-            return CanInlineResult.NO;
+-          }
+-        }
++        if (cArg != null)
++			if (NodeUtil.mayEffectMutableState(cArg, compiler)
++					&& NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1) {
++				return CanInlineResult.NO;
++			}
+ 
+         // Move to the next name.
+         fnParam = fnParam.getNext();
