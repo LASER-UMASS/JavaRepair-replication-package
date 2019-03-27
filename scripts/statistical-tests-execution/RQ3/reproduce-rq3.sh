@@ -58,3 +58,4 @@ rm par_rq3_es3_es6_consolidated.csv
 rm par_rq3_es3_es6_consolidated_sorted.csv
 
 Rscript freq-distribution.R
+Rscript computeMLR.R
