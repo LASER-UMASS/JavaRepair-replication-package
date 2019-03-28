@@ -48,8 +48,6 @@ cat("mean quality improvement:", mean(gp_improvement), "\n")
 cat("median quality improvement:", median(gp_improvement), "\n")
 cat("max quality improvement:", max(gp_improvement), "\n")
 cat("number of defects evaluated:", length(unique(def_gp$defect)), "\n")
-cat(length(gp_improvement))
-
 
 pdf("gp_quality_improvement_subset.pdf")
 dtf <- data.frame(x = gp_quality$defect,y = gp_improvement)
