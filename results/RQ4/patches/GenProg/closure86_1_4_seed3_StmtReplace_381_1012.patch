@@ -1,0 +1,14 @@
+--- ./original/com/google/javascript/jscomp/NodeUtil.java	2018-05-20 20:39:16.000000000 -0400
++++ ./variant23/com/google/javascript/jscomp/NodeUtil.java	2018-05-21 05:19:55.000000000 -0400
+@@ -757,10 +757,7 @@
+         return false;
+       }
+ 
+-      if (callNode.isOnlyModifiesThisCall()
+-          && evaluatesToLocalValue(nameNode.getFirstChild())) {
+-        return false;
+-      }
++      nameNode.putBooleanProp(Node.IS_CONSTANT_NAME, true);
+ 
+       // Functions in the "Math" namespace have no side effects.
+       if (nameNode.getFirstChild().getType() == Token.NAME) {

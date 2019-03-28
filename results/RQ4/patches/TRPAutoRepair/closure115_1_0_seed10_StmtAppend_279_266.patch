@@ -1,0 +1,29 @@
+--- ./original/com/google/javascript/jscomp/FunctionInjector.java	2017-12-20 13:02:45.000000000 -0500
++++ ./variant57/com/google/javascript/jscomp/FunctionInjector.java	2017-12-20 14:55:32.000000000 -0500
+@@ -747,9 +747,23 @@
+       // For every call argument check for side-effects, even if there
+       // isn't a named parameter to match.
+       if (cArg != null) {
+-        if (NodeUtil.mayHaveSideEffects(cArg, compiler)) {
+-          return CanInlineResult.NO;
+-        }
++        {
++			if (NodeUtil.mayHaveSideEffects(cArg, compiler)) {
++				return CanInlineResult.NO;
++			}
++			if (fnParam != null) {
++				if (cArg != null) {
++					if (hasSideEffects && NodeUtil.canBeSideEffected(cArg)) {
++						return CanInlineResult.NO;
++					}
++					if (NodeUtil.mayEffectMutableState(cArg, compiler)
++							&& NodeUtil.getNameReferenceCount(block, fnParam.getString()) > 1) {
++						return CanInlineResult.NO;
++					}
++				}
++				fnParam = fnParam.getNext();
++			}
++		}
+         cArg = cArg.getNext();
+       }
+     }

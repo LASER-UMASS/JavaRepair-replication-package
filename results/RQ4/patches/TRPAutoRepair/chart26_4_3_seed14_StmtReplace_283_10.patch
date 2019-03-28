@@ -1,0 +1,18 @@
+--- ./original/org/jfree/chart/axis/Axis.java	2017-12-31 11:11:36.000000000 -0500
++++ ./variant26/org/jfree/chart/axis/Axis.java	2017-12-31 16:37:05.000000000 -0500
+@@ -1187,14 +1187,7 @@
+                     + insets.getRight());
+ 
+         }
+-        if (plotState != null && hotspot != null) {
+-            ChartRenderingInfo owner = plotState.getOwner();
+-                EntityCollection entities = owner.getEntityCollection();
+-                if (entities != null) {
+-                    entities.add(new AxisLabelEntity(this, hotspot, 
+-                            this.labelToolTip, this.labelURL));
+-                }
+-        }
++        this.axisLinePaint = DEFAULT_AXIS_LINE_PAINT;
+         return state;
+ 
+     }
