@@ -27,9 +27,6 @@ import xml.etree.ElementTree
 import shutil
 import time
 
-#USAGE
-#python evaluateGeneratedPatchesIn10SubTestSuites.py ExamplesCheckedOut  /home/mausoto/JavaRepair-results/patches/GenProg/RQ0/  /home/mausoto/JavaRepair-results/generatedTestSuites/Evosuite103Budget1800/
-
 d4jHome = os.environ['D4J_HOME']
 defects4jCommand = d4jHome + "/framework/bin/defects4j"
 

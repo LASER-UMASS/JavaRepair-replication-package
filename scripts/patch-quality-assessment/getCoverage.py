@@ -1,6 +1,7 @@
 #/bin/python
 
 #The purpose of this script is to collect branch and line coverage data of a test suite of the class and modified methods in the selected bugs
+#This should be ran with each of the 10 seeds per each bug
 
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
@@ -21,6 +22,7 @@
 # --coverage is a coverage file
 
 # CMD TO RUN: 
+# e.g., python getCoverage.py ExamplesCheckedOut2 /home/mausoto/tsePaperScripts/NewRepo/JavaRepair-results/test_suites/Evosuite106Budget1800/ HUMAN --many aFileWithAListOfBugs.csv --seed $i
 # e.g., python getCoverage.py ExamplesCheckedOut1 /home/mausoto/defects4jJava8/defects4j/generatedTestSuites/allTestSuites/ 20180215 --project Closure --bug 83 --seed 1
 
 # OUTPUT:
