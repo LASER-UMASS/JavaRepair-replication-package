@@ -1,6 +1,7 @@
 #/bin/python
 
 #The purpose of this script is to collect branch and line coverage data of a test suite of the class and modified methods in the selected bugs
+#This should be ran with each of the 10 seeds per each bug
 
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
