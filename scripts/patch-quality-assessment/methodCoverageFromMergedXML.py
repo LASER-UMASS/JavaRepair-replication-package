@@ -1,6 +1,7 @@
 #/bin/python
 
-#The purpose of this script is to 
+#The purpose of this script is to extract the coverage from the xml file (merged several test suite seeds)
+#This script is meant to be ran after mergeSeveralSeedsCovFiles.sh
 
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
@@ -71,7 +72,7 @@ def getOptions():
 
 def main():
 	args=getOptions()
-	subprocess.call("rm "+ args.destinationFile, shell=True)
+	subprocess.call("rm -f "+ args.destinationFile, shell=True)
 	if args.human is None:
 		cmd = "echo \"Project,Bug, Patch Seed, Mutation, Class Line Cov, Class Branch Cov, Method changed, Method Line Cov, Method Branch Cov\" >> "+ args.destinationFile
 	else:

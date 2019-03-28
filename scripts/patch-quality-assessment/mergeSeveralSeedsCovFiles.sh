@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #The purpose of this script is to merge the coverages from different test suite seeds
-#This script is meant to be ran after getCoverage.py
+#This script is meant to be ran after getCoverage.py with all seeds
 
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
@@ -19,7 +19,9 @@
 #Example of usage:  ./mergeSeveralSeedsCovFiles.sh H /home/mausoto/QualityEvaluationDefects4jGenProg/AllBugsFixedByAllApproaches.csv HUMAN
 
 # OUTPUT:
+# This script creates a file in D4J_HOME/MergedCoverages/ID/coverage.xml that describes the coverage of all seeds
 # This script copies all the folders with results, with xml and ser files to a central folder in D4J_HOME/MergedCoverages/
+
 
 D4JLOCATION="$D4J_HOME"
 HorG="$1"
@@ -33,8 +35,8 @@ moveFoldersToOutputFolder(){
 	do	
 		com="ls -d "$D4JLOCATION"/ExamplesCheckedOut"$TSSEED"/"$ID"*TSSeed"$TSSEED"*/"
 		FOLDERTOMOVE=$($com)
-		com="cp -r "$FOLDERTOMOVE" /home/mausoto/deletePlease/"
-		eval $com
+		#com="cp -r "$FOLDERTOMOVE" /home/mausoto/deletePlease/"
+		#eval $com
 		#rm -rf $OUTPUTFOLDER"/"$ID"TSSeed"$TSSEED
 		com="cp -r "$FOLDERTOMOVE" "$OUTPUTFOLDER"/"$ID"TSSeed"$TSSEED
 		echo $com

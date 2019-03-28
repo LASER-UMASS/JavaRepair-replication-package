@@ -21,6 +21,7 @@
 # --coverage is a coverage file
 
 # CMD TO RUN: 
+# e.g., python getCoverage.py ExamplesCheckedOut2 /home/mausoto/tsePaperScripts/NewRepo/JavaRepair-results/test_suites/Evosuite106Budget1800/ HUMAN --many aFileWithAListOfBugs.csv --seed $i
 # e.g., python getCoverage.py ExamplesCheckedOut1 /home/mausoto/defects4jJava8/defects4j/generatedTestSuites/allTestSuites/ 20180215 --project Closure --bug 83 --seed 1
 
 # OUTPUT:
