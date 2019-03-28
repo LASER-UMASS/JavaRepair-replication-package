@@ -5,25 +5,27 @@
 import sys
 
 f = open(sys.argv[1])
-c = 0
 r1 = ""
 r2 = ""
+defect_result = {}
 out = open("results.csv", "w")
 out.write("project,defect,totaltests,failingtests,passingtests,failpercentage,passpercentage\n")
 
 for line in f:
 	if "project" in line:
-		continue
+		continue	
+	defect = line.split(",")[1].strip()
+	
+	if defect not in defect_result:
+		defect_result[defect] = line.strip()
 	else:
-		c += 1
-	if c%2 != 0:
-		r1 = line.split(",")
+		r1 = defect_result[defect].split(",")
 		project1 = r1[0]
 		defect1 = r1[1]
 		totaltests1 = float(r1[2].strip())
 		failingtests1 = float(r1[3].strip())
 		passingtests1 = float(r1[4].strip())
-	elif c%2 == 0:
+
 		r2 = line.split(",")
 		project2 = r2[0]
 		defect2 = r2[1]
@@ -38,8 +40,4 @@ for line in f:
 			failpercentage = (failingtests / totaltests) * 100.0
 			passpercentage = (passingtests / totaltests) * 100.0
 			out.write(project2 + "," + defect2 + "," + str(totaltests) + "," + str(failingtests) + "," + str(passingtests) + "," + str(failpercentage) + "," + str(passpercentage) + "\n")
-		else:	
-			print("Consecutive duplicates not found!")
-			print(project1, project2, defect1, defect2)
-			break
-		
+	
