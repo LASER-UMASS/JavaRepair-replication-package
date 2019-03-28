@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:51:11.000000000 -0500
++++ ./variant24/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 03:30:05.000000000 -0500
+@@ -1080,7 +1080,8 @@
+                 if ((dMin >= 0) && (dMin1 > 0)) {
+                     // the shift was good
+                     updateSigma(tau);
+-                    return deflatedEnd;
++                    {
++					}
+                 } else if ((dMin < 0.0) &&
+                            (dMin1 > 0.0) &&
+                            (work[4 * deflatedEnd - 5 - pingPong] < TOLERANCE * (sigma + dN1)) &&

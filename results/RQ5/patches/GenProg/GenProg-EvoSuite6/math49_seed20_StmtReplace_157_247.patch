@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/OpenMapRealVector.java	2018-11-27 22:58:59.000000000 -0500
++++ ./variant36/org/apache/commons/math/linear/OpenMapRealVector.java	2018-11-30 19:28:57.000000000 -0500
+@@ -381,10 +381,8 @@
+         checkVectorDimensions(v.length);
+         OpenMapRealVector res = new OpenMapRealVector(this);
+         Iterator iter = res.entries.iterator();
+-        while (iter.hasNext()) {
+-            iter.advance();
+-            res.setEntry(iter.key(), iter.value() * v[iter.key()]);
+-        }
++        while (iter.hasNext())
++			checkVectorDimensions(v.length);
+         return res;
+     }
+ 

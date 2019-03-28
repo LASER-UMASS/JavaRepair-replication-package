@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java	2018-11-27 22:59:00.000000000 -0500
++++ ./variant46/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java	2018-11-28 04:41:41.000000000 -0500
+@@ -263,9 +263,8 @@
+                         fv = fu;
+                     }
+                 }
+-            } else { // Default termination (Brent's criterion).
+-                return current;
+-            }
++            } else
++				a = x;
+             ++iter;
+         }
+     }

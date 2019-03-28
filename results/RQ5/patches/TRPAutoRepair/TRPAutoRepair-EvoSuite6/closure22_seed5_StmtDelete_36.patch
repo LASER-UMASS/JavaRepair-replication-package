@@ -1,0 +1,18 @@
+--- ./original/com/google/javascript/jscomp/CheckSideEffects.java	2018-11-27 22:34:52.000000000 -0500
++++ ./variant26/com/google/javascript/jscomp/CheckSideEffects.java	2018-11-27 23:28:16.000000000 -0500
+@@ -119,13 +119,8 @@
+             break;
+         }
+       }
+-    } else if (parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+-      if (parent.getType() == Token.FOR && parent.getChildCount() == 4 && (n == parent.getFirstChild() ||
+-           n == parent.getFirstChild().getNext().getNext())) {
+-      } else {
+-      return;
+-      }
+-    }
++    } else {
++	}
+ 
+     boolean isResultUsed = NodeUtil.isExpressionResultUsed(n);
+     boolean isSimpleOp = NodeUtil.isSimpleOperatorType(n.getType());

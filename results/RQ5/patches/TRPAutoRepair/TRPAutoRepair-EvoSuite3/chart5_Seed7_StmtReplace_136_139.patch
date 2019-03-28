@@ -1,0 +1,16 @@
+--- ./original/org/jfree/data/xy/XYSeries.java	2017-12-26 17:25:55.000000000 -0500
++++ ./variant116/org/jfree/data/xy/XYSeries.java	2017-12-26 18:55:39.000000000 -0500
+@@ -560,10 +560,9 @@
+             // Collections.binarySearch() and tells us where to insert the
+             // new item...otherwise it will be just -1 and we should just
+             // append the value to the list...
+-            if (this.autoSort) {
+-                this.data.add(-index - 1, new XYDataItem(x, y));
+-            }
+-            else {
++            if (this.autoSort)
++				this.data.add(new XYDataItem(x, y));
++			else {
+                 this.data.add(new XYDataItem(x, y));
+             }
+             // check if this addition will exceed the maximum item count...

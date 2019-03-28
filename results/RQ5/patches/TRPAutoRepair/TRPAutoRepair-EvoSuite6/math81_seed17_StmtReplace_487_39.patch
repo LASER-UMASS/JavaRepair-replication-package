@@ -1,0 +1,24 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:39:47.000000000 -0500
++++ ./variant23/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 12:47:55.000000000 -0500
+@@ -1049,19 +1049,8 @@
+         final int l = 4 * deflatedEnd + pingPong - 1;
+ 
+         // step 2: flip array if needed
+-        if ((dMin <= 0) || (deflatedEnd < end)) {
+-            if (flipIfWarranted(deflatedEnd, 1)) {
+-                dMin2 = Math.min(dMin2, work[l - 1]);
+-                work[l - 1] =
+-                    Math.min(work[l - 1],
+-                             Math.min(work[3 + pingPong], work[7 + pingPong]));
+-                work[l - 2 * pingPong] =
+-                    Math.min(work[l - 2 * pingPong],
+-                             Math.min(work[6 + pingPong], work[6 + pingPong]));
+-                qMax  = Math.max(qMax, Math.max(work[3 + pingPong], work[7 + pingPong]));
+-                dMin  = -0.0;
+-            }
+-        }
++        if ((dMin <= 0) || (deflatedEnd < end))
++			findEigenvalues();
+ 
+         if ((dMin < 0) ||
+             (MathUtils.SAFE_MIN * qMax < Math.min(work[l - 1],

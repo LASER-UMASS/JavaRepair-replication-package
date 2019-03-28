@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:51:51.000000000 -0500
++++ ./variant19/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 14:11:08.000000000 -0500
+@@ -847,7 +847,10 @@
+         dMin1 = 0;
+         dMin2 = 0;
+         dN    = 0;
+-        dN1   = 0;
++        {
++			dN1 = 0;
++			decompose();
++		}
+         dN2   = 0;
+         tau   = 0;
+ 

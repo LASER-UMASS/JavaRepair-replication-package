@@ -1,0 +1,14 @@
+--- ./original/org/apache/commons/lang/NumberUtils.java	2018-11-27 22:54:11.000000000 -0500
++++ ./variant194/org/apache/commons/lang/NumberUtils.java	2018-11-28 09:14:14.000000000 -0500
+@@ -298,9 +298,8 @@
+             return true;
+         }
+         for (int i = s.length() - 1; i >= 0; i--) {
+-            if (s.charAt(i) != '0') {
+-                return false;
+-            }
++            if (s.charAt(i) != '0')
++				i++;
+         }
+         return s.length() > 0;
+     }

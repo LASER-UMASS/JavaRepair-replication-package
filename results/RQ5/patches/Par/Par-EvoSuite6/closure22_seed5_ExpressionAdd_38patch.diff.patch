@@ -1,0 +1,11 @@
+--- ./original/com/google/javascript/jscomp/CheckSideEffects.java	2018-12-14 18:55:24.000000000 -0500
++++ ./variant237/com/google/javascript/jscomp/CheckSideEffects.java	2018-12-15 01:36:21.000000000 -0500
+@@ -121,7 +121,7 @@
+       }
+     } else if (parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+       if (parent.getType() == Token.FOR && parent.getChildCount() == 4 && (n == parent.getFirstChild() ||
+-           n == parent.getFirstChild().getNext().getNext())) {
++           n == parent.getFirstChild().getNext().getNext()) || parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+       } else {
+       return;
+       }

@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/lang3/ClassUtils.java	2017-12-27 14:38:34.000000000 -0500
++++ ./variant30/org/apache/commons/lang3/ClassUtils.java	2017-12-27 16:12:45.000000000 -0500
+@@ -906,9 +906,10 @@
+             return ArrayUtils.EMPTY_CLASS_ARRAY;
+         }
+         Class<?>[] classes = new Class[array.length];
+-        for (int i = 0; i < array.length; i++) {
+-            classes[i] = array[i].getClass();
+-        }
++        for (int i = 0; i < array.length; i++)
++			if (array.length == 0) {
++				return ArrayUtils.EMPTY_CLASS_ARRAY;
++			}
+         return classes;
+     }
+ 
