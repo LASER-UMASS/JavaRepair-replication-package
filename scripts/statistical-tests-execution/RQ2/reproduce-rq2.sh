@@ -59,3 +59,11 @@ rm defective_rq2_es3_es6_consolidated_sorted.csv
 
 Rscript quality-stats.R
 Rscript compare-quality-with-defective.R
+
+
+rm gp_rq2_overall.csv
+rm par_rq2_overall.csv
+rm trp_rq2_overall.csv
+rm defective_rq2_overall.csv
+
+
