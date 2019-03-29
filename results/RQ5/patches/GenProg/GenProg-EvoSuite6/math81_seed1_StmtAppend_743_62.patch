@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:51:11.000000000 -0500
++++ ./variant34/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 23:40:21.000000000 -0500
+@@ -1436,7 +1436,12 @@
+         // a negative dMin forces the shift to take that absolute value
+         // tType records the type of shift.
+         if (dMin <= 0.0) {
+-            tau = -dMin;
++            {
++				tau = -dMin;
++				{
++					findEigenVectors();
++				}
++			}
+             tType = -1;
+             return;
+         }

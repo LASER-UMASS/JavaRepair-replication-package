@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-11-27 22:41:17.000000000 -0500
++++ ./variant39/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2018-11-28 06:50:02.000000000 -0500
+@@ -258,8 +258,7 @@
+                     // is a NaN (which occurs when some sampling points share the same y)
+                     // we try again with a lower interpolation order
+                     if (signChangeIndex - start >= end - signChangeIndex) {
+-                        // we have more points before the sign change, drop the lowest point
+-                        ++start;
++                        nbPoints--;
+                     } else {
+                         // we have more points after sign change, drop the highest point
+                         --end;

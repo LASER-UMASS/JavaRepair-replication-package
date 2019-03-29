@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-01-26 11:16:54.000000000 -0500
++++ ./variant16/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-01-26 11:34:17.000000000 -0500
+@@ -419,8 +419,7 @@
+         int start = pos.getIndex();
+         char[] c = pattern.toCharArray();
+         if (escapingOn && c[start] == QUOTE) {
+-            return appendTo == null ? null : appendTo.append(QUOTE);
+-        }
++		}
+         int lastHold = start;
+         for (int i = pos.getIndex(); i < pattern.length(); i++) {
+             if (escapingOn && pattern.substring(i).startsWith(ESCAPED_QUOTE)) {

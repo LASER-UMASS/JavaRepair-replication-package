@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:51:51.000000000 -0500
++++ ./variant93/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 07:02:05.000000000 -0500
+@@ -836,8 +836,10 @@
+             return;
+         }
+ 
+-        // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
++        {
++			flipIfWarranted(n, 2);
++			findEigenvalues();
++		}
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);

@@ -1,0 +1,12 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:51:51.000000000 -0500
++++ ./variant48/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 18:58:57.000000000 -0500
+@@ -856,8 +856,7 @@
+         int n0 = n;
+         while (n0 > 0) {
+ 
+-            // retrieve shift that was temporarily stored as a negative off-diagonal element
+-            sigma    = (n0 == n) ? 0 : -work[4 * n0 - 2];
++            findEigenvalues();
+             sigmaLow = 0;
+ 
+             // find start of a new split segment to process

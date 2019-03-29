@@ -1,0 +1,21 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:35:43.000000000 -0500
++++ ./variant319/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 03:06:58.000000000 -0500
+@@ -1202,8 +1202,16 @@
+             final double range = right - left;
+             if ((range < absoluteTolerance) ||
+                 (range < relativeTolerance * Math.max(Math.abs(left), Math.abs(right)))) {
+-                // search has converged
+-                break;
++                {
++					if (eigenvectors == null) {
++						findEigenVectors();
++					}
++					final int m = eigenvectors.length;
++					cachedVt = MatrixUtils.createRealMatrix(m, m);
++					for (int k = 0; k < m; ++k) {
++						cachedVt.setRowVector(k, eigenvectors[k]);
++					}
++				}
+             }
+ 
+             final double middle = 0.5 * (left + right);

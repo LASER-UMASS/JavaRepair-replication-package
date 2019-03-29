@@ -1,0 +1,51 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:51:11.000000000 -0500
++++ ./variant40/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 15:52:36.000000000 -0500
+@@ -1331,47 +1331,7 @@
+         double d = work[4 * start + pingPong];
+         dMin = d;
+ 
+-        if (pingPong == 0) {
+-            for (int j4 = 4 * start + 3; j4 < 4 * (end - 3); j4 += 4) {
+-                work[j4 - 2] = d + work[j4 - 1];
+-                if (work[j4 - 2] == 0.0) {
+-                    work[j4] = 0.0;
+-                    d = work[j4 + 1];
+-                    dMin = d;
+-                    eMin = 0.0;
+-                } else if ((MathUtils.SAFE_MIN * work[j4 + 1] < work[j4 - 2]) &&
+-                           (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4 + 1])) {
+-                    final double tmp = work[j4 + 1] / work[j4 - 2];
+-                    work[j4] = work[j4 - 1] * tmp;
+-                    d *= tmp;
+-                } else {
+-                    work[j4] = work[j4 + 1] * (work[j4 - 1] / work[j4 - 2]);
+-                    d *= work[j4 + 1] / work[j4 - 2];
+-                }
+-                dMin = Math.min(dMin, d);
+-                eMin = Math.min(eMin, work[j4]);
+-            }
+-        } else {
+-            for (int j4 = 4 * start + 3; j4 < 4 * (end - 3); j4 += 4) {
+-                work[j4 - 3] = d + work[j4];
+-                if (work[j4 - 3] == 0.0) {
+-                    work[j4 - 1] = 0.0;
+-                    d = work[j4 + 2];
+-                    dMin = d;
+-                    eMin = 0.0;
+-                } else if ((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) &&
+-                           (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2])) {
+-                    final double tmp = work[j4 + 2] / work[j4 - 3];
+-                    work[j4 - 1] = work[j4] * tmp;
+-                    d *= tmp;
+-                } else {
+-                    work[j4 - 1] = work[j4 + 2] * (work[j4] / work[j4 - 3]);
+-                    d *= work[j4 + 2] / work[j4 - 3];
+-                }
+-                dMin = Math.min(dMin, d);
+-                eMin = Math.min(eMin, work[j4 - 1]);
+-            }
+-        }
++        decompose();
+ 
+         // Unroll last two steps
+         dN2   = d;

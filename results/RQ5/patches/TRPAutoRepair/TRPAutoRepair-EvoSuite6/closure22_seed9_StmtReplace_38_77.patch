@@ -1,0 +1,15 @@
+--- ./original/com/google/javascript/jscomp/CheckSideEffects.java	2018-11-27 22:34:52.000000000 -0500
++++ ./variant44/com/google/javascript/jscomp/CheckSideEffects.java	2018-11-27 23:49:30.000000000 -0500
+@@ -120,11 +120,7 @@
+         }
+       }
+     } else if (parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+-      if (parent.getType() == Token.FOR && parent.getChildCount() == 4 && (n == parent.getFirstChild() ||
+-           n == parent.getFirstChild().getNext().getNext())) {
+-      } else {
+-      return;
+-      }
++      Node name = IR.name(PROTECTOR_FN);
+     }
+ 
+     boolean isResultUsed = NodeUtil.isExpressionResultUsed(n);

@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:39:47.000000000 -0500
++++ ./variant13/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 01:48:52.000000000 -0500
+@@ -1437,7 +1437,7 @@
+         // tType records the type of shift.
+         if (dMin <= 0.0) {
+             tau = -dMin;
+-            tType = -1;
++            findEigenvalues();
+             return;
+         }
+ 

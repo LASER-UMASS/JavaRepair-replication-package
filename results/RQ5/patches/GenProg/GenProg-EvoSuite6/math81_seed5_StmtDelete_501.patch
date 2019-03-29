@@ -1,0 +1,45 @@
+--- ./original/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-27 22:51:11.000000000 -0500
++++ ./variant30/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-28 02:12:39.000000000 -0500
+@@ -1076,40 +1076,8 @@
+                 // perform one dqds step with the chosen shift
+                 dqds(start, deflatedEnd);
+ 
+-                // check result of the dqds step
+-                if ((dMin >= 0) && (dMin1 > 0)) {
+-                    // the shift was good
+-                    updateSigma(tau);
+-                    return deflatedEnd;
+-                } else if ((dMin < 0.0) &&
+-                           (dMin1 > 0.0) &&
+-                           (work[4 * deflatedEnd - 5 - pingPong] < TOLERANCE * (sigma + dN1)) &&
+-                           (Math.abs(dN) < TOLERANCE * sigma)) {
+-                   // convergence hidden by negative DN.
+-                    work[4 * deflatedEnd - 3 - pingPong] = 0.0;
+-                    dMin = 0.0;
+-                    updateSigma(tau);
+-                    return deflatedEnd;
+-                } else if (dMin < 0.0) {
+-                    // tau too big. Select new tau and try again.
+-                    if (tType < -22) {
+-                        // failed twice. Play it safe.
+-                        tau = 0.0;
+-                    } else if (dMin1 > 0.0) {
+-                        // late failure. Gives excellent shift.
+-                        tau = (tau + dMin) * (1.0 - 2.0 * MathUtils.EPSILON);
+-                        tType -= 11;
+-                    } else {
+-                        // early failure. Divide by 4.
+-                        tau *= 0.25;
+-                        tType -= 12;
+-                    }
+-                } else if (Double.isNaN(dMin)) {
+-                    tau = 0.0;
+-                } else {
+-                    // possible underflow. Play it safe.
+-                    loop = false;
+-                }
++                {
++				}
+             }
+ 
+         }

@@ -1,0 +1,12 @@
+--- ./original/com/google/javascript/jscomp/CheckSideEffects.java	2018-11-27 22:54:12.000000000 -0500
++++ ./variant18/com/google/javascript/jscomp/CheckSideEffects.java	2018-11-27 23:45:49.000000000 -0500
+@@ -123,7 +123,8 @@
+       if (parent.getType() == Token.FOR && parent.getChildCount() == 4 && (n == parent.getFirstChild() ||
+            n == parent.getFirstChild().getNext().getNext())) {
+       } else {
+-      return;
++      {
++	}
+       }
+     }
+ 

@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/math/complex/Complex.java	2018-05-10 11:53:02.000000000 -0400
++++ ./variant24/org/apache/commons/math/complex/Complex.java	2018-05-13 08:08:46.000000000 -0400
+@@ -149,7 +149,12 @@
+      */
+     public Complex add(Complex rhs)
+         throws NullArgumentException {
+-        MathUtils.checkNotNull(rhs);
++        {
++			MathUtils.checkNotNull(rhs);
++			if (isNaN || rhs.isNaN) {
++				return NaN;
++			}
++		}
+         return createComplex(real + rhs.getReal(),
+             imaginary + rhs.getImaginary());
+     }
