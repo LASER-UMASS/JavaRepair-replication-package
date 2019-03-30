@@ -1,6 +1,7 @@
 #/bin/python
 
 #The purpose of this script is to determine the behavior of the N version patches
+#This script is meant to be ran after evaluatePatchesIn10TS.py
 
 #Preconditions:
 #There should be a folder called generatedTestSuites in the defects4j folder where the test suites and their output will be stored.
