@@ -1,0 +1,76 @@
+#Sat Feb 11 02:15:59 EST 2017
+negativeTestWeight=2.0
+classSourceFolder=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/target/classes
+model=default
+sourceVersion=1.6
+srcClassPath=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/target/classes
+sampleStrategy=variant
+popsize=40
+regenPaths=false
+posCoverageFile=coverage.path.pos
+continue=false
+edits=FUNREP;PARREP;PARADD;PARREM;EXPREP;EXPADD;EXPREM;NULLCHECK;OBJINIT;RANGECHECK;SIZECHECK;CASTCHECK
+negCoverageFile=coverage.path.neg
+workingDir=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/
+clearTestCache=false
+skipFailedSanity=true
+sample=.10
+oracleGenome=
+justTestingFaultLoc=false
+faultLocStrategy=standardPathFile
+crossp=0.5
+pMutation=1
+generations=10
+javaVM=/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/bin/java
+positiveTests=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/pos.tests
+seed=9
+negativePathWeight=1.0
+fixStrategy=classScope
+compileCommand=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/runCompile.sh
+allowCoverageFail=false
+targetClassName=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/bugfiles.txt
+classTestFolder=
+modelPath=OVERALLModel.txt
+javaRuntime=java.lang.Runtime@5d099f62
+sanity=no
+positivePathWeight=0.1
+jacocoPath=/home/ubuntu/genprog4java/lib/jacocoagent.jar
+negativeTests=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/neg.tests
+pathToFileHumanInjectedFaultLoc=fileHumanInjectedFaultLoc.txt
+outputDir=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/tmp
+testClassPath=/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/target/classes\:/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/target/test-classes\:/home/ubuntu/defects4j/framework/projects/lib/junit-4.11.jar\:/home/ubuntu/defects4j/ExamplesCheckedOut/math85Buggy/lib/junit-4.4.jar
+faultStrategy=classScope
+sourceDir=src/java
+checkSpace=false
+search=ga
+globalExtension=.java
+maxVariants=50
+libs=/home/ubuntu/genprog4java/lib/junittestrunner.jar\:/home/ubuntu/genprog4java/lib/commons-io-1.4.jar\:/home/ubuntu/genprog4java/lib/junit-4.12.jar\:/home/ubuntu/genprog4java/lib/hamcrest-core-1.3.jar
+crossover=onepoint
+0 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+Deserialized fitnessCache HashMap
+723 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@89526a9c
+724 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+744 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+744 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+
+5813 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 original (stored at: variant0)
+14226 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ExpressionAdd(34: (fa * fb >= 0.0) || (initial < lowerBound || initial > upperBound || lowerBound >= upperBound)) (stored at: variant1)
+22653 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ExpressionAdd(34: (fa * fb >= 0.0) || (initial < lowerBound || initial > upperBound)) (stored at: variant2)
+29089 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ParameterReplacer(21: (initial) -->(upperBound)) (stored at: variant3)
+35977 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ParameterReplacer(21: (lowerBound) -->(upperBound)) (stored at: variant4)
+44243 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ParameterReplacer(8: (absoluteAccuracy) -->(x0)) (stored at: variant5)
+51405 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ParameterReplacer(4: (x1) -->(x0)) (stored at: variant6)
+55832 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 19.0 Object initializer (stored at: variant7)
+63972 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ParameterReplacer(9: (x1) -->(x0)) (stored at: variant8)
+70503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ParameterReplacer(21: (upperBound) -->(initial)) (stored at: variant9)
+79110 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 20.0 ExpressionReplace(13: (function == null) -->(lowerBound >= upperBound)) (stored at: variant10)
+86260 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 19.0 ParameterReplacer(8: (absoluteAccuracy) -->(x0)) (stored at: variant11)
+86264 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 609.0 ExpressionReplace(34: (fa * fb >= 0.0) -->(function == null)) (stored at: )
+86264 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: ExpressionReplace(34: (fa * fb >= 0.0) -->(function == null)) (in )
+
+86336 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+86337 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 86
+
