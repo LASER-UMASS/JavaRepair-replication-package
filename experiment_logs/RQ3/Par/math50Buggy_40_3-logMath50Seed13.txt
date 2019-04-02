@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 15 09:35:17 EDT 2018
+22 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 13:12:28 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math50_40_3/math50Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math50_40_3/math50Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,23 +50,52 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-73 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+110 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-501 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@aae2de76
-5501 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5521 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10522 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+782 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@aae2de76
+5782 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+5810 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+10810 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10556 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 original (stored at: )
-10587 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionReplace(66: (f1 <= 0) -->(!inverted)) (stored at: )
-13553 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionReplace(65: (f1 <= 0) -->(inverted)) (stored at: variant0)
-16186 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(76: (!inverted) && (f1 >= 0)) (stored at: variant1)
-19106 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(39: (fx == 0.0) || (f1 * fx < 0)) (stored at: variant2)
-22146 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 12.0 ExpressionReplace(42: (x == x1) -->(f1 >= 0)) (stored at: variant3)
-22146 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: ExpressionReplace(42: (x == x1) -->(f1 >= 0)) (in variant3)
+10865 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 original (stored at: )
+14386 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(66: (inverted) -->(FastMath.abs(f1) <= ftol)) (stored at: variant0)
+17781 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(65: (inverted) -->(f1 <= 0)) (stored at: variant1)
+17790 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(76: (!inverted) && (f1 >= 0)) (stored at: )
+20658 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(39: (fx == 0.0) || (f1 * fx < 0)) (stored at: variant2)
+24097 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(42: (f1 * fx < 0) -->(f1 <= 0)) (stored at: variant3)
+24101 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (x1) -->(atol)) (stored at: )
+24103 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ParameterReplacer(38: (x) -->(x1)) (stored at: )
+24107 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(66: (!inverted) || (!inverted)) (stored at: )
+27546 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(76: (!inverted) || (f1 <= 0)) (stored at: variant4)
+27548 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (x1) -->(atol)) (stored at: )
+27551 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(30: (x0) -->(x1)) (stored at: )
+27553 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(57: (atol) -->(x0)) (stored at: )
+27556 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 9.0 ParameterReplacer(23: (x1) -->(x0)) (stored at: )
+30966 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(102: ((f1 <= 0)) && (f1 >= 0)) (stored at: variant5)
+33782 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(67: (f1 >= 0) && (!inverted)) (stored at: variant6)
+37222 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(56: (x == x1) && (inverted)) (stored at: variant7)
+37227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(66: (f1 <= 0) && (inverted)) (stored at: )
+37229 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (atol) -->(x1)) (stored at: )
+37231 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(22: (x0) -->(x1)) (stored at: )
+37234 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(30: (x0) -->(x1)) (stored at: )
+40648 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(18: (min) -->(startValue)) (stored at: variant8)
+44013 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(39: (fx == 0.0) && (inverted)) (stored at: variant9)
+44016 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (atol) -->(x0)) (stored at: )
+44018 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (x1) -->(atol)) (stored at: )
+44020 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(57: (atol) -->(x1)) (stored at: )
+44022 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (x1) -->(x0)) (stored at: )
+46894 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(92: ((f1 >= 0)) || (f1 <= 0)) (stored at: variant10)
+46896 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(57: (x1) -->(x0)) (stored at: )
+46897 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (x1) -->(atol)) (stored at: )
+46899 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (atol) -->(x1)) (stored at: )
+46900 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(59: (x0) -->(x1)) (stored at: )
+46901 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(58: (x1) -->(x0)) (stored at: )
+46903 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(22: (x0) -->(x1)) (stored at: )
+46904 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 12.0 ParameterReplacer(56: (x0) -->(atol)) (stored at: )
+46904 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: ParameterReplacer(56: (x0) -->(atol)) (in )
 
-22154 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-22154 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 22
+46914 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+46914 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 46
 

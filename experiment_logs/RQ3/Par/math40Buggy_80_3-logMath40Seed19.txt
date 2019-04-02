@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 15 07:21:55 EDT 2018
+34 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 14:27:54 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,38 +50,435 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-70 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+125 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-500 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@f6eaba64
-5500 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5520 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10521 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+862 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@f6eaba64
+5863 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+5899 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+10899 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10575 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 original (stored at: )
-10605 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(124: (signChangeIndex >= (x.length + 1) / 2) -->(nextY * yA <= 0)) (stored at: )
-10615 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 RangeChecker(155) (stored at: )
-13220 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionAdd(108: (Double.isNaN(nextX)) && (nbPoints > 2)) (stored at: variant0)
-13222 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(98: (end - start) -->(start)) (stored at: )
-13224 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(31: (x[1]) -->(x[0])) (stored at: )
-15476 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionReplace(100: (!((nextX > xA) && (nextX < xB))) -->((xB - xA) <= xTol)) (stored at: variant1)
-15481 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 RangeChecker(155) (stored at: )
-16597 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
-16597 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(42: (y[1] * y[2] < 0) && ((xB - xA) <= xTol)) at variant2 fails to compile
+11006 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 original (stored at: )
+11050 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(124: (signChangeIndex >= (x.length + 1) / 2) -->(nextY * yA <= 0)) (stored at: )
+11066 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(155) (stored at: )
+14841 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(108: (Double.isNaN(nextX)) && (nbPoints > 2)) (stored at: variant0)
+14843 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(98: (x) -->(tmpX)) (stored at: )
+14846 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(31: (x[0]) -->(x[1])) (stored at: )
+18381 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(100: (!((nextX > xA) && (nextX < xB))) -->((xB - xA) <= xTol)) (stored at: variant1)
+18387 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(155) (stored at: )
+20198 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+20198 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(42: (y[0] * y[1] < 0) && (FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) at variant2 fails to compile
 
-16597 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(42: (y[1] * y[2] < 0) && ((xB - xA) <= xTol)) (stored at: variant2)
-16601 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 RangeChecker(155) (stored at: )
-16603 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(51: (y[1] * y[2] < 0) -->(FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: )
-16605 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionReplace(71: (absYA < absYB) -->((xB - xA) <= xTol)) (stored at: )
-16607 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(48: (y[2]) -->(x[2])) (stored at: )
-19224 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionAdd(136: (nextY * yA <= 0) || (absYA < absYB)) (stored at: variant3)
-21491 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(37: (0.0) -->(y[1])) (stored at: variant4)
-21493 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(60: (yA) -->(xA)) (stored at: )
-21497 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 RangeChecker(152) (stored at: )
-21498 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 6.0 ParameterReplacer(99: (start) -->(1)) (stored at: )
-21498 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: ParameterReplacer(99: (start) -->(1)) (in )
+20198 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(42: (y[0] * y[1] < 0) && (FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: variant2)
+20206 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(155) (stored at: )
+22083 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+22083 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(51: (y[1] * y[2] < 0) -->(FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) at variant3 fails to compile
 
-21515 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-21515 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 21
+22083 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(51: (y[1] * y[2] < 0) -->(FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: variant3)
+22086 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(71: (absYA < absYB) -->((xB - xA) <= xTol)) (stored at: )
+22087 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(48: (0.0) -->(x[2])) (stored at: )
+25746 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(136: (nextY * yA <= 0) || (absYA < absYB)) (stored at: variant4)
+29319 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(37: (0.0) -->(y[1])) (stored at: variant5)
+29334 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(60: (yA) -->(xA)) (stored at: )
+29340 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(152) (stored at: )
+29342 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(99: (y) -->(x)) (stored at: )
+29344 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(47: (x[2]) -->(y[2])) (stored at: )
+29347 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(31: (x[1]) -->(x[2])) (stored at: )
+29354 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(63) (stored at: )
+29359 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(134) (stored at: )
+29367 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(154) (stored at: )
+29369 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(137: (yB) -->(nextX)) (stored at: )
+29372 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(117: ((nbPoints > 2) && (end - start != nbPoints)) -->(nbPoints > 2)) (stored at: )
+29373 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(140: (yB) -->(x[1])) (stored at: )
+29375 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(60: (yA) -->(y[0])) (stored at: )
+29377 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(140: (yB) -->(yA)) (stored at: )
+29378 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(33: (y[1]) -->(x[1])) (stored at: )
+31252 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+31252 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(42: (y[0] * y[1] < 0) -->(end - start != nbPoints)) at variant6 fails to compile
 
+31252 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(42: (y[0] * y[1] < 0) -->(end - start != nbPoints)) (stored at: variant6)
+31255 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(120: (start) -->(0)) (stored at: )
+35304 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(137: (yB) -->(absYA)) (stored at: variant7)
+39019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(117: ((nbPoints > 2) && (end - start != nbPoints)) -->(end - start != nbPoints)) (stored at: variant8)
+41952 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(69: (absYA) -->(xB)) (stored at: variant9)
+41955 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(71: (absYA < absYB) -->(((xB - xA) <= xTol) || (FastMath.max(absYA,absYB) < getFunctionValueAccuracy()))) (stored at: )
+41960 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(62) (stored at: )
+41962 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(36: (x[0]) -->(0.0)) (stored at: )
+41964 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(47: (x[2]) -->(0.0)) (stored at: )
+41966 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(33: (y[1]) -->(0.0)) (stored at: )
+46033 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(117: (nbPoints == x.length) || (end - start != nbPoints)) (stored at: variant10)
+46034 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+116742 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+138486 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+138490 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(73: (absYA < absYB) || (nextY * yA <= 0)) at variant11 fails to compile
+
+138490 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(73: (absYA < absYB) || (nextY * yA <= 0)) (stored at: variant11)
+138495 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(156) (stored at: )
+142159 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(140: (yB) -->(y[1])) (stored at: variant12)
+142161 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(73: (absYA < absYB) -->(FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: )
+142163 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(31: (x[2]) -->(x[1])) (stored at: )
+142165 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(32: (x[1]) -->(y[1])) (stored at: )
+142171 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(154) (stored at: )
+142174 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(133: (nbPoints - signChangeIndex) -->(signChangeIndex + 1)) (stored at: )
+142176 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(118: (start) -->(0)) (stored at: )
+142177 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(32: (x[1]) -->(x[2])) (stored at: )
+142179 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(127: (nbPoints) -->(0)) (stored at: )
+142180 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(70: ((yA <= 0)) -->(nbPoints > 2)) (stored at: )
+142186 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(71: (absYA < absYB) || (FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: )
+142189 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(134) (stored at: )
+142196 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(154) (stored at: )
+142197 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(60: (yA) -->(y[2])) (stored at: )
+142199 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(129: (nbPoints) -->(0)) (stored at: )
+142201 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(68: (xA) -->(absYA)) (stored at: )
+142202 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(146: (yA) -->(x[2])) (stored at: )
+142211 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(70: ((yA <= 0)) -->((xB - xA) <= xTol)) (stored at: )
+142212 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(47: (x[2]) -->(0.0)) (stored at: )
+142214 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(48: (y[2]) -->(0.0)) (stored at: )
+145885 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(136: (nextY * yA <= 0) && (end - start != nbPoints)) (stored at: variant13)
+145888 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(129: (1) -->(0)) (stored at: )
+145892 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(151) (stored at: )
+145893 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(100: (!((nextX > xA) && (nextX < xB))) -->(nextX < xB)) (stored at: )
+145895 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(100: (!((nextX > xA) && (nextX < xB))) -->(nextX < xB)) (stored at: )
+145896 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(114: (nextY) -->(0.0)) (stored at: )
+145898 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(131: (signChangeIndex) -->(nbPoints - signChangeIndex)) (stored at: )
+145899 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(88: (agingB >= MAXIMAL_AGING) -->(agingA >= MAXIMAL_AGING)) (stored at: )
+145903 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(155) (stored at: )
+145905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(137: (yB) -->(targetY)) (stored at: )
+145906 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(36: (x[0]) -->(y[1])) (stored at: )
+145910 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(155) (stored at: )
+145911 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(47: (x[2]) -->(y[2])) (stored at: )
+145913 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(70: ((yA < 0)) -->(yA <= 0)) (stored at: )
+145916 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(62) (stored at: )
+145918 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(140: (yB) -->(nextX)) (stored at: )
+145920 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(47: (x[2]) -->(0.0)) (stored at: )
+149070 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(32: (x[1]) -->(y[2])) (stored at: variant14)
+149074 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(132) (stored at: )
+149075 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(127: (1) -->(nbPoints)) (stored at: )
+149077 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(121: (start) -->(0)) (stored at: )
+149080 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(134) (stored at: )
+149082 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(69: (absYA < absYB) -->(FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: )
+149083 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(129: (0) -->(1)) (stored at: )
+149087 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(156) (stored at: )
+149089 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(33: (y[1]) -->(x[1])) (stored at: )
+149092 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(132) (stored at: )
+149094 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(48: (y[2]) -->(x[2])) (stored at: )
+151003 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+151004 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(85: (agingA >= MAXIMAL_AGING) -->((nextX > xA) && (nextX < xB))) at variant15 fails to compile
+
+151004 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(85: (agingA >= MAXIMAL_AGING) -->((nextX > xA) && (nextX < xB))) (stored at: variant15)
+154800 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(32: (x[1]) -->(y[0])) (stored at: variant16)
+154803 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(160) (stored at: )
+154805 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(140: (yB) -->(nextY)) (stored at: )
+154808 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(155) (stored at: )
+154810 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(64: (yB) -->(0.0)) (stored at: )
+154810 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
+261582 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+319641 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(132) (stored at: )
+323164 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(131: (signChangeIndex) -->(0)) (stored at: variant17)
+323166 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(120: (start) -->(0)) (stored at: )
+326706 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(108: (nextX) -->(0.0)) (stored at: variant18)
+326710 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(151) (stored at: )
+326711 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+326713 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionRemove(69) (stored at: )
+326714 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(68: (xA) -->(absYB)) (stored at: )
+326718 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(134) (stored at: )
+330216 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(88: (agingB >= MAXIMAL_AGING) -->(y[0] * y[1] < 0)) (stored at: variant19)
+330218 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+332021 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+332021 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(42: (y[1] * y[2] < 0) || (Double.isNaN(nextX))) at variant20 fails to compile
+
+332021 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionAdd(42: (y[1] * y[2] < 0) || (Double.isNaN(nextX))) (stored at: variant20)
+332023 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(36: (x[0]) -->(y[0])) (stored at: )
+332024 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(68: (xB) -->(absYA)) (stored at: )
+332026 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(160) (stored at: )
+332030 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(151) (stored at: )
+332033 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 NullCheckAdder(123) (stored at: )
+335674 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionAdd(100: (!((nextX > xA) && (nextX < xB))) || (Double.isNaN(nextX))) (stored at: variant21)
+335676 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+339258 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(131: (x) -->(y)) (stored at: variant22)
+339262 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(132) (stored at: )
+339263 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(114: (0.0) -->(nextX)) (stored at: )
+339265 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(159) (stored at: )
+339267 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(42: (y[1] * y[2] < 0) -->(y[0] * y[1] < 0)) (stored at: )
+339269 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(123: (1) -->(nbPoints)) (stored at: )
+339270 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(137: (yB) -->(nextX)) (stored at: )
+339273 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(160) (stored at: )
+339274 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 5.0 ParameterReplacer(120: (start) -->(nbPoints)) (stored at: )
+339275 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(128: (0) -->(1)) (stored at: )
+339277 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+339278 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(136: (yA) -->(yB)) (stored at: )
+339279 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(64: (yB) -->(yA)) (stored at: )
+339280 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(129: (y) -->(x)) (stored at: )
+339283 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(134) (stored at: )
+339284 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(47: (x[2]) -->(y[2])) (stored at: )
+342956 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(123: (signChangeIndex >= (x.length + 1) / 2) -->(absYA < absYB)) (stored at: variant23)
+342958 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(140: (yB) -->(0.0)) (stored at: )
+342960 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(152) (stored at: )
+342962 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(117: (nbPoints) -->(0)) (stored at: )
+342963 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 5.0 ParameterReplacer(121: (start) -->(nbPoints)) (stored at: )
+342964 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(42: (0.0) -->(x[2])) (stored at: )
+342965 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(137: (yB) -->(0.0)) (stored at: )
+342966 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(32: (x[1]) -->(y[1])) (stored at: )
+342969 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(158) (stored at: )
+345821 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(71: (absYA < absYB) -->(nbPoints > 2)) (stored at: variant24)
+345826 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionAdd(85: (agingB >= MAXIMAL_AGING) && (nextX < xB)) (stored at: )
+345827 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionAdd(88: (agingB >= MAXIMAL_AGING) && (agingA >= MAXIMAL_AGING)) (stored at: )
+345828 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(120: (0) -->(nbPoints)) (stored at: )
+345829 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(48: (0.0) -->(x[2])) (stored at: )
+345830 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(131: (x) -->(y)) (stored at: )
+345831 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(33: (0.0) -->(y[1])) (stored at: )
+345833 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(33: (0.0) -->(y[1])) (stored at: )
+345834 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+345835 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 5.0 ExpressionReplace(102: (signChangeIndex - start >= end - signChangeIndex) -->(!((nextX > xA) && (nextX < xB)))) (stored at: )
+345836 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(126: (0) -->(1)) (stored at: )
+349882 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 5.0 ExpressionAdd(102: (signChangeIndex - start >= end - signChangeIndex) || (agingA >= MAXIMAL_AGING)) (stored at: variant25)
+349883 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(36: (x[0]) -->(0.0)) (stored at: )
+349889 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(132) (stored at: )
+353502 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(73: (absYA < absYB) -->(y[1] * y[2] < 0)) (stored at: variant26)
+353504 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(128: (1) -->(nbPoints)) (stored at: )
+353506 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(132) (stored at: )
+355261 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+355261 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(88: (agingB >= MAXIMAL_AGING) -->(Double.isNaN(nextX))) at variant27 fails to compile
+
+355261 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(88: (agingB >= MAXIMAL_AGING) -->(Double.isNaN(nextX))) (stored at: variant27)
+355261 [main] INFO clegoues.genprog4java.Search.Search  - search: generation3
+467971 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+513996 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(85: (agingB >= MAXIMAL_AGING) || ((xB - xA) <= xTol)) (stored at: variant28)
+513998 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(127: (1) -->(nbPoints)) (stored at: )
+514001 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(63) (stored at: )
+514002 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(31: (x[0]) -->(x[1])) (stored at: )
+514005 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(156) (stored at: )
+514006 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(131: (x) -->(y)) (stored at: )
+514008 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(37: (y[0]) -->(x[0])) (stored at: )
+514009 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(137: (yB) -->(0.0)) (stored at: )
+514010 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(99: (y) -->(tmpX)) (stored at: )
+516917 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(85: (agingA >= MAXIMAL_AGING) || (nextX < xB)) (stored at: variant29)
+516920 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(159) (stored at: )
+516922 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(160) (stored at: )
+516924 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(121: (nbPoints) -->(0)) (stored at: )
+520438 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(129: (1) -->(signChangeIndex)) (stored at: variant30)
+520439 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(120: (x) -->(y)) (stored at: )
+520441 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionRemove(117) (stored at: )
+520442 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+520443 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(127: (1) -->(nbPoints)) (stored at: )
+520444 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(126: (0) -->(1)) (stored at: )
+522247 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+522247 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(42: (y[0] * y[1] < 0) && (signChangeIndex - start >= end - signChangeIndex)) at variant31 fails to compile
+
+522247 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(42: (y[0] * y[1] < 0) && (signChangeIndex - start >= end - signChangeIndex)) (stored at: variant31)
+522248 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(146: (yA) -->(nextX)) (stored at: )
+522249 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(101: (signChangeIndex - start >= end - signChangeIndex) && (nextX < xB)) (stored at: )
+522250 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(124: (signChangeIndex >= (x.length + 1) / 2) -->(nextY * yA <= 0)) (stored at: )
+525746 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(73: (absYA < absYB) -->(agingB >= MAXIMAL_AGING)) (stored at: variant32)
+527505 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+527505 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(85: (agingA >= MAXIMAL_AGING) -->(Double.isNaN(nextX))) at variant33 fails to compile
+
+527505 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(85: (agingA >= MAXIMAL_AGING) -->(Double.isNaN(nextX))) (stored at: variant33)
+529279 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+529280 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(70: ((yA < 0)) && ((nbPoints > 2) && (end - start != nbPoints))) at variant34 fails to compile
+
+529280 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(70: ((yA < 0)) && ((nbPoints > 2) && (end - start != nbPoints))) (stored at: variant34)
+529281 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(117: (x) -->(y)) (stored at: )
+532854 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(136: (nextY * yA <= 0) || (nbPoints == x.length)) (stored at: variant35)
+535852 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(108: (nextX) -->(y[2])) (stored at: variant36)
+535854 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(31: (x[0]) -->(x[1])) (stored at: )
+535857 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(160) (stored at: )
+539403 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(136: (nextY * yA <= 0) -->(agingA >= MAXIMAL_AGING)) (stored at: variant37)
+539406 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(158) (stored at: )
+539407 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(73: (absYA < absYB) || (FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: )
+539410 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(155) (stored at: )
+539412 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(63) (stored at: )
+539414 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(129: (1) -->(nbPoints)) (stored at: )
+539416 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(154) (stored at: )
+539418 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(51: (y[1] * y[2] < 0) || (yA < 0)) (stored at: )
+539420 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(154) (stored at: )
+543145 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(117: ((nbPoints > 2) && (end - start != nbPoints)) || (nbPoints > 2)) (stored at: variant38)
+543146 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(146: (yA) -->(x[2])) (stored at: )
+543147 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(47: (x[2]) -->(y[2])) (stored at: )
+543148 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(68: (xB) -->(absYB)) (stored at: )
+543149 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(160) (stored at: )
+546914 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(127: (nbPoints) -->(signChangeIndex)) (stored at: variant39)
+549770 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(120: (start) -->(nbPoints - signChangeIndex)) (stored at: variant40)
+549772 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(73: (absYA < absYB) || ((xB - xA) <= xTol)) (stored at: )
+549773 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(127: (x) -->(y)) (stored at: )
+549775 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(63) (stored at: )
+549777 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(155) (stored at: )
+549779 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(99: (end) -->(start)) (stored at: )
+549780 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 NullCheckAdder(126) (stored at: )
+549782 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(132) (stored at: )
+549783 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(117: (0) -->(nbPoints)) (stored at: )
+549784 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(120: (x) -->(y)) (stored at: )
+549785 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(36: (x[0]) -->(x[1])) (stored at: )
+549786 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(31: (x[2]) -->(y[1])) (stored at: )
+549788 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(160) (stored at: )
+549790 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 RangeChecker(154) (stored at: )
+549792 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 NullCheckAdder(124) (stored at: )
+549794 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionRemove(69) (stored at: )
+549795 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(99: (start) -->(end - start)) (stored at: )
+553436 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(100: (!((nextX > xA) && (nextX < xB))) && ((nextX > xA) && (nextX < xB))) (stored at: variant41)
+553437 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(120: (nbPoints) -->(start)) (stored at: )
+553438 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(128: (0) -->(1)) (stored at: )
+553438 [main] INFO clegoues.genprog4java.Search.Search  - search: generation4
+627511 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+713355 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(151) (stored at: )
+713360 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(137: (yB) -->(nextY)) (stored at: )
+713361 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(140: (yB) -->(nextX)) (stored at: )
+713362 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(136: (nextY * yA <= 0) -->(nbPoints == x.length)) (stored at: )
+713363 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 5.0 ParameterReplacer(121: (start) -->(nbPoints)) (stored at: )
+716949 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionAdd(117: ((nbPoints > 2) && (end - start != nbPoints)) || (nbPoints == x.length)) (stored at: variant42)
+716950 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(123: (0) -->(nbPoints - signChangeIndex)) (stored at: )
+716951 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(131: (signChangeIndex + 1) -->(signChangeIndex)) (stored at: )
+720005 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionAdd(51: (y[1] * y[2] < 0) && (nextY * yA <= 0)) (stored at: variant43)
+723487 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionAdd(70: ((yA < 0)) && (((xB - xA) <= xTol) || (FastMath.max(absYA,absYB) < getFunctionValueAccuracy()))) (stored at: variant44)
+723490 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(118: (start) -->(0)) (stored at: )
+727062 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(113: (nextX) -->(targetY)) (stored at: variant45)
+727063 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(137: (yB) -->(yA)) (stored at: )
+727065 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(88: (agingB >= MAXIMAL_AGING) -->(absYA < absYB)) (stored at: )
+727065 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(32: (x[1]) -->(0.0)) (stored at: )
+727067 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(151) (stored at: )
+727068 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(64: (yB) -->(x[2])) (stored at: )
+727070 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionAdd(73: (absYA < absYB) || (((xB - xA) <= xTol) || (FastMath.max(absYA,absYB) < getFunctionValueAccuracy()))) (stored at: )
+727070 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(48: (y[2]) -->(x[2])) (stored at: )
+727072 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(151) (stored at: )
+727074 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(129: (0) -->(1)) (stored at: )
+727076 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(154) (stored at: )
+727077 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(31: (x[0]) -->(x[2])) (stored at: )
+727078 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(36: (x[0]) -->(y[0])) (stored at: )
+728863 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+728863 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(51: (y[1] * y[2] < 0) || (nextX < xB)) at variant46 fails to compile
+
+728863 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionAdd(51: (y[1] * y[2] < 0) || (nextX < xB)) (stored at: variant46)
+728866 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(62) (stored at: )
+728868 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(159) (stored at: )
+728871 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(63) (stored at: )
+728872 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(37: (0.0) -->(x[0])) (stored at: )
+728873 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(123: (0) -->(nbPoints)) (stored at: )
+728874 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(99: (tmpX) -->(y)) (stored at: )
+728875 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(99: (end) -->(end - start)) (stored at: )
+728876 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(136: (nextY * yA <= 0) -->(nbPoints == x.length)) (stored at: )
+728877 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(131: (x) -->(y)) (stored at: )
+728879 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(62) (stored at: )
+728880 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(36: (x[0]) -->(y[0])) (stored at: )
+728881 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(136: (yB) -->(0.0)) (stored at: )
+728882 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(131: (signChangeIndex) -->(signChangeIndex + 1)) (stored at: )
+732361 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(131: (nbPoints - signChangeIndex) -->(signChangeIndex + 1)) (stored at: variant47)
+732362 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 5.0 ExpressionReplace(102: (signChangeIndex - start >= end - signChangeIndex) -->(!((nextX > xA) && (nextX < xB)))) (stored at: )
+735946 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(100: (!((nextX > xA) && (nextX < xB))) -->((nextX > xA) && (nextX < xB))) (stored at: variant48)
+735951 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(47: (x[2]) -->(y[2])) (stored at: )
+735952 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(133: (signChangeIndex + 1) -->(signChangeIndex)) (stored at: )
+738958 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(100: (!((nextX > xA) && (nextX < xB))) -->(signChangeIndex - start >= end - signChangeIndex)) (stored at: variant49)
+738959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(48: (y[2]) -->(x[2])) (stored at: )
+738962 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(62) (stored at: )
+742761 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(136: (nextY * yA <= 0) -->(signChangeIndex - start >= end - signChangeIndex)) (stored at: variant50)
+742762 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(140: (yB) -->(targetY)) (stored at: )
+742763 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(118: (x) -->(y)) (stored at: )
+744518 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+744518 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(42: (y[1] * y[2] < 0) -->((nbPoints > 2) && (end - start != nbPoints))) at variant51 fails to compile
+
+744518 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(42: (y[1] * y[2] < 0) -->((nbPoints > 2) && (end - start != nbPoints))) (stored at: variant51)
+744519 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionAdd(100: (!((nextX > xA) && (nextX < xB))) || (nextX > xA)) (stored at: )
+744520 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+744521 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(69: (((xB - xA) <= xTol) || (FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) -->(FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: )
+744523 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(154) (stored at: )
+744526 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(158) (stored at: )
+744527 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(158) (stored at: )
+744529 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 RangeChecker(62) (stored at: )
+744530 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ParameterReplacer(117: (nbPoints) -->(0)) (stored at: )
+744530 [main] INFO clegoues.genprog4java.Search.Search  - search: generation5
+810001 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+827364 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+847223 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+870039 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+888837 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 5.0 ExpressionAdd(101: (signChangeIndex - start >= end - signChangeIndex) || (!((nextX > xA) && (nextX < xB)))) (stored at: )
+891711 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(33: (0.0) -->(y[2])) (stored at: variant52)
+891713 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(134) (stored at: )
+891714 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(129: (nbPoints) -->(0)) (stored at: )
+891715 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(64: (yB) -->(xA)) (stored at: )
+891716 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(60: (yA) -->(y[2])) (stored at: )
+891718 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(134) (stored at: )
+891720 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(159) (stored at: )
+891722 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(155) (stored at: )
+893532 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+893532 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(85: (agingB >= MAXIMAL_AGING) || ((nextX > xA) && (nextX < xB))) at variant53 fails to compile
+
+893532 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(85: (agingB >= MAXIMAL_AGING) || ((nextX > xA) && (nextX < xB))) (stored at: variant53)
+893534 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(155) (stored at: )
+893535 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionReplace(136: (nextY * yA <= 0) -->(nbPoints == x.length)) (stored at: )
+893537 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(158) (stored at: )
+893539 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(156) (stored at: )
+893540 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+896958 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(136: (nextY * yA <= 0) || (agingA >= MAXIMAL_AGING)) (stored at: variant54)
+896961 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(155) (stored at: )
+896962 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(60: (yA) -->(x[0])) (stored at: )
+896963 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(140: (yB) -->(yA)) (stored at: )
+899884 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(123: (nbPoints) -->(start)) (stored at: variant55)
+899885 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 MethodReplacer(108) (stored at: )
+899888 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(154) (stored at: )
+899888 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(121: (start) -->(0)) (stored at: )
+903279 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(42: (x[2]) -->(y[0])) (stored at: variant56)
+903281 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(152) (stored at: )
+903282 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(128: (0) -->(nbPoints)) (stored at: )
+905111 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math40_80_3/math40Buggy/runCompile.sh exited abnormally with status 1
+905111 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(51: (y[1] * y[2] < 0) || (isNaN)) at variant57 fails to compile
+
+905111 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(51: (y[1] * y[2] < 0) || (isNaN)) (stored at: variant57)
+905113 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(159) (stored at: )
+905114 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(31: (x[0]) -->(x[2])) (stored at: )
+905115 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(120: (start) -->(0)) (stored at: )
+905117 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(160) (stored at: )
+905118 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(133: (signChangeIndex) -->(1)) (stored at: )
+905119 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(33: (y[1]) -->(x[1])) (stored at: )
+905120 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(127: (nbPoints) -->(0)) (stored at: )
+905121 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(68: (xB) -->(absYA)) (stored at: )
+905123 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(151) (stored at: )
+905125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(140: (yB) -->(yA)) (stored at: )
+905129 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(101: (signChangeIndex - start >= end - signChangeIndex) && (nextX < xB)) (stored at: )
+905131 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(132) (stored at: )
+905133 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(132) (stored at: )
+905134 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(32: (x[1]) -->(0.0)) (stored at: )
+905135 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(137: (yB) -->(yA)) (stored at: )
+908834 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(117: (0) -->(signChangeIndex + 1)) (stored at: variant58)
+912441 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionReplace(85: (agingA >= MAXIMAL_AGING) -->(yA < 0)) (stored at: variant59)
+916039 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(140: (yB) -->(x[2])) (stored at: variant60)
+916041 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(101: (signChangeIndex - start >= end - signChangeIndex) && (!((nextX > xA) && (nextX < xB)))) (stored at: )
+916041 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(36: (x[0]) -->(y[0])) (stored at: )
+916042 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(36: (x[0]) -->(y[1])) (stored at: )
+919110 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionReplace(123: (signChangeIndex >= (x.length + 1) / 2) -->(agingA >= MAXIMAL_AGING)) (stored at: variant61)
+919112 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(69: (absYA < absYB) || (FastMath.max(absYA,absYB) < getFunctionValueAccuracy())) (stored at: )
+919112 [main] INFO clegoues.genprog4java.Search.Search  - search: generation6
+1040174 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionAdd(126: (signChangeIndex >= (x.length + 1) / 2) || (y[0] * y[1] < 0)) (stored at: )
+1040181 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(68: (xB) -->(absYB)) (stored at: )
+1040182 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 5.0 ExpressionReplace(102: (signChangeIndex - start >= end - signChangeIndex) -->(!((nextX > xA) && (nextX < xB)))) (stored at: )
+1040183 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 5.0 ParameterReplacer(118: (start) -->(nbPoints)) (stored at: )
+1040184 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(32: (x[1]) -->(0.0)) (stored at: )
+1040185 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(137: (yB) -->(nextY)) (stored at: )
+1040186 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionReplace(85: (agingB >= MAXIMAL_AGING) -->(agingA >= MAXIMAL_AGING)) (stored at: )
+1040188 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 RangeChecker(160) (stored at: )
+1040188 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(140: (yB) -->(yA)) (stored at: )
+1040189 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(146: (yA) -->(nextY)) (stored at: )
+1043728 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(113: (nextX) -->(yB)) (stored at: variant62)
+1043729 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(137: (yB) -->(nextX)) (stored at: )
+1043730 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(98: (x) -->(y)) (stored at: )
+1043730 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(108: (nextX) -->(0.0)) (stored at: )
+1043731 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(31: (x[2]) -->(x[0])) (stored at: )
+1043732 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(98: (start) -->(end - start)) (stored at: )
+1043733 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 RangeChecker(152) (stored at: )
+1043735 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 RangeChecker(158) (stored at: )
+1043736 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(140: (yB) -->(yA)) (stored at: )
+1043737 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(121: (0) -->(nbPoints)) (stored at: )
+1043738 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(114: (0.0) -->(nextX)) (stored at: )
+1043739 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionRemove(69) (stored at: )
+1043740 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(114: (0.0) -->(nextY)) (stored at: )
+1043742 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 RangeChecker(63) (stored at: )
+1043744 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 RangeChecker(160) (stored at: )
+1043745 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(140: (yB) -->(x[2])) (stored at: )
+1043747 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionAdd(124: (signChangeIndex >= (x.length + 1) / 2) && (nbPoints == x.length)) (stored at: )
+1043749 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 RangeChecker(62) (stored at: )
+1047425 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(133: (y) -->(x)) (stored at: variant63)
+1047426 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(129: (nbPoints) -->(1)) (stored at: )
+1047427 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(68: (xA) -->(absYA)) (stored at: )
+1047429 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+1047430 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(32: (x[1]) -->(x[0])) (stored at: )
+1047431 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 RangeChecker(160) (stored at: )
+1047433 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(113: (nextX) -->(0.0)) (stored at: )
+1047435 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 RangeChecker(62) (stored at: )
+1047436 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(33: (y[1]) -->(x[0])) (stored at: )

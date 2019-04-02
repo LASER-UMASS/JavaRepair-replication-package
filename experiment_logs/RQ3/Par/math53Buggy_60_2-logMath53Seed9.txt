@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 15 10:26:11 EDT 2018
+57 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 13:46:03 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,59 +50,237 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-73 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
-533 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e62b64b7
-5533 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5553 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10554 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+150 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+926 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e62b64b7
+5926 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+5965 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+10965 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-17175 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 original (stored at: variant0)
-23768 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 NullCheckAdder(87) (stored at: variant1)
-30445 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionAdd(87: (Double.isInfinite(real) || Double.isInfinite(imaginary) || Double.isInfinite(rhs.real)|| Double.isInfinite(rhs.imaginary)) && (Double.isInfinite(imaginary))) (stored at: variant2)
-36978 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionReplace(163: (real == 0.0 && imaginary == 0.0) -->(isNaN)) (stored at: variant3)
-43499 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionAdd(47: (FastMath.abs(c) < FastMath.abs(d)) && (c == 0.0)) (stored at: variant4)
-50112 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 23.0 ParameterReplacer(55: ((imaginary * q + real) / denominator) -->(d)) (stored at: variant5)
-56624 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionAdd(41: (c == 0.0 && d == 0.0) || (isNaN)) (stored at: variant6)
-63150 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 21.0 ParameterReplacer(19: (imaginary) -->(real)) (stored at: variant7)
-69572 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 24.0 MethodReplacer(114) (stored at: variant8)
-76014 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 24.0 ExpressionReplace(160: (isNaN) -->(real == 0.0)) (stored at: variant9)
-82584 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ParameterReplacer(23: (imaginary) -->(real)) (stored at: variant10)
-89257 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 MethodReplacer(10) (stored at: variant11)
-95805 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionAdd(13: (FastMath.abs(real) < FastMath.abs(imaginary)) && (isInfinite())) (stored at: variant12)
-102317 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 22.0 ParameterReplacer(19: (1 + q * q) -->(imaginary)) (stored at: variant13)
-103576 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
-103577 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@60: [ (Complex)other ]) at variant14 fails to compile
+15823 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 original (stored at: variant0)
+20352 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 NullCheckAdder(87) (stored at: variant1)
+25017 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(87: (Double.isInfinite(real) || Double.isInfinite(imaginary) || Double.isInfinite(rhs.real)|| Double.isInfinite(rhs.imaginary)) && (Double.isInfinite(imaginary))) (stored at: variant2)
+29449 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionReplace(163: (real == 0.0 && imaginary == 0.0) -->(isNaN)) (stored at: variant3)
+34113 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(47: (FastMath.abs(c) < FastMath.abs(d)) && (c == 0.0)) (stored at: variant4)
+38562 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(55: ((imaginary * q + real) / denominator) -->(d)) (stored at: variant5)
+43285 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(41: (c == 0.0 && d == 0.0) || (isNaN)) (stored at: variant6)
+48040 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(19: (imaginary) -->(real)) (stored at: variant7)
+52861 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 MethodReplacer(114) (stored at: variant8)
+57222 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionReplace(160: (isNaN) -->(real == 0.0)) (stored at: variant9)
+61858 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(23: (imaginary) -->(real)) (stored at: variant10)
+66315 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 MethodReplacer(10) (stored at: variant11)
+70727 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(13: (FastMath.abs(real) < FastMath.abs(imaginary)) && (isInfinite())) (stored at: variant12)
+75423 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(19: (1 + q * q) -->(imaginary)) (stored at: variant13)
+77335 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+77335 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@60: [ (Complex)other ]) at variant14 fails to compile
 
-103577 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@60: [ (Complex)other ]) (stored at: variant14)
-110130 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 22.0 ParameterReplacer(19: (imaginary) -->(1 + q * q)) (stored at: variant15)
-110132 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 21.0 ParameterReplacer(19: (imaginary) -->(real)) (stored at: )
-116662 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 22.0 ParameterReplacer(28: (imaginary + rhs.getImaginary()) -->(real + rhs.getReal())) (stored at: variant16)
-123170 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionAdd(14: (imaginary == 0.0) && (FastMath.abs(real) < FastMath.abs(imaginary))) (stored at: variant17)
-129753 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionAdd(44: (rhs.isInfinite() && !isInfinite()) || (rhs.isInfinite())) (stored at: variant18)
-136269 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 23.0 MethodReplacer(40) (stored at: variant19)
-136272 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@62: [ (Complex)other ]) (stored at: )
-137532 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
-137533 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant20 fails to compile
+77335 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@60: [ (Complex)other ]) (stored at: variant14)
+81916 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(19: (imaginary) -->(1 + q * q)) (stored at: variant15)
+86323 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(19: (imaginary) -->(real)) (stored at: variant16)
+90967 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(28: (imaginary + rhs.getImaginary()) -->(real + rhs.getReal())) (stored at: variant17)
+95583 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(14: (imaginary == 0.0) && (FastMath.abs(real) < FastMath.abs(imaginary))) (stored at: variant18)
+100091 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(44: (rhs.isInfinite() && !isInfinite()) || (rhs.isInfinite())) (stored at: variant19)
+104518 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 MethodReplacer(40) (stored at: variant20)
+106565 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+106565 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@62: [ (Complex)other ]) at variant21 fails to compile
 
-137533 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant20)
-144028 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ParameterReplacer(164: (0.0) -->(real)) (stored at: variant21)
-145362 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
-145362 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant22 fails to compile
+106565 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@62: [ (Complex)other ]) (stored at: variant21)
+108683 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+108683 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant22 fails to compile
 
-145362 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant22)
-151903 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionReplace(10: (isInfinite()) -->(isInfinite)) (stored at: variant23)
-151905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ParameterReplacer(23: (imaginary) -->(real)) (stored at: )
-158432 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionReplace(106: (isNaN || rhs.isNaN) -->(isNaN)) (stored at: variant24)
-164929 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionAdd(41: (c == 0.0 && d == 0.0) || (c == 0.0 && d == 0.0)) (stored at: variant25)
-171503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionReplace(7: (isNaN) -->(isInfinite())) (stored at: variant26)
-178050 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 NullCheckAdder(63) (stored at: variant27)
-184575 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 23.0 ExpressionReplace(41: (c == 0.0 && d == 0.0) -->(d == 0.0)) (stored at: variant28)
-191084 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 23.0 MethodReplacer(145) (stored at: variant29)
-197641 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 NullCheckAdder(28) (stored at: variant30)
-204158 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ParameterReplacer(47: (c) -->(d)) (stored at: variant31)
-204160 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ParameterReplacer(22: (imaginary) -->(real)) (stored at: )
-210723 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionReplace(7: (isNaN) -->(isInfinite)) (stored at: variant32)
-210726 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 NullCheckAdder(67) (stored at: )
-217352 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 25.0 ExpressionAdd(163: (real == 0.0 && imaginary == 0.0) && (imaginary == 0.0)) (stored at: variant33)
-223948 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 21.0 ParameterReplacer(19: (1 + q * q) -->(real)) (stored at: variant34)
-223949 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+108683 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant22)
+113431 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(164: (0.0) -->(real)) (stored at: variant23)
+115469 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+115470 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant24 fails to compile
+
+115470 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant24)
+119894 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionReplace(10: (isInfinite()) -->(isInfinite)) (stored at: variant25)
+123591 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(23: (imaginary) -->(real)) (stored at: variant26)
+127995 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionReplace(106: (isNaN || rhs.isNaN) -->(isNaN)) (stored at: variant27)
+132690 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(41: (c == 0.0 && d == 0.0) || (c == 0.0 && d == 0.0)) (stored at: variant28)
+137392 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionReplace(7: (isNaN) -->(isInfinite())) (stored at: variant29)
+141928 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 NullCheckAdder(63) (stored at: variant30)
+146407 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionReplace(41: (c == 0.0 && d == 0.0) -->(d == 0.0)) (stored at: variant31)
+150952 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 MethodReplacer(145) (stored at: variant32)
+155348 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 NullCheckAdder(28) (stored at: variant33)
+159931 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(47: (c) -->(d)) (stored at: variant34)
+164205 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(22: (imaginary) -->(real)) (stored at: variant35)
+168921 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionReplace(7: (isNaN) -->(isInfinite)) (stored at: variant36)
+172935 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 NullCheckAdder(67) (stored at: variant37)
+177263 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ExpressionAdd(163: (real == 0.0 && imaginary == 0.0) && (imaginary == 0.0)) (stored at: variant38)
+181622 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(19: (1 + q * q) -->(real)) (stored at: variant39)
+181623 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+195984 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(168: (t) -->(real)) (stored at: variant40)
+200424 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(67) (stored at: variant41)
+202492 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+202492 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant42 fails to compile
+
+202492 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant42)
+206934 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 MethodReplacer(4) (stored at: variant43)
+208875 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+208875 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(4) at variant44 fails to compile
+
+208875 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(4) (stored at: variant44)
+213289 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(13: (FastMath.abs(real) < FastMath.abs(imaginary)) -->(isInfinite)) (stored at: variant45)
+217861 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 MethodReplacer(40) (stored at: variant46)
+222317 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(10: (isInfinite()) -->(FastMath.abs(real) < FastMath.abs(imaginary))) (stored at: variant47)
+224231 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+224232 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant48 fails to compile
+
+224232 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant48)
+228728 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionAdd(36: (isNaN || rhs.isNaN) && (isNaN || rhs.isNaN)) (stored at: variant49)
+230557 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+230557 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(5) at variant50 fails to compile
+
+230557 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(5) (stored at: variant50)
+235025 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 MethodReplacer(114) (stored at: variant51)
+239298 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionAdd(21: (real == 0.0) && (imaginary == 0.0)) (stored at: variant52)
+243742 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionAdd(163: (real == 0.0 && imaginary == 0.0) || (real == 0.0)) (stored at: variant53)
+248037 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(63: (rhs.isNaN) -->(isNaN)) (stored at: variant54)
+252787 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(5: (imaginary) -->(real)) (stored at: variant55)
+257392 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(140: (imaginary) -->(real)) (stored at: variant56)
+261988 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(36: (isNaN || rhs.isNaN) -->(isNaN)) (stored at: variant57)
+266662 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(48: ((real * q + imaginary) / denominator) -->(d)) (stored at: variant58)
+271142 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(103: (-real) -->(-imaginary)) (stored at: variant59)
+275576 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(63: (rhs.isNaN) -->(isNaN)) (stored at: variant60)
+280054 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(168: (imaginary / (2.0 * t)) -->(real)) (stored at: variant61)
+284019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(67) (stored at: variant62)
+287960 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(63) (stored at: variant63)
+289910 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+289911 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@62: [ (Complex)other ]) at variant64 fails to compile
+
+289911 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ClassCastChecker(@62: [ (Complex)other ]) (stored at: variant64)
+294428 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(114: (this.sqrt1z().multiply(Complex.I)) -->(Complex.I.negate())) (stored at: variant65)
+296774 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+296775 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(191) at variant66 fails to compile
+
+296775 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(191) (stored at: variant66)
+298651 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+298651 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant67 fails to compile
+
+298651 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant67)
+302698 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(28) (stored at: variant68)
+306784 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionRemove(36) (stored at: variant69)
+311135 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(33: (real) -->(-imaginary)) (stored at: variant70)
+315629 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionAdd(21: (real == 0.0) && (FastMath.abs(real) < FastMath.abs(imaginary))) (stored at: variant71)
+320196 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(63) (stored at: variant72)
+324937 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 2.0 ExpressionReplace(14: (imaginary == 0.0) -->(FastMath.abs(real) < FastMath.abs(imaginary))) (stored at: variant73)
+326892 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+326892 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant74 fails to compile
+
+326892 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant74)
+328823 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+328823 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant75 fails to compile
+
+328823 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant75)
+333328 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(57: (this == other) -->(other instanceof Complex)) (stored at: variant76)
+338006 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 2.0 MethodReplacer(191) (stored at: variant77)
+343044 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(57: (this == other) -->(other instanceof Complex)) (stored at: variant78)
+347589 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(25: (real) -->(1 + q * q)) (stored at: variant79)
+351991 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionAdd(63: (rhs.isNaN) || (rhs.isNaN)) (stored at: variant80)
+356072 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(67) (stored at: variant81)
+360102 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(25: (real) -->(1 + q * q)) (stored at: variant82)
+364466 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(106: (isNaN || rhs.isNaN) -->(isNaN)) (stored at: variant83)
+368864 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(139: (real) -->(imaginary)) (stored at: variant84)
+373155 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionAdd(21: (real == 0.0) && (FastMath.abs(real) < FastMath.abs(imaginary))) (stored at: variant85)
+375159 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+375159 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant86 fails to compile
+
+375160 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant86)
+377241 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+377241 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@62: [ (Complex)other ]) at variant87 fails to compile
+
+377241 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ClassCastChecker(@62: [ (Complex)other ]) (stored at: variant87)
+379263 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+379263 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(60: (other instanceof Complex) || (rhs.isNaN)) at variant88 fails to compile
+
+379263 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(60: (other instanceof Complex) || (rhs.isNaN)) (stored at: variant88)
+381310 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+381310 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(39) at variant89 fails to compile
+
+381310 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(39) (stored at: variant89)
+383401 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+383401 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@62: [ (Complex)other ]) at variant90 fails to compile
+
+383402 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ClassCastChecker(@62: [ (Complex)other ]) (stored at: variant90)
+388032 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionAdd(15: (imaginary == 0.0) && (FastMath.abs(real) < FastMath.abs(imaginary))) (stored at: variant91)
+393024 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(168: (imaginary / (2.0 * t)) -->(t)) (stored at: variant92)
+395173 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+395173 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant93 fails to compile
+
+395174 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant93)
+399455 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(23: (imaginary) -->(real)) (stored at: variant94)
+404176 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(14: (1 + q * q) -->(imaginary)) (stored at: variant95)
+408935 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(106) (stored at: variant96)
+413777 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(48: ((real * q + imaginary) / denominator) -->(c)) (stored at: variant97)
+418290 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(28) (stored at: variant98)
+420379 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+420379 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant99 fails to compile
+
+420379 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant99)
+422316 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+422316 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(40) at variant100 fails to compile
+
+422317 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(40) (stored at: variant100)
+424181 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+424182 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant101 fails to compile
+
+424182 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant101)
+428653 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(16: (real) -->(imaginary)) (stored at: variant102)
+430719 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+430719 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@62: [ (Complex)other ]) at variant103 fails to compile
+
+430719 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ClassCastChecker(@62: [ (Complex)other ]) (stored at: variant103)
+434997 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(47: (c) -->(d)) (stored at: variant104)
+436977 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+436977 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(39) at variant105 fails to compile
+
+436977 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(39) (stored at: variant105)
+436978 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
+494216 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(13: (real) -->(imaginary)) (stored at: variant106)
+494217 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(15: (real) -->(imaginary)) (stored at: )
+498250 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(22: (imaginary) -->(real)) (stored at: variant107)
+502508 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(33: (real) -->(-imaginary)) (stored at: variant108)
+506667 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 NullCheckAdder(28) (stored at: variant109)
+510965 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionReplace(63: (rhs.isNaN) -->(isNaN)) (stored at: variant110)
+515564 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 NullCheckAdder(90) (stored at: variant111)
+517622 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+517622 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(57: (this == other) || (rhs.isNaN)) at variant112 fails to compile
+
+517622 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionAdd(57: (this == other) || (rhs.isNaN)) (stored at: variant112)
+521857 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 MethodReplacer(4) (stored at: variant113)
+526408 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionReplace(106: (isNaN || rhs.isNaN) -->(isNaN)) (stored at: variant114)
+528359 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+528359 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant115 fails to compile
+
+528359 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant115)
+533075 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 MethodReplacer(173) (stored at: variant116)
+537997 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionAdd(44: (rhs.isInfinite() && !isInfinite()) || (d == 0.0)) (stored at: variant117)
+542571 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionAdd(60: (rhs.isNaN) || (other instanceof Complex)) (stored at: variant118)
+547221 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionReplace(47: (FastMath.abs(c) < FastMath.abs(d)) -->(d == 0.0)) (stored at: variant119)
+551513 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionAdd(63: (rhs.isNaN) || (rhs.isNaN)) (stored at: variant120)
+556156 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 2.0 MethodReplacer(39) (stored at: variant121)
+561026 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 2.0 MethodReplacer(191) (stored at: variant122)
+562907 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+562907 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(57: (this == other) -->(rhs.isNaN)) at variant123 fails to compile
+
+562907 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(57: (this == other) -->(rhs.isNaN)) (stored at: variant123)
+567180 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 NullCheckAdder(67) (stored at: variant124)
+571837 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 MethodReplacer(148) (stored at: variant125)
+573806 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+573806 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant126 fails to compile
+
+573806 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant126)
+578767 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionReplace(21: (real == 0.0) -->(FastMath.abs(real) < FastMath.abs(imaginary))) (stored at: variant127)
+583303 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionAdd(47: (FastMath.abs(c) < FastMath.abs(d)) && (isInfinite)) (stored at: variant128)
+587478 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 NullCheckAdder(67) (stored at: variant129)
+592134 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 2.0 ParameterReplacer(90: (real * rhs.imaginary + imaginary * rhs.real) -->(imaginary)) (stored at: variant130)
+596966 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 MethodReplacer(5) (stored at: variant131)
+601382 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(19: (1 + q * q) -->(imaginary)) (stored at: variant132)
+605862 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(139: (real) -->(imaginary)) (stored at: variant133)
+607853 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math53_60_2/math53Buggy/runCompile.sh exited abnormally with status 1
+607853 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant134 fails to compile
+
+607853 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant134)
+612637 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(103: (-imaginary) -->(-real)) (stored at: variant135)
+616609 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(33: (real) -->(-imaginary)) (stored at: variant136)
+621190 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 2.0 ExpressionReplace(60: (rhs.isNaN) -->(other instanceof Complex)) (stored at: variant137)

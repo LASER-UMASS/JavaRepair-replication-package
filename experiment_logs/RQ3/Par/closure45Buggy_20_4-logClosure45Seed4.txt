@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-19 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 08 17:33:00 EDT 2018
+89 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 11:46:16 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure45_20_4/closure45Buggy/build/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure45_20_4/closure45Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,26 +50,19 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-73 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+204 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-568 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@946eb409
-5569 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5593 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10594 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+1233 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@946eb409
+6233 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6284 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11284 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10636 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 original (stored at: )
-19903 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionReplace(315: (assign.isPropertyAssign) -->(var.getParentNode().isVar() && !NodeUtil.isForIn(var.getParentNode().getParent()))) (stored at: variant0)
-29151 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(315) (stored at: variant1)
-38379 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionReplace(318: (!NodeUtil.isLiteralValue(assign.assignNode.getLastChild(),true)) -->(assignedToUnknownValue && hasPropertyAssign)) (stored at: variant2)
-41445 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure45_20_4/closure45Buggy/runCompile.sh exited abnormally with status 1
-41446 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(329) at variant3 fails to compile
+11364 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 original (stored at: )
+32702 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 12.0 ExpressionReplace(315: (!NodeUtil.isLiteralValue(assign.assignNode.getLastChild(),true)) -->(!NodeUtil.isForIn(var.getParentNode().getParent()))) (stored at: variant0)
+32720 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: ExpressionReplace(315: (!NodeUtil.isLiteralValue(assign.assignNode.getLastChild(),true)) -->(!NodeUtil.isForIn(var.getParentNode().getParent()))) (in variant0)
 
-41446 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(329) (stored at: variant3)
-41450 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 12.0 ParameterReplacer(54: (maybeAssign.nameNode) -->(n)) (stored at: )
-41450 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: ParameterReplacer(54: (maybeAssign.nameNode) -->(n)) (in )
-
-41456 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-41456 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 41
+32737 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+32737 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 32
 

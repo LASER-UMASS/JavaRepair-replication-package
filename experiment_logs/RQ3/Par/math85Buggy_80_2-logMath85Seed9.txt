@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 15 17:58:22 EDT 2018
+21 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 14:05:10 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,24 +50,90 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-73 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+107 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-524 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@89526a9c
-5524 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5541 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10541 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+729 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@89526a9c
+5729 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+5768 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+10769 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10580 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 9.0 original (stored at: )
-10620 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 NullCheckAdder(32) (stored at: )
-14121 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 8.0 ExpressionReplace(13: (function == null) -->(initial < lowerBound || initial > upperBound || lowerBound >= upperBound)) (stored at: variant0)
-14123 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 9.0 ParameterReplacer(18: ("bad value for maximum iterations number: {0}") -->("function is null")) (stored at: )
-14125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 9.0 ParameterReplacer(14: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: )
-14130 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-14131 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 27.0 ExpressionReplace(34: (fa * fb >= 0.0) -->(initial > upperBound)) (stored at: )
-14132 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: ExpressionReplace(34: (fa * fb >= 0.0) -->(initial > upperBound)) (in )
+10824 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 original (stored at: )
+10871 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 NullCheckAdder(32) (stored at: )
+10876 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(13: (function == null) -->(initial < lowerBound || initial > upperBound || lowerBound >= upperBound)) (stored at: )
+10879 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(18: ("bad value for maximum iterations number: {0}") -->("function is null")) (stored at: )
+10882 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(14: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: )
+12688 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/runCompile.sh exited abnormally with status 1
+12688 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant0 fails to compile
 
-14144 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-14144 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 14
+12688 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant0)
+16236 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(34: (fa * fb >= 0.0) -->(initial > upperBound)) (stored at: variant1)
+16238 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(14: ("function is null") -->("invalid bracketing parameters:  lower bound={0},  initial={1}, upper bound={2}")) (stored at: )
+19499 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(21: (lowerBound) -->(initial)) (stored at: variant2)
+19503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(17: ("bad value for maximum iterations number: {0}") -->("invalid bracketing parameters:  lower bound={0},  initial={1}, upper bound={2}")) (stored at: )
+22128 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(13: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: variant3)
+22131 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(14: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: )
+121508 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(11: (initial) -->(upperBound)) (stored at: variant4)
+125037 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(15: ("function is null") -->("invalid bracketing parameters:  lower bound={0},  initial={1}, upper bound={2}")) (stored at: variant5)
+130807 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(30: (upperBound) -->(a)) (stored at: variant6)
+130810 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(15: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: )
+134194 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(32: (b) -->(a - 1.0)) (stored at: variant7)
+134197 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(4: (x0) -->(x1)) (stored at: )
+134199 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(14: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: )
+233303 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(31: (a) -->(upperBound)) (stored at: variant8)
+233306 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(15: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: )
+237621 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(30: (b + 1.0) -->(a - 1.0)) (stored at: variant9)
+241075 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(30: (b + 1.0) -->(a - 1.0)) (stored at: variant10)
+241078 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(15: ("function is null") -->("invalid bracketing parameters:  lower bound={0},  initial={1}, upper bound={2}")) (stored at: )
+244579 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(34: (fa * fb >= 0.0) -->(initial < lowerBound)) (stored at: variant11)
+244581 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(17: ("bad value for maximum iterations number: {0}") -->("function is null")) (stored at: )
+247410 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(32: (b) -->(upperBound)) (stored at: variant12)
+247412 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(11: (lowerBound) -->(initial)) (stored at: )
+249218 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/runCompile.sh exited abnormally with status 1
+249218 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant13 fails to compile
+
+249218 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant13)
+249220 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(13: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: )
+252843 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionAdd(19: (initial < lowerBound || initial > upperBound || lowerBound >= upperBound) && (initial < lowerBound || initial > upperBound)) (stored at: variant14)
+256212 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(20: (upperBound) -->(initial)) (stored at: variant15)
+259868 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(11: (upperBound) -->(lowerBound)) (stored at: variant16)
+261730 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/runCompile.sh exited abnormally with status 1
+261730 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant17 fails to compile
+
+261730 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant17)
+263524 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/runCompile.sh exited abnormally with status 1
+263524 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(30) at variant18 fails to compile
+
+263524 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(30) (stored at: variant18)
+265226 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/runCompile.sh exited abnormally with status 1
+265226 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(29) at variant19 fails to compile
+
+265227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(29) (stored at: variant19)
+267010 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/runCompile.sh exited abnormally with status 1
+267011 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant20 fails to compile
+
+267011 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant20)
+267012 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(11: (lowerBound) -->(initial)) (stored at: )
+267014 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(18: ("bad value for maximum iterations number: {0}") -->("function is null")) (stored at: )
+270421 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(13: (function == null) -->(initial > upperBound)) (stored at: variant21)
+270445 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+274981 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/runCompile.sh exited abnormally with status 1
+335032 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(4: (x0) -->(x1)) (stored at: variant22)
+336716 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math85_80_2/math85Buggy/runCompile.sh exited abnormally with status 1
+336717 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - NullCheckAdder(32) at variant23 fails to compile
+
+336717 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 NullCheckAdder(32) (stored at: variant23)
+336718 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(4: (x0) -->(x1)) (stored at: )
+339975 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(20: ("invalid bracketing parameters:  lower bound={0},  initial={1}, upper bound={2}") -->("function is null")) (stored at: variant24)
+339977 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(20: (upperBound) -->(lowerBound)) (stored at: )
+343266 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(29: (lowerBound) -->(b)) (stored at: variant25)
+343268 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(14: ("function is null") -->("bad value for maximum iterations number: {0}")) (stored at: )
+346700 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(14: ("function is null") -->("invalid bracketing parameters:  lower bound={0},  initial={1}, upper bound={2}")) (stored at: variant26)
+349459 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(29) (stored at: variant27)
+354169 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 27.0 ExpressionReplace(34: (fa * fb >= 0.0) -->(initial < lowerBound || initial > upperBound || lowerBound >= upperBound)) (stored at: variant28)
+354169 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: ExpressionReplace(34: (fa * fb >= 0.0) -->(initial < lowerBound || initial > upperBound || lowerBound >= upperBound)) (in variant28)
+
+354187 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+354188 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 354
 

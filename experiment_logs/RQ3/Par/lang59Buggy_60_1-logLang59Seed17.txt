@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 15 04:39:25 EDT 2018
+20 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 20:03:26 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,247 +50,702 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-73 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+100 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-1000 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@2d735d28
-6001 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-6033 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-11033 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+1267 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@2d735d28
+6272 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6345 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11345 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-11089 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 original (stored at: )
-11125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 ParameterReplacer(109: (0) -->(len)) (stored at: )
-18924 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 ExpressionAdd(678: (length <= 0 || index >= size) || (index >= size)) (stored at: variant0)
-18927 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 ParameterReplacer(564: (endIndex) -->(startIndex)) (stored at: )
-18932 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 NullCheckAdder(309) (stored at: )
-18936 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 NullCheckAdder(805) (stored at: )
-18938 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 MethodReplacer(174) (stored at: )
-18941 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(203) (stored at: )
-18944 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 NullCheckAdder(218) (stored at: )
-18963 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(849: (obj instanceof StrBuilder) || (thisBuf[i] != otherBuf[i])) (stored at: )
-18965 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 ParameterReplacer(354: (0) -->(size)) (stored at: )
-18967 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 MethodReplacer(256) (stored at: )
-18971 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-18974 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 NullCheckAdder(222) (stored at: )
-18977 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 MethodReplacer(493) (stored at: )
-18979 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 ParameterReplacer(576: (replaceLen) -->(removeLen)) (stored at: )
-20270 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-20270 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(255: (value) || (length > 0)) at variant1 fails to compile
+11453 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 original (stored at: )
+14656 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(109: (len) -->(0)) (stored at: variant0)
+17134 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(678: (length <= 0 || index >= size) || (index >= size)) (stored at: variant1)
+19982 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(564: (endIndex) -->(startIndex)) (stored at: variant2)
+19990 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 NullCheckAdder(309) (stored at: )
+21824 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(805) (stored at: variant3)
+25074 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(174) (stored at: variant4)
+27219 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(203) (stored at: variant5)
+27225 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(218) (stored at: )
+29067 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+29067 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(849: (obj instanceof StrBuilder) || (thisBuf[i] != otherBuf[i])) at variant6 fails to compile
 
-20270 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(255: (value) || (length > 0)) (stored at: variant1)
-20273 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 ExpressionAdd(106: (destination == null || destination.length < len) || (destination.length < len)) (stored at: )
-20276 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 NullCheckAdder(301) (stored at: )
-20278 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 ParameterReplacer(573: (i + removeLen) -->(i)) (stored at: )
-20280 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 MethodReplacer(239) (stored at: )
-20290 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 ExpressionAdd(723: (strLen == 0) || (startIndex >= size)) (stored at: )
-20292 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 ParameterReplacer(452: (startIndex) -->(endIndex)) (stored at: )
-28030 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 ExpressionAdd(681: (size <= index + length) && (index < 0)) (stored at: variant2)
-28034 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 40.0 ParameterReplacer(202: (str.buffer) -->(buffer)) (stored at: )
-28035 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 ParameterReplacer(250: (len + length) -->(len)) (stored at: )
-28037 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 ParameterReplacer(454: (startIndex) -->(endIndex)) (stored at: )
-29315 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-29315 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(829) at variant3 fails to compile
+29067 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(849: (obj instanceof StrBuilder) || (thisBuf[i] != otherBuf[i])) (stored at: variant6)
+32183 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(354: (0) -->(size)) (stored at: variant7)
+32186 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(256) (stored at: )
+34018 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 Object initializer (stored at: variant8)
+34023 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(222) (stored at: )
+37046 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(493) (stored at: variant9)
+39314 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(576: (i + removeLen) -->(replaceLen)) (stored at: variant10)
+41099 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+41099 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(255: (value) || (length > 0)) at variant11 fails to compile
 
-29315 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(829) (stored at: variant3)
-29317 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 ExpressionReplace(570: (replaceStr == null) -->(matcher == null || size == 0)) (stored at: )
-29320 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 Object initializer (stored at: )
-29324 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 RangeChecker(476) (stored at: )
-29326 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 38.0 ParameterReplacer(509: (size - endIndex) -->(removeLen)) (stored at: )
-29328 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 RangeChecker(529) (stored at: )
-29330 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 NullCheckAdder(338) (stored at: )
-29332 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 ExpressionAdd(345: (obj == null) && (width > 0)) (stored at: )
-29335 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 NullCheckAdder(752) (stored at: )
-29337 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 43.0 MethodReplacer(256) (stored at: )
-29339 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(271) (stored at: )
-29341 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 44.0 ExpressionReplace(726: (strLen > size) -->(startIndex >= size)) (stored at: )
-29343 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 39.0 MethodReplacer(175) (stored at: )
-29343 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
-40794 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-42053 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-89119 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(169) (stored at: )
-89122 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 RangeChecker(843) (stored at: )
-89125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionAdd(871: (startIndex > endIndex) || (endIndex > size)) (stored at: )
-89126 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionRemove(154) (stored at: )
-89129 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ParameterAdder(303) (stored at: )
-89130 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 MethodReplacer(161) (stored at: )
-89132 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 40.0 MethodReplacer(192) (stored at: )
-89133 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(135) (stored at: )
-89134 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 39.0 MethodReplacer(157) (stored at: )
-89136 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(734) (stored at: )
-89138 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 ParameterReplacer(750: (i) -->(len)) (stored at: )
-89140 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 NullCheckAdder(344) (stored at: )
-89141 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 ParameterReplacer(806: (i) -->(endIndex)) (stored at: )
-89143 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 NullCheckAdder(202) (stored at: )
-89145 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 42.0 ExpressionReplace(347: (obj == null) -->(width > 0)) (stored at: )
-89146 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 MethodReplacer(307) (stored at: )
-89148 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(263) (stored at: )
-89150 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 RangeChecker(535) (stored at: )
-90390 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-90390 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(205: (strLen) -->(len + length)) at variant4 fails to compile
+41099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(255: (value) || (length > 0)) (stored at: variant11)
+44350 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(106: (destination == null || destination.length < len) || (destination.length < len)) (stored at: variant12)
+47385 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(301) (stored at: variant13)
+50418 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(573: (to) -->(i)) (stored at: variant14)
+53237 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(239) (stored at: variant15)
+55498 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(723: (strLen == 0) || (startIndex >= size)) (stored at: variant16)
+55501 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(452: (startIndex) -->(endIndex)) (stored at: )
+58897 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(681: (size <= index + length) && (index < 0)) (stored at: variant17)
+60901 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(202: (str.buffer) -->(buffer)) (stored at: variant18)
+63796 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(250: (len + length) -->(len)) (stored at: variant19)
+63799 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(454: (startIndex) -->(endIndex)) (stored at: )
+66209 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(829) (stored at: variant20)
+69618 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionReplace(570: (replaceStr == null) -->(matcher == null || size == 0)) (stored at: variant21)
+69623 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 Object initializer (stored at: )
+69628 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 RangeChecker(476) (stored at: )
+72709 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(509: (endIndex) -->(removeLen)) (stored at: variant22)
+72714 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 RangeChecker(529) (stored at: )
+74537 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 NullCheckAdder(338) (stored at: variant23)
+77751 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(345: (obj == null) && (width > 0)) (stored at: variant24)
+77762 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(752) (stored at: )
+77765 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 MethodReplacer(256) (stored at: )
+79615 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(271) (stored at: variant25)
+82903 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionReplace(726: (strLen > size) -->(startIndex >= size)) (stored at: variant26)
+82905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(175) (stored at: )
+82905 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+117486 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(763: (buffer[i] == ch) -->(startIndex < 0)) (stored at: variant27)
+119473 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(871: (startIndex > endIndex) -->(startIndex < 0)) (stored at: variant28)
+122236 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(574: (from) -->(i)) (stored at: variant29)
+124198 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(503: (1) -->(size)) (stored at: variant30)
+127257 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(338: (size + padLen) -->(strLen)) (stored at: variant31)
+130203 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(174) (stored at: variant32)
+130206 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(220) (stored at: )
+131867 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+131867 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(170) at variant33 fails to compile
 
-90390 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(205: (strLen) -->(len + length)) (stored at: variant4)
-90391 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionReplace(112: (startIndex < 0) -->(destination == null)) (stored at: )
-90393 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(296: (separator == null) -->(it != null)) (stored at: )
-90395 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 Object initializer (stored at: )
-90398 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ClassCastChecker(@851: [ (StrBuilder)obj ]) (stored at: )
-90404 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionAdd(799: (matcher == null || startIndex < 0) && (startIndex >= size)) (stored at: )
-90405 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(169) (stored at: )
-90407 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 RangeChecker(764) (stored at: )
-90408 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(170) (stored at: )
-90410 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 MethodReplacer(239) (stored at: )
-90412 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 18.0 MethodReplacer(144) (stored at: )
-90413 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(309) (stored at: )
-90415 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(506) (stored at: )
-90416 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(507) (stored at: )
-90418 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionReplace(759: (startIndex >= size) -->(startIndex < 0)) (stored at: )
-90419 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(837: (this.size != other.size) -->(thisBuf[i] != otherBuf[i])) (stored at: )
-90421 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(257) (stored at: )
-98021 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionAdd(241: (startIndex < 0 || startIndex > chars.length) && (startIndex < 0)) (stored at: variant5)
-98023 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 40.0 MethodReplacer(719) (stored at: )
-98024 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 ParameterReplacer(338: (size + padLen) -->(0)) (stored at: )
-98029 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(294: (separator == null) && (it != null)) (stored at: )
-98031 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 ExpressionReplace(804: (matcher.isMatch(buf,i,0,endIndex) > 0) -->(startIndex < 0)) (stored at: )
-98035 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(506: (insertLen != removeLen) || (matcher == null || size == 0)) (stored at: )
-98036 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(173) (stored at: )
-98038 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionAdd(325: (obj == null) && (width > 0)) (stored at: )
-98039 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 MethodReplacer(174) (stored at: )
-98040 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionAdd(763: (buffer[i] == ch) || (startIndex < 0)) (stored at: )
-98044 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionAdd(745: (matcher == null || startIndex >= size) || (startIndex < 0)) (stored at: )
-98046 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(134) (stored at: )
-98047 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 MethodReplacer(181) (stored at: )
-98049 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 Object initializer (stored at: )
-99379 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-99379 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(296: (separator == null) || (hasNext)) at variant6 fails to compile
+131868 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(170) (stored at: variant33)
+131869 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(191) (stored at: )
+134842 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionRemove(567) (stored at: variant34)
+137140 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(219) (stored at: variant35)
+140257 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 MethodReplacer(169) (stored at: variant36)
+140259 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(515: (startIndex) -->(endIndex)) (stored at: )
+143349 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(140) (stored at: variant37)
+146685 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(147: (strLen) -->(len)) (stored at: variant38)
+146688 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(164) (stored at: )
+146690 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(757: (size - 1) -->(0)) (stored at: )
+149526 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(742) (stored at: variant39)
+149529 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(310) (stored at: )
+149531 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(52: (size) -->(0)) (stored at: )
+149533 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(250) (stored at: )
+149536 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ClassCastChecker(@849: [ (StrBuilder)obj ]) (stored at: )
+151622 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(681: (size <= index + length) -->(index >= size)) (stored at: variant40)
+154454 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(503: (1) -->(size)) (stored at: variant41)
+156663 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(820) (stored at: variant42)
+159927 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(351: (0) -->(strLen)) (stored at: variant43)
+161746 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(308: (separator == null) -->(it.hasNext())) (stored at: variant44)
+165136 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(570: (replaceStr == null) -->(replaceCount > 0)) (stored at: variant45)
+167225 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(248) (stored at: variant46)
+170407 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(190: (len) -->(startIndex)) (stored at: variant47)
+170410 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterAdder(312) (stored at: )
+173673 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionAdd(83: (index < 0 || index >= size) || (index < 0)) (stored at: variant48)
+173676 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 Object initializer (stored at: )
+175658 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ExpressionReplace(715: (startIndex < 0) -->(thisBuf[i] == ch)) (stored at: variant49)
+175660 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(515: (startIndex) -->(endIndex)) (stored at: )
+178774 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(198) (stored at: variant50)
+178776 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(326) (stored at: )
+178778 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(850) (stored at: )
+180637 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(332: (strLen - width) -->(size)) (stored at: variant51)
+183468 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(342: (width) -->(value)) (stored at: variant52)
+183470 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 MethodReplacer(145) (stored at: )
+183472 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterAdder(300) (stored at: )
+183475 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 Object initializer (stored at: )
+183477 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 MethodReplacer(346) (stored at: )
+185750 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionAdd(817: (this == other) || (c1 != c2 && Character.toUpperCase(c1) != Character.toUpperCase(c2))) (stored at: variant53)
+188601 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(328: (obj == null) -->(width > 0)) (stored at: variant54)
+190735 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 MethodReplacer(174) (stored at: variant55)
+192557 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+192558 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(726: (strLen > size) -->(thisBuf[i] == ch)) at variant56 fails to compile
 
-99379 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(296: (separator == null) || (hasNext)) (stored at: variant6)
-99381 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 43.0 ExpressionAdd(844: (thisBuf[i] != otherBuf[i]) && (this.size != other.size)) (stored at: )
-99382 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionReplace(238: (chars == null) -->(length < 0)) (stored at: )
-99384 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(716: (str == null || startIndex >= size) -->(thisBuf[i] == ch)) (stored at: )
-99386 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ExpressionAdd(759: (startIndex >= size) && (startIndex < 0)) (stored at: )
-99387 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 MethodReplacer(191) (stored at: )
-99389 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 MethodReplacer(209) (stored at: )
-99391 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 38.0 Object initializer (stored at: )
-99393 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(828) (stored at: )
-100673 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-100673 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(168: (str == null) && (startIndex < 0 || startIndex > str.length())) at variant7 fails to compile
+192558 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ExpressionReplace(726: (strLen > size) -->(thisBuf[i] == ch)) (stored at: variant56)
+192560 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterRemover(489: (index=indexOf(str,index);
+)) (stored at: )
+195593 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionAdd(842: (thisBuf[i] != otherBuf[i]) && (this.size != other.size)) (stored at: variant57)
+195595 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(210) (stored at: )
+197418 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(308: (separator == null) -->(it != null)) (stored at: variant58)
+197422 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 2.0 Object initializer (stored at: )
+197423 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(51: (0) -->(size)) (stored at: )
+200651 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 MethodReplacer(201) (stored at: variant59)
+203593 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionRemove(241) (stored at: variant60)
+203593 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
+241830 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+243506 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+255110 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(701: (startIndex < 0) -->(startIndex >= size)) (stored at: variant61)
+255112 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(496: (index + len) -->(index)) (stored at: )
+256993 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 MethodReplacer(142) (stored at: variant62)
+258731 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+258731 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(14) at variant63 fails to compile
 
-100673 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(168: (str == null) && (startIndex < 0 || startIndex > str.length())) (stored at: variant7)
-100674 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 44.0 ParameterReplacer(250: (len + length) -->(startIndex)) (stored at: )
-100674 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
-131919 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-186402 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-195097 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 40.0 MethodReplacer(163) (stored at: )
-195099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 NullCheckAdder(160) (stored at: )
-195101 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 NullCheckAdder(750) (stored at: )
-195102 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 38.0 ParameterReplacer(515: (endIndex) -->(startIndex)) (stored at: )
-195104 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 RangeChecker(475) (stored at: )
-195105 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ParameterReplacer(456: (startIndex) -->(len)) (stored at: )
-195106 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 35.0 MethodReplacer(272) (stored at: )
-195108 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 MethodReplacer(256) (stored at: )
-195109 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ParameterReplacer(564: (endIndex) -->(replaceCount)) (stored at: )
-195110 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ExpressionReplace(842: (thisBuf[i] != otherBuf[i]) -->(this.size != other.size)) (stored at: )
-195111 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 39.0 ParameterReplacer(449: (size - endIndex) -->(startIndex)) (stored at: )
-195113 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 NullCheckAdder(338) (stored at: )
-202099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ExpressionAdd(238: (chars == null) || (startIndex < 0)) (stored at: variant8)
-202100 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 MethodReplacer(209) (stored at: )
-209707 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ParameterReplacer(577: (i) -->(i + removeLen)) (stored at: variant9)
-209708 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 MethodReplacer(140) (stored at: )
-217341 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ExpressionAdd(678: (length <= 0 || index >= size) && (length <= 0)) (stored at: variant10)
-224933 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ParameterReplacer(190: (len + length) -->(startIndex + length)) (stored at: variant11)
-224934 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(234: (0) -->(len + length)) (stored at: )
-226207 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-226207 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(255: (value) && (startIndex < 0)) at variant12 fails to compile
+258731 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 MethodReplacer(14) (stored at: variant63)
+258733 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(202) (stored at: )
+258735 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 MethodReplacer(326) (stored at: )
+261799 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 MethodReplacer(197) (stored at: variant64)
+263746 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(678: (length <= 0 || index >= size) -->(index >= size)) (stored at: variant65)
+263748 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(205) (stored at: )
+263751 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 Object initializer (stored at: )
+267029 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(865: (startIndex < 0) && (startIndex > endIndex)) (stored at: variant66)
+269120 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(106: (destination == null || destination.length < len) || (destination.length < len)) (stored at: variant67)
+272422 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(183) (stored at: variant68)
+272424 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterAdder(137) (stored at: )
+275222 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 MethodReplacer(227) (stored at: variant69)
+275225 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 RangeChecker(532) (stored at: )
+275227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 MethodReplacer(271) (stored at: )
+278511 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(118: (startIndex > endIndex) || (destination == null)) (stored at: variant70)
+281503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(494: (0) -->(len)) (stored at: variant71)
+283322 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(865: (startIndex < 0) -->(endIndex > size)) (stored at: variant72)
+286405 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 MethodReplacer(507) (stored at: variant73)
+286407 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 MethodReplacer(175) (stored at: )
+286409 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(720) (stored at: )
+289457 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(121: (endIndex - startIndex) -->(0)) (stored at: variant74)
+292331 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(517: (endIndex - startIndex) -->(startIndex)) (stored at: variant75)
+292333 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 MethodReplacer(151) (stored at: )
+295290 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterRemover(495: (int index=indexOf(str,0);
+)) (stored at: variant76)
+295291 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(533: (buffer[i] == search) -->(search != replace)) (stored at: )
+297081 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+297081 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(719) at variant77 fails to compile
 
-226207 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionAdd(255: (value) && (startIndex < 0)) (stored at: variant12)
-226209 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ParameterRemover(493: (if (len > 0) {
+297081 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 MethodReplacer(719) (stored at: variant77)
+300324 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(338: (strLen) -->(size + padLen)) (stored at: variant78)
+303507 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(86: (index + 1) -->(index)) (stored at: variant79)
+303510 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 Object initializer (stored at: )
+303513 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(143) (stored at: )
+303521 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionAdd(732: (str.charAt(j) != thisBuf[i + j]) || (thisBuf[i] == ch)) (stored at: )
+306506 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ParameterReplacer(475: (i + 1) -->(1)) (stored at: variant80)
+308588 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 MethodReplacer(506) (stored at: variant81)
+308590 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(202) (stored at: )
+308592 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(205) (stored at: )
+308594 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 RangeChecker(476) (stored at: )
+311841 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(86: (index + 1) -->(1)) (stored at: variant82)
+313941 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(567: (matcher == null || size == 0) || (size == 0)) (stored at: variant83)
+313942 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 2.0 MethodReplacer(169) (stored at: )
+316795 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(701: (startIndex < 0) -->(startIndex >= size)) (stored at: variant84)
+318754 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 MethodReplacer(201) (stored at: variant85)
+318757 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: )
+320474 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+320475 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(296: (separator == null) -->(hasNext)) at variant86 fails to compile
+
+320475 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(296: (separator == null) -->(hasNext)) (stored at: variant86)
+323795 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(344: (obj == null) && (width > 0)) (stored at: variant87)
+325766 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 NullCheckAdder(805) (stored at: variant88)
+328871 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(580: (replaceCount > 0) -->(replaceStr == null)) (stored at: variant89)
+330845 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(715: (startIndex < 0) || (thisBuf[i] == ch)) (stored at: variant90)
+333603 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(498: (len) -->(index)) (stored at: variant91)
+336034 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(248: (length) -->(startIndex + length)) (stored at: variant92)
+339450 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(118: (startIndex > endIndex) -->(destination == null)) (stored at: variant93)
+342456 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(750: (matcher.isMatch(buf,i,startIndex,len) > 0) || (startIndex >= size)) (stored at: variant94)
+342456 [main] INFO clegoues.genprog4java.Search.Search  - search: generation3
+372089 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+382631 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+391409 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(331) (stored at: )
+391410 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(301: (it.hasNext()) -->(it.hasNext())) (stored at: )
+394569 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 ParameterReplacer(354: (strLen) -->(size)) (stored at: variant95)
+396394 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 2.0 MethodReplacer(719) (stored at: variant96)
+396396 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterAdder(313) (stored at: )
+399188 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 MethodReplacer(136) (stored at: variant97)
+401433 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(204: (len + strLen) -->(len + length)) (stored at: variant98)
+404271 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(342: (width) -->(value)) (stored at: variant99)
+406347 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 ExpressionAdd(349: (strLen >= width) || (width > 0)) (stored at: variant100)
+406350 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 RangeChecker(843) (stored at: )
+406352 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 MethodReplacer(329) (stored at: )
+409329 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 MethodReplacer(303) (stored at: variant101)
+412467 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(567: (matcher == null || size == 0) -->(replaceStr == null)) (stored at: variant102)
+415577 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(496: (index) -->(0)) (stored at: variant103)
+418715 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(751: (len) -->(startIndex)) (stored at: variant104)
+418717 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterAdder(312) (stored at: )
+420563 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 Object initializer (stored at: variant105)
+420564 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 ParameterReplacer(449: (startIndex) -->(size - endIndex)) (stored at: )
+420566 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(530: (buffer[i] == search) || (search != replace)) (stored at: )
+423357 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 MethodReplacer(142) (stored at: variant106)
+425164 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(751) (stored at: variant107)
+425166 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(512) (stored at: )
+425168 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(702: (startIndex >= size) -->(startIndex < 0)) (stored at: )
+426942 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+426943 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(482: (str == null) -->(len > 0)) at variant108 fails to compile
+
+426943 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 2.0 ExpressionReplace(482: (str == null) -->(len > 0)) (stored at: variant108)
+430036 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(708: (thisBuf[i] == ch) || (startIndex < 0)) (stored at: variant109)
+432153 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(475: (i + 1) -->(size)) (stored at: variant110)
+435016 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 MethodReplacer(142) (stored at: variant111)
+435017 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 MethodReplacer(191) (stored at: )
+436979 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 2.0 MethodReplacer(271) (stored at: variant112)
+436981 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterAdder(10) (stored at: )
+436983 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 Object initializer (stored at: )
+440276 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 MethodReplacer(482) (stored at: variant113)
+442042 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+442043 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(294: (coll != null && coll.size() > 0) && (it != null)) at variant114 fails to compile
+
+442043 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(294: (coll != null && coll.size() > 0) && (it != null)) (stored at: variant114)
+442045 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 RangeChecker(474) (stored at: )
+442046 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 MethodReplacer(145) (stored at: )
+442048 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(345) (stored at: )
+442050 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(312) (stored at: )
+444991 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(109: (buffer) -->(destination)) (stored at: variant115)
+446958 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 MethodReplacer(221) (stored at: variant116)
+449836 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 MethodReplacer(256) (stored at: variant117)
+451641 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 RangeChecker(532) (stored at: variant118)
+454604 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(175: (len + strLen) -->(len)) (stored at: variant119)
+454605 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(826: (c1 != c2 && Character.toUpperCase(c1) != Character.toUpperCase(c2)) -->(c1 != c2 && Character.toUpperCase(c1) != Character.toUpperCase(c2))) (stored at: )
+456719 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(325: (size + padLen) -->(0)) (stored at: variant120)
+456721 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(533: (buffer[i] == search) || (search != replace)) (stored at: )
+456723 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(331) (stored at: )
+460005 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 ParameterReplacer(488: (index + len) -->(index)) (stored at: variant121)
+460008 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 Object initializer (stored at: )
+461963 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 ExpressionReplace(735: (str.charAt(j) != thisBuf[i + j]) -->(thisBuf[i] == ch)) (stored at: variant122)
+461965 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(147) (stored at: )
+464763 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterRemover(695: (return indexOf(str,0) >= 0;
+)) (stored at: variant123)
+467125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(215: (length < 0 || (startIndex + length) > str.length()) -->(str == null)) (stored at: variant124)
+470586 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(180: (str == null) -->(startIndex < 0 || startIndex > str.length())) (stored at: variant125)
+473449 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(55: (buffer) -->(old)) (stored at: variant126)
+475611 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(572: (replaceCount > 0) || (removeLen > 0)) (stored at: variant127)
+477387 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+477387 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(294: (coll != null && coll.size() > 0) || (hasNext)) at variant128 fails to compile
+
+477387 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(294: (coll != null && coll.size() > 0) || (hasNext)) (stored at: variant128)
+480577 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(251: (startIndex) -->(len + length)) (stored at: variant129)
+484066 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(180: (str == null) && (startIndex < 0)) (stored at: variant130)
+486323 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(294: (separator == null) || (hasNext)) (stored at: variant131)
+488107 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+488107 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(134: (obj == null) -->((startIndex + length) > str.length())) at variant132 fails to compile
+
+488107 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(134: (obj == null) -->((startIndex + length) > str.length())) (stored at: variant132)
+488107 [main] INFO clegoues.genprog4java.Search.Search  - search: generation4
+540315 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(750) (stored at: )
+540317 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(203) (stored at: )
+540318 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(257) (stored at: )
+543631 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 MethodReplacer(15) (stored at: variant133)
+543633 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 RangeChecker(534) (stored at: )
+543635 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(300) (stored at: )
+543637 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(511) (stored at: )
+543638 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(191) (stored at: )
+545362 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+545362 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(14) at variant134 fails to compile
+
+545362 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 MethodReplacer(14) (stored at: variant134)
+548086 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionReplace(763: (buffer[i] == ch) -->(startIndex < 0)) (stored at: variant135)
+550188 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 MethodReplacer(310) (stored at: variant136)
+553423 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(176: (strLen) -->(len)) (stored at: variant137)
+553424 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 ExpressionReplace(328: (obj == null) -->(strLen >= width)) (stored at: )
+553425 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(307) (stored at: )
+556641 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(140) (stored at: variant138)
+558451 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(354) (stored at: variant139)
+561711 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(210) (stored at: variant140)
+561713 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(233) (stored at: )
+564987 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 ParameterReplacer(202: (str.buffer) -->(buffer)) (stored at: variant141)
+566763 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 Object initializer (stored at: variant142)
+569503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(483) (stored at: variant143)
+571795 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionReplace(567: (matcher == null || size == 0) -->(removeLen > 0)) (stored at: variant144)
+574895 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(511: (startIndex) -->(removeLen)) (stored at: variant145)
+577168 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 ExpressionAdd(230: (strLen > 0) || (length > 0)) (stored at: variant146)
+580163 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(507) (stored at: variant147)
+582462 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 ParameterReplacer(488: (len) -->(index)) (stored at: variant148)
+585685 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(183) (stored at: variant149)
+587779 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(230) (stored at: variant150)
+590883 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionAdd(675: (index < 0) && (length <= 0)) (stored at: variant151)
+592811 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(180) (stored at: variant152)
+592813 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 ExpressionReplace(806: (matcher.isMatch(buf,i,0,endIndex) > 0) -->(startIndex >= size)) (stored at: )
+592814 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(851) (stored at: )
+596104 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(757) (stored at: variant153)
+598491 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionReplace(678: (length <= 0 || index >= size) -->(index < 0)) (stored at: variant154)
+598493 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(263) (stored at: )
+601636 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionAdd(189: (length > 0) && (str == null)) (stored at: variant155)
+603570 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 MethodReplacer(325) (stored at: variant156)
+603572 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(193) (stored at: )
+603574 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(143) (stored at: )
+606871 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(344: (0) -->(size)) (stored at: variant157)
+608950 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 ExpressionReplace(296: (separator == null) -->(hasNext)) (stored at: variant158)
+611880 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(564: (endIndex) -->(startIndex)) (stored at: variant159)
+614007 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(251: (len) -->(startIndex)) (stored at: variant160)
+617124 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(263) (stored at: variant161)
+619098 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionRemove(716) (stored at: variant162)
+619100 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterRemover(494: ({
   int index=indexOf(str,0);
   if (index >= 0) {
     deleteImpl(index,index + len,len);
   }
 }
 )) (stored at: )
-226210 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ParameterReplacer(496: (len) -->(index)) (stored at: )
-226211 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 39.0 ParameterReplacer(449: (size - endIndex) -->(endIndex)) (stored at: )
-226213 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(205: (len) -->(len + length)) (stored at: )
-226214 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 42.0 MethodReplacer(248) (stored at: )
-226215 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ExpressionReplace(575: (replaceCount > 0) -->(removeLen > 0)) (stored at: )
-226217 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ParameterReplacer(52: (0) -->(size)) (stored at: )
-226218 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 MethodReplacer(183) (stored at: )
-226220 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 NullCheckAdder(344) (stored at: )
-226222 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 40.0 ParameterReplacer(189: (startIndex + length) -->(startIndex)) (stored at: )
-226223 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ParameterAdder(314) (stored at: )
-226225 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ParameterReplacer(498: (len) -->(index)) (stored at: )
-226225 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ExpressionReplace(310: (it.hasNext()) -->(it.hasNext())) (stored at: )
-226227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 NullCheckAdder(300) (stored at: )
-226230 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 RangeChecker(828) (stored at: )
-226232 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 NullCheckAdder(201) (stored at: )
-226234 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(726: (strLen > size) -->(thisBuf[i] == ch)) (stored at: )
-226235 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 MethodReplacer(145) (stored at: )
-226236 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ParameterReplacer(163: (len + length) -->(startIndex)) (stored at: )
-226237 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ParameterReplacer(327: (size + width) -->(0)) (stored at: )
-226239 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 ExpressionReplace(299: (it.hasNext()) -->(it != null)) (stored at: )
-226244 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionAdd(744: (startIndex < 0) || (thisBuf[i] == ch)) (stored at: )
-226246 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ParameterReplacer(496: (index) -->(len)) (stored at: )
-226247 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 40.0 MethodReplacer(204) (stored at: )
-226249 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 NullCheckAdder(752) (stored at: )
-226251 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 MethodReplacer(742) (stored at: )
-226253 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ExpressionAdd(330: (strLen >= width) && (obj == null)) (stored at: )
-226254 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ParameterReplacer(476: (i + 1) -->(0)) (stored at: )
-226256 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ExpressionReplace(580: (replaceCount > 0) -->(size == 0)) (stored at: )
-226258 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 44.0 NullCheckAdder(244) (stored at: )
-226259 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 MethodReplacer(342) (stored at: )
-226261 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 MethodReplacer(493) (stored at: )
-226263 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 Object initializer (stored at: )
-226265 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 43.0 ExpressionAdd(681: (size <= index + length) && (index < 0)) (stored at: )
-226265 [main] INFO clegoues.genprog4java.Search.Search  - search: generation3
-250912 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-275767 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-277041 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-300013 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-310402 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionAdd(817: (this == other) || (this.size != other.size)) (stored at: )
-310403 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ParameterReplacer(493: (index + len) -->(0)) (stored at: )
-310405 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ExpressionReplace(349: (strLen >= width) -->(obj == null)) (stored at: )
-310406 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 MethodReplacer(263) (stored at: )
-310408 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(226: (chars == null) -->(length > 0)) (stored at: )
-310409 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 MethodReplacer(249) (stored at: )
-310410 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(837: (this.size != other.size) -->(thisBuf[i] != otherBuf[i])) (stored at: )
-318262 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 40.0 ParameterReplacer(222: (startIndex + length) -->(startIndex)) (stored at: variant13)
-318265 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 NullCheckAdder(244) (stored at: )
-318266 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionAdd(570: (replaceStr == null) && (matcher == null || size == 0)) (stored at: )
-318267 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionReplace(750: (matcher.isMatch(buf,i,startIndex,len) > 0) -->(startIndex >= size)) (stored at: )
-318268 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 MethodReplacer(136) (stored at: )
-318270 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionAdd(843: (thisBuf[i] != otherBuf[i]) && (this == other)) (stored at: )
-318271 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 MethodReplacer(162) (stored at: )
-318272 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ParameterReplacer(805: (0) -->(i)) (stored at: )
-319564 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-319564 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(118: (startIndex > endIndex) && (destination.length < len)) at variant14 fails to compile
+622201 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(565: (endIndex) -->(startIndex)) (stored at: variant163)
+622203 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(338) (stored at: )
+624327 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionReplace(112: (startIndex < 0) -->(destination.length < len)) (stored at: variant164)
+627481 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 ParameterReplacer(251: (len) -->(len + length)) (stored at: variant165)
+629202 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+629202 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(186) at variant166 fails to compile
 
-319564 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(118: (startIndex > endIndex) && (destination.length < len)) (stored at: variant14)
-319566 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ParameterAdder(295) (stored at: )
-319568 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 NullCheckAdder(164) (stored at: )
-319569 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ParameterReplacer(507: (newSize) -->(removeLen)) (stored at: )
-319570 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionReplace(681: (size <= index + length) -->(length <= 0 || index >= size)) (stored at: )
-319571 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 MethodReplacer(295) (stored at: )
-319575 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(112: (startIndex < 0) || (destination.length < len)) (stored at: )
-319577 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ExpressionAdd(530: (buffer[i] == search) && (search != replace)) (stored at: )
-319578 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 MethodReplacer(227) (stored at: )
-319579 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionReplace(871: (startIndex > endIndex) -->(startIndex < 0)) (stored at: )
-319580 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 MethodReplacer(695) (stored at: )
-319584 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(751: (matcher.isMatch(buf,i,startIndex,len) > 0) || (thisBuf[i] == ch)) (stored at: )
-319588 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ExpressionAdd(723: (strLen == 0) || (startIndex >= size)) (stored at: )
-319589 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ParameterAdder(132) (stored at: )
-319590 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ExpressionReplace(567: (matcher == null || size == 0) -->(matcher == null || size == 0)) (stored at: )
-319591 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionAdd(843: (thisBuf[i] != otherBuf[i]) && (this.size != other.size)) (stored at: )
-319593 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 MethodReplacer(489) (stored at: )
-319594 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 MethodReplacer(227) (stored at: )
-319597 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: )
-319598 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ParameterReplacer(109: (len) -->(0)) (stored at: )
-319600 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 NullCheckAdder(309) (stored at: )
-319602 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: )
-319604 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionAdd(865: (startIndex < 0) || (endIndex > size)) (stored at: )
-319605 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ParameterReplacer(456: (len) -->(startIndex)) (stored at: )
-319606 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(529: (search != replace) && (buffer[i] == search)) (stored at: )
-319608 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionAdd(532: (buffer[i] == search) || (search != replace)) (stored at: )
-319610 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ParameterRemover(483: (if (len > 0) {
+629203 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 MethodReplacer(186) (stored at: variant166)
+632287 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(327: (size + width) -->(0)) (stored at: variant167)
+635257 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(721: (0) -->(startIndex)) (stored at: variant168)
+636983 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+636983 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(24) at variant169 fails to compile
+
+636983 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 MethodReplacer(24) (stored at: variant169)
+636985 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(143) (stored at: )
+640137 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 MethodReplacer(191) (stored at: variant170)
+640137 [main] INFO clegoues.genprog4java.Search.Search  - search: generation5
+656380 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+682520 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(227) (stored at: )
+682521 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 2.0 MethodReplacer(719) (stored at: )
+685977 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionAdd(218: (length > 0) && ((startIndex + length) > str.length())) (stored at: variant171)
+688101 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 ExpressionReplace(10: (str == null) -->(initialCapacity <= 0)) (stored at: variant172)
+688103 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(249) (stored at: )
+688104 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterAdder(295) (stored at: )
+690925 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(354) (stored at: variant173)
+690926 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(176) (stored at: )
+692905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionReplace(735: (str.charAt(j) != thisBuf[i + j]) -->(thisBuf[i] == ch)) (stored at: variant174)
+694641 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+694641 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(849: (obj instanceof StrBuilder) && (this == other)) at variant175 fails to compile
+
+694641 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(849: (obj instanceof StrBuilder) && (this == other)) (stored at: variant175)
+697771 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionRemove(678) (stored at: variant176)
+699595 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(497: (index + len) -->(index)) (stored at: variant177)
+702600 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(202) (stored at: variant178)
+704703 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionAdd(829: (c1 != c2 && Character.toUpperCase(c1) != Character.toUpperCase(c2)) || (c1 != c2)) (stored at: variant179)
+706456 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+706456 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(168: (str == null) -->(startIndex > str.length())) at variant180 fails to compile
+
+706456 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionReplace(168: (str == null) -->(startIndex > str.length())) (stored at: variant180)
+709857 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 ParameterReplacer(193: (startIndex + length) -->(len)) (stored at: variant181)
+711871 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 MethodReplacer(570) (stored at: variant182)
+714651 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(300) (stored at: variant183)
+716627 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 2.0 MethodReplacer(492) (stored at: variant184)
+719797 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionReplace(570: (replaceStr == null) -->(matcher == null)) (stored at: variant185)
+719799 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterAdder(310) (stored at: )
+721892 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(200) (stored at: variant186)
+721894 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 Object initializer (stored at: )
+721895 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(348) (stored at: )
+721896 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(344) (stored at: )
+724905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionReplace(750: (matcher.isMatch(buf,i,startIndex,len) > 0) -->(startIndex < 0)) (stored at: variant187)
+726749 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(449: (startIndex) -->(endIndex)) (stored at: variant188)
+729726 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(121: (startIndex) -->(0)) (stored at: variant189)
+732125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionAdd(244: (length < 0 || (startIndex + length) > chars.length) || ((startIndex + length) > str.length())) (stored at: variant190)
+732126 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 MethodReplacer(342) (stored at: )
+732127 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(326) (stored at: )
+732129 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 Object initializer (stored at: )
+735138 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(509: (size - endIndex) -->(removeLen)) (stored at: variant191)
+736967 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(309) (stored at: variant192)
+738681 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+738682 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(143: (strLen > 0) && (startIndex < 0)) at variant193 fails to compile
+
+738682 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(143: (strLen > 0) && (startIndex < 0)) (stored at: variant193)
+741898 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionAdd(681: (size <= index + length) || (index < 0)) (stored at: variant194)
+743854 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 MethodReplacer(232) (stored at: variant195)
+743856 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(219) (stored at: )
+746663 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(456: (startIndex) -->(endIndex)) (stored at: variant196)
+746664 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(222) (stored at: )
+748455 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 ParameterReplacer(577: (i + removeLen) -->(i)) (stored at: variant197)
+751427 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(55: (0) -->(size)) (stored at: variant198)
+753670 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 ParameterReplacer(234: (strLen) -->(len)) (stored at: variant199)
+756523 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(515: (startIndex) -->(endIndex)) (stored at: variant200)
+758544 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(174) (stored at: variant201)
+761513 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionReplace(865: (startIndex < 0) -->(startIndex > endIndex)) (stored at: variant202)
+763904 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionAdd(112: (startIndex < 0) && (destination == null || destination.length < len)) (stored at: variant203)
+763905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(257) (stored at: )
+763908 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 RangeChecker(843) (stored at: )
+767061 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(757: (size - 1) -->(0)) (stored at: variant204)
+769013 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionReplace(804: (matcher.isMatch(buf,i,0,endIndex) > 0) -->(startIndex < 0)) (stored at: variant205)
+771934 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 MethodReplacer(239) (stored at: variant206)
+774087 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(565: (startIndex) -->(endIndex)) (stored at: variant207)
+774089 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 RangeChecker(475) (stored at: )
+777192 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 ParameterReplacer(146: (len + strLen) -->(len)) (stored at: variant208)
+777194 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(512) (stored at: )
+779605 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 3.0 ExpressionAdd(218: (length > 0) || (length < 0 || (startIndex + length) > str.length())) (stored at: variant209)
+782898 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionReplace(301: (it.hasNext()) -->(it != null)) (stored at: variant210)
+782906 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(722) (stored at: )
+782908 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 Object initializer (stored at: )
+782908 [main] INFO clegoues.genprog4java.Search.Search  - search: generation6
+786282 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+836950 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ParameterReplacer(109: (buffer) -->(destination)) (stored at: variant211)
+836953 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 3.0 Object initializer (stored at: )
+839387 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionReplace(151: (str == null) -->((startIndex + length) > str.length())) (stored at: variant212)
+842496 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 NullCheckAdder(183) (stored at: variant213)
+842499 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 Object initializer (stored at: )
+842501 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ClassCastChecker(@849: [ (StrBuilder)obj ]) (stored at: )
+842502 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 3.0 ParameterReplacer(454: (len) -->(endIndex)) (stored at: )
+845468 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(198) (stored at: variant214)
+848496 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 3.0 MethodReplacer(221) (stored at: variant215)
+850599 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ParameterReplacer(109: (0) -->(len)) (stored at: variant216)
+853425 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionReplace(868: (endIndex > size) -->(startIndex < 0)) (stored at: variant217)
+855686 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionAdd(763: (buffer[i] == ch) && (startIndex < 0)) (stored at: variant218)
+858572 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionAdd(759: (startIndex >= size) || (startIndex < 0)) (stored at: variant219)
+858573 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(204) (stored at: )
+860378 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(299) (stored at: variant220)
+862097 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+862097 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(147: (len) -->(len + length)) at variant221 fails to compile
+
+862097 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(147: (len) -->(len + length)) (stored at: variant221)
+864941 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(492) (stored at: variant222)
+866742 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionAdd(701: (startIndex < 0) && (startIndex >= size)) (stored at: variant223)
+868440 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+868440 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(506: (insertLen != removeLen) -->(replaceStr == null)) at variant224 fails to compile
+
+868440 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 1.0 ExpressionReplace(506: (insertLen != removeLen) -->(replaceStr == null)) (stored at: variant224)
+870222 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+870222 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(702: (startIndex >= size) && (thisBuf[i] == ch)) at variant225 fails to compile
+
+870222 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionAdd(702: (startIndex >= size) && (thisBuf[i] == ch)) (stored at: variant225)
+870224 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 2.0 RangeChecker(826) (stored at: )
+873189 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ParameterReplacer(488: (index + len) -->(0)) (stored at: variant226)
+875596 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionReplace(344: (width > 0) -->(strLen >= width)) (stored at: variant227)
+875598 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(249) (stored at: )
+878512 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 3.0 ParameterReplacer(511: (startIndex) -->(removeLen)) (stored at: variant228)
+878514 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 NullCheckAdder(351) (stored at: )
+880812 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 3.0 ExpressionReplace(567: (matcher == null || size == 0) -->(removeLen > 0)) (stored at: variant229)
+883755 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(361) (stored at: variant230)
+883757 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 RangeChecker(764) (stored at: )
+885870 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 3.0 ExpressionAdd(576: (replaceCount > 0) || (replaceStr == null)) (stored at: variant231)
+885872 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 RangeChecker(844) (stored at: )
+888687 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(239) (stored at: variant232)
+890510 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(181) (stored at: variant233)
+892250 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+892250 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(197) at variant234 fails to compile
+
+892251 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 2.0 MethodReplacer(197) (stored at: variant234)
+892252 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 NullCheckAdder(735) (stored at: )
+895232 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 3.0 ParameterReplacer(512: (startIndex) -->(removeLen)) (stored at: variant235)
+898177 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionReplace(843: (thisBuf[i] != otherBuf[i]) -->(this.size != other.size)) (stored at: variant236)
+898179 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(294) (stored at: )
+900435 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ParameterReplacer(121: (buffer) -->(destination)) (stored at: variant237)
+902200 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+902200 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(230: (strLen > 0) -->(startIndex < 0 || startIndex > str.length())) at variant238 fails to compile
+
+902200 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionReplace(230: (strLen > 0) -->(startIndex < 0 || startIndex > str.length())) (stored at: variant238)
+902203 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 2.0 Object initializer (stored at: )
+905198 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionReplace(307: (separator == null) -->(it.hasNext())) (stored at: variant239)
+906994 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(220) (stored at: variant240)
+906995 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(136) (stored at: )
+910190 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ParameterReplacer(577: (i) -->(replaceLen)) (stored at: variant241)
+910192 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 MethodReplacer(257) (stored at: )
+911996 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ParameterRemover(485: (int index=indexOf(str,0);
+)) (stored at: variant242)
+914757 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionAdd(834: (this == other) && (this.size != other.size)) (stored at: variant243)
+916850 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ParameterReplacer(231: (chars) -->(buffer)) (stored at: variant244)
+918515 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+918515 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(118: (startIndex > endIndex) && (destination.length < len)) at variant245 fails to compile
+
+918515 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionAdd(118: (startIndex > endIndex) && (destination.length < len)) (stored at: variant245)
+921497 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 ExpressionRemove(567) (stored at: variant246)
+923480 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 2.0 ExpressionReplace(309: (it.hasNext()) -->(hasNext)) (stored at: variant247)
+923481 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 3.0 MethodReplacer(346) (stored at: )
+923483 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 4.0 NullCheckAdder(332) (stored at: )
+923483 [main] INFO clegoues.genprog4java.Search.Search  - search: generation7
+969771 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(507) (stored at: variant248)
+971700 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 2.0 MethodReplacer(361) (stored at: variant249)
+971702 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 RangeChecker(828) (stored at: )
+974966 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(327: (size + width) -->(width)) (stored at: variant250)
+976799 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 NullCheckAdder(837) (stored at: variant251)
+976800 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(171) (stored at: )
+979728 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(209) (stored at: variant252)
+982103 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionAdd(212: (startIndex < 0 || startIndex > str.length()) || (startIndex > str.length())) (stored at: variant253)
+985205 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionReplace(151: (str == null) -->(length < 0)) (stored at: variant254)
+985206 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(489: (index) -->(index + len)) (stored at: )
+985207 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionRemove(745) (stored at: )
+985209 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(256) (stored at: )
+986955 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+986955 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(701: (startIndex < 0) -->(thisBuf[i] == ch)) at variant255 fails to compile
+
+986955 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 1.0 ExpressionReplace(701: (startIndex < 0) -->(thisBuf[i] == ch)) (stored at: variant255)
+986957 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(455: (len) -->(startIndex)) (stored at: )
+989907 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(573: (to) -->(i)) (stored at: variant256)
+991852 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 3.0 MethodReplacer(171) (stored at: variant257)
+991854 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(219) (stored at: )
+993622 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+993622 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(759: (startIndex >= size) || (buffer[i] == ch)) at variant258 fails to compile
+
+993622 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 ExpressionAdd(759: (startIndex >= size) || (buffer[i] == ch)) (stored at: variant258)
+996464 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(456: (len) -->(startIndex)) (stored at: variant259)
+998470 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 3.0 ExpressionReplace(296: (separator == null) -->(it.hasNext())) (stored at: variant260)
+998471 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(200) (stored at: )
+998471 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionReplace(83: (index < 0 || index >= size) -->(index < 0 || index >= size)) (stored at: )
+1001453 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(488: (index) -->(index + len)) (stored at: variant261)
+1001454 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 NullCheckAdder(164) (stored at: )
+1004323 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 3.0 MethodReplacer(142) (stored at: variant262)
+1006323 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(449: (endIndex) -->(startIndex)) (stored at: variant263)
+1009675 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(251: (length) -->(startIndex)) (stored at: variant264)
+1011386 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1011386 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(247: (length > 0) && ((startIndex + length) > str.length())) at variant265 fails to compile
+
+1011386 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 ExpressionAdd(247: (length > 0) && ((startIndex + length) > str.length())) (stored at: variant265)
+1014665 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionReplace(295: (it.hasNext()) -->(separator == null)) (stored at: variant266)
+1017438 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 RangeChecker(533) (stored at: variant267)
+1017438 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionReplace(83: (index < 0 || index >= size) -->(index < 0 || index >= size)) (stored at: )
+1019544 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(806: (0) -->(endIndex)) (stored at: variant268)
+1022766 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(361: (value) -->(size)) (stored at: variant269)
+1022768 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 NullCheckAdder(722) (stored at: )
+1025162 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionAdd(218: (length > 0) || (startIndex < 0 || startIndex > str.length())) (stored at: variant270)
+1028029 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 3.0 ParameterReplacer(354: (strLen) -->(0)) (stored at: variant271)
+1029827 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionReplace(347: (obj == null) -->(width > 0)) (stored at: variant272)
+1032959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionAdd(678: (length <= 0 || index >= size) && (length <= 0 || index >= size)) (stored at: variant273)
+1032961 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 3.0 NullCheckAdder(721) (stored at: )
+1034912 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(239) (stored at: variant274)
+1038068 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 3.0 ParameterReplacer(331: (strLen) -->(size)) (stored at: variant275)
+1038069 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(191) (stored at: )
+1040509 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionAdd(849: (obj instanceof StrBuilder) && (this.size != other.size)) (stored at: variant276)
+1040511 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 NullCheckAdder(172) (stored at: )
+1043544 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionAdd(678: (length <= 0 || index >= size) && (length <= 0 || index >= size)) (stored at: variant277)
+1043545 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 NullCheckAdder(513) (stored at: )
+1045501 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(86: (1) -->(index + 1)) (stored at: variant278)
+1048684 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ExpressionReplace(567: (matcher == null || size == 0) -->(size == 0)) (stored at: variant279)
+1048686 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 NullCheckAdder(190) (stored at: )
+1048687 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 3.0 NullCheckAdder(736) (stored at: )
+1051013 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 ParameterReplacer(449: (startIndex) -->(endIndex)) (stored at: variant280)
+1051015 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 MethodReplacer(272) (stored at: )
+1051017 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 Object initializer (stored at: )
+1053870 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 RangeChecker(531) (stored at: variant281)
+1055862 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 4.0 NullCheckAdder(106) (stored at: variant282)
+1057566 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1057566 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(328) at variant283 fails to compile
+
+1057566 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 MethodReplacer(328) (stored at: variant283)
+1057566 [main] INFO clegoues.genprog4java.Search.Search  - search: generation8
+1059338 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1110263 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(209: (str == null) || (startIndex < 0)) (stored at: variant284)
+1111971 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1111971 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(230: (strLen > 0) -->(length > 0)) at variant285 fails to compile
+
+1111971 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 ExpressionReplace(230: (strLen > 0) -->(length > 0)) (stored at: variant285)
+1113721 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1113721 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(134: (obj == null) || (length < 0)) at variant286 fails to compile
+
+1113721 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 ExpressionAdd(134: (obj == null) || (length < 0)) (stored at: variant286)
+1116515 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(722: (0) -->(startIndex)) (stored at: variant287)
+1118463 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 MethodReplacer(134) (stored at: variant288)
+1118464 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterAdder(311) (stored at: )
+1118465 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(52: (size) -->(0)) (stored at: )
+1121606 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionRemove(115) (stored at: variant289)
+1121607 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 MethodReplacer(157) (stored at: )
+1123853 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(734: (str.charAt(j) != thisBuf[i + j]) || (thisBuf[i] == ch)) (stored at: variant290)
+1123854 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionReplace(701: (startIndex < 0) -->(startIndex >= size)) (stored at: )
+1125591 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1125591 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(230: (strLen > 0) || (length < 0 || (startIndex + length) > str.length())) at variant291 fails to compile
+
+1125591 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 ExpressionAdd(230: (strLen > 0) || (length < 0 || (startIndex + length) > str.length())) (stored at: variant291)
+1128351 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 MethodReplacer(295) (stored at: variant292)
+1128353 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 RangeChecker(533) (stored at: )
+1130658 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(760: (startIndex < 0) && (startIndex >= size)) (stored at: variant293)
+1133606 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(234: (chars) -->(buffer)) (stored at: variant294)
+1133607 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterAdder(306) (stored at: )
+1136019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(151: (str == null) && (startIndex < 0)) (stored at: variant295)
+1136021 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(512) (stored at: )
+1136023 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(511) (stored at: )
+1139109 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionRemove(106) (stored at: variant296)
+1140930 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(512) (stored at: variant297)
+1140932 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 1.0 RangeChecker(828) (stored at: )
+1143739 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 MethodReplacer(298) (stored at: variant298)
+1145713 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionReplace(483: (len > 0) -->(str == null)) (stored at: variant299)
+1145715 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 RangeChecker(529) (stored at: )
+1147399 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1147399 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(145) at variant300 fails to compile
+
+1147399 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 1.0 MethodReplacer(145) (stored at: variant300)
+1147401 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 MethodReplacer(135) (stored at: )
+1147402 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(533: (buffer[i] == search) || (search != replace)) (stored at: )
+1149156 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1149156 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(751: (matcher.isMatch(buf,i,startIndex,len) > 0) && (thisBuf[i] == ch)) at variant301 fails to compile
+
+1149156 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 1.0 ExpressionAdd(751: (matcher.isMatch(buf,i,startIndex,len) > 0) && (thisBuf[i] == ch)) (stored at: variant301)
+1150793 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1150793 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(176: (0) -->(len + length)) at variant302 fails to compile
+
+1150793 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 ParameterReplacer(176: (0) -->(len + length)) (stored at: variant302)
+1153818 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(230: (chars) -->(buffer)) (stored at: variant303)
+1153820 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(52: (old) -->(buffer)) (stored at: )
+1153821 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(349) (stored at: )
+1155806 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(308: (separator == null) && (it != null)) (stored at: variant304)
+1158701 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(496: (len) -->(index)) (stored at: variant305)
+1160646 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 3.0 ExpressionReplace(707: (thisBuf[i] == ch) -->(startIndex < 0)) (stored at: variant306)
+1163851 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(310: (it.hasNext()) || (it != null)) (stored at: variant307)
+1163852 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(806) (stored at: )
+1163854 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 Object initializer (stored at: )
+1163855 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(350) (stored at: )
+1165689 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterRemover(757: (return lastIndexOf(ch,size - 1);
+)) (stored at: variant308)
+1168853 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(806: (matcher.isMatch(buf,i,0,endIndex) > 0) || (startIndex < 0)) (stored at: variant309)
+1170682 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(157) (stored at: variant310)
+1170684 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(49) (stored at: )
+1170686 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 NullCheckAdder(147) (stored at: )
+1170687 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(498: (len) -->(index)) (stored at: )
+1173821 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionReplace(330: (strLen >= width) -->(width > 0)) (stored at: variant311)
+1175647 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 MethodReplacer(170) (stored at: variant312)
+1178516 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 MethodReplacer(249) (stored at: variant313)
+1180366 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ExpressionAdd(760: (startIndex < 0) || (startIndex >= size)) (stored at: variant314)
+1182087 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1182087 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(732) at variant315 fails to compile
+
+1182087 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 1.0 MethodReplacer(732) (stored at: variant315)
+1184959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(476: (i) -->(0)) (stored at: variant316)
+1186794 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 ParameterReplacer(508: (newSize) -->(removeLen)) (stored at: variant317)
+1189679 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 4.0 Object initializer (stored at: variant318)
+1191784 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 2.0 MethodReplacer(135) (stored at: variant319)
+1191784 [main] INFO clegoues.genprog4java.Search.Search  - search: generation9
+1210842 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1249051 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(574: (i) -->(to)) (stored at: variant320)
+1249053 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 NullCheckAdder(176) (stored at: )
+1249054 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(478: (1) -->(0)) (stored at: )
+1251307 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(164: (startIndex) -->(len + length)) (stored at: variant321)
+1254547 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(332: (strLen - width) -->(0)) (stored at: variant322)
+1256243 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1256243 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(701: (startIndex < 0) || (thisBuf[i] == ch)) at variant323 fails to compile
+
+1256243 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionAdd(701: (startIndex < 0) || (thisBuf[i] == ch)) (stored at: variant323)
+1259270 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionAdd(344: (strLen >= width) || (obj == null)) (stored at: variant324)
+1262206 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionReplace(744: (startIndex < 0) -->(startIndex >= size)) (stored at: variant325)
+1262207 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 NullCheckAdder(806) (stored at: )
+1263954 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1263954 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(197) at variant326 fails to compile
+
+1263954 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 MethodReplacer(197) (stored at: variant326)
+1263956 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 NullCheckAdder(312) (stored at: )
+1265661 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1265662 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(732) at variant327 fails to compile
+
+1265662 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 MethodReplacer(732) (stored at: variant327)
+1268458 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionAdd(701: (startIndex < 0) || (startIndex >= size)) (stored at: variant328)
+1268460 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 3.0 MethodReplacer(192) (stored at: )
+1268461 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterRemover(487: ({
+  deleteImpl(index,index + len,len);
+  index=indexOf(str,index);
+}
+)) (stored at: )
+1268461 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionReplace(483: (len > 0) -->(str == null)) (stored at: )
+1268462 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(654: (endIndex) -->(startIndex)) (stored at: )
+1270420 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(496: (index + len) -->(index)) (stored at: variant329)
+1273347 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 MethodReplacer(742) (stored at: variant330)
+1276745 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(221: (len + length) -->(startIndex + length)) (stored at: variant331)
+1279946 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionAdd(837: (this.size != other.size) && (this == other)) (stored at: variant332)
+1279948 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionReplace(295: (it.hasNext()) -->(it.hasNext())) (stored at: )
+1281758 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionRemove(799) (stored at: variant333)
+1284716 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(234: (chars) -->(buffer)) (stored at: variant334)
+1284718 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterAdder(15) (stored at: )
+1287114 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionReplace(154: (startIndex < 0 || startIndex > str.length()) -->(length > 0)) (stored at: variant335)
+1289923 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 3.0 ParameterReplacer(736: (j) -->(0)) (stored at: variant336)
+1289925 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterAdder(10) (stored at: )
+1291748 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 2.0 MethodReplacer(348) (stored at: variant337)
+1291749 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 MethodReplacer(484) (stored at: )
+1294845 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionAdd(799: (matcher == null || startIndex < 0) || (startIndex >= size)) (stored at: variant338)
+1294847 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 NullCheckAdder(147) (stored at: )
+1296791 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 NullCheckAdder(186) (stored at: variant339)
+1296793 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 NullCheckAdder(219) (stored at: )
+1298496 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1298496 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(309: (it.hasNext()) && (hasNext)) at variant340 fails to compile
+
+1298496 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionAdd(309: (it.hasNext()) && (hasNext)) (stored at: variant340)
+1298497 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterAdder(314) (stored at: )
+1298499 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 Object initializer (stored at: )
+1301471 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 MethodReplacer(303) (stored at: variant341)
+1303271 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 NullCheckAdder(49) (stored at: variant342)
+1306218 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionReplace(678: (length <= 0 || index >= size) -->(length <= 0)) (stored at: variant343)
+1309149 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionReplace(681: (size <= index + length) -->(length <= 0)) (stored at: variant344)
+1309151 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 Object initializer (stored at: )
+1311125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 MethodReplacer(247) (stored at: variant345)
+1314217 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 MethodReplacer(154) (stored at: variant346)
+1314219 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 NullCheckAdder(218) (stored at: )
+1317008 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(508: (newSize) -->(removeLen)) (stored at: variant347)
+1319193 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 MethodReplacer(239) (stored at: variant348)
+1321942 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(354: (0) -->(size)) (stored at: variant349)
+1324111 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionAdd(294: (it.hasNext()) && (it != null)) (stored at: variant350)
+1326978 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 3.0 MethodReplacer(346) (stored at: variant351)
+1326979 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterRemover(484: ({
   int index=indexOf(str,0);
   while (index >= 0) {
     deleteImpl(index,index + len,len);
@@ -298,450 +753,21 @@ Deserialized fitnessCache HashMap
   }
 }
 )) (stored at: )
-319611 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 NullCheckAdder(201) (stored at: )
-319612 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ParameterReplacer(86: (1) -->(index)) (stored at: )
-319613 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 40.0 ExpressionReplace(734: (str.charAt(j) != thisBuf[i + j]) -->(startIndex >= size)) (stored at: )
-319615 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 MethodReplacer(135) (stored at: )
-319616 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ParameterReplacer(52: (old) -->(buffer)) (stored at: )
-319618 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 NullCheckAdder(172) (stored at: )
-319619 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 40.0 MethodReplacer(719) (stored at: )
-319621 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 38.0 MethodReplacer(250) (stored at: )
-319623 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 Object initializer (stored at: )
-319624 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 ExpressionReplace(726: (strLen > size) -->(startIndex < 0)) (stored at: )
-319626 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionAdd(681: (size <= index + length) && (length <= 0)) (stored at: )
-319627 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 44.0 NullCheckAdder(311) (stored at: )
-319629 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: )
-319631 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 38.0 ParameterReplacer(515: (endIndex) -->(startIndex)) (stored at: )
-319632 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(197: (str == null) -->(startIndex > str.length())) (stored at: )
-319634 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 43.0 ExpressionAdd(843: (thisBuf[i] != otherBuf[i]) && (this == other)) (stored at: )
-319634 [main] INFO clegoues.genprog4java.Search.Search  - search: generation4
-327826 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-329101 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-357549 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-372314 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-400449 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-401722 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-413812 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 MethodReplacer(169) (stored at: )
-413815 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 RangeChecker(534) (stored at: )
-413816 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ParameterReplacer(234: (0) -->(len)) (stored at: )
-413817 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 MethodReplacer(14) (stored at: )
-413818 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 MethodReplacer(145) (stored at: )
-413820 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 39.0 ParameterReplacer(509: (endIndex) -->(removeLen)) (stored at: )
-413821 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterReplacer(475: (i) -->(0)) (stored at: )
-413823 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 36.0 ParameterReplacer(654: (endIndex) -->(startIndex)) (stored at: )
-413824 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 MethodReplacer(174) (stored at: )
-413825 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterReplacer(565: (replaceCount) -->(startIndex)) (stored at: )
-422516 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ExpressionAdd(306: (it != null) && (separator == null)) (stored at: variant15)
-422518 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 MethodReplacer(171) (stored at: )
-422519 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ExpressionReplace(701: (startIndex < 0) -->(startIndex >= size)) (stored at: )
-422521 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ExpressionAdd(681: (size <= index + length) || (length <= 0 || index >= size)) (stored at: )
-422522 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ParameterReplacer(455: (endIndex) -->(len)) (stored at: )
-422523 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ParameterReplacer(455: (endIndex) -->(len)) (stored at: )
-422524 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ClassCastChecker(@850: [ (StrBuilder)obj ]) (stored at: )
-422525 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ParameterAdder(15) (stored at: )
-422527 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 NullCheckAdder(215) (stored at: )
-422528 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 40.0 MethodReplacer(721) (stored at: )
-422529 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 MethodReplacer(271) (stored at: )
-422530 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ExpressionRemove(567) (stored at: )
-422531 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterReplacer(354: (strLen) -->(0)) (stored at: )
-422532 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterRemover(722: (return indexOf(str.charAt(0),startIndex);
-)) (stored at: )
-422534 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(298: (it.hasNext()) -->(hasNext)) (stored at: )
-422535 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 MethodReplacer(850) (stored at: )
-422536 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 40.0 MethodReplacer(162) (stored at: )
-422537 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterReplacer(488: (index + len) -->(index)) (stored at: )
-430268 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ExpressionAdd(675: (index < 0) || (index >= size)) (stored at: variant16)
-430271 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 RangeChecker(764) (stored at: )
-430272 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ExpressionReplace(675: (index < 0) -->(length <= 0)) (stored at: )
-430273 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterRemover(757: (return lastIndexOf(ch,size - 1);
-)) (stored at: )
-430274 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 MethodReplacer(257) (stored at: )
-430276 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 MethodReplacer(342) (stored at: )
-430277 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ParameterRemover(487: ({
-  deleteImpl(index,index + len,len);
-  index=indexOf(str,index);
-}
-)) (stored at: )
-430278 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 40.0 MethodReplacer(232) (stored at: )
-430279 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 MethodReplacer(492) (stored at: )
-430280 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterReplacer(338: (0) -->(size + padLen)) (stored at: )
-430282 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 NullCheckAdder(338) (stored at: )
-430286 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionAdd(296: (separator == null) || (hasNext)) (stored at: )
-430287 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 42.0 MethodReplacer(271) (stored at: )
-430289 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 MethodReplacer(849) (stored at: )
-430290 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 38.0 Object initializer (stored at: )
-430291 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterReplacer(565: (endIndex) -->(replaceCount)) (stored at: )
-430293 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ParameterReplacer(192: (len + length) -->(startIndex)) (stored at: )
-430294 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ParameterReplacer(192: (len + length) -->(len)) (stored at: )
-430295 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ExpressionReplace(567: (matcher == null || size == 0) -->(size == 0)) (stored at: )
-430296 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ExpressionReplace(750: (matcher.isMatch(buf,i,startIndex,len) > 0) -->(startIndex >= size)) (stored at: )
-431582 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-431582 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(255: (value) -->(startIndex > str.length())) at variant17 fails to compile
+1328859 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 3.0 MethodReplacer(175) (stored at: variant352)
+1328861 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(454: (len) -->(startIndex)) (stored at: )
+1328863 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 RangeChecker(474) (stored at: )
+1331658 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(331: (strLen) -->(size)) (stored at: variant353)
+1333905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ExpressionAdd(759: (startIndex >= size) || (buffer[i] == ch)) (stored at: variant354)
+1337019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 MethodReplacer(181) (stored at: variant355)
+1338857 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 ParameterReplacer(478: (1) -->(0)) (stored at: variant356)
+1340514 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
+1340514 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(143: (strLen > 0) -->(length < 0)) at variant357 fails to compile
 
-431582 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(255: (value) -->(startIndex > str.length())) (stored at: variant17)
-431584 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterReplacer(476: (i + 1) -->(size)) (stored at: )
-431585 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 ParameterReplacer(576: (i) -->(i + removeLen)) (stored at: )
-431586 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 42.0 ParameterReplacer(351: (0) -->(strLen)) (stored at: )
-431587 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 ParameterAdder(313) (stored at: )
-431588 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 MethodReplacer(140) (stored at: )
-431589 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 43.0 MethodReplacer(495) (stored at: )
-431592 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 44.0 NullCheckAdder(331) (stored at: )
-431592 [main] INFO clegoues.genprog4java.Search.Search  - search: generation5
-490796 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-520946 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionReplace(715: (startIndex < 0) -->(thisBuf[i] == ch)) (stored at: )
-520947 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 38.0 ParameterReplacer(515: (endIndex) -->(startIndex)) (stored at: )
-520948 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 MethodReplacer(198) (stored at: )
-520950 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 NullCheckAdder(326) (stored at: )
-520951 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 MethodReplacer(850) (stored at: )
-520952 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(332: (strLen) -->(size)) (stored at: )
-520953 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(342: (width) -->(value)) (stored at: )
-520954 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 39.0 MethodReplacer(145) (stored at: )
-520956 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ParameterAdder(300) (stored at: )
-520957 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 Object initializer (stored at: )
-520959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 MethodReplacer(346) (stored at: )
-520961 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(817: (this == other) || (c1 != c2 && Character.toUpperCase(c1) != Character.toUpperCase(c2))) (stored at: )
-520962 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ExpressionReplace(328: (obj == null) -->(width > 0)) (stored at: )
-520963 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 MethodReplacer(174) (stored at: )
-520964 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionReplace(726: (strLen > size) -->(thisBuf[i] == ch)) (stored at: )
-520965 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ParameterRemover(489: (index=indexOf(str,index);
-)) (stored at: )
-520966 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ExpressionAdd(842: (thisBuf[i] != otherBuf[i]) && (this.size != other.size)) (stored at: )
-520968 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 MethodReplacer(210) (stored at: )
-520969 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ExpressionReplace(308: (separator == null) -->(it != null)) (stored at: )
-520971 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 Object initializer (stored at: )
-520972 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(51: (0) -->(size)) (stored at: )
-520974 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 MethodReplacer(201) (stored at: )
-520975 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ExpressionRemove(241) (stored at: )
-520977 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(828) (stored at: )
-520979 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 NullCheckAdder(350) (stored at: )
-520981 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ExpressionAdd(702: (startIndex >= size) || (startIndex < 0)) (stored at: )
-520983 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 RangeChecker(532) (stored at: )
-520985 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ParameterReplacer(327: (size + width) -->(size)) (stored at: )
-520986 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 MethodReplacer(263) (stored at: )
-520988 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(486: (index + len) -->(index)) (stored at: )
-520990 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 RangeChecker(707) (stored at: )
-520991 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(455: (startIndex) -->(endIndex)) (stored at: )
-528587 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(338: (strLen) -->(size + padLen)) (stored at: variant18)
-528589 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 NullCheckAdder(164) (stored at: )
-528590 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(498: (index + len) -->(len)) (stored at: )
-528591 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 15.0 MethodReplacer(142) (stored at: )
-528592 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(508: (newSize) -->(removeLen)) (stored at: )
-528593 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 MethodReplacer(162) (stored at: )
-528595 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 NullCheckAdder(350) (stored at: )
-528597 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ExpressionAdd(530: (buffer[i] == search) && (search != replace)) (stored at: )
-528598 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 RangeChecker(828) (stored at: )
-528600 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ExpressionRemove(745) (stored at: )
-528601 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(332: (strLen - width) -->(0)) (stored at: )
-528602 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 MethodReplacer(487) (stored at: )
-528604 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 RangeChecker(530) (stored at: )
-528605 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 MethodReplacer(201) (stored at: )
-536243 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ExpressionReplace(151: (str == null) -->((startIndex + length) > str.length())) (stored at: variant19)
-536245 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ExpressionAdd(308: (separator == null) || (it != null)) (stored at: )
-536246 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ExpressionAdd(533: (buffer[i] == search) || (search != replace)) (stored at: )
-536248 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 NullCheckAdder(350) (stored at: )
-536249 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 MethodReplacer(263) (stored at: )
-543908 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ExpressionReplace(154: (startIndex < 0 || startIndex > str.length()) -->(length < 0)) (stored at: variant20)
-543909 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ExpressionReplace(701: (startIndex < 0) -->(startIndex >= size)) (stored at: )
-551501 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(361: (width) -->(0)) (stored at: variant21)
-551503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(456: (startIndex) -->(endIndex)) (stored at: )
-551504 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 43.0 ParameterReplacer(720: (startIndex) -->(0)) (stored at: )
-551506 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 NullCheckAdder(244) (stored at: )
-551507 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 RangeChecker(844) (stored at: )
-551509 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 NullCheckAdder(351) (stored at: )
-551510 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 44.0 ParameterRemover(486: (while (index >= 0) {
-  deleteImpl(index,index + len,len);
-  index=indexOf(str,index);
-}
-)) (stored at: )
-551510 [main] INFO clegoues.genprog4java.Search.Search  - search: generation6
-552777 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-574191 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-609181 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-620597 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-646467 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 NullCheckAdder(325) (stored at: )
-646468 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionReplace(312: (it.hasNext()) -->(hasNext)) (stored at: )
-646470 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 40.0 MethodReplacer(233) (stored at: )
-646471 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 MethodReplacer(197) (stored at: )
-646472 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 RangeChecker(535) (stored at: )
-646474 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 39.0 MethodReplacer(176) (stored at: )
-646474 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 MethodReplacer(329) (stored at: )
-646476 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 40.0 MethodReplacer(163) (stored at: )
-646477 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ExpressionRemove(115) (stored at: )
-646478 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ExpressionAdd(760: (startIndex < 0) && (startIndex >= size)) (stored at: )
-646480 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ExpressionAdd(681: (size <= index + length) && (length <= 0 || index >= size)) (stored at: )
-646481 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 38.0 ParameterReplacer(513: (0) -->(removeLen)) (stored at: )
-646482 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ParameterReplacer(493: (index + len) -->(0)) (stored at: )
-646484 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 40.0 MethodReplacer(220) (stored at: )
-646486 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 42.0 ParameterReplacer(351: (0) -->(strLen)) (stored at: )
-646488 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 NullCheckAdder(331) (stored at: )
-646490 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ParameterReplacer(109: (destination) -->(buffer)) (stored at: )
-646491 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ExpressionReplace(817: (this == other) -->(this.size != other.size)) (stored at: )
-646492 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 MethodReplacer(162) (stored at: )
-646493 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 MethodReplacer(160) (stored at: )
-646494 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ParameterReplacer(330: (strLen) -->(size)) (stored at: )
-646495 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ExpressionRemove(799) (stored at: )
-646497 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 NullCheckAdder(24) (stored at: )
-646498 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 42.0 MethodReplacer(249) (stored at: )
-646499 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ExpressionReplace(296: (separator == null) -->(it.hasNext())) (stored at: )
-646501 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 MethodReplacer(152) (stored at: )
-646502 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ParameterReplacer(477: (1) -->(size)) (stored at: )
-646503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 NullCheckAdder(331) (stored at: )
-646504 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ParameterReplacer(344: (0) -->(size)) (stored at: )
-646506 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 Object initializer (stored at: )
-646507 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ExpressionAdd(312: (it.hasNext()) || (separator == null)) (stored at: )
-646512 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionAdd(296: (separator == null) || (it != null)) (stored at: )
-646513 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ExpressionReplace(678: (length <= 0 || index >= size) -->(length <= 0)) (stored at: )
-646515 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 40.0 MethodReplacer(192) (stored at: )
-646515 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 MethodReplacer(14) (stored at: )
-646517 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 39.0 ExpressionReplace(706: (thisBuf[i] == ch) -->(startIndex >= size)) (stored at: )
-653380 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ExpressionAdd(209: (str == null) || (length < 0 || (startIndex + length) > str.length())) (stored at: variant22)
-653382 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ParameterAdder(10) (stored at: )
-653383 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 MethodReplacer(169) (stored at: )
-653384 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionReplace(118: (startIndex > endIndex) -->(destination.length < len)) (stored at: )
-653386 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 NullCheckAdder(193) (stored at: )
-653387 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 RangeChecker(476) (stored at: )
-653388 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 39.0 ParameterReplacer(509: (endIndex) -->(removeLen)) (stored at: )
-660952 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 40.0 ParameterReplacer(161: (startIndex) -->(startIndex + length)) (stored at: variant23)
-660954 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 40.0 MethodReplacer(221) (stored at: )
-660958 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ExpressionAdd(805: (matcher.isMatch(buf,i,0,endIndex) > 0) && (startIndex >= size)) (stored at: )
-660959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ParameterRemover(695: (return indexOf(str,0) >= 0;
-)) (stored at: )
-660960 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ParameterReplacer(146: (len + strLen) -->(len + length)) (stored at: )
-660961 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ParameterRemover(695: (return indexOf(str,0) >= 0;
-)) (stored at: )
-660963 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 Object initializer (stored at: )
-660964 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 NullCheckAdder(351) (stored at: )
-660965 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ExpressionReplace(681: (size <= index + length) -->(length <= 0 || index >= size)) (stored at: )
-662327 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-662327 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(197: (str == null) -->(startIndex < 0 || startIndex > str.length())) at variant24 fails to compile
-
-662327 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 ExpressionReplace(197: (str == null) -->(startIndex < 0 || startIndex > str.length())) (stored at: variant24)
-662329 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ParameterReplacer(86: (index + 1) -->(1)) (stored at: )
-662330 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ParameterReplacer(456: (len) -->(startIndex)) (stored at: )
-662331 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 NullCheckAdder(176) (stored at: )
-662332 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 ParameterReplacer(564: (startIndex) -->(endIndex)) (stored at: )
-662333 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ParameterReplacer(488: (index + len) -->(index)) (stored at: )
-662334 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 44.0 NullCheckAdder(222) (stored at: )
-662338 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 43.0 ExpressionAdd(750: (matcher.isMatch(buf,i,startIndex,len) > 0) && (startIndex < 0)) (stored at: )
-662339 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 0.0 MethodReplacer(191) (stored at: )
-662340 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 6 39.0 ExpressionReplace(708: (thisBuf[i] == ch) -->(startIndex >= size)) (stored at: )
-662340 [main] INFO clegoues.genprog4java.Search.Search  - search: generation7
-704304 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-729614 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-758250 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-765048 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ParameterReplacer(572: (i) -->(from)) (stored at: )
-765049 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 40.0 MethodReplacer(200) (stored at: )
-765050 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionReplace(83: (index < 0 || index >= size) -->(index >= size)) (stored at: )
-765051 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 MethodReplacer(271) (stored at: )
-765052 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 NullCheckAdder(512) (stored at: )
-765053 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 42.0 MethodReplacer(24) (stored at: )
-765055 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 Object initializer (stored at: )
-765056 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 NullCheckAdder(193) (stored at: )
-765057 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 MethodReplacer(239) (stored at: )
-765060 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 ExpressionAdd(294: (separator == null) || (hasNext)) (stored at: )
-765062 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 NullCheckAdder(736) (stored at: )
-765063 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionAdd(763: (buffer[i] == ch) || (startIndex >= size)) (stored at: )
-765064 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 43.0 MethodReplacer(171) (stored at: )
-765065 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionAdd(532: (buffer[i] == search) && (search != replace)) (stored at: )
-765066 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 37.0 ParameterReplacer(248: (length) -->(startIndex + length)) (stored at: )
-765068 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 43.0 ParameterReplacer(565: (startIndex) -->(endIndex)) (stored at: )
-765069 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ParameterReplacer(330: (strLen) -->(strLen - width)) (stored at: )
-765071 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 Object initializer (stored at: )
-765074 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 ExpressionAdd(296: (separator == null) && (it != null)) (stored at: )
-765076 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 Object initializer (stored at: )
-765077 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 42.0 MethodReplacer(249) (stored at: )
-765078 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 43.0 ExpressionRemove(745) (stored at: )
-766335 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-766335 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(139: (str == null) -->(length < 0)) at variant25 fails to compile
-
-766335 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 ExpressionReplace(139: (str == null) -->(length < 0)) (stored at: variant25)
-766337 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ParameterAdder(314) (stored at: )
-766338 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 ExpressionReplace(726: (strLen > size) -->(thisBuf[i] == ch)) (stored at: )
-766339 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 43.0 ExpressionReplace(871: (startIndex > endIndex) -->(startIndex < 0)) (stored at: )
-766340 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ParameterRemover(486: (while (index >= 0) {
-  deleteImpl(index,index + len,len);
-  index=indexOf(str,index);
-}
-)) (stored at: )
-766341 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ParameterReplacer(829: (c2) -->(c1)) (stored at: )
-766342 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 ExpressionAdd(328: (obj == null) || (strLen >= width)) (stored at: )
-766343 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 NullCheckAdder(736) (stored at: )
-766344 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 43.0 ParameterReplacer(722: (startIndex) -->(0)) (stored at: )
-766345 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ParameterRemover(485: (int index=indexOf(str,0);
-)) (stored at: )
-766346 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionAdd(308: (separator == null) || (it != null)) (stored at: )
-766347 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 MethodReplacer(203) (stored at: )
-766348 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionAdd(706: (thisBuf[i] == ch) || (startIndex >= size)) (stored at: )
-766349 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 39.0 ParameterReplacer(517: (endIndex) -->(startIndex)) (stored at: )
-766350 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionAdd(706: (thisBuf[i] == ch) || (startIndex < 0)) (stored at: )
-766351 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 38.0 ParameterReplacer(509: (size - endIndex) -->(removeLen)) (stored at: )
-766352 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 MethodReplacer(719) (stored at: )
-766353 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionAdd(760: (startIndex < 0) || (startIndex >= size)) (stored at: )
-766354 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 43.0 MethodReplacer(482) (stored at: )
-766356 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 Object initializer (stored at: )
-766357 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionReplace(837: (this.size != other.size) -->(this == other)) (stored at: )
-766358 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 RangeChecker(828) (stored at: )
-766360 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionAdd(834: (this == other) && (this.size != other.size)) (stored at: )
-766361 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 Object initializer (stored at: )
-766362 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 43.0 ParameterReplacer(507: (newSize) -->(removeLen)) (stored at: )
-773874 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 38.0 ParameterReplacer(247: (startIndex) -->(startIndex + length)) (stored at: variant26)
-773876 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 NullCheckAdder(311) (stored at: )
-773877 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 40.0 ParameterReplacer(121: (startIndex) -->(0)) (stored at: )
-773877 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 43.0 ParameterReplacer(805: (endIndex) -->(i)) (stored at: )
-773878 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 ExpressionRemove(215) (stored at: )
-773880 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 Object initializer (stored at: )
-773881 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 39.0 MethodReplacer(173) (stored at: )
-773882 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 0.0 MethodReplacer(342) (stored at: )
-773883 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 7 44.0 RangeChecker(529) (stored at: )
-773883 [main] INFO clegoues.genprog4java.Search.Search  - search: generation8
-785224 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-786492 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-801242 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-808803 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-813413 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-828018 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-865000 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ExpressionReplace(806: (matcher.isMatch(buf,i,0,endIndex) > 0) -->(startIndex >= size)) (stored at: )
-865001 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ParameterReplacer(577: (removeLen) -->(to)) (stored at: )
-865002 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ParameterRemover(722: (return indexOf(str.charAt(0),startIndex);
-)) (stored at: )
-865003 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ExpressionRemove(567) (stored at: )
-865004 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 MethodReplacer(171) (stored at: )
-865005 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ParameterAdder(300) (stored at: )
-865006 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ParameterReplacer(577: (replaceLen) -->(i + removeLen)) (stored at: )
-865007 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 27.0 MethodReplacer(15) (stored at: )
-865008 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 ExpressionReplace(325: (obj == null) -->(strLen >= width)) (stored at: )
-865011 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ExpressionAdd(806: (matcher.isMatch(buf,i,0,endIndex) > 0) && (startIndex >= size)) (stored at: )
-865012 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 MethodReplacer(328) (stored at: )
-865013 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ExpressionAdd(482: (str == null) && (len > 0)) (stored at: )
-865015 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 NullCheckAdder(751) (stored at: )
-865016 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 39.0 MethodReplacer(175) (stored at: )
-865016 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ParameterReplacer(455: (len) -->(startIndex)) (stored at: )
-865017 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ExpressionReplace(580: (replaceCount > 0) -->(removeLen > 0)) (stored at: )
-865018 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 38.0 ExpressionReplace(247: (length > 0) -->(startIndex < 0)) (stored at: )
-865019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ExpressionReplace(575: (replaceCount > 0) -->(replaceStr == null)) (stored at: )
-865022 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 ExpressionAdd(168: (str == null) && (length < 0 || (startIndex + length) > str.length())) (stored at: )
-865023 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 MethodReplacer(298) (stored at: )
-865025 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 Object initializer (stored at: )
-865026 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ExpressionAdd(868: (endIndex > size) && (startIndex < 0)) (stored at: )
-865027 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ParameterReplacer(474: (i) -->(0)) (stored at: )
-865028 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ParameterReplacer(346: (size + width) -->(0)) (stored at: )
-865029 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 MethodReplacer(699) (stored at: )
-865031 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 MethodReplacer(299) (stored at: )
-865032 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 MethodReplacer(256) (stored at: )
-865036 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ExpressionAdd(751: (matcher.isMatch(buf,i,startIndex,len) > 0) && (startIndex < 0)) (stored at: )
-865037 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ExpressionReplace(865: (startIndex < 0) -->(startIndex > endIndex)) (stored at: )
-865038 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ParameterReplacer(456: (len) -->(endIndex)) (stored at: )
-865040 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 40.0 MethodReplacer(193) (stored at: )
-865042 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 NullCheckAdder(513) (stored at: )
-865043 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 Object initializer (stored at: )
-865044 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 MethodReplacer(231) (stored at: )
-865046 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 39.0 MethodReplacer(172) (stored at: )
-865047 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 MethodReplacer(489) (stored at: )
-865049 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 MethodReplacer(174) (stored at: )
-865050 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 NullCheckAdder(511) (stored at: )
-865051 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 MethodReplacer(263) (stored at: )
-865052 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 38.0 ParameterReplacer(512: (startIndex) -->(removeLen)) (stored at: )
-872557 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ExpressionReplace(244: (length < 0 || (startIndex + length) > chars.length) -->(startIndex < 0)) (stored at: variant27)
-872572 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 MethodReplacer(140) (stored at: )
-872573 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 39.0 ParameterReplacer(449: (size - endIndex) -->(startIndex)) (stored at: )
-872574 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 40.0 ParameterReplacer(193: (len) -->(startIndex + length)) (stored at: )
-872575 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 MethodReplacer(757) (stored at: )
-872577 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 NullCheckAdder(212) (stored at: )
-872578 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 MethodReplacer(191) (stored at: )
-872579 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 38.0 ParameterReplacer(248: (startIndex) -->(startIndex + length)) (stored at: )
-872580 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ExpressionReplace(751: (matcher.isMatch(buf,i,startIndex,len) > 0) -->(startIndex >= size)) (stored at: )
-872581 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 ExpressionReplace(732: (str.charAt(j) != thisBuf[i + j]) -->(thisBuf[i] == ch)) (stored at: )
-872582 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ParameterReplacer(250: (len + length) -->(startIndex + length)) (stored at: )
-872584 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ExpressionReplace(834: (this == other) -->(this.size != other.size)) (stored at: )
-872585 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 MethodReplacer(14) (stored at: )
-872586 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 43.0 ExpressionAdd(572: (replaceCount > 0) && (matcher == null)) (stored at: )
-872587 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 40.0 MethodReplacer(192) (stored at: )
-872588 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 Object initializer (stored at: )
-872589 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 40.0 ParameterReplacer(732: (j) -->(0)) (stored at: )
-872590 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 0.0 ParameterReplacer(233: (len + strLen) -->(len + length)) (stored at: )
-872592 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ClassCastChecker(@850: [ (StrBuilder)obj ]) (stored at: )
-872593 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 8 44.0 ExpressionReplace(865: (startIndex < 0) -->(startIndex > endIndex)) (stored at: )
-872593 [main] INFO clegoues.genprog4java.Search.Search  - search: generation9
-880577 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-885223 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-904314 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-905572 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-957404 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-966453 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-967701 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-983124 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 NullCheckAdder(183) (stored at: )
-983125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 ParameterRemover(722: (return indexOf(str.charAt(0),startIndex);
-)) (stored at: )
-983126 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 ParameterReplacer(338: (strLen) -->(size + padLen)) (stored at: )
-983127 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ParameterReplacer(218: (len + length) -->(startIndex)) (stored at: )
-983129 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 MethodReplacer(735) (stored at: )
-983130 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 MethodReplacer(239) (stored at: )
-983131 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ExpressionRemove(826) (stored at: )
-983133 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 12.0 MethodReplacer(146) (stored at: )
-983134 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 38.0 ParameterReplacer(509: (size - endIndex) -->(removeLen)) (stored at: )
-983135 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 ParameterRemover(720: (if (strLen == 1) {
-  return indexOf(str.charAt(0),startIndex);
-}
-)) (stored at: )
-983136 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 40.0 ParameterReplacer(734: (j) -->(i)) (stored at: )
-983138 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 NullCheckAdder(144) (stored at: )
-983142 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ExpressionAdd(295: (it.hasNext()) || (it != null)) (stored at: )
-983143 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ParameterAdder(132) (stored at: )
-990098 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ExpressionAdd(201: (strLen > 0) || (startIndex < 0 || startIndex > str.length())) (stored at: variant28)
-991396 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-991396 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(115: (endIndex < 0 || endIndex > length()) && (destination == null || destination.length < len)) at variant29 fails to compile
-
-991396 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionAdd(115: (endIndex < 0 || endIndex > length()) && (destination == null || destination.length < len)) (stored at: variant29)
-991397 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 MethodReplacer(255) (stored at: )
-991398 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 38.0 ParameterReplacer(248: (startIndex) -->(startIndex + length)) (stored at: )
-991400 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 NullCheckAdder(14) (stored at: )
-991402 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 37.0 ParameterReplacer(251: (len) -->(startIndex + length)) (stored at: )
-991403 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 MethodReplacer(507) (stored at: )
-991404 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 ParameterReplacer(454: (endIndex) -->(startIndex)) (stored at: )
-991405 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 40.0 MethodReplacer(162) (stored at: )
-991406 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 MethodReplacer(263) (stored at: )
-991407 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 40.0 MethodReplacer(200) (stored at: )
-991409 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionReplace(230: (strLen > 0) -->(startIndex < 0)) (stored at: )
-991410 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 NullCheckAdder(106) (stored at: )
-991412 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 MethodReplacer(105) (stored at: )
-992685 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang59_60_1/lang59Buggy/runCompile.sh exited abnormally with status 1
-992685 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(296: (separator == null) && (hasNext)) at variant30 fails to compile
-
-992685 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionAdd(296: (separator == null) && (hasNext)) (stored at: variant30)
-992687 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 39.0 ParameterReplacer(507: (endIndex) -->(removeLen)) (stored at: )
-992689 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 NullCheckAdder(176) (stored at: )
-1000311 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 40.0 ParameterReplacer(222: (startIndex + length) -->(len + length)) (stored at: variant31)
-1000316 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ExpressionAdd(299: (it.hasNext()) && (separator == null)) (stored at: )
-1000317 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 RangeChecker(827) (stored at: )
-1000318 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ExpressionAdd(763: (buffer[i] == ch) || (startIndex >= size)) (stored at: )
-1000319 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 MethodReplacer(145) (stored at: )
-1000321 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 NullCheckAdder(732) (stored at: )
-1000321 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 MethodReplacer(249) (stored at: )
-1000322 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 MethodReplacer(312) (stored at: )
-1000324 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 NullCheckAdder(157) (stored at: )
-1000325 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 38.0 ParameterReplacer(506: (size - endIndex) -->(removeLen)) (stored at: )
-1000329 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 RangeChecker(827) (stored at: )
-1000330 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionAdd(820: (this.size != other.size) || (Character.toUpperCase(c1) != Character.toUpperCase(c2))) (stored at: )
-1000331 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 42.0 ParameterReplacer(720: (0) -->(startIndex)) (stored at: )
-1000332 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 ParameterReplacer(86: (1) -->(index)) (stored at: )
-1000333 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ExpressionAdd(530: (buffer[i] == search) && (search != replace)) (stored at: )
-1000335 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 40.0 MethodReplacer(161) (stored at: )
-1000336 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 ExpressionReplace(798: (startIndex >= size) -->(startIndex < 0)) (stored at: )
-1000340 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionAdd(112: (startIndex < 0) || (destination == null || destination.length < len)) (stored at: )
-1000342 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 NullCheckAdder(190) (stored at: )
-1000345 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 MethodReplacer(325) (stored at: )
-1000347 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 RangeChecker(828) (stored at: )
-1000348 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 RangeChecker(475) (stored at: )
-1000349 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 MethodReplacer(203) (stored at: )
-1000350 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 42.0 ParameterReplacer(350: (strLen) -->(size)) (stored at: )
-1000351 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ClassCastChecker(@849: [ (StrBuilder)obj ]) (stored at: )
-1000352 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 40.0 ExpressionReplace(160: (length > 0) -->(startIndex > str.length())) (stored at: )
-1000353 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionReplace(247: (length > 0) -->(str == null)) (stored at: )
-1000354 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ExpressionAdd(573: (replaceCount > 0) || (replaceStr == null)) (stored at: )
-1000356 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 38.0 Object initializer (stored at: )
-1000357 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 43.0 ParameterReplacer(574: (to) -->(i)) (stored at: )
-1000358 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 44.0 ExpressionReplace(83: (index < 0 || index >= size) -->(index < 0 || index >= size)) (stored at: )
-1000734 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-1000734 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 1000
+1340514 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 0.0 ExpressionReplace(143: (strLen > 0) -->(length < 0)) (stored at: variant357)
+1343461 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 3.0 ParameterReplacer(202: (str.buffer) -->(buffer)) (stored at: variant358)
+1343463 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 RangeChecker(535) (stored at: )
+1343465 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 9 4.0 MethodReplacer(851) (stored at: )
+1343696 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+1343696 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 1343
 

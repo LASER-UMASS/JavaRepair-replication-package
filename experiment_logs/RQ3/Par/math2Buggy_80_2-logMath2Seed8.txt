@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 15 04:30:45 EDT 2018
+34 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 13:01:43 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math2_80_2/math2Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math2_80_2/math2Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,29 +50,28 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-72 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+118 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-495 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@b067861b
-5495 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5511 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10512 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+765 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@b067861b
+5765 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+5792 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+10793 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10558 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 original (stored at: )
-10594 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(73) (stored at: )
-13911 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(48: (populationSize) -->(numberOfSuccesses)) (stored at: variant0)
-13924 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@54: [ (double)(populationSize - sampleSize)(double)populationSize ]) (stored at: )
-13925 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(24: (sampleSize) -->(populationSize)) (stored at: )
-17304 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(48: (populationSize) -->(sampleSize)) (stored at: variant1)
-20620 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(57: (populationSize) -->(x)) (stored at: variant2)
-23971 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 MethodReplacer(80) (stored at: variant3)
-27391 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(57: (populationSize) -->(populationSize - numberOfSuccesses)) (stored at: variant4)
-30735 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionReplace(7: (numberOfSuccesses < 0) -->(populationSize <= 0)) (stored at: variant5)
-30738 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(77) (stored at: )
-30739 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 15.0 MethodReplacer(82) (stored at: )
-30739 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: MethodReplacer(82) (in )
+10868 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 original (stored at: )
+10914 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 MethodReplacer(73) (stored at: )
+14884 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(48: (populationSize) -->(numberOfSuccesses)) (stored at: variant0)
+16747 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math2_80_2/math2Buggy/runCompile.sh exited abnormally with status 1
+16747 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@54: [ (double)(populationSize - sampleSize)(double)populationSize ]) at variant1 fails to compile
 
-30748 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-30748 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 30
+16747 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@54: [ (double)populationSize(double)(populationSize - sampleSize) ]) (stored at: variant1)
+20467 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(24: (numberOfSuccesses) -->(populationSize)) (stored at: variant2)
+24178 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(48: (populationSize) -->(sampleSize)) (stored at: variant3)
+27347 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(57: (sampleSize) -->(x)) (stored at: variant4)
+31845 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 15.0 MethodReplacer(80) (stored at: variant5)
+31845 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: MethodReplacer(80) (in variant5)
+
+31859 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+31859 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 31
 

@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-20 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Thu Apr 05 06:34:47 EDT 2018
+55 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 23:23:09 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/build/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,89 +50,608 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-78 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+140 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-800 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@d37cacf1
-5801 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5838 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10839 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+1342 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@d37cacf1
+6342 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6427 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11428 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10911 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 original (stored at: )
-39169 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionAdd(387: (!expectedType.isUnknownType()) && (!type.isPropertyTypeInferred(property))) (stored at: variant0)
-39179 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-67254 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionReplace(571: (varType != null) -->(parentNodeType == Token.FUNCTION || parentNodeType == Token.CATCH || parentNodeType == Token.PARAM_LIST)) (stored at: variant1)
-95426 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(448) (stored at: variant2)
-123743 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 MethodReplacer(426) (stored at: variant3)
-123747 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(888) (stored at: )
-123750 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 34.0 ParameterReplacer(657: (nameType) -->(valueType)) (stored at: )
-123752 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ParameterReplacer(103: (n) -->(parent)) (stored at: )
-123754 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 33.0 ParameterReplacer(330: (key) -->(n)) (stored at: )
-152243 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionAdd(387: (type.hasProperty(property) && !type.isPropertyTypeInferred(property) && !propertyIsImplicitCast(type,property)) || (type.hasProperty(property) && !type.isPropertyTypeInferred(property) && !propertyIsImplicitCast(type,property))) (stored at: variant4)
-180446 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionAdd(717: (badImplementedType) && (baseInterfaceObj != null)) (stored at: variant5)
-180447 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionReplace(721: (extInterface.getConstructor() != null && !extInterface.getConstructor().isInterface()) -->(extInterface.getConstructor() != null && !extInterface.getConstructor().isInterface())) (stored at: )
-180451 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(205) (stored at: )
-180454 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 34.0 ParameterReplacer(434: (property) -->(property2)) (stored at: )
-180458 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-209080 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionRemove(194) (stored at: variant6)
-212486 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-212487 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(491: (implementedInterface.isUnknownType() || implementedInterface.isEmptyType()) -->(interfaceHasProperty)) at variant7 fails to compile
+23239 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 original (stored at: variant0)
+37409 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(387: (!expectedType.isUnknownType()) && (!type.isPropertyTypeInferred(property))) (stored at: variant1)
+42781 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+42782 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant2 fails to compile
 
-212487 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(491: (implementedInterface.isUnknownType() || implementedInterface.isEmptyType()) -->(interfaceHasProperty)) (stored at: variant7)
-212490 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionRemove(542) (stored at: )
-212493 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 NullCheckAdder(179) (stored at: )
-212495 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(484) (stored at: )
-215943 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-215944 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(364: (property.equals("prototype")) || (equals)) at variant8 fails to compile
+42782 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant2)
+58446 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionReplace(571: (varType != null) -->(parentNodeType == Token.FUNCTION || parentNodeType == Token.CATCH || parentNodeType == Token.PARAM_LIST)) (stored at: variant3)
+71386 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(448) (stored at: variant4)
+86776 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 MethodReplacer(426) (stored at: variant5)
+99802 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 NullCheckAdder(888) (stored at: variant6)
+113358 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(657: (nameType) -->(valueType)) (stored at: variant7)
+125933 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(103: (n) -->(parent)) (stored at: variant8)
+138724 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(330: (key) -->(n)) (stored at: variant9)
+152881 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(387: (type.hasProperty(property) && !type.isPropertyTypeInferred(property) && !propertyIsImplicitCast(type,property)) && (type.hasProperty(property) && !type.isPropertyTypeInferred(property) && !propertyIsImplicitCast(type,property))) (stored at: variant10)
+168098 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(717: (badImplementedType) && (baseInterfaceObj != null)) (stored at: variant11)
+168099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionReplace(721: (extInterface.getConstructor() != null && !extInterface.getConstructor().isInterface()) -->(extInterface.getConstructor() != null && !extInterface.getConstructor().isInterface())) (stored at: )
+180906 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(205) (stored at: variant12)
+194338 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(434: (assign) -->(object2)) (stored at: variant13)
+199611 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+199611 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant14 fails to compile
 
-215944 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(364: (property.equals("prototype")) || (equals)) (stored at: variant8)
-215948 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(392) (stored at: )
-215951 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(197) (stored at: )
-219410 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-219411 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant9 fails to compile
+199612 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant14)
+214739 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionRemove(194) (stored at: variant15)
+219978 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+219978 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(491: (reportMissingOverride.isOn() && !declaredOverride && interfaceHasProperty) -->(!propertyType.canAssignTo(superClassPropType))) at variant16 fails to compile
 
-219411 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant9)
-219414 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 24.0 ExpressionReplace(71: (functionPrivateName != null && functionPrivateName.length() > 0 && outerScope.isDeclared(functionPrivateName,false) && !(outerScope.getVar(functionPrivateName).getType() instanceof FunctionType)) -->(functionPrivateName != null)) (stored at: )
-222824 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-222825 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant10 fails to compile
+219978 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(491: (reportMissingOverride.isOn() && !declaredOverride && interfaceHasProperty) -->(!propertyType.canAssignTo(superClassPropType))) (stored at: variant16)
+235148 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionRemove(542) (stored at: variant17)
+240603 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+240603 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - NullCheckAdder(179) at variant18 fails to compile
 
-222825 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant10)
-222828 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(432) (stored at: )
-222831 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-222833 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-222835 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionRemove(748) (stored at: )
-250779 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 34.0 ParameterReplacer(657: (valueType) -->(nameType)) (stored at: variant11)
-250782 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(485) (stored at: )
-250784 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(43) (stored at: )
-250787 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(549) (stored at: )
-278525 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(768) (stored at: variant12)
-278528 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 NullCheckAdder(768) (stored at: )
-307095 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ParameterReplacer(374: (assign) -->(rvalue)) (stored at: variant13)
-307097 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(118: (n) -->(left)) (stored at: )
-335617 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 36.0 ExpressionRemove(404) (stored at: variant14)
-335617 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
-346522 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-398907 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-402474 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-413259 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-452161 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-513702 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 36.0 NullCheckAdder(197) (stored at: )
-513705 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: )
-540916 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 36.0 NullCheckAdder(542) (stored at: variant15)
-540918 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 36.0 ParameterReplacer(878: (infoType) -->(type)) (stored at: )
-540920 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 36.0 NullCheckAdder(195) (stored at: )
-540924 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: )
-540930 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: )
-544339 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-544339 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant16 fails to compile
+240603 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 NullCheckAdder(179) (stored at: variant18)
+252729 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(484) (stored at: variant19)
+267085 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionAdd(364: (type.hasProperty(property) && !type.isPropertyTypeInferred(property) && !propertyIsImplicitCast(type,property)) && (type != null)) (stored at: variant20)
+279503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(392) (stored at: variant21)
+290969 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(197) (stored at: variant22)
+296265 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+296266 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant23 fails to compile
 
-544339 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant16)
-547740 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-547741 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(516: (!propertyType.canAssignTo(superClassPropType)) || (reportMissingOverride.isOn() && !declaredOverride && interfaceHasProperty)) at variant17 fails to compile
+296266 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant23)
+311735 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionReplace(71: (functionPrivateName != null && functionPrivateName.length() > 0 && outerScope.isDeclared(functionPrivateName,false) && !(outerScope.getVar(functionPrivateName).getType() instanceof FunctionType)) -->(functionPrivateName != null)) (stored at: variant24)
+317147 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+317148 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant25 fails to compile
 
-547741 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(516: (!propertyType.canAssignTo(superClassPropType)) || (reportMissingOverride.isOn() && !declaredOverride && interfaceHasProperty)) (stored at: variant17)
-575859 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 36.0 ParameterReplacer(729: (CONFLICTING_IMPLEMENTED_TYPE) -->(CONFLICTING_EXTENDED_TYPE)) (stored at: variant18)
-575862 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 36.0 NullCheckAdder(700) (stored at: )
-579367 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
-579367 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant19 fails to compile
+317148 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant25)
+329334 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(432) (stored at: variant26)
+334696 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+334696 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant27 fails to compile
 
-579367 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant19)
+334696 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant27)
+339907 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+339907 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant28 fails to compile
+
+339907 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant28)
+355081 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionRemove(748) (stored at: variant29)
+370632 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 ParameterReplacer(657: (valueType) -->(nameType)) (stored at: variant30)
+382767 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(485) (stored at: variant31)
+395727 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(43) (stored at: variant32)
+409959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(549) (stored at: variant33)
+425467 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(768) (stored at: variant34)
+438115 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 NullCheckAdder(768) (stored at: variant35)
+453096 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ParameterReplacer(374: (rvalue) -->(object)) (stored at: variant36)
+458471 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+458471 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(118: (n) -->(left)) at variant37 fails to compile
+
+458471 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ParameterReplacer(118: (n) -->(left)) (stored at: variant37)
+473732 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 4.0 ExpressionRemove(404) (stored at: variant38)
+473732 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+580988 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(516) (stored at: variant39)
+596109 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(495) (stored at: variant40)
+611406 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(542: (maybeSuperInstanceType.isUnknownType() || maybeSuperInstanceType.isEmptyType()) -->(ctor == null)) (stored at: variant41)
+624669 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(887) (stored at: variant42)
+630030 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+630030 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant43 fails to compile
+
+630031 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant43)
+645374 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionRemove(562) (stored at: variant44)
+650779 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+650779 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant45 fails to compile
+
+650779 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant45)
+656054 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+656055 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - NullCheckAdder(180) at variant46 fails to compile
+
+656055 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 NullCheckAdder(180) (stored at: variant46)
+669753 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(140) (stored at: variant47)
+675117 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+675117 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant48 fails to compile
+
+675117 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant48)
+690667 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(436: (key) -->(objlit)) (stored at: variant49)
+695977 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+695978 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant50 fails to compile
+
+695978 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant50)
+711155 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 Object initializer (stored at: variant51)
+716496 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+716496 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant52 fails to compile
+
+716496 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant52)
+730213 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(42) (stored at: variant53)
+745627 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 MethodReplacer(610) (stored at: variant54)
+750781 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+750781 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant55 fails to compile
+
+750782 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant55)
+766022 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(748: (n) -->(child)) (stored at: variant56)
+781600 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionRemove(519) (stored at: variant57)
+794354 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(660: (constructor) -->(n)) (stored at: variant58)
+810073 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 ParameterReplacer(433: (property) -->(property2)) (stored at: variant59)
+825138 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(194) (stored at: variant60)
+830357 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+830358 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - NullCheckAdder(0) at variant61 fails to compile
+
+830358 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 NullCheckAdder(0) (stored at: variant61)
+835672 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+835673 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(429: (functionType.isConstructor() || functionType.isInterface()) -->(equals)) at variant62 fails to compile
+
+835673 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(429: (functionType.isConstructor() || functionType.isInterface()) -->(equals)) (stored at: variant62)
+848014 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(449) (stored at: variant63)
+853109 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+853109 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(103: (n) -->(left)) at variant64 fails to compile
+
+853109 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(103: (n) -->(left)) (stored at: variant64)
+866112 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(655: (name) -->(value)) (stored at: variant65)
+881375 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(367: (object) -->(rvalue)) (stored at: variant66)
+896642 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(35: (externsRoot) -->(jsRoot)) (stored at: variant67)
+912637 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionAdd(882: (info.isImplicitCast() && !inExterns) || (info.isImplicitCast() && !inExterns)) (stored at: variant68)
+917761 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+917761 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant69 fails to compile
+
+917761 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant69)
+933142 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(784: (minArgs > numArgs || maxArgs < numArgs) -->(maxArgs != Integer.MAX_VALUE)) (stored at: variant70)
+945346 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(470: (docInfo != null && docInfo.isImplicitCast()) -->(docInfo != null)) (stored at: variant71)
+959500 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionAdd(664: (fnType != null) && (type.isConstructor() || type.isEmptyType() || type.isUnknownType())) (stored at: variant72)
+974791 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionAdd(514: (!propertyType.canAssignTo(superClassPropType)) && (!superClassHasProperty)) (stored at: variant73)
+990276 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionRemove(610) (stored at: variant74)
+1005590 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(389) (stored at: variant75)
+1010861 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1010867 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant76 fails to compile
+
+1010867 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant76)
+1026282 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 2.0 ExpressionAdd(876: (info.isImplicitCast() && !inExterns) || (info != null)) (stored at: variant77)
+1040071 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(388) (stored at: variant78)
+1055446 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(763) (stored at: variant79)
+1069338 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(581: (objNode) -->(property)) (stored at: variant80)
+1074643 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1074643 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant81 fails to compile
+
+1074643 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant81)
+1088584 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(196) (stored at: variant82)
+1102572 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(140) (stored at: variant83)
+1107948 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1107950 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant84 fails to compile
+
+1107950 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant84)
+1123702 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(514: (!propertyType.canAssignTo(superClassPropType)) -->(!declaredOverride)) (stored at: variant85)
+1128978 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1128978 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(442: (rightType == null) -->(!type.isPropertyTypeInferred(property))) at variant86 fails to compile
+
+1128978 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(442: (rightType == null) -->(!type.isPropertyTypeInferred(property))) (stored at: variant86)
+1144490 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(581: (objNode) -->(n)) (stored at: variant87)
+1149718 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1149718 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant88 fails to compile
+
+1149718 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant88)
+1164887 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 3.0 NullCheckAdder(502) (stored at: variant89)
+1180667 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionAdd(376: (objectJsType != null && objectJsType.isFunctionType()) && (objectJsType != null && objectJsType.isFunctionType())) (stored at: variant90)
+1195818 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(392: (assign) -->(object)) (stored at: variant91)
+1209256 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionRemove(369) (stored at: variant92)
+1220877 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionReplace(582: (n.getJSType() != null && parent.isAssign()) -->(n.getJSType() != null && parent.isAssign())) (stored at: variant93)
+1232852 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(654: (name) -->(value)) (stored at: variant94)
+1246146 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 NullCheckAdder(876) (stored at: variant95)
+1251416 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1251417 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant96 fails to compile
+
+1251417 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant96)
+1256694 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1256694 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant97 fails to compile
+
+1256694 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant97)
+1261904 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1261905 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant98 fails to compile
+
+1261905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant98)
+1267073 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1267074 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(132: (n) -->(left)) at variant99 fails to compile
+
+1267074 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ParameterReplacer(132: (n) -->(left)) (stored at: variant99)
+1280020 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ParameterReplacer(103: (n) -->(parent)) (stored at: variant100)
+1293603 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 4.0 ExpressionRemove(530) (stored at: variant101)
+1298839 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1298839 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(408: (NodeUtil.getRootOfQualifiedName(lvalue).isThis() && t.getScope() != var.getScope()) || (!expectedType.isUnknownType())) at variant102 fails to compile
+
+1298839 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(408: (NodeUtil.getRootOfQualifiedName(lvalue).isThis() && t.getScope() != var.getScope()) || (!expectedType.isUnknownType())) (stored at: variant102)
+1304327 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1304327 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant103 fails to compile
+
+1304327 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant103)
+1309539 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1309539 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant104 fails to compile
+
+1309539 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant104)
+1309539 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
+1500380 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(429) (stored at: variant105)
+1505857 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1505858 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant106 fails to compile
+
+1505858 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant106)
+1521675 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(97: (n) -->(parent)) (stored at: variant107)
+1534995 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 NullCheckAdder(195) (stored at: variant108)
+1547229 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(377) (stored at: variant109)
+1561162 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(85: ((n.isObjectLit()) && (parent.getJSType() instanceof EnumType)) && ((n.isObjectLit()) && (parent.getJSType() instanceof EnumType))) (stored at: variant110)
+1576599 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(457: (objlit) -->(key)) (stored at: variant111)
+1592135 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(594: (objectType != null) -->(!objectType.hasProperty(propName) || objectType.isEquivalentTo(typeRegistry.getNativeType(UNKNOWN_TYPE)))) (stored at: variant112)
+1604363 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(777) (stored at: variant113)
+1609653 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1609653 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant114 fails to compile
+
+1609653 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant114)
+1625117 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionReplace(388: (!expectedType.isUnknownType()) -->(!propertyIsImplicitCast(type,property))) (stored at: variant115)
+1630386 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1630386 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant116 fails to compile
+
+1630386 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant116)
+1643792 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(653) (stored at: variant117)
+1657459 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(566: (varType != null) -->(var != null)) (stored at: variant118)
+1670631 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(877: (infoType) -->(type)) (stored at: variant119)
+1675747 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1675747 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant120 fails to compile
+
+1675747 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant120)
+1688271 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(654: (name) -->(value)) (stored at: variant121)
+1693629 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1693644 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant122 fails to compile
+
+1693644 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant122)
+1706360 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(653: (nameType) -->(valueType)) (stored at: variant123)
+1719497 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(612) (stored at: variant124)
+1734536 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(372: (jsType.isInterface() && object.getLastChild().getString().equals("prototype")) -->(objectJsType != null && objectJsType.isFunctionType())) (stored at: variant125)
+1749651 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(749: (EXPECTED_THIS_TYPE) -->(CONSTRUCTOR_NOT_CALLABLE)) (stored at: variant126)
+1762443 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(331: (key) -->(n)) (stored at: variant127)
+1767566 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1767566 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant128 fails to compile
+
+1767566 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant128)
+1772906 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1772906 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant129 fails to compile
+
+1772906 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant129)
+1788257 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(700: (functionPrivateName) -->("dict")) (stored at: variant130)
+1793682 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1793682 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(136: (n) -->(left)) at variant131 fails to compile
+
+1793682 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(136: (n) -->(left)) (stored at: variant131)
+1799095 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1799095 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant132 fails to compile
+
+1799095 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant132)
+1804253 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1804254 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant133 fails to compile
+
+1804254 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant133)
+1817652 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(790: (valueNode == null) -->(returnType == null)) (stored at: variant134)
+1831720 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(332: (key) -->(n)) (stored at: variant135)
+1845649 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(613) (stored at: variant136)
+1858526 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(534) (stored at: variant137)
+1873740 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(87: (parent) -->(n)) (stored at: variant138)
+1888900 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(780) (stored at: variant139)
+1894209 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1894209 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant140 fails to compile
+
+1894209 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant140)
+1907513 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionRemove(462) (stored at: variant141)
+1923139 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 3.0 ExpressionAdd(562: (parentNodeType == Token.FUNCTION || parentNodeType == Token.CATCH || parentNodeType == Token.PARAM_LIST || parentNodeType == Token.VAR) && (parentNodeType == Token.FUNCTION || parentNodeType == Token.CATCH)) (stored at: variant142)
+1928203 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1928203 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant143 fails to compile
+
+1928203 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant143)
+1941344 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(42) (stored at: variant144)
+1954445 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(63) (stored at: variant145)
+1966864 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(664) (stored at: variant146)
+1980128 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(883) (stored at: variant147)
+1985376 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1985376 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(341: (n) -->(left)) at variant148 fails to compile
+
+1985376 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ParameterReplacer(341: (n) -->(left)) (stored at: variant148)
+1990553 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+1990553 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant149 fails to compile
+
+1990553 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant149)
+2006284 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(370: (lvalue) -->(object)) (stored at: variant150)
+2021380 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(570: (var != null) -->(parentNodeType == Token.PARAM_LIST)) (stored at: variant151)
+2036507 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 Object initializer (stored at: variant152)
+2049051 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(198) (stored at: variant153)
+2064383 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionAdd(186: (right.isTypeOf() && left.isString()) && (n.getType() == Token.EQ || n.getType() == Token.NE)) (stored at: variant154)
+2077046 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(598) (stored at: variant155)
+2082215 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2082215 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant156 fails to compile
+
+2082215 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 Object initializer (stored at: variant156)
+2095012 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(535) (stored at: variant157)
+2109913 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ParameterReplacer(553: (INVALID_INTERFACE_MEMBER_DECLARATION) -->(INTERFACE_FUNCTION_NOT_EMPTY)) (stored at: variant158)
+2123227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 NullCheckAdder(554) (stored at: variant159)
+2137426 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 ExpressionReplace(539: (maybeSuperInstanceType == null) -->(maybeSuperInstanceType.isUnknownType() || maybeSuperInstanceType.isEmptyType())) (stored at: variant160)
+2142887 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2142887 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - NullCheckAdder(0) at variant161 fails to compile
+
+2142887 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 NullCheckAdder(0) (stored at: variant161)
+2158448 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 4.0 ExpressionReplace(759: (functionType.isOrdinaryFunction() && !functionType.getTypeOfThis().isUnknownType() && !functionType.getTypeOfThis().isNativeObjectType()&& !(child.isGetElem() || child.isGetProp())) -->(!functionType.getTypeOfThis().isUnknownType())) (stored at: variant162)
+2158449 [main] INFO clegoues.genprog4java.Search.Search  - search: generation3
+2300378 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2300378 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant163 fails to compile
+
+2300378 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant163)
+2305642 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2305642 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant164 fails to compile
+
+2305642 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant164)
+2318480 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(450) (stored at: variant165)
+2333558 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionRemove(492) (stored at: variant166)
+2338928 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2338929 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(661: (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) -->(fnType != null)) at variant167 fails to compile
+
+2338929 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionReplace(661: (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) -->(fnType != null)) (stored at: variant167)
+2352427 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(344: (!(s.equals("number") || s.equals("string") || s.equals("boolean")|| s.equals("undefined")|| s.equals("function")|| s.equals("object")|| s.equals("unknown"))) -->(s.equals("number"))) (stored at: variant168)
+2357605 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2357605 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(329: (n) -->(left)) at variant169 fails to compile
+
+2357605 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(329: (n) -->(left)) (stored at: variant169)
+2362765 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2362766 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant170 fails to compile
+
+2362766 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant170)
+2376053 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(664: (fnType != null) && (type.isConstructor() || type.isEmptyType() || type.isUnknownType())) (stored at: variant171)
+2381258 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2381258 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(103: (n) -->(left)) at variant172 fails to compile
+
+2381259 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(103: (n) -->(left)) (stored at: variant172)
+2394462 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 ParameterReplacer(418: (rightType) -->(leftType)) (stored at: variant173)
+2407530 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(63) (stored at: variant174)
+2413059 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2413059 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant175 fails to compile
+
+2413059 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant175)
+2428068 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionRemove(378) (stored at: variant176)
+2441927 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionRemove(389) (stored at: variant177)
+2455286 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(755) (stored at: variant178)
+2460696 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2460696 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(697: (functionType.makesDicts() && !baseConstructor.makesDicts()) && (!interfaceConstructor.isInterface())) at variant179 fails to compile
+
+2460696 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(697: (functionType.makesDicts() && !baseConstructor.makesDicts()) && (!interfaceConstructor.isInterface())) (stored at: variant179)
+2465969 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2465969 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(612: (!typeRegistry.canPropertyBeDefined(objectType,propName)) && (isPropertyTest)) at variant180 fails to compile
+
+2465969 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(612: (!typeRegistry.canPropertyBeDefined(objectType,propName)) && (isPropertyTest)) (stored at: variant180)
+2481320 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(374: (rvalue) -->(assign)) (stored at: variant181)
+2496890 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(408) (stored at: variant182)
+2509431 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(484) (stored at: variant183)
+2522330 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(393) (stored at: variant184)
+2537304 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(194: (n.getType() == Token.SHEQ) || (result != TernaryValue.UNKNOWN)) (stored at: variant185)
+2551043 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(125) (stored at: variant186)
+2556325 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2556346 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant187 fails to compile
+
+2556346 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant187)
+2569742 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 NullCheckAdder(893) (stored at: variant188)
+2583015 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(562: (parentNodeType == Token.FUNCTION || parentNodeType == Token.CATCH || parentNodeType == Token.PARAM_LIST || parentNodeType == Token.VAR) -->(parentNodeType == Token.FUNCTION || parentNodeType == Token.CATCH || parentNodeType == Token.PARAM_LIST)) (stored at: variant189)
+2588429 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2588429 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant190 fails to compile
+
+2588429 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant190)
+2601827 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(30) (stored at: variant191)
+2616043 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(379) (stored at: variant192)
+2621333 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2621333 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant193 fails to compile
+
+2621333 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant193)
+2634253 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(878: (infoType) -->(type)) (stored at: variant194)
+2650019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(789) (stored at: variant195)
+2655322 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2655323 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant196 fails to compile
+
+2655323 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant196)
+2660702 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2660708 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant197 fails to compile
+
+2660708 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant197)
+2666099 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2666099 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant198 fails to compile
+
+2666099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant198)
+2679978 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionRemove(400) (stored at: variant199)
+2695294 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(749: (functionType.isOrdinaryFunction() && !functionType.getTypeOfThis().isUnknownType() && !functionType.getTypeOfThis().isNativeObjectType()&& !(child.isGetElem() || child.isGetProp())) -->(isExtern)) (stored at: variant200)
+2709227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(748) (stored at: variant201)
+2714607 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2714607 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(103: (n) -->(left)) at variant202 fails to compile
+
+2714607 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ParameterReplacer(103: (n) -->(left)) (stored at: variant202)
+2720205 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2720205 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant203 fails to compile
+
+2720205 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant203)
+2725458 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2725458 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(717: (badImplementedType) || (!extInterface.getConstructor().isInterface())) at variant204 fails to compile
+
+2725458 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 ExpressionAdd(717: (badImplementedType) || (!extInterface.getConstructor().isInterface())) (stored at: variant204)
+2738620 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionRemove(494) (stored at: variant205)
+2743840 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2743840 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant206 fails to compile
+
+2743840 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant206)
+2759192 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(639: (info == null) -->(nameType == null)) (stored at: variant207)
+2772285 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(464) (stored at: variant208)
+2777621 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2777621 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant209 fails to compile
+
+2777621 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant209)
+2782986 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2782994 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - NullCheckAdder(0) at variant210 fails to compile
+
+2782994 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 NullCheckAdder(0) (stored at: variant210)
+2797880 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionReplace(56: (info != null && info.isNoTypeCheck()) -->(enterSection)) (stored at: variant211)
+2812827 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 3.0 ExpressionRemove(372) (stored at: variant212)
+2828183 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(519: (!foundInterfaceProperty && !superClassHasProperty && !superInterfaceHasProperty) && (!superInterfaceHasProperty)) (stored at: variant213)
+2833494 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2833494 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant214 fails to compile
+
+2833494 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant214)
+2847220 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 NullCheckAdder(876) (stored at: variant215)
+2860842 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(430: (assign) -->(object2)) (stored at: variant216)
+2866131 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2866131 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant217 fails to compile
+
+2866131 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant217)
+2881787 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ExpressionAdd(411: (var.getType() != null) && (NodeUtil.getRootOfQualifiedName(lvalue).isThis() && t.getScope() != var.getScope())) (stored at: variant218)
+2895208 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 4.0 ParameterReplacer(376: (rvalue) -->(assign)) (stored at: variant219)
+2900504 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+2900506 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant220 fails to compile
+
+2900506 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 Object initializer (stored at: variant220)
+2900506 [main] INFO clegoues.genprog4java.Search.Search  - search: generation4
+3091292 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 Object initializer (stored at: variant221)
+3096698 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3096698 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant222 fails to compile
+
+3096698 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant222)
+3112865 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 ParameterReplacer(446: (key) -->(owner)) (stored at: variant223)
+3128281 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(354) (stored at: variant224)
+3133502 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3133502 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant225 fails to compile
+
+3133502 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant225)
+3138662 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3138662 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant226 fails to compile
+
+3138662 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant226)
+3152356 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(873) (stored at: variant227)
+3157756 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3157756 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant228 fails to compile
+
+3157756 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant228)
+3162997 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3162997 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(640: (value != null) || (info == null)) at variant229 fails to compile
+
+3162997 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionAdd(640: (value != null) || (info == null)) (stored at: variant229)
+3168306 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3168306 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant230 fails to compile
+
+3168306 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant230)
+3183928 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(613) (stored at: variant231)
+3197009 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(448) (stored at: variant232)
+3202231 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3202231 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant233 fails to compile
+
+3202231 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant233)
+3207466 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3207467 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant234 fails to compile
+
+3207467 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant234)
+3222510 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(194: (rightTypeRestricted) -->(leftType)) (stored at: variant235)
+3236145 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionAdd(644: ((nameType == null)) || (value != null)) (stored at: variant236)
+3241420 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3241420 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant237 fails to compile
+
+3241420 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant237)
+3257242 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(785: (String.valueOf(minArgs)) -->(String.valueOf(numArgs))) (stored at: variant238)
+3272684 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(139: (n) -->(parent)) (stored at: variant239)
+3278145 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3278145 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant240 fails to compile
+
+3278145 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant240)
+3293113 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(196: (rightTypeRestricted) -->(leftType)) (stored at: variant241)
+3304823 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 3.0 ExpressionReplace(378: (objectJsType != null && objectJsType.isFunctionType()) -->(objectJsType != null && objectJsType.isFunctionType())) (stored at: variant242)
+3319157 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(100) (stored at: variant243)
+3324492 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3324492 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant244 fails to compile
+
+3324492 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant244)
+3338598 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 MethodReplacer(423) (stored at: variant245)
+3350557 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionReplace(530: (!foundInterfaceProperty && !superClassHasProperty && !superInterfaceHasProperty) -->(!foundInterfaceProperty && !superClassHasProperty && !superInterfaceHasProperty)) (stored at: variant246)
+3362799 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(670: (n) -->(constructor)) (stored at: variant247)
+3376218 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(405) (stored at: variant248)
+3389291 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(384) (stored at: variant249)
+3404770 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(391: (property) -->("prototype")) (stored at: variant250)
+3417849 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 Object initializer (stored at: variant251)
+3422948 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3422949 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant252 fails to compile
+
+3422949 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant252)
+3438143 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(462: (owner) -->(key)) (stored at: variant253)
+3451504 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(449) (stored at: variant254)
+3466683 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(499: (interfaceType) -->(ctorType)) (stored at: variant255)
+3480228 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(454: (key) -->(objlit)) (stored at: variant256)
+3495353 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(598) (stored at: variant257)
+3507125 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(449) (stored at: variant258)
+3512476 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3512476 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant259 fails to compile
+
+3512476 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant259)
+3517722 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3517722 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant260 fails to compile
+
+3517722 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant260)
+3530850 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionAdd(411: (var.getType() != null) && (t.getScope() != var.getScope())) (stored at: variant261)
+3536065 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3536073 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant262 fails to compile
+
+3536073 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant262)
+3541280 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3541280 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant263 fails to compile
+
+3541280 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant263)
+3556360 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionRemove(600) (stored at: variant264)
+3571589 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(379: (OVERRIDING_PROTOTYPE_WITH_NON_OBJECT) -->("prototype")) (stored at: variant265)
+3576871 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3576872 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant266 fails to compile
+
+3576872 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant266)
+3591798 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(159: (n) -->(parent)) (stored at: variant267)
+3607417 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionAdd(57: (enterSection) || (info != null && info.isNoTypeCheck())) (stored at: variant268)
+3622171 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ParameterReplacer(551: (rvalue) -->(object)) (stored at: variant269)
+3633625 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(448) (stored at: variant270)
+3646233 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 ExpressionAdd(399: (NodeUtil.getRootOfQualifiedName(lvalue).isThis() && t.getScope() != var.getScope()) && (t.getScope() != var.getScope())) (stored at: variant271)
+3651820 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3651821 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant272 fails to compile
+
+3651821 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 Object initializer (stored at: variant272)
+3663971 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 4.0 NullCheckAdder(449) (stored at: variant273)
+3669284 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3669285 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(717: (badImplementedType) -->(interfaceConstructor != null)) at variant274 fails to compile
+
+3669285 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 ExpressionReplace(717: (badImplementedType) -->(interfaceConstructor != null)) (stored at: variant274)
+3669285 [main] INFO clegoues.genprog4java.Search.Search  - search: generation5
+3811838 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3811838 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(377: (objectJsType != null && objectJsType.isFunctionType()) || (equals)) at variant275 fails to compile
+
+3811838 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(377: (objectJsType != null && objectJsType.isFunctionType()) || (equals)) (stored at: variant275)
+3824666 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionRemove(372) (stored at: variant276)
+3838373 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionReplace(598: (!objectType.hasProperty(propName) || objectType.isEquivalentTo(typeRegistry.getNativeType(UNKNOWN_TYPE))) -->(objectType instanceof EnumType)) (stored at: variant277)
+3852529 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(194: (rightTypeRestricted) -->(leftType)) (stored at: variant278)
+3852532 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 Object initializer (stored at: )
+3867830 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionAdd(427: (functionType.isConstructor() || functionType.isInterface()) || ("prototype".equals(property2))) (stored at: variant279)
+3881030 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionAdd(388: (type.hasProperty(property) && !type.isPropertyTypeInferred(property) && !propertyIsImplicitCast(type,property)) && (type != null)) (stored at: variant280)
+3893499 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(427: (assign) -->(object2)) (stored at: variant281)
+3898952 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3898953 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant282 fails to compile
+
+3898953 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 Object initializer (stored at: variant282)
+3904313 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3904313 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ParameterReplacer(97: (n) -->(left)) at variant283 fails to compile
+
+3904313 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ParameterReplacer(97: (n) -->(left)) (stored at: variant283)
+3919510 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(207: (n) -->(left)) (stored at: variant284)
+3931135 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(412) (stored at: variant285)
+3936487 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3936488 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(462: (type.hasProperty(property) && !type.isPropertyTypeInferred(property) && !propertyIsImplicitCast(type,property)) && (propertyIsImplicitCast)) at variant286 fails to compile
+
+3936488 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 ExpressionAdd(462: (type.hasProperty(property) && !type.isPropertyTypeInferred(property) && !propertyIsImplicitCast(type,property)) && (propertyIsImplicitCast)) (stored at: variant286)
+3951957 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ExpressionReplace(753: (functionJSDocInfo != null && functionJSDocInfo.getAssociatedNode() != null) -->(functionType.isConstructor() && !functionType.isNativeObjectType() && (functionType.getReturnType().isUnknownType() || functionType.getReturnType().isVoidType() || !isExtern))) (stored at: variant287)
+3957256 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3957256 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant288 fails to compile
+
+3957256 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 Object initializer (stored at: variant288)
+3972824 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(873) (stored at: variant289)
+3977958 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+3977958 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant290 fails to compile
+
+3977958 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 Object initializer (stored at: variant290)
+3992422 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(778) (stored at: variant291)
+4005949 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(691) (stored at: variant292)
+4019086 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 ParameterReplacer(742: (child) -->(n)) (stored at: variant293)
+4032817 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(893) (stored at: variant294)
+4045639 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 4.0 NullCheckAdder(45) (stored at: variant295)
+4050986 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Closure11_60_4/closure11Buggy/runCompile.sh exited abnormally with status 1
+4050986 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant296 fails to compile
+
+4050986 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 Object initializer (stored at: variant296)

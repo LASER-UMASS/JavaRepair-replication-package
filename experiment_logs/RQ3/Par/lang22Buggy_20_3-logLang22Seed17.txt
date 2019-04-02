@@ -1,6 +1,6 @@
-1 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-19 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sat Apr 14 14:20:45 EDT 2018
+0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
+50 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 15:56:28 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,50 +50,53 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-73 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
-533 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e639b276
-5534 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5555 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10555 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+240 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+1304 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e639b276
+6305 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6400 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11401 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-13107 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 original (stored at: variant0)
-15696 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 MethodReplacer(156) (stored at: variant1)
-17751 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionReplace(23: (numerator < 0) -->(numeratorValue < Integer.MIN_VALUE || numeratorValue > Integer.MAX_VALUE)) (stored at: variant2)
-20229 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionReplace(304: (obj == this) -->(obj instanceof Fraction == false)) (stored at: variant3)
-21253 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
-21253 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@236: [ (int)m ]) at variant4 fails to compile
+15354 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 original (stored at: variant0)
+19058 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 MethodReplacer(156) (stored at: variant1)
+21503 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(23: (numerator < 0) -->(numeratorValue < Integer.MIN_VALUE || numeratorValue > Integer.MAX_VALUE)) (stored at: variant2)
+24830 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(304: (obj == this) -->(obj instanceof Fraction == false)) (stored at: variant3)
+27488 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ClassCastChecker(@236: [ (int)m ]) (stored at: variant4)
+30753 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionAdd(233: (m < Integer.MIN_VALUE || m > Integer.MAX_VALUE) && (m > Integer.MAX_VALUE)) (stored at: variant5)
+33395 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionAdd(48: (numerator == Integer.MIN_VALUE || denominator == Integer.MIN_VALUE) || (numerator == Integer.MIN_VALUE)) (stored at: variant6)
+36757 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionAdd(304: (obj == this) || (obj instanceof Fraction)) (stored at: variant7)
+39351 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(47: (denominator < 0) -->(denominator == Integer.MIN_VALUE)) (stored at: variant8)
+42623 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionRemove(47) (stored at: variant9)
+44682 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionAdd(304: (obj == this) || (obj instanceof Fraction)) (stored at: variant10)
+46669 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
+46670 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant11 fails to compile
 
-21253 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@236: [ (int)m ]) (stored at: variant4)
-23766 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionAdd(233: (m < Integer.MIN_VALUE || m > Integer.MAX_VALUE) && (m > Integer.MAX_VALUE)) (stored at: variant5)
-25809 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionAdd(48: (numerator == Integer.MIN_VALUE || denominator == Integer.MIN_VALUE) || (numerator == Integer.MIN_VALUE)) (stored at: variant6)
-28290 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionAdd(304: (obj == this) || (obj instanceof Fraction)) (stored at: variant7)
-30780 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionReplace(47: (denominator < 0) -->(denominator == Integer.MIN_VALUE)) (stored at: variant8)
-32826 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionRemove(47) (stored at: variant9)
-32828 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionAdd(304: (obj == this) || (obj instanceof Fraction)) (stored at: )
-33859 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
-33859 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant10 fails to compile
+46670 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant11)
+48583 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
+48583 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@35: [ (int)numeratorValue ]) at variant12 fails to compile
 
-33859 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant10)
-34878 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
-34879 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@35: [ (int)numeratorValue ]) at variant11 fails to compile
+48583 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@35: [ (int)numeratorValue ]) (stored at: variant12)
+50554 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
+50554 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant13 fails to compile
 
-34879 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@35: [ (int)numeratorValue ]) (stored at: variant11)
-34883 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-35903 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
-35903 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(151: (equals(ZERO)) -->(equals)) at variant12 fails to compile
+50554 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant13)
+52449 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
+52449 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(151: (equals(ZERO)) -->(equals)) at variant14 fails to compile
 
-35903 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(151: (equals(ZERO)) -->(equals)) (stored at: variant12)
-35906 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 MethodReplacer(151) (stored at: )
-38408 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionRemove(49) (stored at: variant13)
-40900 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ExpressionReplace(37: (denominator == 0) -->(numerator == Integer.MIN_VALUE)) (stored at: variant14)
-40903 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 MethodReplacer(156) (stored at: )
-42953 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ParameterReplacer(156: (numerator / gcd) -->(denominator / gcd)) (stored at: variant15)
-43982 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
-43983 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@232: [ (long)x(long)y ]) at variant16 fails to compile
+52449 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(151: (equals(ZERO)) -->(equals)) (stored at: variant14)
+52452 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 MethodReplacer(151) (stored at: )
+55796 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionRemove(49) (stored at: variant15)
+58401 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(37: (denominator == 0) -->(numerator == Integer.MIN_VALUE)) (stored at: variant16)
+61521 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 MethodReplacer(156) (stored at: variant17)
+63909 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(156: (numerator / gcd) -->(denominator / gcd)) (stored at: variant18)
+65896 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
+65897 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@232: [ (long)x(long)y ]) at variant19 fails to compile
 
-43983 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@232: [ (long)y(long)x ]) (stored at: variant16)
-45009 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
-45009 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@310: [ (Fraction)obj ]) at variant17 fails to compile
+65897 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@232: [ (long)y(long)x ]) (stored at: variant19)
+67809 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
+67809 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@310: [ (Fraction)obj ]) at variant20 fails to compile
 
-45010 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@310: [ (Fraction)obj ]) (stored at: variant17)
-45013 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@310: [ (Fraction)obj ]) (stored at: )
+67810 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@310: [ (Fraction)obj ]) (stored at: variant20)
+69485 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_20_3/lang22Buggy/runCompile.sh exited abnormally with status 1
+69485 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@310: [ (Fraction)obj ]) at variant21 fails to compile
+
+69485 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@310: [ (Fraction)obj ]) (stored at: variant21)

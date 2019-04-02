@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-19 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 15 14:03:31 EDT 2018
+22 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 15:22:23 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,205 +50,130 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-76 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+110 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-674 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@c86ccf51
-5674 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5719 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10719 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+1229 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@c86ccf51
+6229 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6345 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11346 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10779 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 original (stored at: )
-15211 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionAdd(429: ((MathUtils.SAFE_MIN * work[i + 2] < work[j]) && (MathUtils.SAFE_MIN * work[j] < work[i + 2])) || (MathUtils.SAFE_MIN * work[j] < work[i + 2])) (stored at: variant0)
-19545 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 NullCheckAdder(51) (stored at: variant1)
-19551 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(733) (stored at: )
-24025 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ParameterReplacer(494: (work[7 + pingPong]) -->(Math.min(work[3 + pingPong],work[7 + pingPong]))) (stored at: variant2)
-24030 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-28433 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionReplace(514: (tType < -22) -->(dMin < 0.0)) (stored at: variant3)
-28437 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(1027) (stored at: )
-32785 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 7.0 ParameterReplacer(551: (lower) -->(work[lowerStart + index + i])) (stored at: variant4)
-32788 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(491) (stored at: )
-34287 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-34288 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(220) at variant5 fails to compile
+15307 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 original (stored at: variant0)
+18155 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionAdd(429: (work[i] <= TOLERANCE_2 * d) || ((MathUtils.SAFE_MIN * work[i + 2] < work[j]) && (MathUtils.SAFE_MIN * work[j] < work[i + 2]))) (stored at: variant1)
+21983 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 NullCheckAdder(51) (stored at: variant2)
+21995 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 RangeChecker(733) (stored at: )
+25926 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(494: (work[3 + pingPong]) -->(Math.min(work[3 + pingPong],work[7 + pingPong]))) (stored at: variant3)
+28087 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+28088 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant4 fails to compile
 
-34288 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(220) (stored at: variant5)
-38711 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(428) (stored at: variant6)
-43031 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 8.0 ParameterReplacer(462: (1 + s / t) -->(Math.max(work[3 + pingPong],work[7 + pingPong]))) (stored at: variant7)
-44550 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-44550 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(675) at variant8 fails to compile
+28088 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: variant4)
+31960 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(514: (dMin1 > 0.0) -->(tType < -22)) (stored at: variant5)
+34115 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+34115 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - RangeChecker(1027) at variant6 fails to compile
 
-44551 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(675) (stored at: variant8)
-46037 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-46038 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(625) at variant9 fails to compile
+34116 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(1027) (stored at: variant6)
+39801 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 31.0 ParameterReplacer(551: (work[lowerStart + index + i]) -->(lower)) (stored at: variant7)
+41904 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+41904 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(491) at variant8 fails to compile
 
-46038 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(625) (stored at: variant9)
-46042 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(1027) (stored at: )
-50415 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 NullCheckAdder(279) (stored at: variant10)
-50419 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(1029) (stored at: )
-51905 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-51905 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(795: (work[nn - 9] > work[nn - 11]) && (gap2 > 0.0 && gap2 > b2 * a2)) at variant11 fails to compile
+41904 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(491) (stored at: variant8)
+44077 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+44077 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(220) at variant9 fails to compile
 
-51905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(795: (work[nn - 9] > work[nn - 11]) && (gap2 > 0.0 && gap2 > b2 * a2)) (stored at: variant11)
-51909 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(425) (stored at: )
-51912 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ParameterReplacer(735: (dN) -->(dMin)) (stored at: )
-51914 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionRemove(832) (stored at: )
-56432 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(610) (stored at: variant12)
-60808 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionReplace(765: (dN > b1) -->(dMin1 == dN1)) (stored at: variant13)
-62312 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-62312 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(934) at variant14 fails to compile
+44077 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(220) (stored at: variant9)
+47832 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 RangeChecker(428) (stored at: variant10)
+51740 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(462: (1 + s / t) -->(Math.max(work[3 + pingPong],work[7 + pingPong]))) (stored at: variant11)
+54049 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+54049 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(675) at variant12 fails to compile
 
-62313 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(934) (stored at: variant14)
-66707 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(285) (stored at: variant15)
-66708 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionReplace(681: ((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) && (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2])) -->((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) && (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2]))) (stored at: )
-71080 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionReplace(721: ((MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4p2 + 2])) -->(MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2])) (stored at: variant16)
-71092 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(435) (stored at: )
-75490 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionAdd(919: (work[i4] > work[i4 - 2]) || (dMin2 == dN2 && 2 * work[nn - 5] < work[nn - 7])) (stored at: variant17)
-79815 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionReplace(422: (work[i + 2] <= TOLERANCE_2 * d) -->(work[i] <= TOLERANCE_2 * d)) (stored at: variant18)
-79817 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ParameterReplacer(491: (dMin2) -->(work[l - 1])) (stored at: )
-84131 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(1001) (stored at: variant19)
-88617 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 ExpressionRemove(727) (stored at: variant20)
-88620 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 RangeChecker(422) (stored at: )
-88621 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 MethodReplacer(79) (stored at: )
-88624 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
-88625 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 11.0 MethodReplacer(79) (stored at: )
-90091 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-90092 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(363: ((n0 == n)) -->(work[4 * n0 - 1] <= TOLERANCE_2 * diagMax)) at variant21 fails to compile
+54049 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(675) (stored at: variant12)
+56238 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+56238 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(625) at variant13 fails to compile
 
-90092 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(363: ((n0 == n)) -->(work[4 * n0 - 1] <= TOLERANCE_2 * diagMax)) (stored at: variant21)
-94324 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 10.0 MethodReplacer(91) (stored at: variant22)
-94324 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
-100151 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-101629 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-103098 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-104616 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-106086 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-124702 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-148532 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 MethodReplacer(770) (stored at: variant23)
-152916 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionAdd(562: ((range < absoluteTolerance) || (range < relativeTolerance * Math.max(Math.abs(left),Math.abs(right)))) || (range < absoluteTolerance)) (stored at: variant24)
-157334 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(297) (stored at: variant25)
-161658 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 6.0 ParameterReplacer(529: (start) -->(end - deflatedEnd)) (stored at: variant26)
-161661 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(1030) (stored at: )
-167039 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(619) (stored at: variant27)
-167041 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(964) (stored at: )
-171432 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(16) (stored at: variant28)
-171434 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 MethodReplacer(80) (stored at: )
-177426 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionAdd(418: ((MathUtils.SAFE_MIN * work[i + 2] < work[j]) && (MathUtils.SAFE_MIN * work[j] < work[i + 2])) || (MathUtils.SAFE_MIN * work[i + 2] < work[j])) (stored at: variant29)
-177428 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 MethodReplacer(81) (stored at: )
-181755 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(628) (stored at: variant30)
-186103 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionReplace(782: (work[nn - 5] > work[nn - 7]) -->(dMin == dN && dMin1 == dN1)) (stored at: variant31)
-192277 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionRemove(667) (stored at: variant32)
-196696 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 9.0 MethodReplacer(227) (stored at: variant33)
-198155 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-198155 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(271) at variant34 fails to compile
+56239 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(625) (stored at: variant13)
+56244 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(1027) (stored at: )
+59959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 NullCheckAdder(279) (stored at: variant14)
+62113 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+62113 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - RangeChecker(1029) at variant15 fails to compile
 
-198155 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(271) (stored at: variant34)
-202482 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(624) (stored at: variant35)
-206870 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 9.0 ExpressionReplace(496: ((dMin < 0.0) && (dMin1 > 0.0) && (work[4 * deflatedEnd - 5 - pingPong] < TOLERANCE * (sigma + dN1))&& (Math.abs(dN) < TOLERANCE * sigma)) -->(dMin1 > 0.0)) (stored at: variant36)
-208356 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-208357 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - Object initializer at variant37 fails to compile
+62113 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 RangeChecker(1029) (stored at: variant15)
+64248 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+64248 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(795: (work[nn - 9] > work[nn - 11]) && (gap2 > 0.0 && gap2 > b2 * a2)) at variant16 fails to compile
 
-208357 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 Object initializer (stored at: variant37)
-212723 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 6.0 ExpressionReplace(568: (countEigenValues(middle,index,n) >= 1) -->(countEigenValues(middle,index,n) >= n)) (stored at: variant38)
-217089 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ParameterReplacer(492: (Math.min(work[3 + pingPong],work[7 + pingPong])) -->(work[3 + pingPong])) (stored at: variant39)
-221441 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(837) (stored at: variant40)
-221443 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(603) (stored at: )
-222974 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-222974 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(857: (tType == -6) && (work[i4] > work[i4 - 2])) at variant41 fails to compile
+64248 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionAdd(795: (work[nn - 9] > work[nn - 11]) && (gap2 > 0.0 && gap2 > b2 * a2)) (stored at: variant16)
+64252 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 RangeChecker(425) (stored at: )
+68020 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(735: (dN) -->(dMin)) (stored at: variant17)
+71769 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionRemove(832) (stored at: variant18)
+71774 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 RangeChecker(610) (stored at: )
+74522 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(765: (dN > b1) -->(dMin1 == dN1)) (stored at: variant19)
+76709 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+76709 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(934) at variant20 fails to compile
 
-222974 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(857: (tType == -6) && (work[i4] > work[i4 - 2])) (stored at: variant41)
-224473 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-224473 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(554) at variant42 fails to compile
+76709 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(934) (stored at: variant20)
+80530 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 RangeChecker(285) (stored at: variant21)
+83086 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(681: ((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) && (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2])) -->((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) && (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2]))) (stored at: variant22)
+86989 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(721: ((MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4p2 + 2])) -->(MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2])) (stored at: variant23)
+90720 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 RangeChecker(435) (stored at: variant24)
+93504 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionAdd(919: (100 * b1 < b2) || (dMin2 == dN2)) (stored at: variant25)
+97439 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(422: (work[i + 2] <= TOLERANCE_2 * d) -->(work[i] <= TOLERANCE_2 * d)) (stored at: variant26)
+101383 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ParameterReplacer(491: (work[l - 1]) -->(Math.min(work[3 + pingPong],work[7 + pingPong]))) (stored at: variant27)
+105141 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 RangeChecker(1001) (stored at: variant28)
+108794 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionRemove(727) (stored at: variant29)
+112529 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 RangeChecker(422) (stored at: variant30)
+112532 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 MethodReplacer(79) (stored at: )
+112536 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 Object initializer (stored at: )
+112539 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 MethodReplacer(79) (stored at: )
+115251 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 ExpressionReplace(363: ((n0 == n)) -->(work[4 * n0 - 1] <= TOLERANCE_2 * diagMax)) (stored at: variant31)
+119163 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 MethodReplacer(91) (stored at: variant32)
+119163 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+162099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(491: (dMin2) -->(Math.min(work[3 + pingPong],work[7 + pingPong]))) (stored at: variant33)
+165778 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(430) (stored at: variant34)
+168381 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(619) (stored at: variant35)
+168384 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(435) (stored at: )
+170537 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+170537 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(604) at variant36 fails to compile
 
-224473 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(554) (stored at: variant42)
-225963 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-225963 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(696) at variant43 fails to compile
+170537 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(604) (stored at: variant36)
+174380 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ExpressionReplace(679: ((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) && (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2])) -->((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) && (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2]))) (stored at: variant37)
+176976 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(81) (stored at: variant38)
+179184 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+179184 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - RangeChecker(287) at variant39 fails to compile
 
-225963 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(696) (stored at: variant43)
-230283 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 10.0 ExpressionReplace(401: ((work[i + 3] <= TOLERANCE_2 * work[i]) || (work[i + 2] <= TOLERANCE_2 * sigma)) -->(n0 - i0 > 3)) (stored at: variant44)
-234617 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ParameterReplacer(201: (lower) -->(lowerSpectra)) (stored at: variant45)
-236104 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-236105 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(795: (work[nn - 9] > work[nn - 11]) || (gap2 > 0.0)) at variant46 fails to compile
+179184 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(287) (stored at: variant39)
+181373 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+181373 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(492) at variant40 fails to compile
 
-236105 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(795: (work[nn - 9] > work[nn - 11]) || (gap2 > 0.0)) (stored at: variant46)
-236106 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 MethodReplacer(81) (stored at: )
-237619 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-237620 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(26) at variant47 fails to compile
+181373 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(492) (stored at: variant40)
+185107 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(532) (stored at: variant41)
+187463 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+187463 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(271) at variant42 fails to compile
 
-237620 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(26) (stored at: variant47)
-237622 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(425) (stored at: )
-241999 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionReplace(857: (tType == -6) -->(tType == -18)) (stored at: variant48)
-246455 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionAdd(453: ((start == deflatedEnd - 2) || (work[k - 9] <= TOLERANCE_2 * sigma) || (work[k - 2 * pingPong - 8] <= TOLERANCE_2 * work[k - 11])) && (work[k - 2 * pingPong - 8] <= TOLERANCE_2 * work[k - 11])) (stored at: variant49)
-246457 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(14) (stored at: )
-247915 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-247915 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(494) at variant50 fails to compile
+187463 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(271) (stored at: variant42)
+189632 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+189632 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(667: ((MathUtils.SAFE_MIN * work[j4 + 1] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4 + 1])) -->((MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4p2 + 2]))) at variant43 fails to compile
 
-247915 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(494) (stored at: variant50)
-252332 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 9.0 ParameterReplacer(232: (begin) -->(n)) (stored at: variant51)
-252335 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(434) (stored at: )
-256811 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionReplace(514: (tType < -22) -->((dMin >= 0) && (dMin1 > 0))) (stored at: variant52)
-261288 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ParameterReplacer(853: (a2) -->(b2)) (stored at: variant53)
-261289 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionReplace(422: (work[i + 2] <= TOLERANCE_2 * d) -->(work[i] <= TOLERANCE_2 * d)) (stored at: )
-262758 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-262758 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(494) at variant54 fails to compile
+189632 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(667: ((MathUtils.SAFE_MIN * work[j4 + 1] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4 + 1])) -->((MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4p2 + 2]))) (stored at: variant43)
+189636 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(723) (stored at: )
+191834 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+191834 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(363: ((n0 == n)) && (work[i + 2] <= 0)) at variant44 fails to compile
 
-262758 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(494) (stored at: variant54)
-262760 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 MethodReplacer(79) (stored at: )
-270903 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ParameterReplacer(409: (diagMax) -->(offDiagMin)) (stored at: variant55)
-272430 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-272430 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(735) at variant56 fails to compile
+191834 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(363: ((n0 == n)) && (work[i + 2] <= 0)) (stored at: variant44)
+191836 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(80) (stored at: )
+195554 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(80) (stored at: variant45)
+198345 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(932) (stored at: variant46)
+202333 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(976) (stored at: variant47)
+205984 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(998) (stored at: variant48)
+209907 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(771: (0.333 * dMin) -->(s)) (stored at: variant49)
+213556 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(723) (stored at: variant50)
+216324 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ParameterReplacer(491: (work[l - 1]) -->(work[l - 2 * pingPong])) (stored at: variant51)
+220183 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ExpressionReplace(778: (work[nn - 9] > work[nn - 11]) -->(work[nn - 5] > work[nn - 7])) (stored at: variant52)
+223793 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(81) (stored at: variant53)
+225951 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
+225951 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(751: (dMin == dN && dMin1 == dN1) || (gap2 > 0.0)) at variant54 fails to compile
 
-272430 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(735) (stored at: variant56)
-272432 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(604) (stored at: )
-272433 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionReplace(847: (100 * Math.max(b2,b1) < a2 || cnst1 < a2) -->(100 * Math.max(b2,b1) < a2)) (stored at: )
-273908 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-273909 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(878) at variant57 fails to compile
-
-273909 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(878) (stored at: variant57)
-273911 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(435) (stored at: )
-275401 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-275401 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(604) at variant58 fails to compile
-
-275401 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(604) (stored at: variant58)
-275402 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 ExpressionReplace(679: ((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) && (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2])) -->((MathUtils.SAFE_MIN * work[j4 + 2] < work[j4 - 3]) && (MathUtils.SAFE_MIN * work[j4 - 3] < work[j4 + 2]))) (stored at: )
-275403 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 MethodReplacer(81) (stored at: )
-276890 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-276890 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - RangeChecker(287) at variant59 fails to compile
-
-276890 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 RangeChecker(287) (stored at: variant59)
-280023 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-280023 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(492) at variant60 fails to compile
-
-280023 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(492) (stored at: variant60)
-280026 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(532) (stored at: )
-281493 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-281493 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(271) at variant61 fails to compile
-
-281493 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(271) (stored at: variant61)
-282969 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-282969 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(667: ((MathUtils.SAFE_MIN * work[j4 + 1] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4 + 1])) -->((MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4p2 + 2]))) at variant62 fails to compile
-
-282969 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionReplace(667: ((MathUtils.SAFE_MIN * work[j4 + 1] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4 + 1])) -->((MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2]) && (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4p2 + 2]))) (stored at: variant62)
-282971 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(723) (stored at: )
-284458 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-284458 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionAdd(363: ((n0 == n)) && (work[i + 2] <= 0)) at variant63 fails to compile
-
-284458 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(363: ((n0 == n)) && (work[i + 2] <= 0)) (stored at: variant63)
-284459 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 MethodReplacer(80) (stored at: )
-284460 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 MethodReplacer(80) (stored at: )
-285941 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-285941 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(932) at variant64 fails to compile
-
-285941 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 MethodReplacer(932) (stored at: variant64)
-293617 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 10.0 MethodReplacer(976) (stored at: variant65)
-293620 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 11.0 RangeChecker(998) (stored at: )
-293620 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
-295094 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-363274 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math80_80_1/math80Buggy/runCompile.sh exited abnormally with status 1
-363274 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(500: ((dMin >= 0) && (dMin1 > 0)) -->(work[k - 2 * pingPong - 8] <= TOLERANCE_2 * work[k - 11])) at variant66 fails to compile
-
-363274 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 ExpressionReplace(500: ((dMin >= 0) && (dMin1 > 0)) -->(work[k - 2 * pingPong - 8] <= TOLERANCE_2 * work[k - 11])) (stored at: variant66)
-367585 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 8.0 MethodReplacer(46) (stored at: variant67)
-371986 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 11.0 ParameterReplacer(350: (2) -->(n)) (stored at: variant68)
-371987 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 11.0 MethodReplacer(80) (stored at: )
-371990 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 11.0 RangeChecker(640) (stored at: )
-371991 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 11.0 RangeChecker(436) (stored at: )
-376393 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 11.0 ParameterReplacer(510: (tau) -->(work[3 + pingPong])) (stored at: variant69)
+225952 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 ExpressionAdd(751: (dMin == dN && dMin1 == dN1) || (gap2 > 0.0)) (stored at: variant54)
+229772 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(401) (stored at: variant55)
+233483 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(886) (stored at: variant56)
+236077 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(1031) (stored at: variant57)
+239926 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 ExpressionAdd(513: (tType < -22) && (dMin < 0.0)) (stored at: variant58)
+243744 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 RangeChecker(425) (stored at: variant59)
+246532 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 MethodReplacer(494) (stored at: variant60)

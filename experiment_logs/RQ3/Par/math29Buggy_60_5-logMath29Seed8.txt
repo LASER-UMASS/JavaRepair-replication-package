@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Apr 15 02:36:24 EDT 2018
+22 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 13:27:44 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math29_60_5/math29Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math29_60_5/math29Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=1.0 
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -50,16 +50,22 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-72 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+108 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-572 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e5c7c73a
-5573 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5597 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10598 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+1018 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e5c7c73a
+6019 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6066 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11067 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10639 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 51.0 original (stored at: )
-10676 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(271) (stored at: )
-22048 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 49.0 ParameterReplacer(290: (i) -->(i + index)) (stored at: variant0)
-33603 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 51.0 ParameterReplacer(363: (epsilon) -->(other.epsilon)) (stored at: variant1)
-33610 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@359: [ (OpenMapRealVector)obj ]) (stored at: )
-45091 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 51.0 NullCheckAdder(139) (stored at: variant2)
+11142 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 original (stored at: )
+13073 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math29_60_5/math29Buggy/runCompile.sh exited abnormally with status 1
+13074 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(271) at variant0 fails to compile
+
+13074 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(271) (stored at: variant0)
+17369 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ParameterReplacer(290: (i + index) -->(i)) (stored at: variant1)
+21765 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 ParameterReplacer(363: (epsilon) -->(other.epsilon)) (stored at: variant2)
+23677 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Math29_60_5/math29Buggy/runCompile.sh exited abnormally with status 1
+23677 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@359: [ (OpenMapRealVector)obj ]) at variant3 fails to compile
+
+23677 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@359: [ (OpenMapRealVector)obj ]) (stored at: variant3)
+27876 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 5.0 NullCheckAdder(139) (stored at: variant4)
