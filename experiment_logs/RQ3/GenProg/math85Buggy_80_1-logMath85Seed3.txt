@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Tue Feb 20 18:23:48 EST 2018
+47 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Thu May 10 03:00:21 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math85_80_1/math85Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math85_80_1/math85Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=0.1  
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -27,7 +27,7 @@ generations=10
 positiveTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math85_80_1/math85Buggy/pos.tests
 javaVM=/usr/lib/jvm/java-1.7.0//jre/bin/java
 seed=3
-negativePathWeight=0.65
+negativePathWeight=0.35
 compileCommand=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math85_80_1/math85Buggy/runCompile.sh
 fixStrategy=classScope
 allowCoverageFail=false
@@ -36,7 +36,7 @@ javaRuntime=java.lang.Runtime@300ffa5d
 classTestFolder=
 modelPath=OVERALLModel.txt
 sanity=no
-positivePathWeight=0.35
+positivePathWeight=0.65
 jacocoPath=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/jacocoagent.jar
 negativeTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math85_80_1/math85Buggy/neg.tests
 pathToFileHumanInjectedFaultLoc=fileHumanInjectedFaultLoc.txt
@@ -50,20 +50,27 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-71 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+134 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-464 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@89526a9c
-5464 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5480 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10480 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+758 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@89526a9c
+5758 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+5781 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+10782 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-12560 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 original (stored at: variant0)
-14376 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(35,15) (stored at: variant1)
-14380 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 24.0 StmtDelete(36) (stored at: )
-14380 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: StmtDelete(36) (in )
+10835 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 original (stored at: )
+13002 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math85_80_1/math85Buggy/runCompile.sh exited abnormally with status 1
+13002 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(34,15) at variant0 fails to compile
 
-14385 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-14385 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 14
+13002 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(34,15) (stored at: variant0)
+14981 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math85_80_1/math85Buggy/runCompile.sh exited abnormally with status 1
+14981 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(35,19) at variant1 fails to compile
+
+14982 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(35,19) (stored at: variant1)
+20464 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 24.0 StmtDelete(36) (stored at: variant2)
+20465 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: StmtDelete(36) (in variant2)
+
+20478 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+20478 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 20
 

@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-18 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Sun Feb 25 01:38:05 EST 2018
+21 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Thu May 10 09:34:57 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=0.1  
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -27,7 +27,7 @@ generations=10
 positiveTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/pos.tests
 javaVM=/usr/lib/jvm/java-1.7.0//jre/bin/java
 seed=14
-negativePathWeight=0.65
+negativePathWeight=0.35
 compileCommand=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh
 fixStrategy=classScope
 allowCoverageFail=false
@@ -36,7 +36,7 @@ javaRuntime=java.lang.Runtime@300ffa5d
 classTestFolder=
 modelPath=OVERALLModel.txt
 sanity=no
-positivePathWeight=0.35
+positivePathWeight=0.65
 jacocoPath=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/jacocoagent.jar
 negativeTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/neg.tests
 pathToFileHumanInjectedFaultLoc=fileHumanInjectedFaultLoc.txt
@@ -50,253 +50,436 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-72 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+101 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-738 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@c86ccf51
-5738 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5822 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10823 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+1401 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@c86ccf51
+6401 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6515 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11515 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-11221 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 original (stored at: )
-14060 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(748,717) (stored at: variant0)
-16054 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(448,36) (stored at: variant1)
-18420 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(251) (stored at: variant2)
-20435 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(960) (stored at: variant3)
-23088 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(651,514) (stored at: variant4)
-24943 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(22) (stored at: variant5)
-27481 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(80) (stored at: variant6)
-29567 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(703) (stored at: variant7)
-32365 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(80,40) (stored at: variant8)
-34203 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(431) (stored at: variant9)
-36789 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(495) (stored at: variant10)
-38814 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(386) (stored at: variant11)
-40150 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-40150 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(383,884) at variant12 fails to compile
+12014 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 original (stored at: )
+16162 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(750,717) (stored at: variant0)
+20307 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(430,38) (stored at: variant1)
+22989 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(243) (stored at: variant2)
+27005 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(968) (stored at: variant3)
+31037 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(647,514) (stored at: variant4)
+31043 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(20) (stored at: )
+31047 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(68) (stored at: )
+35188 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(695) (stored at: variant5)
+39315 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(68,39) (stored at: variant6)
+41992 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(391) (stored at: variant7)
+46086 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(481) (stored at: variant8)
+48421 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+48421 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(368) at variant9 fails to compile
 
-40150 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(383,884) (stored at: variant12)
-42601 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(615) (stored at: variant13)
-43958 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-43958 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(786,782) at variant14 fails to compile
+48421 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(368) (stored at: variant9)
+50650 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+50650 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(91,743) at variant10 fails to compile
 
-43958 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(786,782) (stored at: variant14)
-46529 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(198,745) (stored at: variant15)
-48520 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(690,60) (stored at: variant16)
-49872 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-49872 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(829,30) at variant17 fails to compile
+50650 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(91,743) (stored at: variant10)
+54832 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(494) (stored at: variant11)
+59038 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(442,856) (stored at: variant12)
+63163 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(894,651) (stored at: variant13)
+67385 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(969) (stored at: variant14)
+70210 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(621,629) (stored at: variant15)
+72494 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+72494 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(549,354) at variant16 fails to compile
 
-49872 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(829,30) (stored at: variant17)
-52624 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(374,188) (stored at: variant18)
-53977 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-53977 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(211) at variant19 fails to compile
+72495 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(549,354) (stored at: variant16)
+74800 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+74801 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(226,745) at variant17 fails to compile
 
-53978 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(211) (stored at: variant19)
-56812 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(603,744) (stored at: variant20)
-59331 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(206) (stored at: variant21)
-61364 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(34,187) (stored at: variant22)
-63855 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(822) (stored at: variant23)
-65887 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(562,43) (stored at: variant24)
-68358 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(216) (stored at: variant25)
-70384 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(67,348) (stored at: variant26)
-73139 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(643,725) (stored at: variant27)
-74953 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(513) (stored at: variant28)
-76331 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-76331 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(775,873) at variant29 fails to compile
+74801 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(226,745) (stored at: variant17)
+76952 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+76952 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(654) at variant18 fails to compile
 
-76331 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(775,873) (stored at: variant29)
-77648 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-77648 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(758,735) at variant30 fails to compile
+76952 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(654) (stored at: variant18)
+79190 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+79190 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(441,80) at variant19 fails to compile
 
-77648 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(758,735) (stored at: variant30)
-79017 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-79017 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(826,899) at variant31 fails to compile
+79190 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(441,80) (stored at: variant19)
+83316 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(819,829) (stored at: variant20)
+86211 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(242,92) (stored at: variant21)
+90015 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(971) (stored at: variant22)
+94219 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(67,900) (stored at: variant23)
+96434 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+96434 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(200,518) at variant24 fails to compile
 
-79017 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(826,899) (stored at: variant31)
-81626 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtAppend(508,36) (stored at: variant32)
-84257 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(550) (stored at: variant33)
-86123 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(628) (stored at: variant34)
-87578 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-87578 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(292,636) at variant35 fails to compile
+96434 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(200,518) (stored at: variant24)
+100360 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(702) (stored at: variant25)
+102994 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(958) (stored at: variant26)
+105332 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+105332 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(876,636) at variant27 fails to compile
 
-87578 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(292,636) (stored at: variant35)
-87581 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(750) (stored at: )
-89107 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-89107 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(341) at variant36 fails to compile
+105332 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(876,636) (stored at: variant27)
+107719 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+107719 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(1020,566) at variant28 fails to compile
 
-89107 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(341) (stored at: variant36)
-90551 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-90551 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(960,522) at variant37 fails to compile
+107719 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(1020,566) (stored at: variant28)
+111734 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(374,504) (stored at: variant29)
+115663 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtDelete(512) (stored at: variant30)
+119660 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(44) (stored at: variant31)
+121887 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+121887 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(729) at variant32 fails to compile
 
-90551 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(960,522) (stored at: variant37)
-90552 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
-113215 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(436) (stored at: variant38)
-115182 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(225) (stored at: variant39)
-117801 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(817) (stored at: variant40)
-119908 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(436,515) (stored at: variant41)
-121343 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-121343 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(988) at variant42 fails to compile
+121887 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(729) (stored at: variant32)
+126034 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(702,660) (stored at: variant33)
+130127 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(372,56) (stored at: variant34)
+132356 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+132356 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(270,10) at variant35 fails to compile
 
-121343 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(988) (stored at: variant42)
-124134 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(186,717) (stored at: variant43)
-126141 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(775,874) (stored at: variant44)
-128819 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(392,224) (stored at: variant45)
-130821 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(972,348) (stored at: variant46)
-132213 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-132213 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(47) at variant47 fails to compile
+132356 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(270,10) (stored at: variant35)
+136536 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 1.0 StmtReplace(456,499) (stored at: variant36)
+136536 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+173085 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(949) (stored at: variant37)
+273078 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(768,80) (stored at: variant38)
+277286 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(353,900) (stored at: variant39)
+280197 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(697) (stored at: variant40)
+284270 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(348,34) (stored at: variant41)
+287048 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(1000,187) (stored at: variant42)
+289308 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+289308 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(952,495) at variant43 fails to compile
 
-132213 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(47) (stored at: variant47)
-134753 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(433) (stored at: variant48)
-136644 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(389) (stored at: variant49)
-138029 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-138029 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(965,695) at variant50 fails to compile
+289308 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(952,495) (stored at: variant43)
+291536 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+291536 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(1023,348) at variant44 fails to compile
 
-138029 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(965,695) (stored at: variant50)
-139461 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-139461 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(1010,889) at variant51 fails to compile
+291536 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(1023,348) (stored at: variant44)
+295641 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(676,392) (stored at: variant45)
+299678 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(258,239) (stored at: variant46)
+303590 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(469) (stored at: variant47)
+305786 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+305787 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(824,186) at variant48 fails to compile
 
-139461 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(1010,889) (stored at: variant51)
-140856 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-140856 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(948) at variant52 fails to compile
+305787 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(824,186) (stored at: variant48)
+309904 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(492,384) (stored at: variant49)
+314214 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(878) (stored at: variant50)
+317070 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(972,745) (stored at: variant51)
+319316 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+319316 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(574,313) at variant52 fails to compile
 
-140856 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(948) (stored at: variant52)
-142250 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-142250 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(274,39) at variant53 fails to compile
+319316 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(574,313) (stored at: variant52)
+321813 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+321813 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(872) at variant53 fails to compile
 
-142250 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(274,39) (stored at: variant53)
-144701 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(424) (stored at: variant54)
-146612 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(1022,59) (stored at: variant55)
-148091 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-148091 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(632,348) at variant56 fails to compile
+321813 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(872) (stored at: variant53)
+321815 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 22.0 StmtDelete(583) (stored at: )
+326037 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(703,91) (stored at: variant54)
+330226 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(266,54) (stored at: variant55)
+334366 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(946,742) (stored at: variant56)
+337224 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(490) (stored at: variant57)
+337227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(703) (stored at: )
+341385 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(962,520) (stored at: variant58)
+344019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(185) (stored at: variant59)
+344021 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(26) (stored at: )
+344022 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(456) (stored at: )
+346165 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+346166 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(21,10) at variant60 fails to compile
 
-148091 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(632,348) (stored at: variant56)
-152033 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 31.0 StmtReplace(596,10) (stored at: variant57)
-154568 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(895) (stored at: variant58)
-156603 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(367,871) (stored at: variant59)
-159295 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(370,198) (stored at: variant60)
-161339 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(386,735) (stored at: variant61)
-163896 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(355,735) (stored at: variant62)
-165697 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(705) (stored at: variant63)
-167067 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-167067 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(539,698) at variant64 fails to compile
+346166 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(21,10) (stored at: variant60)
+350360 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(1038,56) (stored at: variant61)
+353090 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(612) (stored at: variant62)
+357265 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(746,737) (stored at: variant63)
+361405 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(352,59) (stored at: variant64)
+364301 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(773,636) (stored at: variant65)
+368475 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(811,642) (stored at: variant66)
+372471 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(670) (stored at: variant67)
+374918 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+374919 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(271,716) at variant68 fails to compile
 
-167067 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(539,698) (stored at: variant64)
-169732 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(551,706) (stored at: variant65)
-171158 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-171158 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(199) at variant66 fails to compile
+374919 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(271,716) (stored at: variant68)
+379103 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(561,358) (stored at: variant69)
+383205 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(564,643) (stored at: variant70)
+387422 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(56) (stored at: variant71)
+390452 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(387,44) (stored at: variant72)
+394689 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(24,518) (stored at: variant73)
+398947 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(481,504) (stored at: variant74)
+403124 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(537,187) (stored at: variant75)
+407203 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(35,504) (stored at: variant76)
+410161 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(649,681) (stored at: variant77)
+414046 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(343) (stored at: variant78)
+418192 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(391,519) (stored at: variant79)
+422169 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(253,253) (stored at: variant80)
+426400 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(748,519) (stored at: variant81)
+429304 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(498,79) (stored at: variant82)
+433506 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(812,518) (stored at: variant83)
+437476 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(61,9) (stored at: variant84)
+439807 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+439807 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(242,899) at variant85 fails to compile
 
-171158 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(199) (stored at: variant66)
-172546 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-172546 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(452,829) at variant67 fails to compile
+439808 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(242,899) (stored at: variant85)
+444099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(1019,772) (stored at: variant86)
+446483 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+446484 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(51,874) at variant87 fails to compile
 
-172546 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(452,829) (stored at: variant67)
-174006 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-174006 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(959,353) at variant68 fails to compile
+446484 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(51,874) (stored at: variant87)
+450428 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(891) (stored at: variant88)
+453217 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(197,37) (stored at: variant89)
+453219 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(296) (stored at: )
+453220 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(699) (stored at: )
+457376 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(437,34) (stored at: variant90)
+457376 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
+472270 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+502905 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(662,54) (stored at: variant91)
+505245 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+505245 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(556,874) at variant92 fails to compile
 
-174007 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(959,353) (stored at: variant68)
-175493 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-175493 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(219,792) at variant69 fails to compile
+505245 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(556,874) (stored at: variant92)
+509169 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(618,353) (stored at: variant93)
+511745 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(47) (stored at: variant94)
+515826 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(522) (stored at: variant95)
+519726 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(442) (stored at: variant96)
+523938 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(972,79) (stored at: variant97)
+528037 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(254,649) (stored at: variant98)
+532162 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(579,225) (stored at: variant99)
+534385 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+534385 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(199) at variant100 fails to compile
 
-175494 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(219,792) (stored at: variant69)
-178297 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(804,744) (stored at: variant70)
-180192 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(332) (stored at: variant71)
-374567 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(640,416) (stored at: variant72)
-374570 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(434) (stored at: )
-377115 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(735) (stored at: variant73)
-379061 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(382,717) (stored at: variant74)
-380454 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-380454 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(606) at variant75 fails to compile
+534385 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(199) (stored at: variant100)
+536725 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+536725 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(753,9) at variant101 fails to compile
 
-380454 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(606) (stored at: variant75)
-383001 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(26,518) (stored at: variant76)
-384926 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(495,505) (stored at: variant77)
-387425 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(538,198) (stored at: variant78)
-389306 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(38,504) (stored at: variant79)
-390635 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-390636 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(654,643) at variant80 fails to compile
+536725 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(753,9) (stored at: variant101)
+536727 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(993) (stored at: )
+541100 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(553,5) (stored at: variant102)
+543297 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+543297 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(211) at variant103 fails to compile
 
-390636 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(654,643) (stored at: variant80)
-393347 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(361) (stored at: variant81)
-395416 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(431,518) (stored at: variant82)
-396823 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-396823 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(262,235) at variant83 fails to compile
+543297 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(211) (stored at: variant103)
+547117 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(711) (stored at: variant104)
+549840 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(36) (stored at: variant105)
+549842 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(202) (stored at: )
+553966 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(1023,37) (stored at: variant106)
+557921 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(953,42) (stored at: variant107)
+562036 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(648,734) (stored at: variant108)
+566130 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(513,352) (stored at: variant109)
+570320 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(458,889) (stored at: variant110)
+573078 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(433) (stored at: variant111)
+577237 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(819,54) (stored at: variant112)
+580091 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(386) (stored at: variant113)
+580093 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(582) (stored at: )
+582272 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+582272 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(431) at variant114 fails to compile
 
-396823 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(262,235) (stored at: variant83)
-398178 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-398178 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(747,513) at variant84 fails to compile
+582272 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(431) (stored at: variant114)
+584561 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+584561 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(320,357) at variant115 fails to compile
 
-398178 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(747,513) (stored at: variant84)
-400940 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(509,81) (stored at: variant85)
-402870 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(818,517) (stored at: variant86)
-405474 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtReplace(68,9) (stored at: variant87)
-407491 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(249,899) (stored at: variant88)
-408887 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-408887 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(1017,772) at variant89 fails to compile
+584561 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(320,357) (stored at: variant115)
+586838 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+586838 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(780,61) at variant116 fails to compile
 
-408887 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(1017,772) (stored at: variant89)
-411528 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(79) (stored at: variant90)
-413318 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(550) (stored at: variant91)
-414718 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-414718 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(345,392) at variant92 fails to compile
+586839 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(780,61) (stored at: variant116)
+590878 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(501) (stored at: variant117)
+594965 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(260,642) (stored at: variant118)
+597241 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+597241 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(582,900) at variant119 fails to compile
 
-414718 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(345,392) (stored at: variant92)
-416012 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-416012 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(581,236) at variant93 fails to compile
+597242 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(582,900) (stored at: variant119)
+597244 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(760) (stored at: )
+599462 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+599462 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(246,448) at variant120 fails to compile
 
-416012 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(581,236) (stored at: variant93)
-417316 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-417316 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(648,743) at variant94 fails to compile
+599462 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(246,448) (stored at: variant120)
+599464 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(391) (stored at: )
+603527 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(1035) (stored at: variant121)
+605957 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+605957 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(32,224) at variant122 fails to compile
 
-417316 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(648,743) (stored at: variant94)
-419926 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtAppend(49,707) (stored at: variant95)
-421768 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 1.0 StmtDelete(0) (stored at: variant96)
-421768 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
-455020 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(214) (stored at: variant97)
-457824 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(263,35) (stored at: variant98)
-460611 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(645) (stored at: variant99)
-461994 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-461994 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(630,743) at variant100 fails to compile
+605957 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(32,224) (stored at: variant122)
+609991 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(447,504) (stored at: variant123)
+614173 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(819,352) (stored at: variant124)
+618198 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(794,187) (stored at: variant125)
+620460 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+620460 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(311,517) at variant126 fails to compile
 
-461994 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(630,743) (stored at: variant100)
-464737 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(574,744) (stored at: variant101)
-467460 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(1020) (stored at: variant102)
-469514 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(1027,39) (stored at: variant103)
-470942 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-470943 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(316) at variant104 fails to compile
+620460 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(311,517) (stored at: variant126)
+624391 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(293) (stored at: variant127)
+627271 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(1028,889) (stored at: variant128)
+631337 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(629,774) (stored at: variant129)
+634153 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(757,92) (stored at: variant130)
+638394 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(781,737) (stored at: variant131)
+641419 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(1017,450) (stored at: variant132)
+641421 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 32.0 StmtDelete(588) (stored at: )
+645736 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(248,37) (stored at: variant133)
+647996 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+647996 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(547) at variant134 fails to compile
 
-470943 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(316) (stored at: variant104)
-473554 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(616) (stored at: variant105)
-475630 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(1021) (stored at: variant106)
-478351 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(553,36) (stored at: variant107)
-480240 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(267,59) (stored at: variant108)
-481664 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-481664 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(530,358) at variant109 fails to compile
+647996 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(547) (stored at: variant134)
+652145 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(430,51) (stored at: variant135)
+656075 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(487) (stored at: variant136)
+659911 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(779,795) (stored at: variant137)
+662171 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+662171 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(977,225) at variant138 fails to compile
 
-481664 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(530,358) (stored at: variant109)
-484472 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(587,36) (stored at: variant110)
-486489 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(699,56) (stored at: variant111)
-681179 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(500,856) (stored at: variant112)
-682562 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-682562 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(758,774) at variant113 fails to compile
+662171 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(977,225) (stored at: variant138)
+666150 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(999) (stored at: variant139)
+669060 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(1024,492) (stored at: variant140)
+671298 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+671298 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(546) at variant141 fails to compile
 
-682562 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(758,774) (stored at: variant113)
-683911 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-683911 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(262) at variant114 fails to compile
+671298 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(546) (stored at: variant141)
+673439 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+673439 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(986,423) at variant142 fails to compile
 
-683911 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(262) (stored at: variant114)
-686531 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtReplace(894,899) (stored at: variant115)
-688427 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(81,804) (stored at: variant116)
-690732 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtDelete(985) (stored at: variant117)
-692569 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(425,519) (stored at: variant118)
-693834 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
-693834 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(1017) at variant119 fails to compile
+673439 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(986,423) (stored at: variant142)
+677657 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(362,39) (stored at: variant143)
+679869 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+679869 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(1010,762) at variant144 fails to compile
 
-693834 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(1017) (stored at: variant119)
-696254 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(697) (stored at: variant120)
-697937 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(695,695) (stored at: variant121)
-701780 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 33.0 StmtReplace(537,514) (stored at: variant122)
-701781 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: StmtReplace(537,514) (in variant122)
+679869 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(1010,762) (stored at: variant144)
+684207 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 1.0 StmtAppend(372,510) (stored at: variant145)
+688287 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(37,822) (stored at: variant146)
+688287 [main] INFO clegoues.genprog4java.Search.Search  - search: generation3
+696734 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+746978 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(768,353) (stored at: variant147)
+749263 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+749264 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(262) at variant148 fails to compile
 
-701837 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-701837 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 701
+749264 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(262) (stored at: variant148)
+753315 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtAppend(731,353) (stored at: variant149)
+755951 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(630) (stored at: variant150)
+760080 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(59,744) (stored at: variant151)
+764093 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(645) (stored at: variant152)
+766741 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(732) (stored at: variant153)
+770810 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtAppend(603,62) (stored at: variant154)
+773098 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+773099 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(582) at variant155 fails to compile
+
+773099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(582) (stored at: variant155)
+775339 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+775339 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(194) at variant156 fails to compile
+
+775339 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(194) (stored at: variant156)
+777536 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+777537 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(309) at variant157 fails to compile
+
+777537 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(309) (stored at: variant157)
+781731 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(500,455) (stored at: variant158)
+785849 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(1040,495) (stored at: variant159)
+789880 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtAppend(273,515) (stored at: variant160)
+792211 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+792211 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(591,783) at variant161 fails to compile
+
+792211 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(591,783) (stored at: variant161)
+796094 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(312) (stored at: variant162)
+799294 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(268,519) (stored at: variant163)
+803419 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(425,469) (stored at: variant164)
+806286 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(62) (stored at: variant165)
+808658 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+808658 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(601,44) at variant166 fails to compile
+
+808658 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(601,44) (stored at: variant166)
+813019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(425,517) (stored at: variant167)
+817114 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtAppend(475,9) (stored at: variant168)
+821147 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(769,225) (stored at: variant169)
+825225 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(212) (stored at: variant170)
+828079 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(1035,59) (stored at: variant171)
+830321 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+830321 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(876,796) at variant172 fails to compile
+
+830321 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(876,796) (stored at: variant172)
+832643 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+832643 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(884,615) at variant173 fails to compile
+
+832643 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(884,615) (stored at: variant173)
+836743 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(722,91) (stored at: variant174)
+838951 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+838951 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(882,871) at variant175 fails to compile
+
+838951 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(882,871) (stored at: variant175)
+841227 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+841227 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(290,34) at variant176 fails to compile
+
+841227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(290,34) (stored at: variant176)
+843446 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+843446 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(823) at variant177 fails to compile
+
+843446 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(823) (stored at: variant177)
+847682 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(711,188) (stored at: variant178)
+851683 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(1041) (stored at: variant179)
+855639 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(520) (stored at: variant180)
+859962 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(331,18) (stored at: variant181)
+864244 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(221,37) (stored at: variant182)
+866509 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+866509 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(214,46) at variant183 fails to compile
+
+866509 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(214,46) (stored at: variant183)
+870494 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(330,91) (stored at: variant184)
+874388 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(744) (stored at: variant185)
+877267 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(1016,884) (stored at: variant186)
+881105 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(464) (stored at: variant187)
+883884 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(648) (stored at: variant188)
+888227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(382,40) (stored at: variant189)
+890530 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+890530 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(359,899) at variant190 fails to compile
+
+890530 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(359,899) (stored at: variant190)
+894564 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(50) (stored at: variant191)
+896888 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+896888 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(638,3) at variant192 fails to compile
+
+896888 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(638,3) (stored at: variant192)
+900898 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(760) (stored at: variant193)
+903090 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+903090 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(559) at variant194 fails to compile
+
+903091 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(559) (stored at: variant194)
+905372 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+905372 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(365,92) at variant195 fails to compile
+
+905372 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(365,92) (stored at: variant195)
+909751 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(252,90) (stored at: variant196)
+913869 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtDelete(801) (stored at: variant197)
+918301 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 1.0 StmtReplace(346,566) (stored at: variant198)
+918301 [main] INFO clegoues.genprog4java.Search.Search  - search: generation4
+960770 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(947) (stored at: variant199)
+964762 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtAppend(392,17) (stored at: variant200)
+968951 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtAppend(39,56) (stored at: variant201)
+973115 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtReplace(465,354) (stored at: variant202)
+975275 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+975275 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(733,813) at variant203 fails to compile
+
+975275 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(733,813) (stored at: variant203)
+979107 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(13) (stored at: variant204)
+979109 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtDelete(391) (stored at: )
+981974 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(486,517) (stored at: variant205)
+986028 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(761,36) (stored at: variant206)
+990169 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(43,36) (stored at: variant207)
+994264 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtReplace(798,3) (stored at: variant208)
+997151 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtReplace(289,509) (stored at: variant209)
+1001225 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtAppend(464,353) (stored at: variant210)
+1003830 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtDelete(317) (stored at: variant211)
+1006124 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+1006124 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(601,11) at variant212 fails to compile
+
+1006124 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(601,11) (stored at: variant212)
+1008396 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+1008396 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(66,566) at variant213 fails to compile
+
+1008396 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(66,566) (stored at: variant213)
+1012679 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtAppend(537,40) (stored at: variant214)
+1016803 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtReplace(726,744) (stored at: variant215)
+1020884 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtReplace(642,774) (stored at: variant216)
+1020886 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtDelete(8) (stored at: )
+1024992 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtAppend(1006,994) (stored at: variant217)
+1027247 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+1027247 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(882,883) at variant218 fails to compile
+
+1027247 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(882,883) (stored at: variant218)
+1031294 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtAppend(371,636) (stored at: variant219)
+1034137 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtReplace(967,515) (stored at: variant220)
+1036343 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Math80_60_2/math80Buggy/runCompile.sh exited abnormally with status 1
+1036343 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(453,874) at variant221 fails to compile
+
+1036343 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(453,874) (stored at: variant221)
+1040064 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtDelete(278) (stored at: variant222)
+1044088 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 1.0 StmtReplace(745,513) (stored at: variant223)
+1049808 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 33.0 StmtDelete(537) (stored at: variant224)
+1049808 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: StmtDelete(537) (in variant224)
+
+1049931 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+1049932 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 1049
 

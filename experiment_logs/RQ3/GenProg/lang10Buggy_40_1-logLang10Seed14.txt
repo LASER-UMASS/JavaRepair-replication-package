@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-17 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Wed Mar 14 07:04:58 EDT 2018
+23 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Wed May 09 19:22:44 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang10_40_1/lang10Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang10_40_1/lang10Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=0.1  
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -27,7 +27,7 @@ generations=10
 positiveTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang10_40_1/lang10Buggy/pos.tests
 javaVM=/usr/lib/jvm/java-1.7.0//jre/bin/java
 seed=14
-negativePathWeight=0.65
+negativePathWeight=0.35
 compileCommand=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang10_40_1/lang10Buggy/runCompile.sh
 fixStrategy=classScope
 allowCoverageFail=false
@@ -36,7 +36,7 @@ javaRuntime=java.lang.Runtime@300ffa5d
 classTestFolder=
 modelPath=OVERALLModel.txt
 sanity=no
-positivePathWeight=0.35
+positivePathWeight=0.65
 jacocoPath=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/jacocoagent.jar
 negativeTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang10_40_1/lang10Buggy/neg.tests
 pathToFileHumanInjectedFaultLoc=fileHumanInjectedFaultLoc.txt
@@ -50,21 +50,32 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-70 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+113 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-594 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e4825ad6
-5594 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5615 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10616 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+1108 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e4825ad6
+6109 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6176 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11176 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10722 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 original (stored at: )
-13134 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 StmtReplace(176,180) (stored at: variant0)
-15005 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 StmtAppend(77,7) (stored at: variant1)
-17351 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 StmtDelete(27) (stored at: variant2)
-17351 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: StmtDelete(27) (in variant2)
+11355 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 original (stored at: )
+13287 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang10_40_1/lang10Buggy/runCompile.sh exited abnormally with status 1
+13287 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(249) at variant0 fails to compile
 
-17361 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-17361 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 17
+13288 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(249) (stored at: variant0)
+15270 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang10_40_1/lang10Buggy/runCompile.sh exited abnormally with status 1
+15271 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(71,21) at variant1 fails to compile
+
+15271 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(71,21) (stored at: variant1)
+18848 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 StmtDelete(132) (stored at: variant2)
+20676 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang10_40_1/lang10Buggy/runCompile.sh exited abnormally with status 1
+20677 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(122) at variant3 fails to compile
+
+20677 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(122) (stored at: variant3)
+24443 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 3.0 StmtDelete(210) (stored at: variant4)
+24462 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: StmtDelete(210) (in variant4)
+
+24482 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+24482 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 24
 

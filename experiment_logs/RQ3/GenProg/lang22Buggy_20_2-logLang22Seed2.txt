@@ -1,6 +1,6 @@
 0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
-19 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
-#Wed Mar 14 12:58:42 EDT 2018
+23 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Wed May 09 20:16:30 EDT 2018
 negativeTestWeight=2.0
 classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/target/classes
 model=default
@@ -16,7 +16,7 @@ negCoverageFile=coverage.path.neg
 workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/
 clearTestCache=false
 skipFailedSanity=true
-sample=0.1  
+sample=0.1 
 oracleGenome=
 testGranularity=method
 justTestingFaultLoc=false
@@ -27,7 +27,7 @@ generations=10
 positiveTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/pos.tests
 javaVM=/usr/lib/jvm/java-1.7.0//jre/bin/java
 seed=2
-negativePathWeight=0.65
+negativePathWeight=0.35
 compileCommand=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh
 fixStrategy=classScope
 allowCoverageFail=false
@@ -36,7 +36,7 @@ javaRuntime=java.lang.Runtime@300ffa5d
 classTestFolder=
 modelPath=OVERALLModel.txt
 sanity=no
-positivePathWeight=0.35
+positivePathWeight=0.65
 jacocoPath=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/jacocoagent.jar
 negativeTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/neg.tests
 pathToFileHumanInjectedFaultLoc=fileHumanInjectedFaultLoc.txt
@@ -50,77 +50,647 @@ globalExtension=.java
 maxVariants=400
 libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
 crossover=onepoint
-75 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+227 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
 Deserialized fitnessCache HashMap
-571 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e639b276
-5571 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
-5591 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
-10592 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+1248 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e639b276
+6248 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+6459 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+11460 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
 
-10656 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 original (stored at: )
-11751 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-11751 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(210,37) at variant0 fails to compile
+11570 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 original (stored at: )
+15490 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(165,22) (stored at: variant0)
+18293 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(310,308) (stored at: variant1)
+20332 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+20333 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(24,51) at variant2 fails to compile
 
-11751 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(210,37) (stored at: variant0)
-12818 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-12818 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(310,308) at variant1 fails to compile
+20333 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(24,51) (stored at: variant2)
+22478 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+22478 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(230) at variant3 fails to compile
 
-12818 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(310,308) (stored at: variant1)
-13890 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-13890 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(40,51) at variant2 fails to compile
+22478 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(230) (stored at: variant3)
+24501 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+24501 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(212,20) at variant4 fails to compile
 
-13890 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(40,51) (stored at: variant2)
-14942 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-14942 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(305,48) at variant3 fails to compile
+24501 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(212,20) (stored at: variant4)
+28374 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(38,34) (stored at: variant5)
+30809 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+30809 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(56,38) at variant6 fails to compile
 
-14943 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(305,48) (stored at: variant3)
-15993 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-15993 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(223,23) at variant4 fails to compile
+30809 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(56,38) (stored at: variant6)
+32875 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+32875 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(212,25) at variant7 fails to compile
 
-15993 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(223,23) (stored at: variant4)
-17070 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-17070 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(52,34) at variant5 fails to compile
+32875 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(212,25) (stored at: variant7)
+34930 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+34930 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(305,41) at variant8 fails to compile
 
-17070 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(52,34) (stored at: variant5)
-18136 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-18136 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(150,38) at variant6 fails to compile
+34930 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(305,41) (stored at: variant8)
+37138 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+37138 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(154,158) at variant9 fails to compile
 
-18136 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(150,38) (stored at: variant6)
-19197 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-19198 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(223,141) at variant7 fails to compile
+37139 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(154,158) (stored at: variant9)
+40549 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(162,21) (stored at: variant10)
+43420 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(13,165) (stored at: variant11)
+43424 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(28) (stored at: )
+45494 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+45494 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(18,22) at variant12 fails to compile
 
-19198 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(223,141) (stored at: variant7)
-20260 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-20260 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(307,41) at variant8 fails to compile
+45494 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(18,22) (stored at: variant12)
+49897 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(6) (stored at: variant13)
+51917 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+51917 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(27,51) at variant14 fails to compile
 
-20260 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(307,41) (stored at: variant8)
-21314 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-21315 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(168) at variant9 fails to compile
+51917 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(27,51) (stored at: variant14)
+54024 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+54025 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(37,162) at variant15 fails to compile
 
-21315 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(168) (stored at: variant9)
-22365 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-22365 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(206,22) at variant10 fails to compile
+54025 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(37,162) (stored at: variant15)
+58343 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(47,23) (stored at: variant16)
+58346 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(20) (stored at: )
+62250 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(19,37) (stored at: variant17)
+62276 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(3) (stored at: )
+65355 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(57,9) (stored at: variant18)
+67393 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+67393 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(54) at variant19 fails to compile
 
-22366 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(206,22) (stored at: variant10)
-23423 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-23423 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(20,165) at variant11 fails to compile
+67393 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(54) (stored at: variant19)
+69263 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+69263 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(34,133) at variant20 fails to compile
 
-23424 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(20,165) (stored at: variant11)
-25386 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(43) (stored at: variant12)
-26876 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(27,22) (stored at: variant13)
-28844 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(13) (stored at: variant14)
-30319 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(42,147) (stored at: variant15)
-32262 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(51,162) (stored at: variant16)
-33741 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(32,28) (stored at: variant17)
-34827 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
-34827 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(159,24) at variant18 fails to compile
+69263 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(34,133) (stored at: variant20)
+72886 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(163,5) (stored at: variant21)
+72890 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(230) (stored at: )
+72893 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(20) (stored at: )
+76784 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(29,160) (stored at: variant22)
+80836 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(159,24) (stored at: variant23)
+80838 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(3) (stored at: )
+84570 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(14) (stored at: variant24)
+87320 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(214) (stored at: variant25)
+89418 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+89418 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(216,17) at variant26 fails to compile
 
-34827 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(159,24) (stored at: variant18)
-34830 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 9.0 StmtDelete(201) (stored at: )
-34831 [main] INFO clegoues.genprog4java.Search.Search  - 
-Repair Found: StmtDelete(201) (in )
+89418 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(216,17) (stored at: variant26)
+93269 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(46,161) (stored at: variant27)
+95579 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+95580 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(222,14) at variant28 fails to compile
 
-34838 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
-34838 [main] INFO clegoues.genprog4java.main.Main  - 
-Total elapsed time: 34
+95580 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(222,14) (stored at: variant28)
+95583 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(222) (stored at: )
+97961 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+97961 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(23,305) at variant29 fails to compile
+
+97961 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtAppend(23,305) (stored at: variant29)
+101595 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtDelete(304) (stored at: variant30)
+104727 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 StmtReplace(152,34) (stored at: variant31)
+104728 [main] INFO clegoues.genprog4java.Search.Search  - search: generation1
+119064 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+121132 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+159970 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(19) (stored at: variant32)
+163728 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(9,163) (stored at: variant33)
+165898 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+165898 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(8,24) at variant34 fails to compile
+
+165898 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(8,24) (stored at: variant34)
+169910 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(17) (stored at: variant35)
+169913 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(5) (stored at: )
+169914 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(25) (stored at: )
+171959 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+171959 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(149,13) at variant36 fails to compile
+
+171959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(149,13) (stored at: variant36)
+171961 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(214) (stored at: )
+176065 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(153) (stored at: variant37)
+178059 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+178060 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(18,164) at variant38 fails to compile
+
+178060 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(18,164) (stored at: variant38)
+178062 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(28) (stored at: )
+181538 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(215) (stored at: variant39)
+184779 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(149,160) (stored at: variant40)
+186932 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+186932 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(216,165) at variant41 fails to compile
+
+186932 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(216,165) (stored at: variant41)
+189191 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+189191 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(201,201) at variant42 fails to compile
+
+189192 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(201,201) (stored at: variant42)
+191315 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+191315 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(1,201) at variant43 fails to compile
+
+191315 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(1,201) (stored at: variant43)
+193649 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+193649 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(2) at variant44 fails to compile
+
+193649 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(2) (stored at: variant44)
+197458 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(163) (stored at: variant45)
+200596 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(205,208) (stored at: variant46)
+200625 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(28,161) (stored at: )
+203988 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(155) (stored at: variant47)
+205954 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+205954 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(311) at variant48 fails to compile
+
+205954 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(311) (stored at: variant48)
+205956 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(17) (stored at: )
+209406 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(42) (stored at: variant49)
+212868 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(32,18) (stored at: variant50)
+408392 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(225) (stored at: variant51)
+412400 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(166,22) (stored at: variant52)
+415184 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(3,8) (stored at: variant53)
+417401 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+417401 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(160,46) at variant54 fails to compile
+
+417401 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(160,46) (stored at: variant54)
+419511 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+419512 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(23,164) at variant55 fails to compile
+
+419512 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(23,164) (stored at: variant55)
+423444 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(149) (stored at: variant56)
+426093 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(202,57) (stored at: variant57)
+430046 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(308,163) (stored at: variant58)
+433589 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(159) (stored at: variant59)
+436325 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(37) (stored at: variant60)
+440062 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(221) (stored at: variant61)
+442311 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+442311 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(29) at variant62 fails to compile
+
+442311 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(29) (stored at: variant62)
+442313 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(166) (stored at: )
+444534 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+444534 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(149,162) at variant63 fails to compile
+
+444534 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(149,162) (stored at: variant63)
+446872 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+446872 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(20,18) at variant64 fails to compile
+
+446872 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(20,18) (stored at: variant64)
+450239 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(150,159) (stored at: variant65)
+450241 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(34) (stored at: )
+450243 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(28) (stored at: )
+452528 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+452528 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(3,17) at variant66 fails to compile
+
+452528 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(3,17) (stored at: variant66)
+454612 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+454612 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(162,162) at variant67 fails to compile
+
+454612 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(162,162) (stored at: variant67)
+458318 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(43,158) (stored at: variant68)
+460438 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+460438 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(218,17) at variant69 fails to compile
+
+460438 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(218,17) (stored at: variant69)
+462906 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+462906 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(212,159) at variant70 fails to compile
+
+462906 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(212,159) (stored at: variant70)
+462908 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(161) (stored at: )
+465613 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+465613 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(160,147) at variant71 fails to compile
+
+465613 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(160,147) (stored at: variant71)
+465615 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(158) (stored at: )
+467845 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+467845 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(205,145) at variant72 fails to compile
+
+467845 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(205,145) (stored at: variant72)
+471757 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(55) (stored at: variant73)
+475497 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtDelete(53) (stored at: variant74)
+478246 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(3,163) (stored at: variant75)
+481857 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(46,43) (stored at: variant76)
+484254 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+484254 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(56,162) at variant77 fails to compile
+
+484254 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(56,162) (stored at: variant77)
+486384 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+486384 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(1,46) at variant78 fails to compile
+
+486384 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(1,46) (stored at: variant78)
+488565 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+488565 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(308,13) at variant79 fails to compile
+
+488565 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtReplace(308,13) (stored at: variant79)
+490677 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+490677 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(6,17) at variant80 fails to compile
+
+490677 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 1 0.0 StmtAppend(6,17) (stored at: variant80)
+490677 [main] INFO clegoues.genprog4java.Search.Search  - search: generation2
+498711 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+557871 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(57) (stored at: )
+561890 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(17,40) (stored at: variant81)
+3005235 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(203) (stored at: variant82)
+3009045 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(23) (stored at: variant83)
+3009047 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(29) (stored at: )
+3011054 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3011054 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(42,308) at variant84 fails to compile
+
+3011054 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(42,308) (stored at: variant84)
+3013285 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3013285 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(38,201) at variant85 fails to compile
+
+3013286 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(38,201) (stored at: variant85)
+3015323 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3015323 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(308,164) at variant86 fails to compile
+
+3015323 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(308,164) (stored at: variant86)
+3017464 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3017464 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(204,165) at variant87 fails to compile
+
+3017464 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(204,165) (stored at: variant87)
+3019475 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3019475 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(207,13) at variant88 fails to compile
+
+3019475 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(207,13) (stored at: variant88)
+3019476 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(42) (stored at: )
+3021639 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3021640 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(23,38) at variant89 fails to compile
+
+3021640 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(23,38) (stored at: variant89)
+3021642 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(39) (stored at: )
+3021643 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(160) (stored at: )
+3024099 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3024100 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(222,20) at variant90 fails to compile
+
+3024100 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(222,20) (stored at: variant90)
+3024103 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(3) (stored at: )
+3027822 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(19,159) (stored at: variant91)
+3031475 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(22,34) (stored at: variant92)
+3034130 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(223,222) (stored at: variant93)
+3037763 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(56,37) (stored at: variant94)
+3037765 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(160,143) (stored at: )
+3041326 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(55,20) (stored at: variant95)
+3044227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(21,164) (stored at: variant96)
+3046408 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3046408 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(5,21) at variant97 fails to compile
+
+3046408 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(5,21) (stored at: variant97)
+3049894 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(56,161) (stored at: variant98)
+3051919 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3051920 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(161,164) at variant99 fails to compile
+
+3051920 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(161,164) (stored at: variant99)
+3053929 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3053930 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(150,25) at variant100 fails to compile
+
+3053930 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(150,25) (stored at: variant100)
+3058175 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(57,51) (stored at: variant101)
+3061878 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(22,166) (stored at: variant102)
+3061882 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(214) (stored at: )
+3063979 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3063979 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(27) at variant103 fails to compile
+
+3063979 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(27) (stored at: variant103)
+3063981 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(34) (stored at: )
+3066138 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+3066138 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(154,21) at variant104 fails to compile
+
+3066138 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(154,21) (stored at: variant104)
+5217258 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(208) (stored at: variant105)
+5219455 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5219455 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(8,19) at variant106 fails to compile
+
+5219455 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(8,19) (stored at: variant106)
+5219456 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(226) (stored at: )
+5221203 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5221203 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(10,159) at variant107 fails to compile
+
+5221203 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(10,159) (stored at: variant107)
+5224902 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(21,6) (stored at: variant108)
+5226773 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5226773 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(165,47) at variant109 fails to compile
+
+5226773 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(165,47) (stored at: variant109)
+5230151 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(155,164) (stored at: variant110)
+5232507 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(5,25) (stored at: variant111)
+5234642 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5234642 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(43,24) at variant112 fails to compile
+
+5234642 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(43,24) (stored at: variant112)
+5236604 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5236604 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(159,9) at variant113 fails to compile
+
+5236604 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(159,9) (stored at: variant113)
+5238661 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5238661 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(304,6) at variant114 fails to compile
+
+5238661 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(304,6) (stored at: variant114)
+5240688 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5240688 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(161,25) at variant115 fails to compile
+
+5240688 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(161,25) (stored at: variant115)
+5240690 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(14) (stored at: )
+5242833 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5242833 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(8,18) at variant116 fails to compile
+
+5242833 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(8,18) (stored at: variant116)
+5246765 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(24) (stored at: variant117)
+5246767 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(21) (stored at: )
+5248782 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5248782 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(221,13) at variant118 fails to compile
+
+5248782 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(221,13) (stored at: variant118)
+5250808 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5250808 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(158,21) at variant119 fails to compile
+
+5250808 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(158,21) (stored at: variant119)
+5254292 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(47,37) (stored at: variant120)
+5256883 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(53,18) (stored at: variant121)
+5259244 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5259244 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(28,43) at variant122 fails to compile
+
+5259244 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(28,43) (stored at: variant122)
+5259245 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(22) (stored at: )
+5259246 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(5) (stored at: )
+5262956 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(44,160) (stored at: variant123)
+5262958 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(20) (stored at: )
+5262960 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtDelete(214) (stored at: )
+5264934 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5264934 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(212,25) at variant124 fails to compile
+
+5264934 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(212,25) (stored at: variant124)
+5266910 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5266911 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(8,6) at variant125 fails to compile
+
+5266911 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtAppend(8,6) (stored at: variant125)
+5268774 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5268774 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(52,19) at variant126 fails to compile
+
+5268774 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 2 0.0 StmtReplace(52,19) (stored at: variant126)
+5268774 [main] INFO clegoues.genprog4java.Search.Search  - search: generation3
+5270881 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5272876 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5280190 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5350747 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(19) (stored at: )
+5354436 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(9) (stored at: variant127)
+5356815 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(224,37) (stored at: variant128)
+5360543 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(13) (stored at: variant129)
+5363212 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(31) (stored at: variant130)
+5364953 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5364954 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(37,22) at variant131 fails to compile
+
+5364954 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(37,22) (stored at: variant131)
+5368711 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(19,22) (stored at: variant132)
+5372439 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(222,163) (stored at: variant133)
+5372441 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(34) (stored at: )
+5372442 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(27) (stored at: )
+5372443 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(31) (stored at: )
+5374932 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(21,163) (stored at: variant134)
+5374934 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(203) (stored at: )
+5376994 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5376994 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(310) at variant135 fails to compile
+
+5376994 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(310) (stored at: variant135)
+5380587 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(24,37) (stored at: variant136)
+5383095 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(206,162) (stored at: variant137)
+5385114 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5385114 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(51,151) at variant138 fails to compile
+
+5385114 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(51,151) (stored at: variant138)
+5385116 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(156) (stored at: )
+5388669 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(25,21) (stored at: variant139)
+5391197 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(225,53) (stored at: variant140)
+5394959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(162,161) (stored at: variant141)
+5398530 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(17,46) (stored at: variant142)
+5401427 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(46,48) (stored at: variant143)
+5403577 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5403577 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(32,21) at variant144 fails to compile
+
+5403577 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(32,21) (stored at: variant144)
+5407377 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(39,21) (stored at: variant145)
+5410168 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(225,164) (stored at: variant146)
+5410170 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(9) (stored at: )
+5410171 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(27) (stored at: )
+5412126 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5412126 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(213,17) at variant147 fails to compile
+
+5412126 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(213,17) (stored at: variant147)
+5412127 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(22) (stored at: )
+5415771 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(213) (stored at: variant148)
+5419631 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(18,22) (stored at: variant149)
+5422061 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(1,41) (stored at: variant150)
+5424043 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5424044 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(203,17) at variant151 fails to compile
+
+5424044 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(203,17) (stored at: variant151)
+5424045 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(230) (stored at: )
+5427561 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(19,216) (stored at: variant152)
+5427562 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(3) (stored at: )
+5430115 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(165,159) (stored at: variant153)
+5432008 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5432008 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(17,165) at variant154 fails to compile
+
+5432008 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(17,165) (stored at: variant154)
+5435421 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(2,13) (stored at: variant155)
+5437968 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(18) (stored at: variant156)
+5440071 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5440072 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(221,23) at variant157 fails to compile
+
+5440072 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(221,23) (stored at: variant157)
+5440073 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(32) (stored at: )
+5443759 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(211,38) (stored at: variant158)
+5443761 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(210) (stored at: )
+5447494 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(20,47) (stored at: variant159)
+5450082 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(154,164) (stored at: variant160)
+5450083 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(23) (stored at: )
+5453988 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(150) (stored at: variant161)
+5457336 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(49) (stored at: variant162)
+5459981 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(34,308) (stored at: variant163)
+5463676 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(17,20) (stored at: variant164)
+5467696 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(166,168) (stored at: variant165)
+5467709 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(3) (stored at: )
+5471504 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(51,23) (stored at: variant166)
+5473983 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtAppend(54,8) (stored at: variant167)
+5473984 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(163) (stored at: )
+5477474 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(38,8) (stored at: variant168)
+5477475 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(34) (stored at: )
+5480164 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtReplace(161,52) (stored at: variant169)
+5480166 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(17) (stored at: )
+5482255 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5482256 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(164) at variant170 fails to compile
+
+5482256 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 3 0.0 StmtDelete(164) (stored at: variant170)
+5482256 [main] INFO clegoues.genprog4java.Search.Search  - search: generation4
+5493441 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5500598 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5512910 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5551165 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(201,43) (stored at: variant171)
+5553172 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5553173 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(6,47) at variant172 fails to compile
+
+5553173 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(6,47) (stored at: variant172)
+5555227 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5555227 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(8,51) at variant173 fails to compile
+
+5555227 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(8,51) (stored at: variant173)
+5557180 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5557180 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(23,162) at variant174 fails to compile
+
+5557180 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(23,162) (stored at: variant174)
+5557182 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(41) (stored at: )
+5559099 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5559099 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtDelete(168) at variant175 fails to compile
+
+5559099 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(168) (stored at: variant175)
+5561510 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5561510 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(229,47) at variant176 fails to compile
+
+5561510 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(229,47) (stored at: variant176)
+5563647 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5563647 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(210,9) at variant177 fails to compile
+
+5563647 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(210,9) (stored at: variant177)
+5567170 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(205,216) (stored at: variant178)
+5569341 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5569341 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(5,51) at variant179 fails to compile
+
+5569341 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(5,51) (stored at: variant179)
+5571359 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5571359 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(208,147) at variant180 fails to compile
+
+5571359 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(208,147) (stored at: variant180)
+5573478 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5573478 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(225,10) at variant181 fails to compile
+
+5573478 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(225,10) (stored at: variant181)
+5576917 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(41,165) (stored at: variant182)
+5580757 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(28,13) (stored at: variant183)
+5584568 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(304,304) (stored at: variant184)
+5584570 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(156) (stored at: )
+5584571 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(156) (stored at: )
+5587119 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(9,161) (stored at: variant185)
+5589085 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5589085 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(54,25) at variant186 fails to compile
+
+5589085 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(54,25) (stored at: variant186)
+5591201 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5591201 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(158,159) at variant187 fails to compile
+
+5591201 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(158,159) (stored at: variant187)
+5594763 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(44,41) (stored at: variant188)
+5598118 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(223,160) (stored at: variant189)
+5598120 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(155,164) (stored at: )
+5600123 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5600123 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(37,24) at variant190 fails to compile
+
+5600123 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(37,24) (stored at: variant190)
+5602180 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5602180 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(209,43) at variant191 fails to compile
+
+5602180 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(209,43) (stored at: variant191)
+5605639 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(225,21) (stored at: variant192)
+5608127 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(152) (stored at: variant193)
+5608129 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(9) (stored at: )
+5608130 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(44) (stored at: )
+5611758 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(45) (stored at: variant194)
+5613802 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5613802 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(158,38) at variant195 fails to compile
+
+5613802 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(158,38) (stored at: variant195)
+5613804 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(5) (stored at: )
+5613805 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(8,6) (stored at: )
+5615953 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5615953 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(6,40) at variant196 fails to compile
+
+5615953 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(6,40) (stored at: variant196)
+5618011 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5618011 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(209,18) at variant197 fails to compile
+
+5618011 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(209,18) (stored at: variant197)
+5621480 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(25,17) (stored at: variant198)
+5623908 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(150,17) (stored at: variant199)
+5625820 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+5625820 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(216,10) at variant200 fails to compile
+
+5625820 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(216,10) (stored at: variant200)
+8067231 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(205) (stored at: variant201)
+8069097 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8069097 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(201,164) at variant202 fails to compile
+
+8069097 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(201,164) (stored at: variant202)
+8069098 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(42) (stored at: )
+8069100 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(57) (stored at: )
+8071109 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8071109 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(311,46) at variant203 fails to compile
+
+8071109 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(311,46) (stored at: variant203)
+8074541 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(154) (stored at: variant204)
+8077007 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(46,48) (stored at: variant205)
+8078809 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8078809 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(310,304) at variant206 fails to compile
+
+8078809 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(310,304) (stored at: variant206)
+8082382 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(38,162) (stored at: variant207)
+8084762 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(22,143) (stored at: variant208)
+8086635 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8086635 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(155,53) at variant209 fails to compile
+
+8086635 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(155,53) (stored at: variant209)
+8088421 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8088421 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(29,135) at variant210 fails to compile
+
+8088421 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(29,135) (stored at: variant210)
+8090218 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8090218 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(160,305) at variant211 fails to compile
+
+8090218 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtReplace(160,305) (stored at: variant211)
+8090220 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtDelete(160) (stored at: )
+8092144 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8092144 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(165,6) at variant212 fails to compile
+
+8092144 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(165,6) (stored at: variant212)
+8095515 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 4 0.0 StmtAppend(161,20) (stored at: variant213)
+8095516 [main] INFO clegoues.genprog4java.Search.Search  - search: generation5
+8099408 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8111177 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8159777 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(8,44) (stored at: variant214)
+8159779 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(28) (stored at: )
+8159781 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(17) (stored at: )
+8163087 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtAppend(52,9) (stored at: variant215)
+8165159 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8165160 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(150,48) at variant216 fails to compile
+
+8165160 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtAppend(150,48) (stored at: variant216)
+8168449 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(212,200) (stored at: variant217)
+8171105 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(53,201) (stored at: variant218)
+8174672 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(41,25) (stored at: variant219)
+8177139 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtAppend(14,5) (stored at: variant220)
+8177141 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(9) (stored at: )
+8276363 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(211) (stored at: variant221)
+8278277 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8278277 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(210,18) at variant222 fails to compile
+
+8278277 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtAppend(210,18) (stored at: variant222)
+8281602 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(154,160) (stored at: variant223)
+8284137 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(51,15) (stored at: variant224)
+8285959 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8285959 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(31,154) at variant225 fails to compile
+
+8285959 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(31,154) (stored at: variant225)
+8285961 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(23) (stored at: )
+8285961 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(20) (stored at: )
+8285962 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(23) (stored at: )
+8289372 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(56) (stored at: variant226)
+8291723 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(202,158) (stored at: variant227)
+8295121 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(1,161) (stored at: variant228)
+8295122 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(1) (stored at: )
+8295123 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(13) (stored at: )
+8295124 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(160) (stored at: )
+8296848 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8296848 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtReplace(212,165) at variant229 fails to compile
+
+8296848 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(212,165) (stored at: variant229)
+8300288 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(168,160) (stored at: variant230)
+8302875 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtReplace(161,5) (stored at: variant231)
+8302877 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtDelete(17) (stored at: )
+8304840 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_gp_Lang22_20_2/lang22Buggy/runCompile.sh exited abnormally with status 1
+8304840 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - StmtAppend(149,45) at variant232 fails to compile
+
+8304840 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 0.0 StmtAppend(149,45) (stored at: variant232)
+8304841 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 5 9.0 StmtDelete(202) (stored at: )
+8304841 [main] INFO clegoues.genprog4java.Search.Search  - 
+Repair Found: StmtDelete(202) (in )
+
+8304920 [main] INFO clegoues.genprog4java.fitness.Fitness  - Serialized test cache to file testcache.ser
+8304920 [main] INFO clegoues.genprog4java.main.Main  - 
+Total elapsed time: 8304
 
