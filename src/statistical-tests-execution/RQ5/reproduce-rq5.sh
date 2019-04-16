@@ -2,7 +2,7 @@
 # PURPOSE: This is the driver script used to reproduce results for RQ5
 # INPUT: path to directory containing patch quality assesment scores for RQ5 patches  (../../../results/RQ5/patch-quality-assessment/)
 # OUTPUT: plots and results presented in paper
-# CMD TO RUN: bash reproduce-rq5.sh
+# CMD TO RUN: bash reproduce-rq5.sh ../../../results/RQ5/patch-quality-assessment/
 # DEPENDENCIES: this script requires consolidate.py, combinepatches.py and combineresults.py scripts to pre-process input data,
 #               and computeMannWhitney.R to run Mann-Whitney U test and generate boxplots
 #####################################
