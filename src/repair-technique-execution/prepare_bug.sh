@@ -24,7 +24,7 @@
 # 11th param is the path to file containing sampled positive tests
 
 # Example usage, VM:
-#./prepareBug.sh Math 2 allHuman 100 ExamplesCheckedOut /usr/lib/jvm/java-7-oracle/ /usr/lib/jvm/java-8-oracle/ true <path to neg.test> true <path to pos.test>
+#./prepare_bug.sh Math 2 allHuman 100 ExamplesCheckedOut /usr/lib/jvm/java-7-oracle/ /usr/lib/jvm/java-8-oracle/ true <path to neg.test> true <path to pos.test>
 
 if [ "$#" -ne 11 ]; then
     echo "This script should be run with 11 parameters:"
