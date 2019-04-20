@@ -2,7 +2,7 @@
 # PURPOSE: This is the driver script used to generate results for RQ2
 # INPUT: path to directory containing patch quality assesment scores for RQ2 patches  (../../../results/RQ2/patch-quality-assessment/)
 # OUTPUT: plots and results presented in paper
-# CMD TO RUN: bash reproduce-rq2.sh
+# CMD TO RUN: bash reproduce-rq2.sh ../../../results/RQ2/patch-quality-assessment/
 # NOTE: this depends on consolidate.py and combineresults.py scripts to pre-process input data,
 #	and on quality-stats.R and compare-quality-with-defective.R to generate the plots
 #####################################
