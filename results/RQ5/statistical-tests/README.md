@@ -7,6 +7,7 @@ show the distribution of failing tests in developer-written and EvoSuite-generat
 for the 37 defects used for this experiment 
 
 `gp_provenance_boxplot.pdf`, `par_provenance_boxplot.pdf`, and `trp_provenance_boxplot.pdf` show the boxplots
-comparing the quality of patches produced for commonly patched defects by GenProg, Par, and TRPAutoRepair respectively. 
+comparing the quality of patches produced using different provenance for the in-common defects patched by 
+GenProg, Par, and TRPAutoRepair respectively. 
 
 **This replicates results described in Figure 8 of the paper.**
