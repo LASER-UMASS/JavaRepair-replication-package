@@ -99,7 +99,7 @@ if [ -d "$GP4J_HOME" ]; then
 
     cd ~/JavaRepair-results/defects4j-scripts/
 
-	./prepareBug.sh $PROJECT $BUGNUMBER $OPTION $TESTSUITESAMPLE $BUGSFOLDER $DIROFJAVA7 $DIROFJAVA8 $SAMPLENEGTESTS $NEGTESTPATH $SAMPLEPOSTESTS $POSTESTPATH
+	./prepare_bug.sh $PROJECT $BUGNUMBER $OPTION $TESTSUITESAMPLE $BUGSFOLDER $DIROFJAVA7 $DIROFJAVA8 $SAMPLENEGTESTS $NEGTESTPATH $SAMPLEPOSTESTS $POSTESTPATH
 
     if [ -d "$BUGWD/$WD" ]; then
       #Go to the working directory
@@ -147,12 +147,3 @@ if [ -d "$GP4J_HOME" ]; then
 fi
 
 fi #correct number of params
-
-#For use only of the Probabilistic vs Equally distributed comparisson
-#WHICHMODE="RegAllMut"
-#mv $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/ $D4J_HOME/$BUGSFOLDER/"ResultsRegvsProbMultiLine"/$LOWERCASEPACKAGE$2$WHICHMODE/
-#cd $GP4J_HOME/defects4j-scripts/
-#GETLASTLINESFROMLOGS="./probVsEDSpecificScripts/getLastLinesFromAllLogs.sh $PROJECT $BUGNUMBER $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2$WHICHMODE/"
-#eval $GETLASTLINESFROMLOGS
-#CONVERTTOCSV="./probVsEDSpecificScripts/convertToCSVtheLastLines.sh $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2$WHICHMODE/"
-#eval $CONVERTTOCSV
