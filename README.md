@@ -1,17 +1,18 @@
-# JavaRepair-results
-This repository contains the data and scripts to reproduce the results of the paper "Quality of Automated Program Repair on Real-World Defects".
+# Artificat Replication Guide
+
+This repository contains the data and scripts to replicate the results of the paper "Quality of Automated Program Repair on Real-World Defects". It also contains the pre-computed results and experiment logs for easy reference. Following describes the repository structure.   
 
 - The __src__ directory contains the source code used for:  
-  - patch-quality-assessment 	
-  - repair-technique-execution 	
-  - statistical-tests-execution
-  - test-generation-and-sampling
-- The __results__ directory contains the result files organized in terms of the following research questions:
-  - RQ1: Do G&V techniques produce patches for real-world defects?
-  - RQ2: How often and how much do the patches produced by G&V techniques overfit to the developer-written test suite and fail to generalize to the evaluation test suite, and thus ultimately to the program specification?
-  - RQ3: How do the coverage and size of the test suite used to produce the patch affect patch quality?
-  - RQ4: How does the number of tests that a buggy program fails affect the degree to which the generated patches overfit?
-  - RQ5: How does the test suite provenance (whether it is written by developers or generated automatically) influence patch quality?
-  - RQ6: Can overfitting be mitigated by exploiting randomness in the repair process? Do different random seeds overfit in different ways?
+  - __repair-technique-execution__: This directory contains the scrips used to execute the repair techniques using JaRFly framework.  
+  - __test-generation-and-sampling__: This directory contains the scripts used for generating evaluation test suites using EvoSuite and sampling test suites based on statement coverage and number of failing tests.  
+  - __patch-quality-assessment__: This directory contains the scripts used to assess the quality of the patches produced by repair techniques using held-out evaluation test suite.  	
+  - __statistical-tests-execution__: This directory contains, for each research question, the scripts used to run the corresponding statistical tests and generate plots.  
+- The __results__ directory contains the result files organized in terms of the research questions described in the paper. 
+  - __RQ1__(_Do G&V techniques produce patches for real-world defects?_): This directory contains __patches__ (patches produced by repair techniques) and __statistical-tests__ (results showing if the repair techniques can patch real-world defects) sub-directories.  
+  - __RQ2__(_How often and how much do the patches produced by G&V techniques overfit to the developer-written test suite and fail to generalize to the evaluation test suite, and thus ultimately to the program specification?_): This directory contains __patches__ (patches produced by repair techniques), __patch-quality-assessment__ (quality assessment of patches), and __statistical-tests__ (results showing the patch overfitting) sub-directories.  
+  - __RQ3__(_How do the coverage and size of the test suite used to produce the patch affect patch quality?_): This directory contains __sampled-tests-coverage__ (developer-written tests sampled based on statement coverage), __patches__ (patches produced by repair techniques), __patch-quality-assessment__ (quality assessment of patches), and __statistical-tests__ (results showing the affect of test suite coverage and test suite size on patch quality) sub-directories.  
+  - __RQ4__(_How does the number of tests that a buggy program fails affect the degree to which the generated patches overfit?_): This directory contains __sampled-tests-failing-test-count__ (developer-written tests sampled based on failing test count), __patches__ (patches produced by repair techniques), __patch-quality-assessment__ (quality assessment of patches), and __statistical-tests__ (results showing the effect of failing test count on patch quality) sub-directories.  
+  - __RQ5__(_How does the test suite provenance (whether it is written by developers or generated automatically) influence patch quality?_): This directory contains __patches__ (patches produced by repair techniques using EvoSuite-generated tests to guide the repair), __patch-quality-assessment__ (quality assessment of patches), and __statistical-tests__ (results showing the effect of test provenance on patch overfitting) sub-directories.  
+  - __RQ6__(_Can overfitting be mitigated by exploiting randomness in the repair process? Do different random seeds overfit in different ways?_): This directory contains __patch-quality-assessment__ (quality assessment of patches produced using developer-written tests, same as RQ2), __test-execution-results__(quality assessment combined patches (n-version)) and __statistical-tests__ (results comparing the quality of n-version patches with original patches) sub-directories.  
 - The __test_suites__ directory contains the independely generated held-out test suites using EvoSuite version 3 optimizing the branch coverage criterion and using EvoSuite version 6 optimizing the line coverage criterion. 
 - The __experiment_logs__ directory contains the logs generated while executing the repair techniques --- GenProg, Par, and TRPAutoRepair to address each of the research questions listed above. The logs are organized in terms of research questions. 
