@@ -1,5 +1,3 @@
-# Artificat Replication Guide
-
 This repository contains the data and scripts to replicate the results of the paper "Quality of Automated Program Repair on Real-World Defects". It also contains the pre-computed results and experiment logs for easy reference. Following describes the repository structure.   
 
 - The __src__ directory contains the source code used for:  
