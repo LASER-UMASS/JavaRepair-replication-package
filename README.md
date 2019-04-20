@@ -6,4 +6,4 @@ Please use the following links to access the desired information.
 
 * [Repository-Structure](https://github.com/LASER-UMASS/JavaRepair-replication-package/wiki/Repository-Structure)
 * [Replication-Instructions](https://github.com/LASER-UMASS/JavaRepair-replication-package/wiki/Replication-Instructions)
-* [Configuration parameter settings used while running repair techniques using JaRFly framework](https://github.com/LASER-UMASS/JavaRepair-replication-package/wiki/JaRFly-configuration-parameters)
+* [Configuration parameter settings used while running repair techniques using JaRFly framework](https://github.com/LASER-UMASS/JavaRepair-replication-package/wiki/Configuration-parameter-details)
