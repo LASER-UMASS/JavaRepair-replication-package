@@ -1,0 +1,118 @@
+0 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: class
+22 [main] DEBUG clegoues.genprog4java.fitness.Fitness  - parsing granularity, value: method
+#Mon Jul 16 12:20:27 EDT 2018
+negativeTestWeight=2.0
+classSourceFolder=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/target/classes
+model=default
+sampleStrategy=variant
+srcClassPath=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/target/classes
+sourceVersion=1.6
+popsize=40
+regenPaths=false
+posCoverageFile=coverage.path.pos
+continue=false
+edits=FUNREP;PARREP;PARADD;PARREM;EXPREP;EXPADD;EXPREM;NULLCHECK;OBJINIT;RANGECHECK;SIZECHECK;CASTCHECK
+negCoverageFile=coverage.path.neg
+workingDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/
+clearTestCache=false
+skipFailedSanity=true
+sample=0.1 
+oracleGenome=
+testGranularity=method
+justTestingFaultLoc=false
+faultLocStrategy=standardPathFile
+crossp=0.5
+pMutation=1
+generations=10
+positiveTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/pos.tests
+javaVM=/usr/lib/jvm/java-1.7.0//jre/bin/java
+seed=8
+negativePathWeight=1.0
+compileCommand=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/runCompile.sh
+fixStrategy=classScope
+allowCoverageFail=false
+targetClassName=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/bugfiles.txt
+javaRuntime=java.lang.Runtime@300ffa5d
+classTestFolder=
+modelPath=OVERALLModel.txt
+sanity=no
+positivePathWeight=0.1
+jacocoPath=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/jacocoagent.jar
+negativeTests=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/neg.tests
+pathToFileHumanInjectedFaultLoc=fileHumanInjectedFaultLoc.txt
+outputDir=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/tmp
+testClassPath=/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/framework/projects/Lang/lib/junit/junit/4.7/junit-4.7.jar\:/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/framework/projects/Lang/lib/org/easymock/easymock/2.5.2/easymock-2.5.2.jar\:/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/target/classes\:/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/target/test-classes\:/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/framework/projects/Lang/lib/cglib.jar\:/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/framework/projects/Lang/lib/asm.jar\:/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/framework/projects/Lang/lib/easymock.jar\:/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/framework/projects/Lang/lib/commons-io.jar\:/mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/framework/projects/lib/junit-4.11.jar
+faultStrategy=classScope
+sourceDir=src/main/java
+checkSpace=false
+search=gp
+globalExtension=.java
+maxVariants=400
+libs=/mnt/nfs/work1/brun/mmotwani/genprog4java/lib/junittestrunner.jar
+crossover=onepoint
+108 [main] INFO clegoues.genprog4java.main.Main  - Configuration file loaded
+906 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - loaded from source clegoues.genprog4java.java.ClassInfo@e639b276
+5907 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Start Fault Localization
+5962 [main] INFO clegoues.genprog4java.localization.DefaultLocalization  - Finish Fault Localization
+10963 [main] INFO clegoues.genprog4java.Search.Search  - search: genetic algorithm begins
+
+14357 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 original (stored at: variant0)
+16951 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionAdd(153: (gcd == 1) && (numerator == 0)) (stored at: variant1)
+20321 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(156: (numerator / gcd) -->(denominator / gcd)) (stored at: variant2)
+22838 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 MethodReplacer(280) (stored at: variant3)
+26240 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterRemover(125: (if (pos < 0) {
+  return getFraction(Integer.parseInt(str),1);
+}
+ else {
+  int numer=Integer.parseInt(str.substring(0,pos));
+  int denom=Integer.parseInt(str.substring(pos + 1));
+  return getFraction(numer,denom);
+}
+)) (stored at: variant4)
+29610 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 MethodReplacer(156) (stored at: variant5)
+32019 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionReplace(27: (whole < 0) -->(pos >= 0)) (stored at: variant6)
+35291 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionReplace(49: (numerator == Integer.MIN_VALUE || denominator == Integer.MIN_VALUE) -->(numerator == Integer.MIN_VALUE)) (stored at: variant7)
+37722 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ClassCastChecker(@29: [ (long)denominator ]) (stored at: variant8)
+41228 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionReplace(49: (numerator == Integer.MIN_VALUE || denominator == Integer.MIN_VALUE) -->(denominator < 0)) (stored at: variant9)
+44505 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(152: (Math.abs(numerator)) -->(denominator)) (stored at: variant10)
+47072 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ClassCastChecker(@244: [ (long)x(long)y ]) (stored at: variant11)
+50364 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(54: (denominator) -->(numerator)) (stored at: variant12)
+52899 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionAdd(150: (equals(ZERO)) && (equals(ZERO))) (stored at: variant13)
+56174 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionReplace(149: (numerator == 0) -->(equals(ZERO))) (stored at: variant14)
+57876 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/runCompile.sh exited abnormally with status 1
+57877 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ExpressionReplace(153: (gcd == 1) -->(equals)) at variant15 fails to compile
+
+57877 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(153: (gcd == 1) -->(equals)) (stored at: variant15)
+61236 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(187: (-power) -->(power / 2)) (stored at: variant16)
+62940 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/runCompile.sh exited abnormally with status 1
+62941 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@35: [ (int)numeratorValue ]) at variant17 fails to compile
+
+62941 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@35: [ (int)numeratorValue ]) (stored at: variant17)
+66005 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterRemover(131: (return getFraction(numer,denom);
+)) (stored at: variant18)
+68563 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 MethodReplacer(152) (stored at: variant19)
+70297 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/runCompile.sh exited abnormally with status 1
+70297 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(152) at variant20 fails to compile
+
+70297 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(152) (stored at: variant20)
+72068 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/runCompile.sh exited abnormally with status 1
+72068 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@31: [ (long)denominator ]) at variant21 fails to compile
+
+72068 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@31: [ (long)denominator ]) (stored at: variant21)
+75357 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 MethodReplacer(293) (stored at: variant22)
+77922 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ClassCastChecker(@325: [ (long)other.numerator(long)denominator ]) (stored at: variant23)
+79691 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/runCompile.sh exited abnormally with status 1
+79692 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(278) at variant24 fails to compile
+
+79692 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(278) (stored at: variant24)
+82774 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ExpressionReplace(47: (numerator == Integer.MIN_VALUE || denominator == Integer.MIN_VALUE) -->(numerator == Integer.MIN_VALUE)) (stored at: variant25)
+84390 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/runCompile.sh exited abnormally with status 1
+84390 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - ClassCastChecker(@143: [ (long)numerator ]) at variant26 fails to compile
+
+84390 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ClassCastChecker(@143: [ (long)numerator ]) (stored at: variant26)
+86141 [main] ERROR clegoues.util.GlobalUtils  - Command /mnt/nfs/work1/brun/mmotwani/Defects4Java7/defects4j/ExamplesCheckedOut_par_Lang22_100_4/lang22Buggy/runCompile.sh exited abnormally with status 1
+86141 [main] INFO clegoues.genprog4java.rep.CachingRepresentation  - MethodReplacer(314) at variant27 fails to compile
+
+86141 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 MethodReplacer(314) (stored at: variant27)
+89484 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 2.0 ParameterReplacer(292: (fraction.denominator) -->(fraction.numerator)) (stored at: variant28)
+92039 [main] INFO clegoues.genprog4java.fitness.Fitness  - 	 gen: 0 0.0 ExpressionReplace(218: (((u & 1) == 1)) -->(k == 31)) (stored at: variant29)

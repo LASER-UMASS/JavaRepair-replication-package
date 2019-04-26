@@ -2,7 +2,7 @@
 # PURPOSE: This is the driver script used to generate results for RQ4
 # INPUT: path to directory containing patch quality assesment scores for RQ4 patches  (../../../results/RQ4/patch-quality-assessment/)
 # OUTPUT: plots and results presented in paper
-# CMD TO RUN: bash reproduce-rq4.sh
+# CMD TO RUN: bash reproduce-rq4.sh ../../../results/RQ4/patch-quality-assessment/
 # DEPENDENCIES: this script requires consolidate.py and combineresults.py scripts to pre-process input data,
 #               and freq-distribution.R and computePearson.R to generate the plots
 #####################################

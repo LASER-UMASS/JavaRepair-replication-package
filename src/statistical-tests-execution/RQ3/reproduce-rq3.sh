@@ -2,7 +2,7 @@
 # PURPOSE: This is the driver script used to generate results for RQ3
 # INPUT: path to directory containing patch quality assesment scores for RQ3 patches  (../../../results/RQ3/patch-quality-assessment/)
 # OUTPUT: plots and results presented in paper
-# CMD TO RUN: bash reproduce-rq3.sh
+# CMD TO RUN: bash reproduce-rq3.sh ../../../results/RQ3/patch-quality-assessment/
 # DEPENDENCIES: this script requires SampledCoverage.csv, addCoverage.py, and combineresults.py scripts to pre-process input data,
 #		and quality-stats.R and compare-quality-with-defective.R to generate the plots
 #####################################
