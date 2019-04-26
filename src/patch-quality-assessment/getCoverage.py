@@ -6,7 +6,7 @@
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
 # 2. D4J_HOME is set to Defects4J (Java 8 support) 
-# 3. The symbolic link "defects4j/framework/lib/test_generation/runtime/evosuite-rt.jar" points to evosuite-standalone-runtime-1.0.3.jar 
+# 3. The symbolic link "defects4j/framework/lib/test_generation/runtime/evosuite-rt.jar" points to evosuite-standalone-runtime-1.0.3.jar or evosuite-standalone-runtime-1.0.6.jar 
 # 4. Python version 2.7 
 
 #INPUT:	
@@ -17,7 +17,7 @@
 # --bug is the bug number (ex: 1,2,3,4,...)
 # --many is Absolute path, the file listing bugs to process: project,bugNum (one per line). Lines starting with # are skipped
 # --patches is the folder where the patches are located, starting from the the D4J_HOME folder
-# --tool is the generation tool (Randoop or Evosuite)
+# --evosuiteVersion is the version of the generation tool (e.g. 3 or 6)
 # --seed is the seed the test suite was created with
 # --coverage is a coverage file
 
@@ -209,12 +209,12 @@ def printMethodCorrespondingToLine(lineNumber, tree):
 					
 	return list(set(methodsChanged))
 
-def generateCovXML(bug, tool, tsseed):
-	if(tool.lower() == "evosuite"):
+def generateCovXML(bug, evosuiteVersion, tsseed):
+	if(evosuiteVersion == "6"):
 		#This can be evosuite-line or evosuite-branch
 		testSuiteName="evosuite-line"
-	elif(tool.lower() == "randoop"):
-		testSuiteName="randoop"
+	elif(evosuiteVersion == "3"):
+		testSuiteName="evosuite-branch"
 	suitePath =  os.path.join(bug.getTestDir(), bug.getProject()+"-"+bug.getBugNum()+"f-"+testSuiteName+"."+str(tsseed)+".tar.bz2")
 	if(os.path.isfile(suitePath)):
 		cmd = defects4jCommand + " compile -w " + bug.getFixPath()
@@ -336,7 +336,7 @@ def getOptions():
 	parser.add_argument("--bug", help="the bug number (ex: 1,2,3,4,...)")
 	parser.add_argument("--many", help="Absolute path, the file listing bugs to process: project,bugNum (one per line). Lines starting with # are skipped")
 	parser.add_argument("--patches", help="the folder where the patches are located, starting from the the D4J_HOME folder")
-	parser.add_argument("--tool", help="the generation tool (Randoop or Evosuite)", default="Evosuite")
+	parser.add_argument("--evosuiteVersion", help="the version of the generation tool (e.g., 3 or 6)", default="3")
 	parser.add_argument("--seed", help="the seed the test suite was created with", default="1")
 	parser.add_argument("--coverage", help="a coverage file")
 	return parser.parse_args()
@@ -358,9 +358,9 @@ def errorHandling(args):
 		sys.exit("There should be just one of these three options: 1) A file with a list of bugs should be provided with the --many parameter, 2) a particular bug with the --project and --bug parameters, 3) A location with patches with the --patches parameter")
 	if args.project is None and args.bug is None and args.patches is None and args.many is None:
 		sys.exit("There should be one of these three options: 1) A file with a list of bugs should be provided with the --many parameter, 2) a particular bug with the --project and --bug parameters, 3) A location with patches with the --patches parameter")
-	if not(args.tool is None):
-		if args.tool != "Randoop" and args.tool != "Evosuite":	
-			sys.exit("tool should be Randoop or Evosuite")
+	if not(args.evosuiteVersion is None):
+		if args.evosuiteVersion != "3" and args.evosuiteVersion != "6":	
+			sys.exit("evosuiteVersion should be 3 or 6")
 	if not(args.seed is None) and (not (args.seed.isdigit())):
 		sys.exit("Seed should be an integer")
 	if not(args.patches is None) and (not os.path.isdir(os.path.join(d4jHome, args.patches))):
@@ -411,7 +411,7 @@ def main():
 
 		#creating xml file
 		if(args.coverage != None) or (not os.path.exists(bug.getFixPath()+"/coverage.xml")) or (not os.path.exists(bug.getBugPath()+"/coverage.xml")):
-			generateCovXML(bug,args.tool, args.seed)
+			generateCovXML(bug,args.evosuiteVersion, args.seed)
 		if os.path.exists(bug.getFixPath()+"/coverage.xml"):
 			allCoverageMetrics=""
 			for f in getEditedFiles(bug):

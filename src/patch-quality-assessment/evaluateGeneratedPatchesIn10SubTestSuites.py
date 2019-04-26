@@ -5,8 +5,7 @@
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
 # 2. D4J_HOME is set to Defects4J (Java 8 support) 
-# 3. The symbolic link "defects4j/framework/lib/test_generation/runtime/evosuite-rt.jar" points to evosuite-standalone-runtime-1.0.3.jar 
-# 4. Python version 2.7 
+# 3. Python version 2.7 
 
 #INPUT:
 # 1st param is the directory to store the data (strating in D4J_HOME)
@@ -73,10 +72,11 @@ class BugInfo(object):
 
 		
 def getOptions():
-	parser = argparse.ArgumentParser(description="Example of usage: python evaluateGeneratedPatchesIn10SubTestSuites.py ExamplesCheckedOut  /home/mausoto/JavaRepair-results/patches/GenProg/RQ0/  /home/mausoto/JavaRepair-results/generatedTestSuites/Evosuite103Budget1800/")
+	parser = argparse.ArgumentParser(description="Example of usage: python evaluateGeneratedPatchesIn10SubTestSuites.py ExamplesCheckedOut  /home/mausoto/JavaRepair-results/patches/GenProg/RQ0/  /home/mausoto/JavaRepair-results/generatedTestSuites/Evosuite103Budget1800/ 3")
 	parser.add_argument("wd", help="working directory to check out project versions, starting from the the D4J_HOME folder")
 	parser.add_argument("patches", help="the folder where the patches are located")
 	parser.add_argument("testDir", help="the absolute path where the test suite is located")
+	parser.add_argument("evosuiteVersion", help="'6' for Evosuite 1.0.6, '3' for Evosuite 1.0.3")
 	
 	return parser.parse_args()
 	
@@ -157,7 +157,11 @@ def main():
 		patchFixedFile(bug,args)
 		
 		for seed in range(1,11):
-			suitePath =  os.path.join(bug.getTestDir(), bug.getProject()+"-"+bug.getBugNum()+"f-evosuite-branch."+str(seed)+".tar.bz2")
+			if(args.evosuiteVersion == 3):
+				suitePath =  os.path.join(bug.getTestDir(), bug.getProject()+"-"+bug.getBugNum()+"f-evosuite-branch."+str(seed)+".tar.bz2")
+			else if (args.evosuiteVersion == 6):
+				suitePath =  os.path.join(bug.getTestDir(), bug.getProject()+"-"+bug.getBugNum()+"f-evosuite-line."+str(seed)+".tar.bz2")
+			
 			#capture number of failing test cases
 			p = subprocess.call("rm all-tests.txt", shell=True, cwd=bug.getFixPath(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	

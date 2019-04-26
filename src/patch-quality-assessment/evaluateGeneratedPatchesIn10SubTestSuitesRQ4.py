@@ -5,8 +5,7 @@
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
 # 2. D4J_HOME is set to Defects4J (Java 8 support) 
-# 3. The symbolic link "defects4j/framework/lib/test_generation/runtime/evosuite-rt.jar" points to evosuite-standalone-runtime-1.0.3.jar 
-# 4. Python version 2.7 
+# 3. Python version 2.7 
 
 #INPUT:
 # 1st param is the working directory to check out project versions, starting from the the D4J_HOME folder

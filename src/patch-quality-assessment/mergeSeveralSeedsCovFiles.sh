@@ -6,12 +6,12 @@
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
 # 2. D4J_HOME is set to Defects4J (Java 8 support) 
-# 3. The symbolic link "defects4j/framework/lib/test_generation/runtime/evosuite-rt.jar" points to evosuite-standalone-runtime-1.0.3.jar 
+# 3. The symbolic link "defects4j/framework/lib/test_generation/runtime/evosuite-rt.jar" points to evosuite-standalone-runtime-1.0.3.jar  or evosuite-standalone-runtime-1.0.6.jar 
 # 4. Python version 2.7 
 
 #INPUT:
 # 1st param is the option for merging generated patches or human patches (G or H)
-# 2nd param is the folder where the patches are located (if generated) or a two column csv file <Project, BugNumber> (UFT-8 encoding) (if human) 
+# 2nd param is the folder where the patches are located (if generated) or a two column csv file <Project, BugNumber> (if human) (UFT-8 encoding) 
 # 3rd param is an identifier for this execution which is used to create the output file (it has to be the same as the ID used in getCoverage.py)
 
 # CMD TO RUN: 
@@ -19,7 +19,7 @@
 #Example of usage:  ./mergeSeveralSeedsCovFiles.sh H /home/mausoto/QualityEvaluationDefects4jGenProg/AllBugsFixedByAllApproaches.csv HUMAN
 
 # OUTPUT:
-# This script creates a file in D4J_HOME/MergedCoverages/ID/coverage.xml that describes the coverage of all seeds
+# This script creates a file in D4J_HOME/MergedCoverages/ with files $BUG.xml that describe the coverage of all seeds
 # This script copies all the folders with results, with xml and ser files to a central folder in D4J_HOME/MergedCoverages/
 
 

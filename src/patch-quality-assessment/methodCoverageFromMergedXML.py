@@ -6,7 +6,7 @@
 # DEPENDENCIES:
 # 1. JAVA_HOME is set to Java 8
 # 2. D4J_HOME is set to Defects4J (Java 8 support) 
-# 3. The symbolic link "defects4j/framework/lib/test_generation/runtime/evosuite-rt.jar" points to evosuite-standalone-runtime-1.0.3.jar 
+# 3. The symbolic link "defects4j/framework/lib/test_generation/runtime/evosuite-rt.jar" points to evosuite-standalone-runtime-1.0.3.jar  or evosuite-standalone-runtime-1.0.6.jar 
 # 4. Python version 2.7 
 
 #INPUT:
@@ -17,10 +17,10 @@
 
 # CMD TO RUN: 
 # python methodCoverageFromMergedXML.py /home/mausoto/defects4jJava8/defects4j/MergedCoverages/GP/ /home/mausoto/defects4jJava8/defects4j/MergedCoverages/GP/GPTSSeed1/GPTSSeed1Generated.csv /home/mausoto/defects4jJava8/defects4j/MergedCoverages/GP/MergedCovsReport.csv
-# python methodCoverageFromMergedXML.py /home/mausoto/defects4jJava8/defects4j/MergedCoverages/HUMAN/ /home/mausoto/defects4jJava8/defects4j/MergedCoverages/HUMAN/HUMANTSSeed1/HUMANTSSeed1Generated.csv /home/mausoto/defects4jJava8/defects4j/MergedCoverages/HUMAN/MergedCovsReport.csv --human yes
+# python methodCoverageFromMergedXML.py /home/mausoto/defects4jJava8/defects4j/MergedCoverages/HUMAN/ /home/mausoto/defects4jJava8/defects4j/MergedCoverages/HUMAN/HUMANTSSeed1/HUMANDATETSSeed1Human.csv /home/mausoto/defects4jJava8/defects4j/MergedCoverages/HUMAN/MergedCovsReport.csv --human yes
 
 # OUTPUT:
-# The output file reports the merged reports in the path described in the 3rd param.
+# The output file (3rd param) reports the merged reports in the path described in the 3rd param.
 
 import argparse
 import os
