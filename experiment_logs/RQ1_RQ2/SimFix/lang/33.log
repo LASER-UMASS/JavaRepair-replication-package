@@ -1,0 +1,50 @@
+=================================================
+Project : lang_33	start : 19/09/02 15:24
+Current failed test : org.apache.commons.lang3.ClassUtilsTest::testToClass_object | 19/09/02 15:25
+Mon Sep 02 15:25:47 EDT 2019 org.apache.commons.lang3.ClassUtils,903
+Mon Sep 02 15:27:33 EDT 2019 org.apache.commons.lang3.ClassUtils,904
+Mon Sep 02 15:27:33 EDT 2019 org.apache.commons.lang3.ClassUtils,905
+Mon Sep 02 15:27:34 EDT 2019 org.apache.commons.lang3.ClassUtils,906
+Mon Sep 02 15:27:34 EDT 2019 org.apache.commons.lang3.ClassUtils,908
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<array.length;i++){
+classes[i]=array[i]==null?null:array[i].getClass();
+}
+
+Time : 19/09/02 15:28
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.5915452583170533 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_33_buggy/src/main/java/org/apache/commons/lang3/ClassUtils.java=>0,0]
+for(int i=0;i<array.length;i++){
+Character b=array[i];
+result[i]=(b==null?valueForNull:b.charValue());
+}
+
+Time : 19/09/02 15:29
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_33_buggy/src/main/java/org/apache/commons/lang3/ClassUtils.java=>909,911]
+for(int i=0;i<array.length;i++){
+classes[i]=array[i].getClass();
+}
+
+Time : 19/09/02 15:29
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_33_buggy/src/main/java/org/apache/commons/lang3/ClassUtils.java=>909,911]
+for(int i=0;i<array.length;i++){
+classes[i]=array[i]==null?null:array[i].getClass();
+}
+
+Time : 19/09/02 15:29
+----------------------------------------
+Success time : 19/09/02 15:29

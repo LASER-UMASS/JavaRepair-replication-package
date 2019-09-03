@@ -1,0 +1,253 @@
+=================================================
+Project : math_104	start : 19/09/02 13:43
+Current failed test : org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive | 19/09/02 13:43
+Mon Sep 02 13:43:45 EDT 2019 org.apache.commons.math.special.Gamma,200
+Mon Sep 02 13:44:29 EDT 2019 org.apache.commons.math.special.Gamma,243
+Mon Sep 02 13:44:32 EDT 2019 org.apache.commons.math.special.Gamma,248
+Mon Sep 02 13:45:40 EDT 2019 org.apache.commons.math.special.Gamma,252
+Mon Sep 02 13:46:19 EDT 2019 org.apache.commons.math.special.Gamma,237
+Mon Sep 02 13:47:56 EDT 2019 org.apache.commons.math.special.Gamma,243
+Mon Sep 02 13:47:56 EDT 2019 org.apache.commons.math.special.Gamma,256
+Mon Sep 02 13:53:02 EDT 2019 org.apache.commons.math.special.Gamma,257
+Mon Sep 02 13:53:03 EDT 2019 org.apache.commons.math.special.Gamma,235
+Mon Sep 02 13:55:22 EDT 2019 org.apache.commons.math.special.Gamma,120
+Mon Sep 02 13:56:00 EDT 2019 org.apache.commons.math.special.Gamma,168
+Mon Sep 02 13:56:38 EDT 2019 org.apache.commons.math.special.Gamma,169
+Mon Sep 02 13:56:39 EDT 2019 org.apache.commons.math.special.Gamma,170
+Mon Sep 02 14:04:31 EDT 2019 org.apache.commons.math.special.Gamma,171
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+epsilon=(a-an)/serialVersionUID;
+while(Math.abs(an)>epsilon&&n<maxIterations){
+n=n+1.0;
+an=an*(x/(a+n));
+sum=sum+an;
+}
+
+Time : 19/09/02 14:06
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+epsilon=(a-an)/serialVersionUID;
+while(Math.abs(an)>epsilon&&n<maxIterations){
+x+=epsilon;
+n=n+1.0;
+an=an*(x/(a+n));
+sum=sum+an;
+}
+
+Time : 19/09/02 14:08
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+epsilon=(a-an)/serialVersionUID;
+x=an+0.5*epsilon;
+while(Math.abs(an)>epsilon&&n<maxIterations){
+n=n+1.0;
+an=an*(x/(a+n));
+sum=sum+an;
+}
+
+Time : 19/09/02 14:10
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+epsilon=(a-an)/serialVersionUID;
+x=an+0.5*epsilon;
+while(Math.abs(an)>epsilon&&n<maxIterations){
+x+=epsilon;
+n=n+1.0;
+an=an*(x/(a+n));
+sum=sum+an;
+}
+
+Time : 19/09/02 14:20
+----------------------------------------
+Mon Sep 02 14:32:07 EDT 2019 org.apache.commons.math.special.Gamma,173
+Mon Sep 02 14:32:08 EDT 2019 org.apache.commons.math.special.Gamma,174
+Mon Sep 02 14:32:09 EDT 2019 org.apache.commons.math.special.Gamma,177
+Mon Sep 02 14:32:09 EDT 2019 org.apache.commons.math.special.Gamma,179
+Mon Sep 02 14:35:03 EDT 2019 org.apache.commons.math.special.Gamma,182
+Mon Sep 02 14:35:04 EDT 2019 org.apache.commons.math.special.Gamma,233
+Mon Sep 02 14:38:31 EDT 2019 org.apache.commons.math.special.Gamma,260
+Mon Sep 02 14:42:16 EDT 2019 org.apache.commons.math.special.Gamma,162
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(a>=1.0&&a>=x){
+ret=1.0-regularizedGammaQ(a,x,epsilon,maxIterations);
+}else {
+double n=0.0;
+double an=1.0/a;
+double sum=an;
+while(Math.abs(an)>epsilon&&n<maxIterations){
+n=n+1.0;
+an=an*(x/(a+n));
+sum=sum+an;
+}
+if(n>=maxIterations){
+throw new MaxIterationsExceededException(maxIterations);
+}else {
+ret=Math.exp(-x+(a*Math.log(x))-logGamma(a))*sum;
+}
+}
+
+Time : 19/09/02 14:43
+----------------------------------------
+Mon Sep 02 14:45:21 EDT 2019 org.apache.commons.math.special.Gamma,160
+Mon Sep 02 14:46:41 EDT 2019 org.apache.commons.math.special.Gamma,158
+Mon Sep 02 14:50:36 EDT 2019 org.apache.commons.math.special.Gamma,186
+Mon Sep 02 14:56:18 EDT 2019 org.apache.commons.math.util.ContinuedFraction,51
+Mon Sep 02 14:56:20 EDT 2019 Mon Sep 02 14:56:20 EDT 2019 : org.apache.commons.math.util.ContinuedFraction,52=>Find no block
+Mon Sep 02 14:56:21 EDT 2019 org.apache.commons.math.util.ContinuedFraction,133
+Mon Sep 02 14:57:10 EDT 2019 org.apache.commons.math.util.ContinuedFraction,134
+Mon Sep 02 14:57:11 EDT 2019 org.apache.commons.math.util.ContinuedFraction,135
+Mon Sep 02 14:58:23 EDT 2019 org.apache.commons.math.util.ContinuedFraction,136
+Mon Sep 02 15:00:21 EDT 2019 org.apache.commons.math.util.ContinuedFraction,137
+Mon Sep 02 15:03:51 EDT 2019 org.apache.commons.math.util.ContinuedFraction,138
+Mon Sep 02 15:08:40 EDT 2019 org.apache.commons.math.util.ContinuedFraction,139
+Mon Sep 02 15:08:41 EDT 2019 org.apache.commons.math.util.ContinuedFraction,140
+Mon Sep 02 15:21:23 EDT 2019 org.apache.commons.math.util.ContinuedFraction,141
+Mon Sep 02 15:22:25 EDT 2019 org.apache.commons.math.util.ContinuedFraction,142
+Mon Sep 02 15:22:26 EDT 2019 org.apache.commons.math.util.ContinuedFraction,143
+Mon Sep 02 15:24:48 EDT 2019 org.apache.commons.math.util.ContinuedFraction,144
+Mon Sep 02 15:28:28 EDT 2019 org.apache.commons.math.util.ContinuedFraction,145
+Mon Sep 02 15:28:28 EDT 2019 org.apache.commons.math.util.ContinuedFraction,146
+Mon Sep 02 15:28:29 EDT 2019 org.apache.commons.math.util.ContinuedFraction,161
+Mon Sep 02 15:32:38 EDT 2019 org.apache.commons.math.util.ContinuedFraction,162
+Mon Sep 02 15:38:38 EDT 2019 org.apache.commons.math.util.ContinuedFraction,165
+Mon Sep 02 15:41:00 EDT 2019 org.apache.commons.math.util.ContinuedFraction,166
+Mon Sep 02 15:44:36 EDT 2019 org.apache.commons.math.util.ContinuedFraction,167
+Mon Sep 02 15:47:07 EDT 2019 org.apache.commons.math.util.ContinuedFraction,168
+Mon Sep 02 15:49:27 EDT 2019 org.apache.commons.math.util.ContinuedFraction,169
+Mon Sep 02 15:49:27 EDT 2019 Mon Sep 02 15:49:27 EDT 2019 : org.apache.commons.math.util.ContinuedFraction,170=>Find no block
+Mon Sep 02 15:49:28 EDT 2019 org.apache.commons.math.util.ContinuedFraction,172
+Mon Sep 02 15:54:12 EDT 2019 org.apache.commons.math.util.ContinuedFraction,178
+Mon Sep 02 16:00:11 EDT 2019 org.apache.commons.math.special.Gamma,93
+Mon Sep 02 16:05:17 EDT 2019 org.apache.commons.math.special.Gamma,95
+Mon Sep 02 16:05:18 EDT 2019 org.apache.commons.math.special.Gamma,96
+Mon Sep 02 16:09:34 EDT 2019 org.apache.commons.math.special.Gamma,97
+Mon Sep 02 16:09:35 EDT 2019 org.apache.commons.math.special.Gamma,99
+Mon Sep 02 16:17:42 EDT 2019 org.apache.commons.math.special.Gamma,101
+Mon Sep 02 16:21:40 EDT 2019 org.apache.commons.math.special.Gamma,102
+Mon Sep 02 16:21:40 EDT 2019 org.apache.commons.math.special.Gamma,90
+Mon Sep 02 16:23:39 EDT 2019 org.apache.commons.math.special.Gamma,106
+Mon Sep 02 16:29:38 EDT 2019 Mon Sep 02 16:29:38 EDT 2019 : org.apache.commons.math.special.Gamma,40=>Find no block
+Mon Sep 02 16:29:39 EDT 2019 Mon Sep 02 16:29:39 EDT 2019 : org.apache.commons.math.special.Gamma,60=>Find no block
+Mon Sep 02 16:29:40 EDT 2019 org.apache.commons.math.MaxIterationsExceededException,36
+Mon Sep 02 16:29:41 EDT 2019 org.apache.commons.math.MaxIterationsExceededException,38
+Mon Sep 02 16:29:42 EDT 2019 Mon Sep 02 16:29:42 EDT 2019 : org.apache.commons.math.MaxIterationsExceededException,39=>Find no block
+Mon Sep 02 16:29:42 EDT 2019 org.apache.commons.math.MaxIterationsExceededException,50
+Mon Sep 02 16:30:22 EDT 2019 org.apache.commons.math.MaxIterationsExceededException,51
+Mon Sep 02 16:30:23 EDT 2019 Mon Sep 02 16:30:23 EDT 2019 : org.apache.commons.math.MaxIterationsExceededException,52=>Find no block
+Mon Sep 02 16:30:23 EDT 2019 org.apache.commons.math.MaxIterationsExceededException,58
+Mon Sep 02 16:30:25 EDT 2019 org.apache.commons.math.ConvergenceException,34
+Mon Sep 02 16:30:27 EDT 2019 Mon Sep 02 16:30:27 EDT 2019 : org.apache.commons.math.ConvergenceException,35=>Find no block
+Mon Sep 02 16:30:27 EDT 2019 org.apache.commons.math.ConvergenceException,44
+Mon Sep 02 16:31:05 EDT 2019 Mon Sep 02 16:31:05 EDT 2019 : org.apache.commons.math.ConvergenceException,45=>Find no block
+Mon Sep 02 16:31:05 EDT 2019 org.apache.commons.math.ConvergenceException,52
+Mon Sep 02 16:31:07 EDT 2019 Mon Sep 02 16:31:07 EDT 2019 : org.apache.commons.math.ConvergenceException,53=>Find no block
+Mon Sep 02 16:31:08 EDT 2019 org.apache.commons.math.ConvergenceException,63
+Mon Sep 02 16:31:58 EDT 2019 Mon Sep 02 16:31:58 EDT 2019 : org.apache.commons.math.ConvergenceException,64=>Find no block
+Mon Sep 02 16:31:58 EDT 2019 org.apache.commons.math.ConvergenceException,77
+Mon Sep 02 16:32:32 EDT 2019 Mon Sep 02 16:32:32 EDT 2019 : org.apache.commons.math.ConvergenceException,78=>Find no block
+Mon Sep 02 16:32:33 EDT 2019 org.apache.commons.math.ConvergenceException,89
+Mon Sep 02 16:32:34 EDT 2019 Mon Sep 02 16:32:34 EDT 2019 : org.apache.commons.math.ConvergenceException,90=>Find no block
+Mon Sep 02 16:32:35 EDT 2019 org.apache.commons.math.MathException,123
+Mon Sep 02 16:32:36 EDT 2019 org.apache.commons.math.MathException,124
+Mon Sep 02 16:32:37 EDT 2019 org.apache.commons.math.MathException,125
+Mon Sep 02 16:32:37 EDT 2019 org.apache.commons.math.MathException,126
+Mon Sep 02 16:32:38 EDT 2019 Mon Sep 02 16:32:38 EDT 2019 : org.apache.commons.math.MathException,127=>Find no block
+Mon Sep 02 16:32:38 EDT 2019 org.apache.commons.math.MathException,137
+Mon Sep 02 16:32:44 EDT 2019 org.apache.commons.math.MathException,138
+Mon Sep 02 16:32:45 EDT 2019 org.apache.commons.math.MathException,139
+Mon Sep 02 16:32:45 EDT 2019 org.apache.commons.math.MathException,140
+Mon Sep 02 16:32:46 EDT 2019 Mon Sep 02 16:32:46 EDT 2019 : org.apache.commons.math.MathException,141=>Find no block
+Mon Sep 02 16:32:46 EDT 2019 org.apache.commons.math.MathException,151
+Mon Sep 02 16:32:53 EDT 2019 org.apache.commons.math.MathException,152
+Mon Sep 02 16:32:53 EDT 2019 org.apache.commons.math.MathException,153
+Mon Sep 02 16:32:54 EDT 2019 org.apache.commons.math.MathException,154
+Mon Sep 02 16:32:54 EDT 2019 Mon Sep 02 16:32:54 EDT 2019 : org.apache.commons.math.MathException,155=>Find no block
+Mon Sep 02 16:32:55 EDT 2019 org.apache.commons.math.MathException,165
+Mon Sep 02 16:32:57 EDT 2019 org.apache.commons.math.MathException,166
+Mon Sep 02 16:32:57 EDT 2019 org.apache.commons.math.MathException,167
+Mon Sep 02 16:32:58 EDT 2019 org.apache.commons.math.MathException,168
+Mon Sep 02 16:32:58 EDT 2019 Mon Sep 02 16:32:58 EDT 2019 : org.apache.commons.math.MathException,169=>Find no block
+Mon Sep 02 16:32:59 EDT 2019 org.apache.commons.math.MathException,181
+Mon Sep 02 16:33:05 EDT 2019 org.apache.commons.math.MathException,182
+Mon Sep 02 16:33:05 EDT 2019 org.apache.commons.math.MathException,183
+Mon Sep 02 16:33:06 EDT 2019 org.apache.commons.math.MathException,184
+Mon Sep 02 16:33:06 EDT 2019 Mon Sep 02 16:33:06 EDT 2019 : org.apache.commons.math.MathException,185=>Find no block
+Mon Sep 02 16:33:07 EDT 2019 org.apache.commons.math.MathException,197
+Mon Sep 02 16:33:13 EDT 2019 org.apache.commons.math.MathException,198
+Mon Sep 02 16:33:14 EDT 2019 org.apache.commons.math.MathException,199
+Mon Sep 02 16:33:14 EDT 2019 org.apache.commons.math.MathException,200
+Mon Sep 02 16:33:15 EDT 2019 Mon Sep 02 16:33:15 EDT 2019 : org.apache.commons.math.MathException,201=>Find no block
+Mon Sep 02 16:33:15 EDT 2019 Mon Sep 02 16:33:15 EDT 2019 : org.apache.commons.math.MathException,47=>Find no block
+Mon Sep 02 16:33:16 EDT 2019 Mon Sep 02 16:33:16 EDT 2019 : org.apache.commons.math.MathException,49=>Find no block
+Mon Sep 02 16:33:16 EDT 2019 Mon Sep 02 16:33:16 EDT 2019 : org.apache.commons.math.MathException,50=>Find no block
+Mon Sep 02 16:33:17 EDT 2019 Mon Sep 02 16:33:17 EDT 2019 : org.apache.commons.math.MathException,53=>Find no block
+Mon Sep 02 16:33:17 EDT 2019 Mon Sep 02 16:33:17 EDT 2019 : org.apache.commons.math.MathException,51=>Find no block
+Mon Sep 02 16:33:18 EDT 2019 Mon Sep 02 16:33:18 EDT 2019 : org.apache.commons.math.MathException,52=>Find no block
+Mon Sep 02 16:33:18 EDT 2019 Mon Sep 02 16:33:18 EDT 2019 : org.apache.commons.math.MathException,54=>Find no block
+Mon Sep 02 16:33:19 EDT 2019 Mon Sep 02 16:33:19 EDT 2019 : org.apache.commons.math.MathException,57=>Find no block
+Mon Sep 02 16:33:20 EDT 2019 org.apache.commons.math.MathException,83
+Mon Sep 02 16:33:21 EDT 2019 org.apache.commons.math.MathException,85
+Mon Sep 02 16:33:21 EDT 2019 org.apache.commons.math.MathException,89
+Mon Sep 02 16:33:23 EDT 2019 org.apache.commons.math.MathException,91
+Mon Sep 02 16:33:23 EDT 2019 Mon Sep 02 16:33:23 EDT 2019 : org.apache.commons.math.MathException,96=>Find no block
+Mon Sep 02 16:33:24 EDT 2019 Mon Sep 02 16:33:24 EDT 2019 : org.apache.commons.math.MathException,94=>Find no block
+Mon Sep 02 16:33:24 EDT 2019 org.apache.commons.math.MathException,100
+Mon Sep 02 16:33:26 EDT 2019 org.apache.commons.math.MathException,113
+Mon Sep 02 16:33:50 EDT 2019 org.apache.commons.math.MathException,114
+Mon Sep 02 16:33:50 EDT 2019 org.apache.commons.math.MathException,115
+Mon Sep 02 16:33:51 EDT 2019 org.apache.commons.math.MathException,208
+Mon Sep 02 16:33:52 EDT 2019 org.apache.commons.math.MathException,216
+Mon Sep 02 16:33:54 EDT 2019 org.apache.commons.math.MathException,226
+Mon Sep 02 16:33:55 EDT 2019 org.apache.commons.math.MathException,235
+Mon Sep 02 16:33:57 EDT 2019 org.apache.commons.math.MathException,242
+Mon Sep 02 16:33:58 EDT 2019 Mon Sep 02 16:33:58 EDT 2019 : org.apache.commons.math.MathException,243=>Find no block
+Mon Sep 02 16:33:59 EDT 2019 Mon Sep 02 16:33:59 EDT 2019 : org.apache.commons.math.MathException,251=>Find no block
+Mon Sep 02 16:33:59 EDT 2019 org.apache.commons.math.MathException,252
+Mon Sep 02 16:34:29 EDT 2019 org.apache.commons.math.MathException,253
+Mon Sep 02 16:34:30 EDT 2019 org.apache.commons.math.MathException,255
+Mon Sep 02 16:34:30 EDT 2019 Mon Sep 02 16:34:30 EDT 2019 : org.apache.commons.math.MathException,256=>Find no block
+Mon Sep 02 16:34:31 EDT 2019 Mon Sep 02 16:34:31 EDT 2019 : org.apache.commons.math.MathException,257=>Find no block
+Mon Sep 02 16:34:31 EDT 2019 Mon Sep 02 16:34:31 EDT 2019 : org.apache.commons.math.MathException,265=>Find no block
+Mon Sep 02 16:34:32 EDT 2019 org.apache.commons.math.MathException,266
+Mon Sep 02 16:34:33 EDT 2019 org.apache.commons.math.MathException,267
+Mon Sep 02 16:34:35 EDT 2019 org.apache.commons.math.MathException,268
+Mon Sep 02 16:34:35 EDT 2019 org.apache.commons.math.MathException,269
+Mon Sep 02 16:34:36 EDT 2019 Mon Sep 02 16:34:36 EDT 2019 : org.apache.commons.math.MathException,271=>Find no block
+Mon Sep 02 16:34:36 EDT 2019 Mon Sep 02 16:34:36 EDT 2019 : org.apache.commons.math.MathException,272=>Find no block
+Mon Sep 02 16:34:37 EDT 2019 org.apache.commons.math.util.ContinuedFraction,79
+Mon Sep 02 16:35:07 EDT 2019 org.apache.commons.math.util.ContinuedFraction,90
+Mon Sep 02 16:35:44 EDT 2019 org.apache.commons.math.util.ContinuedFraction,101
+Mon Sep 02 16:36:21 EDT 2019 org.apache.commons.math.util.ContinuedFraction,148
+Mon Sep 02 16:36:21 EDT 2019 org.apache.commons.math.util.ContinuedFraction,149
+Mon Sep 02 16:36:22 EDT 2019 org.apache.commons.math.util.ContinuedFraction,150
+Mon Sep 02 16:36:23 EDT 2019 org.apache.commons.math.util.ContinuedFraction,151
+Mon Sep 02 16:36:23 EDT 2019 org.apache.commons.math.util.ContinuedFraction,152
+Mon Sep 02 16:36:23 EDT 2019 org.apache.commons.math.util.ContinuedFraction,153
+Mon Sep 02 16:36:24 EDT 2019 org.apache.commons.math.util.ContinuedFraction,156
+Mon Sep 02 16:36:24 EDT 2019 org.apache.commons.math.util.ContinuedFraction,173
+Mon Sep 02 16:36:25 EDT 2019 org.apache.commons.math.special.Gamma,67
+Mon Sep 02 16:36:25 EDT 2019 Mon Sep 02 16:36:25 EDT 2019 : org.apache.commons.math.special.Gamma,68=>Find no block
+Mon Sep 02 16:36:26 EDT 2019 org.apache.commons.math.special.Gamma,91
+Mon Sep 02 16:36:26 EDT 2019 org.apache.commons.math.special.Gamma,159
+Mon Sep 02 16:36:27 EDT 2019 org.apache.commons.math.special.Gamma,161
+Mon Sep 02 16:36:35 EDT 2019 org.apache.commons.math.special.Gamma,165
+Mon Sep 02 16:36:39 EDT 2019 org.apache.commons.math.special.Gamma,180
+Mon Sep 02 16:36:39 EDT 2019 org.apache.commons.math.special.Gamma,234
+Mon Sep 02 16:36:40 EDT 2019 org.apache.commons.math.special.Gamma,236
+Mon Sep 02 16:36:49 EDT 2019 org.apache.commons.math.special.Gamma,240
+Failed time : 19/09/02 16:36

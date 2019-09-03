@@ -1,0 +1,71 @@
+=================================================
+Project : closure_46	start : 19/09/02 15:59
+Current failed test : com.google.javascript.rhino.jstype.JSTypeTest::testRecordTypeLeastSuperType2 | 19/09/02 16:01
+Mon Sep 02 16:05:50 EDT 2019 com.google.javascript.rhino.jstype.RecordType,145
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(!that.isRecordType()){
+return super.getLeastSupertype(that);
+}
+RecordTypeBuilder builder=new RecordTypeBuilder(registry);
+for(String property : properties.keySet()){
+if(that.toMaybeRecordType().hasProperty(property)&&that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(getPropertyType(property))){
+builder.addProperty(property,getPropertyType(property),getPropertyNode(property));
+}
+}
+return getLeastSupertype(this,that);
+
+Time : 19/09/02 16:09
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.3737520850557352 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_46_buggy/src/com/google/javascript/rhino/jstype/RecordType.java=>0,0]
+if(!that.isUnknownType()&&!that.isUnionType()){
+for(JSType alternate : alternates){
+if(!alternate.isUnknownType()&&that.isSubtype(alternate)){
+return this;
+}
+}
+}
+return getLeastSupertype(this,that);
+
+Time : 19/09/02 16:11
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_46_buggy/src/com/google/javascript/rhino/jstype/RecordType.java=>142,154]
+if(!that.isRecordType()){
+return super.getLeastSupertype(that);
+}
+RecordTypeBuilder builder=new RecordTypeBuilder(registry);
+for(String property : properties.keySet()){
+if(that.toMaybeRecordType().hasProperty(property)&&that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(getPropertyType(property))){
+builder.addProperty(property,getPropertyType(property),getPropertyNode(property));
+}
+}
+return builder.build();
+
+Time : 19/09/02 16:11
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_46_buggy/src/com/google/javascript/rhino/jstype/RecordType.java=>142,154]
+if(!that.isRecordType()){
+return super.getLeastSupertype(that);
+}
+RecordTypeBuilder builder=new RecordTypeBuilder(registry);
+for(String property : properties.keySet()){
+if(that.toMaybeRecordType().hasProperty(property)&&that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(getPropertyType(property))){
+builder.addProperty(property,getPropertyType(property),getPropertyNode(property));
+}
+}
+return getLeastSupertype(this,that);
+
+Time : 19/09/02 16:11
+----------------------------------------
+Success time : 19/09/02 16:11

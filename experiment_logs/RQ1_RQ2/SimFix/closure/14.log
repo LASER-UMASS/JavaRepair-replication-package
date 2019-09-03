@@ -1,0 +1,50 @@
+=================================================
+Project : closure_14	start : 19/09/02 16:00
+Current failed test : com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779 | 19/09/02 16:01
+Mon Sep 02 16:11:01 EDT 2019 com.google.javascript.jscomp.ControlFlowAnalysis,579
+Mon Sep 02 18:26:25 EDT 2019 Mon Sep 02 18:26:25 EDT 2019 : com.google.javascript.jscomp.type.ChainableReverseAbstractInterpreter,250=>Find no block
+Mon Sep 02 18:26:32 EDT 2019 com.google.javascript.jscomp.ControlFlowAnalysis,767
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(Node finallyNode : cfa.finallyMap.get(parent)){
+cfa.createEdge(fromNode,Branch.ON_EX,finallyNode);
+}
+
+Time : 19/09/02 18:29
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.6182856494444295 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java=>0,0]
+if(lastJump==cfgNode){
+createEdge(cfgNode,Branch.ON_EX,catchBlock);
+return ;
+}else {
+finallyMap.put(lastJump,catchBlock);
+}
+
+Time : 19/09/02 18:34
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java=>766,768]
+for(Node finallyNode : cfa.finallyMap.get(parent)){
+cfa.createEdge(fromNode,Branch.UNCOND,finallyNode);
+}
+
+Time : 19/09/02 18:34
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java=>766,768]
+for(Node finallyNode : cfa.finallyMap.get(parent)){
+cfa.createEdge(fromNode,Branch.ON_EX,finallyNode);
+}
+
+Time : 19/09/02 18:34
+----------------------------------------
+Success time : 19/09/02 18:34

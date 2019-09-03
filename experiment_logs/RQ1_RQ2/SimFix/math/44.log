@@ -1,0 +1,228 @@
+=================================================
+Project : math_44	start : 19/09/02 13:43
+Current failed test : org.apache.commons.math.ode.events.EventStateTest::testIssue695_purify_1 | 19/09/02 13:44
+Mon Sep 02 13:45:56 EDT 2019 org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,209
+Mon Sep 02 13:46:50 EDT 2019 org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,212
+Mon Sep 02 13:46:52 EDT 2019 Mon Sep 02 13:46:52 EDT 2019 : org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,214=>Find no block
+Mon Sep 02 13:46:53 EDT 2019 org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,252
+Mon Sep 02 13:47:55 EDT 2019 org.apache.commons.math.util.FastMath,3373
+Mon Sep 02 14:05:21 EDT 2019 org.apache.commons.math.util.FastMath,3375
+Mon Sep 02 14:05:22 EDT 2019 org.apache.commons.math.util.FastMath,3379
+Mon Sep 02 14:14:53 EDT 2019 org.apache.commons.math.ode.events.EventState,334
+Mon Sep 02 14:17:43 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,172
+Mon Sep 02 14:17:47 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,173
+Mon Sep 02 14:17:48 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,340
+Mon Sep 02 14:19:24 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,341
+Mon Sep 02 14:19:25 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,342
+Mon Sep 02 14:19:26 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,343
+Mon Sep 02 14:19:27 EDT 2019 org.apache.commons.math.ode.events.EventState,329
+Mon Sep 02 14:19:31 EDT 2019 org.apache.commons.math.ode.events.EventState,333
+Mon Sep 02 14:19:32 EDT 2019 org.apache.commons.math.ode.events.EventState,336
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(!((previousEventTime>convergence)&&(previousEventTime<pendingEventTime))){
+return false;
+}
+if(nextAction==EventHandler.Action.RESET_STATE){
+handler.resetState(t,y);
+}
+pendingEvent=false;
+pendingEventTime=Double.NaN;
+return (nextAction==EventHandler.Action.RESET_STATE)||(nextAction==EventHandler.Action.RESET_DERIVATIVES);
+
+Time : 19/09/02 14:23
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(!(pendingEvent&&(previousEventTime<pendingEventTime))){
+return false;
+}
+if(nextAction==EventHandler.Action.RESET_STATE){
+handler.resetState(t,y);
+}
+pendingEvent=false;
+pendingEventTime=Double.NaN;
+return (nextAction==EventHandler.Action.RESET_STATE)||(nextAction==EventHandler.Action.RESET_DERIVATIVES);
+
+Time : 19/09/02 14:24
+----------------------------------------
+Mon Sep 02 14:29:38 EDT 2019 org.apache.commons.math.ode.events.EventState,337
+Mon Sep 02 14:29:40 EDT 2019 org.apache.commons.math.ode.events.EventState,339
+Mon Sep 02 14:29:41 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,337
+Mon Sep 02 14:29:42 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,287
+Mon Sep 02 14:29:46 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,146
+Mon Sep 02 14:31:43 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,147
+Mon Sep 02 14:31:44 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,148
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Precision.equals(x[1],0.0,1)){
+return x[1];
+}
+ final double[] y=new double[maximalOrder+1];
+x[0]=getMin();
+x[1]=getStartValue();
+
+Time : 19/09/02 14:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Precision.equals(x[1],0.0,1)){
+return x[1];
+}
+ final double[] y=new double[maximalOrder+1];
+verifySequence(x[0],x[1],x[2]);
+x[0]=getMin();
+x[1]=getStartValue();
+
+Time : 19/09/02 14:33
+----------------------------------------
+Mon Sep 02 14:35:29 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,149
+Mon Sep 02 14:36:59 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,150
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Precision.equals(y[2],0.0,1)){
+return x[2];
+}
+x[1]=getStartValue();
+x[2]=getMax();
+verifySequence(x[0],x[1],x[2]);
+
+Time : 19/09/02 14:38
+----------------------------------------
+Mon Sep 02 14:41:01 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,151
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Precision.equals(y[2],0.0,1)){
+return x[2];
+}
+x[2]=getMax();
+verifySequence(x[0],x[1],x[2]);
+y[1]=computeObjectiveValue(x[1]);
+
+Time : 19/09/02 14:42
+----------------------------------------
+Mon Sep 02 14:45:59 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,154
+Mon Sep 02 14:48:36 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,155
+Mon Sep 02 14:48:40 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,161
+Mon Sep 02 14:50:05 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,162
+Mon Sep 02 14:50:06 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,169
+Mon Sep 02 14:51:46 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,195
+Mon Sep 02 14:56:12 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,198
+Mon Sep 02 14:56:13 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,199
+Mon Sep 02 14:59:30 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,200
+Mon Sep 02 15:03:15 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,201
+Mon Sep 02 15:07:33 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,202
+Mon Sep 02 15:09:18 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,203
+Mon Sep 02 15:13:01 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,204
+Mon Sep 02 15:16:39 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,205
+Mon Sep 02 15:16:40 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,211
+Timeout time : 19/09/02 16:15
+Current failed test : org.apache.commons.math.ode.events.EventStateTest::testIssue695_purify_2 | 19/09/02 16:15
+Mon Sep 02 16:17:03 EDT 2019 org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,209
+Mon Sep 02 16:17:52 EDT 2019 org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,212
+Mon Sep 02 16:17:53 EDT 2019 Mon Sep 02 16:17:53 EDT 2019 : org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,214=>Find no block
+Mon Sep 02 16:17:55 EDT 2019 org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,252
+Mon Sep 02 16:18:51 EDT 2019 org.apache.commons.math.util.FastMath,3373
+Mon Sep 02 16:35:38 EDT 2019 org.apache.commons.math.util.FastMath,3375
+Mon Sep 02 16:35:39 EDT 2019 org.apache.commons.math.util.FastMath,3379
+Mon Sep 02 16:45:02 EDT 2019 org.apache.commons.math.ode.events.EventState,334
+Mon Sep 02 16:47:53 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,172
+Mon Sep 02 16:47:57 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,173
+Mon Sep 02 16:47:58 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,340
+Mon Sep 02 16:49:32 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,341
+Mon Sep 02 16:49:33 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,342
+Mon Sep 02 16:49:34 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,343
+Mon Sep 02 16:49:36 EDT 2019 org.apache.commons.math.ode.events.EventState,329
+Mon Sep 02 16:49:40 EDT 2019 org.apache.commons.math.ode.events.EventState,333
+Mon Sep 02 16:49:41 EDT 2019 org.apache.commons.math.ode.events.EventState,336
+Mon Sep 02 16:57:52 EDT 2019 org.apache.commons.math.ode.events.EventState,337
+Mon Sep 02 16:57:53 EDT 2019 org.apache.commons.math.ode.events.EventState,339
+Mon Sep 02 16:57:54 EDT 2019 org.apache.commons.math.ode.AbstractIntegrator,337
+Mon Sep 02 16:57:56 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,287
+Mon Sep 02 16:57:59 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,146
+Mon Sep 02 16:59:55 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,147
+Mon Sep 02 16:59:56 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,148
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Precision.equals(x[1],0.0,1)){
+return x[1];
+}
+ final double[] y=new double[maximalOrder+1];
+x[0]=getMin();
+x[1]=getStartValue();
+
+Time : 19/09/02 17:00
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Precision.equals(x[1],0.0,1)){
+return x[1];
+}
+ final double[] y=new double[maximalOrder+1];
+verifySequence(x[0],x[1],x[2]);
+x[0]=getMin();
+x[1]=getStartValue();
+
+Time : 19/09/02 17:01
+----------------------------------------
+Mon Sep 02 17:03:35 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,149
+Mon Sep 02 17:05:04 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,150
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Precision.equals(y[2],0.0,1)){
+return x[2];
+}
+x[1]=getStartValue();
+x[2]=getMax();
+verifySequence(x[0],x[1],x[2]);
+
+Time : 19/09/02 17:06
+----------------------------------------
+Mon Sep 02 17:08:56 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,151
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Precision.equals(y[2],0.0,1)){
+return x[2];
+}
+x[2]=getMax();
+verifySequence(x[0],x[1],x[2]);
+y[1]=computeObjectiveValue(x[1]);
+
+Time : 19/09/02 17:10
+----------------------------------------
+Mon Sep 02 17:13:41 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,154
+Mon Sep 02 17:16:12 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,155
+Mon Sep 02 17:16:16 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,161
+Mon Sep 02 17:17:40 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,162
+Mon Sep 02 17:17:42 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,169
+Mon Sep 02 17:19:15 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,195
+Mon Sep 02 17:23:33 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,198
+Mon Sep 02 17:23:34 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,199
+Mon Sep 02 17:26:42 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,200
+Mon Sep 02 17:30:24 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,201
+Mon Sep 02 17:34:32 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,202
+Mon Sep 02 17:36:04 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,203
+Mon Sep 02 17:39:27 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,204
+Mon Sep 02 17:42:52 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,205
+Mon Sep 02 17:42:53 EDT 2019 org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver,211
+Timeout time : 19/09/02 18:47

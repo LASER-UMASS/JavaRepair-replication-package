@@ -1,0 +1,83 @@
+=================================================
+Project : lang_44	start : 19/09/02 15:24
+Current failed test : org.apache.commons.lang.NumberUtilsTest::testLang457 | 19/09/02 15:25
+Mon Sep 02 15:26:04 EDT 2019 org.apache.commons.lang.NumberUtils,139
+Mon Sep 02 15:26:13 EDT 2019 org.apache.commons.lang.NumberUtils,142
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(val.length()!=0){
+throw new NumberFormatException("\"\" is not a valid number.");
+}
+
+Time : 19/09/02 15:27
+----------------------------------------
+Mon Sep 02 15:29:48 EDT 2019 org.apache.commons.lang.NumberUtils,145
+Mon Sep 02 15:30:09 EDT 2019 org.apache.commons.lang.NumberUtils,152
+Mon Sep 02 15:31:00 EDT 2019 org.apache.commons.lang.NumberUtils,155
+Mon Sep 02 15:35:53 EDT 2019 org.apache.commons.lang.NumberUtils,159
+Mon Sep 02 15:38:31 EDT 2019 org.apache.commons.lang.NumberUtils,160
+Mon Sep 02 15:38:32 EDT 2019 org.apache.commons.lang.NumberUtils,162
+Mon Sep 02 15:52:33 EDT 2019 org.apache.commons.lang.NumberUtils,174
+Mon Sep 02 15:52:34 EDT 2019 org.apache.commons.lang.NumberUtils,177
+Mon Sep 02 15:52:35 EDT 2019 org.apache.commons.lang.NumberUtils,179
+Mon Sep 02 15:56:30 EDT 2019 org.apache.commons.lang.NumberUtils,181
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(dec==null&&exp==null&&expPos<numeric.length()-1){
+try{
+return createLong(numeric);
+}catch (NumberFormatException nfe) {
+}
+
+return createBigInteger(numeric);
+}
+
+Time : 19/09/02 16:03
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.2094681193855221 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_44_buggy/src/java/org/apache/commons/lang/NumberUtils.java=>0,0]
+if(expPos>-1&&expPos<str.length()-1){
+exp=str.substring(expPos+1,str.length());
+}else {
+exp=null;
+}
+
+Time : 19/09/02 16:04
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_44_buggy/src/java/org/apache/commons/lang/NumberUtils.java=>193,203]
+if(dec==null&&exp==null&&(numeric.charAt(0)=='-'&&isDigits(numeric.substring(1))||isDigits(numeric))){
+try{
+return createLong(numeric);
+}catch (NumberFormatException nfe) {
+}
+
+return createBigInteger(numeric);
+}
+
+Time : 19/09/02 16:04
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_44_buggy/src/java/org/apache/commons/lang/NumberUtils.java=>193,203]
+if(dec==null&&exp==null&&expPos<numeric.length()-1){
+try{
+return createLong(numeric);
+}catch (NumberFormatException nfe) {
+}
+
+return createBigInteger(numeric);
+}
+
+Time : 19/09/02 16:04
+----------------------------------------
+Success time : 19/09/02 16:04

@@ -1,0 +1,65 @@
+=================================================
+Project : lang_58	start : 19/09/02 15:24
+Current failed test : org.apache.commons.lang.math.NumberUtilsTest::testLang300 | 19/09/02 15:25
+Mon Sep 02 15:25:59 EDT 2019 org.apache.commons.lang.math.NumberUtils,464
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(dec==null&&exp==null&&(numeric.charAt(0)=='-'&&isDigits(numeric.substring(1))||isDigits(numeric))){
+try{
+return createLong(numeric);
+}catch (NumberFormatException nfe) {
+}
+
+return createBigInteger(numeric);
+}
+
+Time : 19/09/02 15:26
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 3.075005835983946 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_58_buggy/src/java/org/apache/commons/lang/math/NumberUtils.java=>0,0]
+if(dec==null&&exp==null&&(numeric.charAt(0)=='-'&&isDigits(numeric.substring(1))||isDigits(numeric))){
+try{
+return createLong(numeric);
+}catch (NumberFormatException nfe) {
+}
+
+return createBigInteger(numeric);
+}
+
+Time : 19/09/02 15:26
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_58_buggy/src/java/org/apache/commons/lang/math/NumberUtils.java=>452,463]
+if(dec==null&&exp==null&&isDigits(numeric.substring(1))&&(numeric.charAt(0)=='-'||Character.isDigit(numeric.charAt(0)))){
+try{
+return createLong(numeric);
+}catch (NumberFormatException nfe) {
+}
+
+return createBigInteger(numeric);
+}
+
+Time : 19/09/02 15:26
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_58_buggy/src/java/org/apache/commons/lang/math/NumberUtils.java=>452,463]
+if(dec==null&&exp==null&&(numeric.charAt(0)=='-'&&isDigits(numeric.substring(1))||isDigits(numeric))){
+try{
+return createLong(numeric);
+}catch (NumberFormatException nfe) {
+}
+
+return createBigInteger(numeric);
+}
+
+Time : 19/09/02 15:26
+----------------------------------------
+Success time : 19/09/02 15:26

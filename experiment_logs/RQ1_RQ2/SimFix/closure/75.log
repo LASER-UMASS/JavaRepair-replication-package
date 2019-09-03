@@ -1,0 +1,646 @@
+=================================================
+Project : closure_75	start : 19/09/02 16:42
+Current failed test : com.google.javascript.jscomp.PeepholeFoldConstantsTest::testIEString | 19/09/02 16:42
+Mon Sep 02 16:52:26 EDT 2019 com.google.javascript.rhino.Node,1371
+Mon Sep 02 16:52:42 EDT 2019 com.google.javascript.rhino.Node,1400
+Mon Sep 02 16:52:45 EDT 2019 com.google.javascript.rhino.Node,1413
+Mon Sep 02 16:52:49 EDT 2019 com.google.javascript.jscomp.NodeUtil,375
+Mon Sep 02 16:52:57 EDT 2019 Mon Sep 02 16:52:57 EDT 2019 : com.google.javascript.rhino.Node,2247=>Find no block
+Mon Sep 02 16:52:57 EDT 2019 com.google.javascript.rhino.Node,2248
+Mon Sep 02 16:53:01 EDT 2019 com.google.javascript.rhino.Node,2249
+Mon Sep 02 16:53:01 EDT 2019 Mon Sep 02 16:53:01 EDT 2019 : com.google.javascript.rhino.Node,2250=>Find no block
+Mon Sep 02 16:53:02 EDT 2019 com.google.javascript.jscomp.NodeUtil,364
+Mon Sep 02 16:56:44 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,355
+Mon Sep 02 17:14:08 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,357
+Mon Sep 02 17:14:08 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,358
+Mon Sep 02 17:14:09 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,359
+Mon Sep 02 17:14:10 EDT 2019 com.google.javascript.jscomp.CodeGenerator,1019
+Mon Sep 02 17:16:59 EDT 2019 com.google.javascript.jscomp.CodeGenerator,1128
+Mon Sep 02 17:17:02 EDT 2019 Mon Sep 02 17:17:02 EDT 2019 : com.google.javascript.jscomp.CodeGenerator,1132=>Find no block
+Mon Sep 02 17:17:02 EDT 2019 Mon Sep 02 17:17:02 EDT 2019 : com.google.javascript.jscomp.CodeGenerator,1133=>Find no block
+Mon Sep 02 17:17:03 EDT 2019 com.google.javascript.jscomp.CodeGenerator,1145
+Mon Sep 02 17:17:54 EDT 2019 com.google.javascript.jscomp.CodeGenerator,1155
+Mon Sep 02 17:23:35 EDT 2019 Mon Sep 02 17:23:35 EDT 2019 : com.google.javascript.jscomp.CodeGenerator,1160=>Find no block
+Mon Sep 02 17:23:36 EDT 2019 com.google.javascript.jscomp.NodeUtil,301
+Mon Sep 02 17:31:18 EDT 2019 com.google.javascript.jscomp.NodeUtil,315
+Mon Sep 02 17:33:59 EDT 2019 com.google.javascript.jscomp.NodeUtil,317
+Mon Sep 02 17:36:21 EDT 2019 com.google.javascript.jscomp.NodeUtil,321
+Mon Sep 02 17:41:14 EDT 2019 com.google.javascript.jscomp.NodeUtil,332
+Mon Sep 02 17:45:46 EDT 2019 com.google.javascript.jscomp.NodeUtil,342
+Mon Sep 02 17:52:27 EDT 2019 com.google.javascript.jscomp.NodeUtil,349
+Mon Sep 02 17:58:56 EDT 2019 com.google.javascript.jscomp.NodeUtil,356
+Mon Sep 02 18:12:29 EDT 2019 com.google.javascript.jscomp.NodeUtil,357
+Mon Sep 02 18:12:29 EDT 2019 Mon Sep 02 18:12:29 EDT 2019 : com.google.javascript.jscomp.NodeUtil,359=>Find no block
+Mon Sep 02 18:12:30 EDT 2019 Mon Sep 02 18:12:30 EDT 2019 : com.google.javascript.jscomp.NodeUtil,363=>Find no block
+Mon Sep 02 18:12:30 EDT 2019 com.google.javascript.jscomp.NodeUtil,366
+Mon Sep 02 18:12:31 EDT 2019 Mon Sep 02 18:12:31 EDT 2019 : com.google.javascript.jscomp.NodeUtil,373=>Find no block
+Mon Sep 02 18:12:32 EDT 2019 com.google.javascript.jscomp.NodeUtil,387
+Mon Sep 02 18:13:04 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,261
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.RETURN){
+return ;
+}
+if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+
+Time : 19/09/02 18:20
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.RETURN){
+return ;
+}
+if(value!=Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+
+Time : 19/09/02 18:22
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.FUNCTION){
+return ;
+}
+if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+
+Time : 19/09/02 18:27
+----------------------------------------
+Mon Sep 02 18:29:46 EDT 2019 com.google.javascript.jscomp.NodeUtil,2141
+Mon Sep 02 18:29:52 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,250
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(result!=null){
+return ;
+}
+double value=result;
+Node replacement;
+
+Time : 19/09/02 18:30
+----------------------------------------
+Mon Sep 02 18:32:29 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,253
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.FUNCTION){
+return ;
+}
+if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+
+Time : 19/09/02 18:36
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+
+Time : 19/09/02 18:43
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.FUNCTION){
+return ;
+}
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+
+Time : 19/09/02 18:50
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.NAME){
+return ;
+}
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+
+Time : 19/09/02 18:57
+----------------------------------------
+Mon Sep 02 19:00:13 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,255
+Mon Sep 02 19:00:13 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,257
+Mon Sep 02 19:00:14 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,264
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.FUNCTION){
+return ;
+}
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:03
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.RETURN){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:12
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.CALL){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:14
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(replacement.getType()!=Token.STRING){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:16
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(n.getFirstChild().getType()!=Token.GETPROP){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:18
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(replacement.getType()!=Token.STRING){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:20
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(n.getFirstChild().getType()!=Token.GETPROP){
+return ;
+}
+if(replacement.getType()!=Token.STRING){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:22
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.NAME){
+return ;
+}
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:25
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+n.getParent().replaceChild(n,replacement);
+
+Time : 19/09/02 19:29
+----------------------------------------
+Mon Sep 02 19:33:22 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,265
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.FUNCTION){
+return ;
+}
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 19:40
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.RETURN){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 19:42
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.CALL){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 19:49
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(replacement.getType()!=Token.STRING){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 19:51
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(n.getFirstChild().getType()!=Token.GETPROP){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 19:52
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(replacement.getType()!=Token.STRING){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 19:54
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(n.getFirstChild().getType()!=Token.GETPROP){
+return ;
+}
+if(replacement.getType()!=Token.STRING){
+return ;
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 19:56
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.NAME){
+return ;
+}
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 20:01
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.CALL){
+return ;
+}
+if(Double.isNaN(value)){
+replacement=Node.newString(Token.NAME,"NaN");
+}else if(value==Double.POSITIVE_INFINITY){
+replacement=Node.newString(Token.NAME,"Infinity");
+}else if(value==Double.NEGATIVE_INFINITY){
+replacement=new Node(Token.NEG,Node.newString(Token.NAME,"Infinity"));
+replacement.copyInformationFromForTree(n);
+}else {
+replacement=Node.newNumber(value);
+}
+n.getParent().replaceChild(n,replacement);
+reportCodeChange();
+
+Time : 19/09/02 20:03
+----------------------------------------
+Mon Sep 02 20:06:54 EDT 2019 Mon Sep 02 20:06:54 EDT 2019 : com.google.javascript.jscomp.PeepholeFoldConstants,266=>Find no block
+Mon Sep 02 20:06:55 EDT 2019 com.google.javascript.jscomp.NodeUtil,1227
+Mon Sep 02 20:07:02 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,245
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+Double result=NodeUtil.getNumberValue(n);
+if(result!=null){
+return ;
+}
+
+Time : 19/09/02 20:07
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.FUNCTION){
+return ;
+}
+Double result=NodeUtil.getNumberValue(n);
+if(result==null){
+return ;
+}
+
+Time : 19/09/02 20:09
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.getType()!=Token.CALL){
+return ;
+}
+Double result=NodeUtil.getNumberValue(n);
+if(result==null){
+return ;
+}
+
+Time : 19/09/02 20:11
+----------------------------------------
+Mon Sep 02 20:16:01 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,246
+Mon Sep 02 20:16:04 EDT 2019 com.google.javascript.rhino.Node,962
+Mon Sep 02 20:25:51 EDT 2019 com.google.javascript.rhino.Node,963
+Mon Sep 02 20:25:51 EDT 2019 com.google.javascript.rhino.Node,220
+Mon Sep 02 20:25:58 EDT 2019 com.google.javascript.rhino.Node,1022
+Mon Sep 02 20:28:02 EDT 2019 com.google.javascript.jscomp.parsing.IRFactory,1059
+Mon Sep 02 20:28:09 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,346
+Mon Sep 02 21:07:52 EDT 2019 com.google.javascript.jscomp.NodeUtil,1192
+Mon Sep 02 21:10:18 EDT 2019 com.google.javascript.jscomp.NodeUtil,1203
+Mon Sep 02 21:18:12 EDT 2019 Mon Sep 02 21:18:12 EDT 2019 : com.google.javascript.jscomp.NodeUtil,1207=>Find no block
+Mon Sep 02 21:18:13 EDT 2019 com.google.javascript.jscomp.PeepholeFoldConstants,344
+Timeout time : 19/09/02 21:52

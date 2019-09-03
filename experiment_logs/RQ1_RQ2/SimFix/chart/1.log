@@ -1,0 +1,88 @@
+=================================================
+Project : chart_1	start : 19/09/02 11:53
+Current failed test : org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::test2947660 | 19/09/02 11:54
+Mon Sep 02 11:55:13 EDT 2019 org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1793
+Mon Sep 02 11:56:08 EDT 2019 org.jfree.chart.plot.CategoryPlot,1613
+Mon Sep 02 11:56:12 EDT 2019 Mon Sep 02 11:56:12 EDT 2019 : org.jfree.chart.plot.CategoryPlot,1614=>Find no block
+Mon Sep 02 11:56:13 EDT 2019 org.jfree.chart.plot.CategoryPlot,1665
+Mon Sep 02 12:03:40 EDT 2019 org.jfree.chart.plot.CategoryPlot,1667
+Mon Sep 02 12:04:27 EDT 2019 org.jfree.chart.plot.CategoryPlot,1672
+Mon Sep 02 12:12:09 EDT 2019 org.jfree.chart.plot.CategoryPlot,1673
+Mon Sep 02 12:12:09 EDT 2019 org.jfree.chart.plot.CategoryPlot,1674
+Mon Sep 02 12:12:10 EDT 2019 org.jfree.chart.plot.CategoryPlot,1675
+Mon Sep 02 12:12:11 EDT 2019 org.jfree.chart.plot.CategoryPlot,1678
+Mon Sep 02 12:15:01 EDT 2019 org.jfree.chart.plot.CategoryPlot,1679
+Mon Sep 02 12:24:23 EDT 2019 org.jfree.chart.plot.CategoryPlot,1681
+Mon Sep 02 12:32:10 EDT 2019 org.jfree.chart.plot.CategoryPlot,1682
+Mon Sep 02 12:32:11 EDT 2019 Mon Sep 02 12:32:11 EDT 2019 : org.jfree.chart.plot.CategoryPlot,1684=>Find no block
+Mon Sep 02 12:32:12 EDT 2019 org.jfree.chart.plot.CategoryPlot,567
+Mon Sep 02 12:32:16 EDT 2019 Mon Sep 02 12:32:16 EDT 2019 : org.jfree.chart.plot.CategoryPlot,568=>Find no block
+Mon Sep 02 12:32:17 EDT 2019 org.jfree.chart.plot.CategoryPlot,1339
+Mon Sep 02 12:32:45 EDT 2019 Mon Sep 02 12:32:45 EDT 2019 : org.jfree.chart.plot.CategoryPlot,1340=>Find no block
+Mon Sep 02 12:32:46 EDT 2019 org.jfree.chart.plot.CategoryPlot,1358
+Mon Sep 02 12:34:36 EDT 2019 org.jfree.chart.plot.CategoryPlot,1045
+Mon Sep 02 12:36:19 EDT 2019 org.jfree.chart.plot.CategoryPlot,1046
+Mon Sep 02 12:36:20 EDT 2019 org.jfree.chart.plot.CategoryPlot,1352
+Mon Sep 02 12:47:36 EDT 2019 org.jfree.chart.plot.CategoryPlot,1353
+Mon Sep 02 12:47:37 EDT 2019 org.jfree.chart.plot.CategoryPlot,1356
+Mon Sep 02 12:47:38 EDT 2019 org.jfree.chart.plot.CategoryPlot,1357
+Mon Sep 02 12:47:39 EDT 2019 org.jfree.chart.plot.CategoryPlot,1362
+Mon Sep 02 12:47:40 EDT 2019 org.jfree.chart.plot.CategoryPlot,1365
+Mon Sep 02 12:47:41 EDT 2019 Mon Sep 02 12:47:41 EDT 2019 : org.jfree.chart.plot.CategoryPlot,1367=>Find no block
+Mon Sep 02 12:47:42 EDT 2019 org.jfree.chart.renderer.category.LineAndShapeRenderer,201
+Mon Sep 02 12:47:46 EDT 2019 Mon Sep 02 12:47:46 EDT 2019 : org.jfree.chart.renderer.category.LineAndShapeRenderer,202=>Find no block
+Mon Sep 02 12:47:46 EDT 2019 org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1791
+Mon Sep 02 12:48:37 EDT 2019 org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1792
+Mon Sep 02 12:48:38 EDT 2019 org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1795
+Mon Sep 02 12:50:48 EDT 2019 org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1796
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+int index=this.plot.getIndexOf(this);
+CategoryDataset dataset=this.plot.getDataset(index);
+if(dataset==null){
+return result;
+}
+
+Time : 19/09/02 12:51
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.5946799084892447 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/chart/chart_1_buggy/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java=>0,0]
+CategoryAnchor anchor=getDomainGridlinePosition();
+RectangleEdge domainAxisEdge=getDomainAxisEdge();
+CategoryDataset dataset=getDataset();
+if(dataset==null){
+return ;
+}
+CategoryAxis axis=getDomainAxis();
+
+Time : 19/09/02 12:51
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/chart/chart_1_buggy/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java=>1795,1799]
+int index=this.plot.getIndexOf(this);
+CategoryDataset dataset=this.plot.getDataset(index);
+if(dataset!=null){
+return result;
+}
+
+Time : 19/09/02 12:51
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/chart/chart_1_buggy/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java=>1795,1799]
+int index=this.plot.getIndexOf(this);
+CategoryDataset dataset=this.plot.getDataset(index);
+if(dataset==null){
+return result;
+}
+
+Time : 19/09/02 12:51
+----------------------------------------
+Success time : 19/09/02 12:51

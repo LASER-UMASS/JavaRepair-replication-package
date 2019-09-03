@@ -1,0 +1,76 @@
+=================================================
+Project : math_74	start : 19/09/02 13:43
+Current failed test : org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial | 19/09/02 13:43
+Mon Sep 02 13:44:16 EDT 2019 org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator,292
+Mon Sep 02 13:45:13 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,309
+Mon Sep 02 13:55:26 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,310
+Mon Sep 02 13:55:26 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,311
+Mon Sep 02 13:55:27 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,290
+Mon Sep 02 14:18:57 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,291
+Mon Sep 02 14:38:40 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,296
+Mon Sep 02 14:38:41 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,297
+Mon Sep 02 14:38:41 EDT 2019 Mon Sep 02 14:38:41 EDT 2019 : org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,299=>Find no block
+Mon Sep 02 14:38:42 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,356
+Mon Sep 02 14:43:49 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,357
+Mon Sep 02 14:43:49 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,358
+Mon Sep 02 14:45:16 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,359
+Mon Sep 02 14:45:17 EDT 2019 org.apache.commons.math.linear.AbstractRealMatrix,919
+Mon Sep 02 14:45:30 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,496
+Mon Sep 02 15:26:53 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,497
+Mon Sep 02 15:26:53 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,498
+Mon Sep 02 15:26:54 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,499
+Mon Sep 02 15:26:55 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,500
+Mon Sep 02 15:26:56 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,501
+Mon Sep 02 15:26:56 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,502
+Mon Sep 02 15:26:57 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,505
+Mon Sep 02 15:26:58 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,236
+Mon Sep 02 15:37:59 EDT 2019 org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator,237
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+interpolator.reinitialize(stepStart,stepSize,scaled,nordsieck);
+interpolator.storeTime(stepStart);
+if((forward&&(t+t>t))||((!forward)&&(stepStart+stepSize<t))){
+stepSize=t-stepStart;
+}
+double hNew=stepSize;
+
+Time : 19/09/02 15:42
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.1962200555823617 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_74_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java=>0,0]
+if((forward&&(stepStart+stepSize>t))||((!forward)&&(stepStart+stepSize<t))){
+stepSize=t-stepStart;
+}
+ final double nextT=stepStart+stepSize;
+lastStep=forward?(nextT>=t):(nextT<=t);
+
+Time : 19/09/02 15:43
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_74_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java=>236,239]
+interpolator.reinitialize(stepStart,stepSize,scaled,nordsieck);
+interpolator.storeTime(stepStart);
+double hNew=stepSize;
+
+Time : 19/09/02 15:43
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_74_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java=>236,239]
+interpolator.reinitialize(stepStart,stepSize,scaled,nordsieck);
+interpolator.storeTime(stepStart);
+if((forward&&(t+t>t))||((!forward)&&(stepStart+stepSize<t))){
+stepSize=t-stepStart;
+}
+double hNew=stepSize;
+
+Time : 19/09/02 15:43
+----------------------------------------
+Success time : 19/09/02 15:43
