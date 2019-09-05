@@ -1,0 +1,19 @@
+--- source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	2019-09-04 12:08:50.452712434 -0400
++++ /home/mmotwani/mywork1dir/SimFix/patch/chart/25/0/1_DefaultStatisticalCategoryDataset.java	2019-09-02 13:23:47.000000000 -0400
+@@ -107,9 +107,16 @@
+         Number result = null;
+         MeanAndStandardDeviation masd 
+             = (MeanAndStandardDeviation) this.data.getObject(row, column);
++// start of generated patch
++if(masd==null){
++result=masd.getMean();
++}
++// end of generated patch
++/* start of original code
+         if (masd != null) {
+             result = masd.getMean();
+         }
++ end of original code*/
+         return result;
+     }
+ 

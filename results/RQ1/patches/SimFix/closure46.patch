@@ -1,0 +1,30 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_46_buggy/src/com/google/javascript/rhino/jstype/RecordType.java	2019-09-02 15:53:40.000000000 -0400
++++ closure/46/0/1_RecordType.java	2019-09-02 16:08:24.000000000 -0400
+@@ -139,6 +139,19 @@
+ 
+   @Override
+   public JSType getLeastSupertype(JSType that) {
++// start of generated patch
++if(!that.isRecordType()){
++return super.getLeastSupertype(that);
++}
++RecordTypeBuilder builder=new RecordTypeBuilder(registry);
++for(String property : properties.keySet()){
++if(that.toMaybeRecordType().hasProperty(property)&&that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(getPropertyType(property))){
++builder.addProperty(property,getPropertyType(property),getPropertyNode(property));
++}
++}
++return getLeastSupertype(this,that);
++// end of generated patch
++/* start of original code
+     if (!that.isRecordType()) {
+       return super.getLeastSupertype(that);
+     }
+@@ -152,6 +165,7 @@
+       }
+     }
+     return builder.build();
++ end of original code*/
+   }
+   JSType getGreatestSubtypeHelper(JSType that) {
+     if (that.isRecordType()) {

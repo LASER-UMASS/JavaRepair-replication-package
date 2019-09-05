@@ -1,0 +1,25 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_79_buggy/src/com/google/javascript/jscomp/VarCheck.java	2019-09-02 16:51:49.000000000 -0400
++++ closure/79/0/1_VarCheck.java	2019-09-02 17:31:53.000000000 -0400
+@@ -131,6 +131,14 @@
+ 
+     // Check if this is a declaration for a var that has been declared
+     // elsewhere. If so, mark it as a duplicate.
++// start of generated patch
++if((parent.getType()==Token.VAR||NodeUtil.isFunctionDeclaration(parent))&&varsToDeclareInExterns.contains(varName)){
++compiler.reportCodeChange();
++createSynthesizedExternVar(varName);
++n.addSuppression("duplicate");
++}
++// end of generated patch
++/* start of original code
+     if ((parent.getType() == Token.VAR ||
+          NodeUtil.isFunctionDeclaration(parent)) &&
+         varsToDeclareInExterns.contains(varName)) {
+@@ -138,6 +146,7 @@
+ 
+       n.addSuppression("duplicate");
+     }
++ end of original code*/
+ 
+     // Check that the var has been declared.
+     Scope scope = t.getScope();

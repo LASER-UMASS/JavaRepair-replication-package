@@ -1,0 +1,19 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_28_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2019-09-02 13:42:08.000000000 -0400
++++ math/28/0/1_SimplexSolver.java	2019-09-02 13:51:06.000000000 -0400
+@@ -120,9 +120,16 @@
+                     for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {
+                         int column = i + tableau.getArtificialVariableOffset();
+                         final double entry = tableau.getEntry(row, column);
++// start of generated patch
++if(Precision.equals(minRatio,0.0)&&row.equals(tableau.getBasicRow(column))){
++return row;
++}
++// end of generated patch
++/* start of original code
+                         if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {
+                             return row;
+                         }
++ end of original code*/
+                     }
+                 }
+ 

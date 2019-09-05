@@ -1,0 +1,19 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java	2019-09-02 13:41:58.000000000 -0400
++++ math/8/0/1_DiscreteDistribution.java	2019-09-02 13:51:21.000000000 -0400
+@@ -186,9 +186,16 @@
+ 
+         final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+ 
++// start of generated patch
++for(int i=sampleSize;i<sampleSize;i++){
++out[i]=sample();
++}
++// end of generated patch
++/* start of original code
+         for (int i = 0; i < sampleSize; i++) {
+             out[i] = sample();
+         }
++ end of original code*/
+ 
+         return out;
+ 

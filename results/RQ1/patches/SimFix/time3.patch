@@ -1,0 +1,19 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/time/time_3_buggy/src/main/java/org/joda/time/chrono/BasicYearDateTimeField.java	2019-09-02 15:30:54.000000000 -0400
++++ ./time/3/0/1_BasicYearDateTimeField.java	2019-09-04 17:06:52.190160475 -0400
+@@ -56,9 +56,16 @@
+     }
+ 
+     public long add(long instant, int years) {
++// start of generated patch
++if(serialVersionUID==0||years==0){
++return instant;
++}
++// end of generated patch
++/* start of original code
+         if (years == 0) {
+             return instant;
+         }
++ end of original code*/
+         int thisYear = get(instant);
+         int newYear = FieldUtils.safeAdd(thisYear, years);
+         return set(instant, newYear);
