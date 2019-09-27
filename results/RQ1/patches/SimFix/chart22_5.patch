@@ -1,0 +1,31 @@
+--- source/org/jfree/data/KeyedObjects2D.java	2019-09-02 13:22:02.000000000 -0400
++++ chart/22/5/1_KeyedObjects2D.java	2019-09-02 15:13:07.000000000 -0400
+@@ -367,6 +367,20 @@
+      * @see #removeRow(Comparable)
+      */
+     public void removeColumn(Comparable columnKey) {
++// start of generated patch
++int index=getColumnIndex(columnKey);
++if(index<0){
++throw new UnknownKeyException("Column key ("+columnKey);
++}
++Iterator iterator=this.rows.iterator();
++while(iterator.hasNext()){
++KeyedObjects rowData=(KeyedObjects)iterator.next();
++this.rows.remove(index);
++rowData.removeValue(columnKey);
++}
++this.columnKeys.remove(columnKey);
++// end of generated patch
++/* start of original code
+         int index = getColumnIndex(columnKey);
+         if (index < 0) {
+             throw new UnknownKeyException("Column key (" + columnKey 
+@@ -378,6 +392,7 @@
+                 rowData.removeValue(columnKey);
+         }
+         this.columnKeys.remove(columnKey);
++ end of original code*/
+     }
+ 
+     /**
