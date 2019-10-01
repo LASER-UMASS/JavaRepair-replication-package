@@ -1,0 +1,27 @@
+--- javajava/org/apache/commons/lang/time/DurationFormatUtils.java	2019-09-02 15:23:44.000000000 -0400
++++ lang/63/0/1_DurationFormatUtils.java	2019-09-02 15:30:42.000000000 -0400
+@@ -433,6 +433,16 @@
+         end.add( field, -1 * difference );
+         int endValue = end.get(field);
+         int startValue = start.get(field);
++// start of generated patch
++if(endValue<field){
++int newdiff=startValue-endValue;
++end.add(field,newdiff);
++return newdiff;
++}else {
++return 0;
++}
++// end of generated patch
++/* start of original code
+         if (endValue < startValue) {
+             int newdiff = startValue - endValue;
+             end.add( field, newdiff );
+@@ -440,6 +450,7 @@
+         } else {
+             return 0;
+         }
++ end of original code*/
+     }
+ 
+     static final Object y = "y";
