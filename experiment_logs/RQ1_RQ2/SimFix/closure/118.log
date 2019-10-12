@@ -1,0 +1,130 @@
+=================================================
+Project : closure_118	start : 19/09/02 18:46
+Current failed test : com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType4 | 19/09/02 18:46
+Mon Sep 02 19:15:49 EDT 2019 com.google.javascript.jscomp.DisambiguateProperties,497
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(t.getScopeDepth()<2){
+return ;
+}
+for(Node child=n.getFirstChild();child!=null;child=child.getNext()){
+String name=child.getString();
+T type=typeSystem.getType(getScope(),n,name);
+Property prop=getProperty(name);
+if(!prop.scheduleRenaming(child,processProperty(t,prop,type,null))){
+if(propertiesToErrorFor.containsKey(name)){
+compiler.report(JSError.make(t.getSourceName(),child,propertiesToErrorFor.get(name),Warnings.INVALIDATION,name,(type==null?"null":type.toString()),n.toString(),""));
+}
+}
+}
+
+Time : 19/09/02 20:08
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(!n.isName()){
+return ;
+}
+for(Node child=n.getFirstChild();child!=null;child=child.getNext()){
+String name=child.getString();
+T type=typeSystem.getType(getScope(),n,name);
+Property prop=getProperty(name);
+if(!prop.scheduleRenaming(child,processProperty(t,prop,type,null))){
+if(propertiesToErrorFor.containsKey(name)){
+compiler.report(JSError.make(t.getSourceName(),child,propertiesToErrorFor.get(name),Warnings.INVALIDATION,name,(type==null?"null":type.toString()),n.toString(),""));
+}
+}
+}
+
+Time : 19/09/02 20:19
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(Node child=n.getFirstChild();child!=null;child=child.getNext()){
+String name=n.isGetProp()?child.getString():"(missing)";
+T type=typeSystem.getType(getScope(),n,name);
+Property prop=getProperty(name);
+if(!prop.scheduleRenaming(child,processProperty(t,prop,type,null))){
+if(propertiesToErrorFor.containsKey(name)){
+compiler.report(JSError.make(t.getSourceName(),child,propertiesToErrorFor.get(name),Warnings.INVALIDATION,name,(type==null?"null":type.toString()),n.toString(),""));
+}
+}
+}
+
+Time : 19/09/02 20:38
+----------------------------------------
+Mon Sep 02 21:59:29 EDT 2019 com.google.javascript.jscomp.DisambiguateProperties,498
+Mon Sep 02 21:59:30 EDT 2019 com.google.javascript.jscomp.DisambiguateProperties,500
+Mon Sep 02 21:59:30 EDT 2019 com.google.javascript.jscomp.DisambiguateProperties,501
+Mon Sep 02 21:59:31 EDT 2019 Mon Sep 02 21:59:31 EDT 2019 : com.google.javascript.jscomp.DisambiguateProperties,493=>Find no block
+Mon Sep 02 21:59:32 EDT 2019 com.google.javascript.rhino.jstype.UnionType,171
+Mon Sep 02 22:02:40 EDT 2019 com.google.javascript.rhino.jstype.UnionType,172
+Mon Sep 02 22:02:40 EDT 2019 com.google.javascript.rhino.jstype.UnionType,173
+Mon Sep 02 22:02:41 EDT 2019 com.google.javascript.jscomp.DisambiguateProperties,442
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(n.isObjectLit()){
+if(n.getFirstChild().getJSType()==null||n.getFirstChild().getJSType().toObjectType()==null){
+return ;
+}
+handleObjectLit(t,n);
+}
+
+Time : 19/09/02 22:41
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(t.getScope().getRootNode().getParent().isObjectLit()){
+handleObjectLit(t,n);
+}
+
+Time : 19/09/02 22:57
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(t.getScope().getRootNode().isObjectLit()){
+handleObjectLit(t,n);
+}
+
+Time : 19/09/02 23:00
+----------------------------------------
+Mon Sep 02 23:03:51 EDT 2019 Mon Sep 02 23:03:51 EDT 2019 : com.google.javascript.jscomp.DisambiguateProperties,491=>Find no block
+Mon Sep 02 23:03:52 EDT 2019 com.google.javascript.jscomp.DisambiguateProperties,492
+Mon Sep 02 23:03:52 EDT 2019 Mon Sep 02 23:03:52 EDT 2019 : com.google.javascript.jscomp.DisambiguateProperties,513=>Find no block
+Mon Sep 02 23:03:53 EDT 2019 com.google.javascript.rhino.Node,1430
+Mon Sep 02 23:03:56 EDT 2019 com.google.javascript.rhino.Node,1446
+Mon Sep 02 23:03:59 EDT 2019 com.google.javascript.rhino.Node,1459
+Mon Sep 02 23:04:03 EDT 2019 Mon Sep 02 23:04:03 EDT 2019 : com.google.javascript.rhino.Node,2194=>Find no block
+Mon Sep 02 23:04:03 EDT 2019 com.google.javascript.rhino.Node,2195
+Mon Sep 02 23:04:07 EDT 2019 com.google.javascript.rhino.Node,2196
+Mon Sep 02 23:04:07 EDT 2019 Mon Sep 02 23:04:07 EDT 2019 : com.google.javascript.rhino.Node,2197=>Find no block
+Mon Sep 02 23:04:08 EDT 2019 com.google.javascript.rhino.jstype.JSTypeRegistry,1417
+Mon Sep 02 23:04:27 EDT 2019 com.google.javascript.rhino.jstype.JSTypeRegistry,1418
+Mon Sep 02 23:04:28 EDT 2019 com.google.javascript.rhino.jstype.JSTypeRegistry,1419
+Mon Sep 02 23:04:28 EDT 2019 com.google.javascript.rhino.jstype.JSTypeRegistry,1420
+Mon Sep 02 23:04:29 EDT 2019 com.google.javascript.rhino.jstype.JSTypeRegistry,1421
+Mon Sep 02 23:04:30 EDT 2019 com.google.javascript.jscomp.TypedScopeCreator,1571
+Mon Sep 02 23:24:54 EDT 2019 com.google.javascript.rhino.jstype.StringType,81
+Mon Sep 02 23:24:57 EDT 2019 com.google.javascript.jscomp.TypedScopeCreator,1675
+Mon Sep 02 23:35:45 EDT 2019 com.google.javascript.jscomp.TypedScopeCreator,1670
+Mon Sep 02 23:48:20 EDT 2019 com.google.javascript.jscomp.TypedScopeCreator,1671
+Mon Sep 02 23:48:21 EDT 2019 com.google.javascript.jscomp.TypedScopeCreator,1672
+Mon Sep 02 23:48:22 EDT 2019 com.google.javascript.jscomp.TypedScopeCreator,1673
+Mon Sep 02 23:48:23 EDT 2019 com.google.javascript.rhino.jstype.InstanceObjectType,117
+Mon Sep 02 23:48:26 EDT 2019 com.google.javascript.rhino.jstype.FunctionType,714
+Mon Sep 02 23:56:15 EDT 2019 com.google.javascript.rhino.jstype.FunctionType,787
+Tue Sep 03 00:04:14 EDT 2019 com.google.javascript.jscomp.DisambiguateProperties,933
+Tue Sep 03 00:10:12 EDT 2019 com.google.javascript.jscomp.CodeGenerator,656
+Timeout time : 19/09/03 00:15

@@ -1,0 +1,372 @@
+=================================================
+Project : math_83	start : 19/09/02 13:43
+Current failed test : org.apache.commons.math.optimization.linear.SimplexSolverTest::testMath286 | 19/09/02 13:43
+Mon Sep 02 13:44:25 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,349
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+++i;
+if(basicRows.contains(basicRow)){
+coefficients[i]=0;
+}else {
+basicRows.add(basicRow);
+coefficients[i]=(basicRow==null?0:getEntry(basicRow,getRhsOffset()))-(restrictToNonNegative?0:mostNegative);
+}
+
+Time : 19/09/02 13:45
+----------------------------------------
+Mon Sep 02 13:46:19 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,151
+Mon Sep 02 13:47:54 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,190
+Mon Sep 02 13:47:57 EDT 2019 Mon Sep 02 13:47:57 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexSolver,179=>Find no block
+Mon Sep 02 13:47:58 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,297
+Mon Sep 02 13:48:04 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,884
+Mon Sep 02 14:01:23 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,885
+Mon Sep 02 14:01:24 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,886
+Mon Sep 02 14:01:25 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,887
+Mon Sep 02 14:01:26 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,889
+Mon Sep 02 14:01:26 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,1287
+Mon Sep 02 14:19:05 EDT 2019 Mon Sep 02 14:19:05 EDT 2019 : org.apache.commons.math.linear.ArrayRealVector,1292=>Find no block
+Mon Sep 02 14:19:06 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,129
+Mon Sep 02 14:19:35 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,132
+Mon Sep 02 14:20:50 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,133
+Mon Sep 02 14:20:50 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,134
+Mon Sep 02 14:20:51 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,137
+Mon Sep 02 14:22:18 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,154
+Mon Sep 02 14:23:53 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,171
+Mon Sep 02 14:23:56 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,172
+Mon Sep 02 14:23:57 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,176
+Mon Sep 02 14:23:59 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,192
+Mon Sep 02 14:24:17 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,310
+Mon Sep 02 14:24:57 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,311
+Mon Sep 02 14:26:37 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,312
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int j=height;j<width-1;j++){
+matrix[i][j]=getEntry(i+1,j+1);
+}
+
+Time : 19/09/02 14:27
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int j=height;j<=width-1;j++){
+matrix[i][j]=getEntry(i+1,j+1);
+}
+
+Time : 19/09/02 14:27
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int j=0;j<width-1;j++){
+j+=height;
+matrix[i][j]=getEntry(i+1,j+1);
+}
+
+Time : 19/09/02 14:28
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<height;i++){
+for(int j=height;j<width-1;j++){
+matrix[i][j]=getEntry(i+1,j+1);
+}
+matrix[i][width-1]=getEntry(i+1,getRhsOffset());
+}
+
+Time : 19/09/02 14:34
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+int height=getHeight()-1;
+double[][] matrix=new double[height][width];
+for(int i=0;i<height;i++){
+for(int j=height;j<width-1;j++){
+matrix[i][j]=getEntry(i+1,j+1);
+}
+matrix[i][width-1]=getEntry(i+1,getRhsOffset());
+}
+
+Time : 19/09/02 14:50
+----------------------------------------
+Mon Sep 02 15:06:57 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,313
+Mon Sep 02 15:06:58 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,314
+Mon Sep 02 15:06:59 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,315
+Mon Sep 02 15:06:59 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,317
+Mon Sep 02 15:07:00 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,319
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<height;i++){
+for(int j=height;j<width-1;j++){
+matrix[i][j]=getEntry(i+1,j+1);
+}
+matrix[i][width-1]=getEntry(i+1,getRhsOffset());
+}
+this.tableau=new Array2DRowRealMatrix(matrix);
+this.numArtificialVariables=0;
+
+Time : 19/09/02 15:09
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<numDecisionVariables;i++){
+for(int j=numDecisionVariables;j<width-1;j++){
+matrix[i][j]=getEntry(i+1,j+1);
+}
+matrix[i][width-1]=getEntry(i+1,getRhsOffset());
+}
+this.tableau=new Array2DRowRealMatrix(matrix);
+this.numArtificialVariables=0;
+
+Time : 19/09/02 15:16
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<height;i++){
+for(int j=numDecisionVariables;j<width-1;j++){
+matrix[i][j]=getEntry(i+1,j+1);
+}
+matrix[i][width-1]=getEntry(i+1,getRhsOffset());
+}
+this.tableau=new Array2DRowRealMatrix(matrix);
+this.numArtificialVariables=0;
+
+Time : 19/09/02 15:17
+----------------------------------------
+Mon Sep 02 15:26:50 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,320
+Mon Sep 02 15:26:50 EDT 2019 Mon Sep 02 15:26:50 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexTableau,321=>Find no block
+Mon Sep 02 15:26:51 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,340
+Mon Sep 02 15:27:25 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,341
+Mon Sep 02 15:27:26 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,342
+Mon Sep 02 15:27:28 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,343
+Mon Sep 02 15:46:29 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,344
+Mon Sep 02 15:46:30 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,345
+Mon Sep 02 15:46:30 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,346
+Mon Sep 02 15:46:31 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,351
+Mon Sep 02 15:46:32 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,352
+Mon Sep 02 15:46:33 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,357
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=getNumObjectiveFunctions();i<coefficients.length;i++){
+Integer basicRow=getBasicRow(getNumObjectiveFunctions()+i);
+if(basicRows.contains(basicRow)){
+coefficients[i]=0;
+}else {
+basicRows.add(basicRow);
+coefficients[i]=(basicRow==null?0:getEntry(basicRow,getRhsOffset()))-(restrictToNonNegative?0:mostNegative);
+}
+}
+return new RealPointValuePair(coefficients,f.getValue(coefficients));
+
+Time : 19/09/02 15:47
+----------------------------------------
+Mon Sep 02 15:57:23 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,458
+Mon Sep 02 15:57:31 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,481
+Mon Sep 02 15:57:39 EDT 2019 Mon Sep 02 15:57:39 EDT 2019 : org.apache.commons.math.optimization.RealPointValuePair,48=>Find no block
+Mon Sep 02 15:57:42 EDT 2019 org.apache.commons.math.optimization.RealPointValuePair,49
+Mon Sep 02 16:00:39 EDT 2019 org.apache.commons.math.optimization.RealPointValuePair,50
+Mon Sep 02 16:00:40 EDT 2019 Mon Sep 02 16:00:40 EDT 2019 : org.apache.commons.math.optimization.RealPointValuePair,51=>Find no block
+Mon Sep 02 16:00:40 EDT 2019 org.apache.commons.math.optimization.RealPointValuePair,86
+Mon Sep 02 16:00:58 EDT 2019 org.apache.commons.math.optimization.linear.LinearObjectiveFunction,92
+Mon Sep 02 16:01:40 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,146
+Mon Sep 02 16:01:41 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,149
+Mon Sep 02 16:01:42 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,150
+Mon Sep 02 16:01:43 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,188
+Mon Sep 02 16:01:44 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,189
+Mon Sep 02 16:01:45 EDT 2019 org.apache.commons.math.util.MathUtils,367
+Mon Sep 02 16:03:18 EDT 2019 org.apache.commons.math.util.MathUtils,368
+Mon Sep 02 16:03:19 EDT 2019 org.apache.commons.math.util.MathUtils,369
+Mon Sep 02 16:03:20 EDT 2019 org.apache.commons.math.util.MathUtils,370
+Mon Sep 02 16:03:21 EDT 2019 org.apache.commons.math.util.MathUtils,372
+Mon Sep 02 16:03:58 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,42
+Mon Sep 02 16:04:00 EDT 2019 Mon Sep 02 16:04:00 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexSolver,43=>Find no block
+Mon Sep 02 16:04:01 EDT 2019 Mon Sep 02 16:04:01 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexSolver,49=>Find no block
+Mon Sep 02 16:04:02 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,50
+Mon Sep 02 16:04:23 EDT 2019 Mon Sep 02 16:04:23 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexSolver,51=>Find no block
+Mon Sep 02 16:04:24 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,59
+Mon Sep 02 16:09:29 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,60
+Mon Sep 02 16:09:30 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,61
+Mon Sep 02 16:09:30 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,62
+Mon Sep 02 16:09:31 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,63
+Mon Sep 02 16:09:32 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,64
+Mon Sep 02 16:09:33 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,67
+Mon Sep 02 16:09:33 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,77
+Mon Sep 02 16:19:33 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,78
+Mon Sep 02 16:19:33 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,79
+Mon Sep 02 16:19:34 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,80
+Mon Sep 02 16:19:35 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,81
+Mon Sep 02 16:19:35 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,82
+Mon Sep 02 16:19:36 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,83
+Mon Sep 02 16:19:37 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,84
+Mon Sep 02 16:19:38 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,85
+Mon Sep 02 16:19:38 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,89
+Mon Sep 02 16:22:35 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,102
+Mon Sep 02 16:23:11 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,104
+Mon Sep 02 16:23:12 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,105
+Mon Sep 02 16:23:44 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,106
+Mon Sep 02 16:23:46 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,111
+Mon Sep 02 16:24:25 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,112
+Mon Sep 02 16:27:34 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,115
+Mon Sep 02 16:27:34 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,116
+Mon Sep 02 16:27:35 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,117
+Mon Sep 02 16:27:36 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,118
+Mon Sep 02 16:27:37 EDT 2019 Mon Sep 02 16:27:37 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexSolver,121=>Find no block
+Mon Sep 02 16:27:38 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,167
+Mon Sep 02 16:27:40 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,185
+Mon Sep 02 16:27:41 EDT 2019 org.apache.commons.math.optimization.linear.SimplexSolver,187
+Mon Sep 02 16:27:41 EDT 2019 Mon Sep 02 16:27:41 EDT 2019 : org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,61=>Find no block
+Mon Sep 02 16:27:42 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,62
+Mon Sep 02 16:28:12 EDT 2019 Mon Sep 02 16:28:12 EDT 2019 : org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,63=>Find no block
+Mon Sep 02 16:28:12 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,67
+Mon Sep 02 16:28:28 EDT 2019 Mon Sep 02 16:28:28 EDT 2019 : org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,68=>Find no block
+Mon Sep 02 16:28:29 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,86
+Mon Sep 02 16:29:14 EDT 2019 Mon Sep 02 16:29:14 EDT 2019 : org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,89=>Find no block
+Mon Sep 02 16:29:15 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,98
+Mon Sep 02 16:29:39 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,99
+Mon Sep 02 16:29:39 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,100
+Mon Sep 02 16:29:40 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,101
+Mon Sep 02 16:29:41 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,103
+Mon Sep 02 16:29:41 EDT 2019 org.apache.commons.math.optimization.linear.AbstractLinearOptimizer,106
+Mon Sep 02 16:29:42 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,307
+Mon Sep 02 16:29:44 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,370
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int j=0;j<getWidth();j++){
+tableau.setEntry(dividendRow,dividendRow,tableau.getEntry(dividendRow,j)/divisor);
+}
+
+Time : 19/09/02 16:31
+----------------------------------------
+Mon Sep 02 16:36:14 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,371
+Mon Sep 02 16:36:15 EDT 2019 Mon Sep 02 16:36:15 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexTableau,373=>Find no block
+Mon Sep 02 16:36:16 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,497
+Mon Sep 02 16:36:49 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,338
+Mon Sep 02 16:49:13 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,339
+Mon Sep 02 16:59:39 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,340
+Mon Sep 02 16:59:39 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,342
+Mon Sep 02 16:59:40 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,134
+Mon Sep 02 16:59:42 EDT 2019 Mon Sep 02 16:59:42 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexTableau,171=>Find no block
+Mon Sep 02 16:59:43 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,178
+Mon Sep 02 17:00:00 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,179
+Mon Sep 02 17:00:01 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,249
+Mon Sep 02 17:05:16 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,250
+Mon Sep 02 17:05:17 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,441
+Mon Sep 02 17:05:51 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,449
+Mon Sep 02 17:05:53 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,296
+Mon Sep 02 17:05:54 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,354
+Mon Sep 02 17:05:57 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,367
+Mon Sep 02 17:06:00 EDT 2019 Mon Sep 02 17:06:00 EDT 2019 : org.apache.commons.math.linear.Array2DRowRealMatrix,372=>Find no block
+Mon Sep 02 17:06:01 EDT 2019 Mon Sep 02 17:06:01 EDT 2019 : org.apache.commons.math.linear.Array2DRowRealMatrix,373=>Find no block
+Mon Sep 02 17:06:02 EDT 2019 Mon Sep 02 17:06:02 EDT 2019 : org.apache.commons.math.util.MathUtils,30=>Find no block
+Mon Sep 02 17:06:02 EDT 2019 Mon Sep 02 17:06:02 EDT 2019 : org.apache.commons.math.util.MathUtils,473=>Find no block
+Mon Sep 02 17:06:03 EDT 2019 org.apache.commons.math.util.MathUtils,395
+Mon Sep 02 17:06:36 EDT 2019 org.apache.commons.math.util.MathUtils,411
+Mon Sep 02 17:08:49 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,273
+Mon Sep 02 17:09:17 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,291
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=start;i<getHeight();i++){
+if(MathUtils.equals(getEntry(i,col),1.0,epsilon)&&i<col){
+row=i;
+}else if(!MathUtils.equals(getEntry(i,col),0.0,epsilon)){
+return null;
+}
+}
+
+Time : 19/09/02 17:11
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+Integer row=null;
+int start=getNumObjectiveFunctions();
+for(int i=start;i<getHeight();i++){
+if(MathUtils.equals(getEntry(i,col),1.0,epsilon)&&i<col){
+row=i;
+}else if(!MathUtils.equals(getEntry(i,col),0.0,epsilon)){
+return null;
+}
+}
+return row;
+
+Time : 19/09/02 17:14
+----------------------------------------
+Mon Sep 02 17:16:09 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,292
+Mon Sep 02 17:16:10 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,293
+Mon Sep 02 17:16:10 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,294
+Mon Sep 02 17:16:11 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,295
+Mon Sep 02 17:16:12 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,300
+Mon Sep 02 17:16:13 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,387
+Mon Sep 02 17:22:48 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,388
+Mon Sep 02 17:22:49 EDT 2019 Mon Sep 02 17:22:49 EDT 2019 : org.apache.commons.math.optimization.linear.SimplexTableau,391=>Find no block
+Mon Sep 02 17:22:50 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,398
+Mon Sep 02 17:23:26 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,406
+Mon Sep 02 17:24:02 EDT 2019 org.apache.commons.math.optimization.linear.SimplexTableau,415
+Mon Sep 02 17:24:54 EDT 2019 org.apache.commons.math.optimization.linear.LinearConstraint,81
+Mon Sep 02 17:24:56 EDT 2019 Mon Sep 02 17:24:56 EDT 2019 : org.apache.commons.math.optimization.linear.LinearConstraint,82=>Find no block
+Mon Sep 02 17:24:57 EDT 2019 Mon Sep 02 17:24:57 EDT 2019 : org.apache.commons.math.linear.ArrayRealVector,77=>Find no block
+Mon Sep 02 17:24:58 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,78
+Mon Sep 02 17:26:25 EDT 2019 Mon Sep 02 17:26:25 EDT 2019 : org.apache.commons.math.linear.ArrayRealVector,79=>Find no block
+Mon Sep 02 17:26:26 EDT 2019 Mon Sep 02 17:26:26 EDT 2019 : org.apache.commons.math.linear.ArrayRealVector,36=>Find no block
+Mon Sep 02 17:26:26 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,854
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+data[0]=0.0;
+return data.clone();
+
+Time : 19/09/02 17:28
+----------------------------------------
+Mon Sep 02 17:28:54 EDT 2019 org.apache.commons.math.linear.ArrayRealVector,1157
+Mon Sep 02 17:30:24 EDT 2019 Mon Sep 02 17:30:24 EDT 2019 : org.apache.commons.math.linear.AbstractRealMatrix,43=>Find no block
+Mon Sep 02 17:30:25 EDT 2019 org.apache.commons.math.linear.AbstractRealMatrix,44
+Mon Sep 02 17:30:44 EDT 2019 Mon Sep 02 17:30:44 EDT 2019 : org.apache.commons.math.linear.AbstractRealMatrix,45=>Find no block
+Mon Sep 02 17:30:45 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,94
+Mon Sep 02 17:30:47 EDT 2019 Mon Sep 02 17:30:47 EDT 2019 : org.apache.commons.math.linear.RealVectorFormat,95=>Find no block
+Mon Sep 02 17:30:48 EDT 2019 Mon Sep 02 17:30:48 EDT 2019 : org.apache.commons.math.linear.RealVectorFormat,117=>Find no block
+Mon Sep 02 17:30:49 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,118
+Mon Sep 02 17:31:30 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,119
+Mon Sep 02 17:31:30 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,120
+Mon Sep 02 17:31:31 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,121
+Mon Sep 02 17:31:32 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,122
+Mon Sep 02 17:31:33 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,123
+Mon Sep 02 17:31:33 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,124
+Mon Sep 02 17:31:34 EDT 2019 Mon Sep 02 17:31:34 EDT 2019 : org.apache.commons.math.linear.RealVectorFormat,125=>Find no block
+Mon Sep 02 17:31:35 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,173
+Mon Sep 02 17:31:37 EDT 2019 org.apache.commons.math.linear.RealVectorFormat,182
+Mon Sep 02 17:31:39 EDT 2019 Mon Sep 02 17:31:39 EDT 2019 : org.apache.commons.math.util.CompositeFormat,31=>Find no block
+Mon Sep 02 17:31:40 EDT 2019 org.apache.commons.math.util.CompositeFormat,54
+Mon Sep 02 17:32:15 EDT 2019 org.apache.commons.math.util.CompositeFormat,55
+Mon Sep 02 17:32:15 EDT 2019 org.apache.commons.math.util.CompositeFormat,56
+Mon Sep 02 17:32:16 EDT 2019 Mon Sep 02 17:32:16 EDT 2019 : org.apache.commons.math.linear.Array2DRowRealMatrix,94=>Find no block
+Mon Sep 02 17:32:17 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,95
+Mon Sep 02 17:32:28 EDT 2019 Mon Sep 02 17:32:28 EDT 2019 : org.apache.commons.math.linear.Array2DRowRealMatrix,96=>Find no block
+Mon Sep 02 17:32:29 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,314
+Mon Sep 02 18:29:05 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,315
+Mon Sep 02 18:29:06 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,320
+Mon Sep 02 18:29:06 EDT 2019 org.apache.commons.math.linear.Array2DRowRealMatrix,325
+Timeout time : 19/09/02 18:44

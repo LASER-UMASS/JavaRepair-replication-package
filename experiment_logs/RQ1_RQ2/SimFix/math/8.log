@@ -1,0 +1,51 @@
+=================================================
+Project : math_8	start : 19/09/02 13:45
+Current failed test : org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942 | 19/09/02 13:45
+Mon Sep 02 13:46:29 EDT 2019 org.apache.commons.math3.distribution.DiscreteDistribution,69
+Mon Sep 02 13:46:36 EDT 2019 Mon Sep 02 13:46:36 EDT 2019 : org.apache.commons.math3.distribution.DiscreteDistribution,70=>Find no block
+Mon Sep 02 13:46:38 EDT 2019 org.apache.commons.math3.distribution.DiscreteDistribution,182
+Mon Sep 02 13:47:34 EDT 2019 org.apache.commons.math3.distribution.DiscreteDistribution,187
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=sampleSize;i<sampleSize;i++){
+out[i]=sample();
+}
+
+Time : 19/09/02 13:51
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.5322446312110585 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java=>0,0]
+for(int i=numPoints-1;i>=0;i--){
+if(!taken[i]){
+nextPointIndex=i;
+break;
+}
+}
+
+Time : 19/09/02 13:54
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java=>189,191]
+for(int i=0;i<sampleSize;i++){
+out[i]=sample();
+}
+
+Time : 19/09/02 13:54
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java=>189,191]
+for(int i=sampleSize;i<sampleSize;i++){
+out[i]=sample();
+}
+
+Time : 19/09/02 13:54
+----------------------------------------
+Success time : 19/09/02 13:54

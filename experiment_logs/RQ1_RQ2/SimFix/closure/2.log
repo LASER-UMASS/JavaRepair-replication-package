@@ -1,0 +1,70 @@
+=================================================
+Project : closure_2	start : 19/09/02 15:59
+Current failed test : com.google.javascript.jscomp.TypeCheckTest::testBadInterfaceExtendsNonExistentInterfaces | 19/09/02 16:00
+Mon Sep 02 16:19:04 EDT 2019 com.google.javascript.rhino.jstype.ObjectType,575
+Mon Sep 02 16:21:34 EDT 2019 com.google.javascript.rhino.jstype.ObjectType,576
+Mon Sep 02 16:21:36 EDT 2019 com.google.javascript.jscomp.TypeCheck,1570
+Mon Sep 02 16:25:00 EDT 2019 com.google.javascript.jscomp.TypeCheck,1574
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(t.getScopeDepth()<2){
+return ;
+}
+Set<String> currentPropertyNames;
+currentPropertyNames=implicitProto.getOwnPropertyNames();
+for(String name : currentPropertyNames){
+ObjectType oType=properties.get(name);
+if(oType!=null){
+if(!interfaceType.getPropertyType(name).isEquivalentTo(oType.getPropertyType(name))){
+compiler.report(t.makeError(n,INCOMPATIBLE_EXTENDED_PROPERTY_TYPE,functionName,name,oType.toString(),interfaceType.toString()));
+}
+}
+currentProperties.put(name,interfaceType);
+}
+
+Time : 19/09/02 18:35
+----------------------------------------
+Mon Sep 02 20:24:32 EDT 2019 com.google.javascript.jscomp.TypeCheck,1658
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(ObjectType interfaceType : functionType.getExtendedInterfaces()){
+if(n.isFunction()){
+break;
+}
+currentProperties.clear();
+checkInterfaceConflictProperties(t,n,functionPrivateName,properties,currentProperties,interfaceType);
+properties.putAll(currentProperties);
+}
+
+Time : 19/09/02 20:38
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(!n.getFirstChild().getNext().isString()){
+return ;
+}
+if(functionType.getExtendedInterfacesCount()>1){
+HashMap<String,ObjectType> properties=new HashMap<String,ObjectType>();
+HashMap<String,ObjectType> currentProperties=new HashMap<String,ObjectType>();
+for(ObjectType interfaceType : functionType.getExtendedInterfaces()){
+currentProperties.clear();
+checkInterfaceConflictProperties(t,n,functionPrivateName,properties,currentProperties,interfaceType);
+properties.putAll(currentProperties);
+}
+}
+
+Time : 19/09/02 21:04
+----------------------------------------
+Mon Sep 02 21:10:01 EDT 2019 com.google.javascript.jscomp.TypeCheck,1660
+Mon Sep 02 21:10:02 EDT 2019 com.google.javascript.jscomp.TypeCheck,1662
+Mon Sep 02 21:10:03 EDT 2019 com.google.javascript.jscomp.TypeCheck,1663
+Mon Sep 02 21:10:03 EDT 2019 com.google.javascript.jscomp.TypeCheck,1664
+Mon Sep 02 21:10:04 EDT 2019 com.google.javascript.rhino.JSTypeExpression,107
+Mon Sep 02 21:12:28 EDT 2019 com.google.javascript.jscomp.TypeCheck,1647
+Timeout time : 19/09/02 21:19

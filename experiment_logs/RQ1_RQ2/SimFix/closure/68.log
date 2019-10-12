@@ -1,0 +1,51 @@
+=================================================
+Project : closure_68	start : 19/09/02 16:34
+Current failed test : com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testIssue477 | 19/09/02 16:35
+Mon Sep 02 16:40:44 EDT 2019 com.google.javascript.jscomp.parsing.JsDocInfoParser,886
+Mon Sep 02 16:42:27 EDT 2019 com.google.javascript.jscomp.parsing.JsDocInfoParser,887
+Mon Sep 02 16:45:35 EDT 2019 com.google.javascript.jscomp.parsing.JsDocInfoParser,1761
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(token!=JsDocToken.LP){
+restoreLookAhead(token);
+return reportTypeSyntaxWarning("msg.jsdoc.missing.lp");
+}
+
+Time : 19/09/02 16:53
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.1196263565463043 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_68_buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java=>0,0]
+if(token==JsDocToken.COMMA||token==JsDocToken.EQUALS||token==JsDocToken.RC||token==JsDocToken.RP||token==JsDocToken.PIPE){
+restoreLookAhead(token);
+return newNode(Token.QMARK);
+}
+return wrapNode(Token.QMARK,parseBasicTypeExpression(token));
+
+Time : 19/09/02 16:57
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_68_buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java=>1760,1762]
+if(token!=JsDocToken.LP){
+return reportTypeSyntaxWarning("msg.jsdoc.missing.lp");
+}
+
+Time : 19/09/02 16:57
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_68_buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java=>1760,1762]
+if(token!=JsDocToken.LP){
+restoreLookAhead(token);
+return reportTypeSyntaxWarning("msg.jsdoc.missing.lp");
+}
+
+Time : 19/09/02 16:57
+----------------------------------------
+Success time : 19/09/02 16:57

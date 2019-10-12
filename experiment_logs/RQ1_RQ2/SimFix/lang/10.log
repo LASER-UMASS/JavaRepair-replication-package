@@ -1,0 +1,558 @@
+=================================================
+Project : lang_10	start : 19/09/02 15:24
+Current failed test : org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_831 | 19/09/02 15:25
+Mon Sep 02 15:26:13 EDT 2019 org.apache.commons.lang3.time.FastDateParser,180
+Mon Sep 02 15:26:20 EDT 2019 org.apache.commons.lang3.time.FastDateParser,685
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(field<=field){
+StringBuilder sb=new StringBuilder(value);
+sb.append(" not in (");
+for(KeyValue textKeyValue : textKeyValues){
+sb.append(textKeyValue.key).append(' ');
+}
+sb.setCharAt(sb.length()-1,')');
+throw new IllegalArgumentException(sb.toString());
+}
+
+Time : 19/09/02 15:35
+----------------------------------------
+Mon Sep 02 15:43:28 EDT 2019 org.apache.commons.lang3.time.FastDateParser,686
+Mon Sep 02 15:43:28 EDT 2019 org.apache.commons.lang3.time.FastDateParser,687
+Mon Sep 02 15:43:29 EDT 2019 org.apache.commons.lang3.time.FastDateParser,696
+Mon Sep 02 15:53:38 EDT 2019 Mon Sep 02 15:53:38 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,697=>Find no block
+Mon Sep 02 15:53:40 EDT 2019 Mon Sep 02 15:53:40 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,850=>Find no block
+Mon Sep 02 15:53:46 EDT 2019 org.apache.commons.lang3.time.FastDateParser,250
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(date!=null){
+if(locale.equals(JAPANESE_IMPERIAL)){
+throw new ParseException("(The "+locale,0);
+}
+throw new ParseException("Unparseable date: \""+source,0);
+}
+
+Time : 19/09/02 15:56
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+Date date=parse(source,new ParsePosition(0));
+if(date!=null){
+if(locale.equals(JAPANESE_IMPERIAL)){
+throw new ParseException("(The "+locale,0);
+}
+throw new ParseException("Unparseable date: \""+source,0);
+}
+return date;
+
+Time : 19/09/02 15:57
+----------------------------------------
+Mon Sep 02 15:58:38 EDT 2019 org.apache.commons.lang3.time.FastDateParser,251
+Mon Sep 02 15:58:43 EDT 2019 org.apache.commons.lang3.time.FastDateParser,260
+Mon Sep 02 15:58:44 EDT 2019 org.apache.commons.lang3.time.FastDateParser,741
+Mon Sep 02 15:59:13 EDT 2019 Mon Sep 02 15:59:13 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,742=>Find no block
+Mon Sep 02 15:59:14 EDT 2019 org.apache.commons.lang3.time.FastDateParser,276
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(currentFormatField==null){
+return null;
+}
+int offset=pos.getIndex();
+Matcher matcher=parsePattern.matcher(source.substring(offset));
+if(!matcher.lookingAt()){
+return null;
+}
+
+Time : 19/09/02 16:00
+----------------------------------------
+Mon Sep 02 16:01:13 EDT 2019 org.apache.commons.lang3.time.FastDateParser,277
+Mon Sep 02 16:01:14 EDT 2019 org.apache.commons.lang3.time.FastDateParser,278
+Mon Sep 02 16:01:26 EDT 2019 org.apache.commons.lang3.time.FastDateParser,282
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+pos.setIndex(offset+matcher.end());
+if(!matcher.lookingAt()){
+return null;
+}
+Calendar cal=Calendar.getInstance(timeZone,locale);
+cal.clear();
+
+Time : 19/09/02 16:02
+----------------------------------------
+Mon Sep 02 16:03:31 EDT 2019 org.apache.commons.lang3.time.FastDateParser,283
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+Calendar cal=Calendar.getInstance(timeZone,locale);
+cal.clear();
+for(int i=0;i<=strategies.length;){
+Strategy strategy=strategies[i++];
+strategy.setCalendar(this,cal,matcher.group(i));
+}
+
+Time : 19/09/02 16:04
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+Calendar cal=currentFormatField==null?null:Calendar.getInstance(timeZone,locale);
+cal.clear();
+for(int i=0;i<strategies.length;){
+Strategy strategy=strategies[i++];
+strategy.setCalendar(this,cal,matcher.group(i));
+}
+
+Time : 19/09/02 16:06
+----------------------------------------
+Mon Sep 02 16:08:32 EDT 2019 org.apache.commons.lang3.time.FastDateParser,285
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<=strategies.length;){
+Strategy strategy=strategies[i++];
+strategy.setCalendar(this,cal,matcher.group(i));
+}
+
+Time : 19/09/02 16:09
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<currentFormatField.length();){
+Strategy strategy=strategies[i++];
+strategy.setCalendar(this,cal,matcher.group(i));
+}
+
+Time : 19/09/02 16:12
+----------------------------------------
+Mon Sep 02 16:15:38 EDT 2019 org.apache.commons.lang3.time.FastDateParser,286
+Mon Sep 02 16:15:40 EDT 2019 org.apache.commons.lang3.time.FastDateParser,287
+Mon Sep 02 16:15:40 EDT 2019 Mon Sep 02 16:15:40 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,288=>Find no block
+Mon Sep 02 16:15:41 EDT 2019 org.apache.commons.lang3.time.FastDateParser,289
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<=strategies.length;){
+Strategy strategy=strategies[i++];
+strategy.setCalendar(this,cal,matcher.group(i));
+}
+pos.setIndex(offset+matcher.end());
+return cal.getTime();
+
+Time : 19/09/02 16:17
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<currentFormatField.length();){
+Strategy strategy=strategies[i++];
+strategy.setCalendar(this,cal,matcher.group(i));
+}
+pos.setIndex(offset+matcher.end());
+return cal.getTime();
+
+Time : 19/09/02 16:19
+----------------------------------------
+Mon Sep 02 16:24:42 EDT 2019 org.apache.commons.lang3.time.FastDateParser,290
+Mon Sep 02 16:24:43 EDT 2019 org.apache.commons.lang3.time.FastDatePrinter,754
+Mon Sep 02 16:24:46 EDT 2019 Mon Sep 02 16:24:46 EDT 2019 : org.apache.commons.lang3.time.FastDatePrinter,755=>Find no block
+Mon Sep 02 16:24:47 EDT 2019 Mon Sep 02 16:24:47 EDT 2019 : org.apache.commons.lang3.time.FastDatePrinter,747=>Find no block
+Mon Sep 02 16:24:48 EDT 2019 org.apache.commons.lang3.time.FastDatePrinter,762
+Mon Sep 02 16:24:52 EDT 2019 org.apache.commons.lang3.time.FastDatePrinter,213
+Mon Sep 02 16:26:55 EDT 2019 org.apache.commons.lang3.time.FastDatePrinter,215
+Mon Sep 02 16:31:30 EDT 2019 org.apache.commons.lang3.time.FastDateParser,395
+Mon Sep 02 16:31:44 EDT 2019 org.apache.commons.lang3.time.FastDateParser,396
+Mon Sep 02 16:31:48 EDT 2019 org.apache.commons.lang3.time.FastDateParser,555
+Mon Sep 02 16:31:53 EDT 2019 org.apache.commons.lang3.time.FastDateParser,379
+Mon Sep 02 16:32:57 EDT 2019 org.apache.commons.lang3.time.FastDateParser,380
+Mon Sep 02 16:32:58 EDT 2019 org.apache.commons.lang3.time.FastDateParser,381
+Mon Sep 02 16:33:01 EDT 2019 org.apache.commons.lang3.time.FastDateParser,382
+Mon Sep 02 16:33:05 EDT 2019 Mon Sep 02 16:33:05 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,383=>Find no block
+Mon Sep 02 16:33:05 EDT 2019 org.apache.commons.lang3.time.FastDateParser,406
+Mon Sep 02 16:33:28 EDT 2019 org.apache.commons.lang3.time.FastDateParser,407
+Mon Sep 02 16:33:28 EDT 2019 org.apache.commons.lang3.time.FastDateParser,411
+Mon Sep 02 16:33:36 EDT 2019 org.apache.commons.lang3.time.FastDateParser,434
+Mon Sep 02 16:33:39 EDT 2019 org.apache.commons.lang3.time.FastDateParser,435
+Mon Sep 02 16:33:40 EDT 2019 org.apache.commons.lang3.time.FastDateParser,436
+Mon Sep 02 16:33:40 EDT 2019 org.apache.commons.lang3.time.FastDateParser,437
+Mon Sep 02 16:33:41 EDT 2019 org.apache.commons.lang3.time.FastDateParser,446
+Mon Sep 02 16:39:03 EDT 2019 org.apache.commons.lang3.time.FastDateParser,447
+Mon Sep 02 16:39:04 EDT 2019 org.apache.commons.lang3.time.FastDateParser,448
+Mon Sep 02 16:39:04 EDT 2019 org.apache.commons.lang3.time.FastDateParser,449
+Mon Sep 02 16:39:05 EDT 2019 org.apache.commons.lang3.time.FastDateParser,450
+Mon Sep 02 16:39:06 EDT 2019 org.apache.commons.lang3.time.FastDateParser,454
+Mon Sep 02 16:39:07 EDT 2019 org.apache.commons.lang3.time.FastDateParser,465
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(value.length()>=0){
+fieldKeyValues[offset++]=new KeyValue(value,i);
+}
+
+Time : 19/09/02 16:40
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int i=0;i<=values.length;++i){
+String value=values[i];
+if(value.length()>0){
+fieldKeyValues[offset++]=new KeyValue(value,i);
+}
+}
+
+Time : 19/09/02 16:42
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+offset--;
+for(int i=0;i<values.length;++i){
+String value=values[i];
+if(value.length()>0){
+fieldKeyValues[offset++]=new KeyValue(value,i);
+}
+}
+
+Time : 19/09/02 16:43
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(values==null){
+for(int i=0;i<values.length;++i){
+String value=values[i];
+if(value.length()>0){
+fieldKeyValues[offset++]=new KeyValue(value,i);
+}
+}
+}
+
+Time : 19/09/02 16:44
+----------------------------------------
+Mon Sep 02 16:45:36 EDT 2019 org.apache.commons.lang3.time.FastDateParser,466
+Mon Sep 02 16:45:37 EDT 2019 org.apache.commons.lang3.time.FastDateParser,467
+Mon Sep 02 16:45:39 EDT 2019 org.apache.commons.lang3.time.FastDateParser,468
+Mon Sep 02 16:45:40 EDT 2019 org.apache.commons.lang3.time.FastDateParser,469
+Mon Sep 02 16:45:41 EDT 2019 org.apache.commons.lang3.time.FastDateParser,473
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(values==null){
+for(int i=0;i<values.length;++i){
+String value=values[i];
+if(value.length()>0){
+fieldKeyValues[offset++]=new KeyValue(value,i);
+}
+}
+}
+return offset;
+
+Time : 19/09/02 16:46
+----------------------------------------
+Mon Sep 02 16:47:58 EDT 2019 Mon Sep 02 16:47:58 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,357=>Find no block
+Mon Sep 02 16:47:59 EDT 2019 org.apache.commons.lang3.time.FastDateParser,358
+Mon Sep 02 16:48:23 EDT 2019 org.apache.commons.lang3.time.FastDateParser,359
+Mon Sep 02 16:48:24 EDT 2019 Mon Sep 02 16:48:24 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,360=>Find no block
+Mon Sep 02 16:48:25 EDT 2019 Mon Sep 02 16:48:25 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,369=>Find no block
+Mon Sep 02 16:48:27 EDT 2019 org.apache.commons.lang3.time.FastDateParser,672
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(KeyValue textKeyValue : parser.getDisplayNames(field)){
+escapeRegex(regex,textKeyValue.key,false).substring('|');
+}
+
+Time : 19/09/02 16:49
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(KeyValue textKeyValue : parser.getDisplayNames(field)){
+regex.append("[]");
+escapeRegex(regex,textKeyValue.key,false).append('|');
+}
+
+Time : 19/09/02 16:50
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(KeyValue textKeyValue : parser.getDisplayNames(field)){
+regex.append("[]");
+escapeRegex(regex,textKeyValue.key,false).substring('|');
+}
+
+Time : 19/09/02 16:50
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(KeyValue textKeyValue : parser.getDisplayNames(field)){
+regex.append("[");
+escapeRegex(regex,textKeyValue.key,false).append('|');
+}
+
+Time : 19/09/02 16:51
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+regex.charAt('(');
+for(KeyValue textKeyValue : parser.getDisplayNames(field)){
+escapeRegex(regex,textKeyValue.key,false).append('|');
+}
+regex.setCharAt(regex.length()-1,')');
+return true;
+
+Time : 19/09/02 16:53
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+regex.setLength('(');
+for(KeyValue textKeyValue : parser.getDisplayNames(field)){
+escapeRegex(regex,textKeyValue.key,false).append('|');
+}
+regex.setCharAt(regex.length()-1,')');
+return true;
+
+Time : 19/09/02 16:54
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+regex.substring('(');
+for(KeyValue textKeyValue : parser.getDisplayNames(field)){
+escapeRegex(regex,textKeyValue.key,false).append('|');
+}
+regex.setCharAt(regex.length()-1,')');
+return true;
+
+Time : 19/09/02 16:55
+----------------------------------------
+Mon Sep 02 16:56:56 EDT 2019 org.apache.commons.lang3.time.FastDateParser,673
+Mon Sep 02 16:56:56 EDT 2019 org.apache.commons.lang3.time.FastDateParser,674
+Mon Sep 02 16:56:58 EDT 2019 org.apache.commons.lang3.time.FastDateParser,676
+Mon Sep 02 16:56:59 EDT 2019 org.apache.commons.lang3.time.FastDateParser,677
+Mon Sep 02 16:57:00 EDT 2019 org.apache.commons.lang3.time.FastDateParser,308
+Mon Sep 02 16:57:22 EDT 2019 org.apache.commons.lang3.time.FastDateParser,309
+Mon Sep 02 16:57:22 EDT 2019 org.apache.commons.lang3.time.FastDateParser,310
+Mon Sep 02 16:57:23 EDT 2019 org.apache.commons.lang3.time.FastDateFormat,472
+Mon Sep 02 16:57:50 EDT 2019 org.apache.commons.lang3.time.FastDateParser,145
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+currentFormatField=patternMatcher.group();
+if(currentStrategy.addRegex(this,regex)){
+collector.add(currentStrategy);
+}
+
+Time : 19/09/02 16:58
+----------------------------------------
+Mon Sep 02 16:59:03 EDT 2019 org.apache.commons.lang3.time.FastDateParser,314
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+wasWhite=!Character.isDigit(c);
+if(Character.isWhitespace(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+
+Time : 19/09/02 16:59
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Character.isLowerCase(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+
+Time : 19/09/02 17:00
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Character.isLowerCase(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+wasWhite=false;
+
+Time : 19/09/02 17:01
+----------------------------------------
+Mon Sep 02 17:02:37 EDT 2019 Mon Sep 02 17:02:37 EDT 2019 : org.apache.commons.lang3.time.FastDateParser,315=>Find no block
+Mon Sep 02 17:02:37 EDT 2019 org.apache.commons.lang3.time.FastDateParser,340
+Mon Sep 02 17:08:41 EDT 2019 org.apache.commons.lang3.time.FastDateParser,565
+Mon Sep 02 17:13:00 EDT 2019 org.apache.commons.lang3.time.FastDateParser,621
+Mon Sep 02 17:15:15 EDT 2019 org.apache.commons.lang3.time.FastDateParser,622
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(c!='\''){
+c=formatField.charAt(1);
+}
+
+Time : 19/09/02 17:15
+----------------------------------------
+Mon Sep 02 17:16:41 EDT 2019 org.apache.commons.lang3.time.FastDateParser,625
+Mon Sep 02 17:16:42 EDT 2019 org.apache.commons.lang3.time.FastDateParser,304
+Mon Sep 02 17:16:50 EDT 2019 org.apache.commons.lang3.time.FastDateParser,305
+Mon Sep 02 17:28:35 EDT 2019 org.apache.commons.lang3.time.FastDateParser,306
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+char c=value.charAt(i);
+if(Character.isLetter(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+
+Time : 19/09/02 17:29
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+char c=value.charAt(i);
+if(Character.isLetterOrDigit(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+
+Time : 19/09/02 17:30
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+char c=value.charAt(i);
+if(Character.isDigit(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+
+Time : 19/09/02 17:31
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+char c=value.charAt(i);
+if(Character.isHighSurrogate(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+
+Time : 19/09/02 17:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.6797332034566244 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_10_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java=>0,0]
+char ch=cs.charAt(i);
+for(int j=0;j<searchLength;j++){
+if(searchChars[j]==ch){
+if(Character.isHighSurrogate(ch)){
+if(j==searchLast){
+return true;
+}
+if(i<csLast&&searchChars[j+1]==cs.charAt(i+1)){
+return true;
+}
+}else {
+return true;
+}
+}
+}
+
+Time : 19/09/02 17:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_10_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java=>306,313]
+char c=value.charAt(i);
+if(Character.isWhitespace(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+
+Time : 19/09/02 17:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_10_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java=>306,313]
+char c=value.charAt(i);
+if(Character.isHighSurrogate(c)){
+if(!wasWhite){
+wasWhite=true;
+regex.append("\\s*+");
+}
+continue;
+}
+
+Time : 19/09/02 17:32
+----------------------------------------
+Success time : 19/09/02 17:32

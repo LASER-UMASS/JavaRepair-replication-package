@@ -1,0 +1,92 @@
+=================================================
+Project : closure_79	start : 19/09/02 16:53
+Current failed test : com.google.javascript.jscomp.VarCheckTest::testCallInExterns | 19/09/02 16:54
+Mon Sep 02 17:03:44 EDT 2019 com.google.javascript.rhino.Node,2043
+Mon Sep 02 17:03:49 EDT 2019 com.google.javascript.rhino.Node,2044
+Mon Sep 02 17:03:50 EDT 2019 com.google.javascript.rhino.Node,2046
+Mon Sep 02 17:04:30 EDT 2019 Mon Sep 02 17:04:30 EDT 2019 : com.google.javascript.rhino.Node,2047=>Find no block
+Mon Sep 02 17:04:31 EDT 2019 com.google.javascript.rhino.JSDocInfo,545
+Mon Sep 02 17:13:11 EDT 2019 com.google.javascript.rhino.JSDocInfo,547
+Mon Sep 02 17:13:50 EDT 2019 com.google.javascript.rhino.JSDocInfo,548
+Mon Sep 02 17:13:51 EDT 2019 com.google.javascript.rhino.JSDocInfo,550
+Mon Sep 02 17:13:52 EDT 2019 Mon Sep 02 17:13:52 EDT 2019 : com.google.javascript.rhino.JSDocInfo,551=>Find no block
+Mon Sep 02 17:13:52 EDT 2019 com.google.javascript.jscomp.VarCheck,137
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if((parent.getType()==Token.VAR||NodeUtil.isFunctionDeclaration(parent))&&varsToDeclareInExterns.contains(varName)){
+compiler.reportCodeChange();
+createSynthesizedExternVar(varName);
+n.addSuppression("duplicate");
+}
+
+Time : 19/09/02 17:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.2405535048490524 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_79_buggy/src/com/google/javascript/jscomp/VarCheck.java=>0,0]
+if(moduleGraph.dependsOn(deepestCommonModuleRef,prop.getModule())&&value.getType()==Token.FUNCTION){
+Node valueParent=value.getParent();
+if(valueParent.getType()==Token.GET||valueParent.getType()==Token.SET){
+continue;
+}
+Node proto=prop.getPrototype();
+int stubId=idGenerator.newId();
+valueParent.replaceChild(value,new Node(Token.CALL,Node.newString(Token.NAME,STUB_METHOD_NAME),Node.newNumber(stubId)).copyInformationFromForTree(value));
+Node unstubParent=compiler.getNodeForCodeInsertion(deepestCommonModuleRef);
+unstubParent.addChildToFront(new Node(Token.EXPR_RESULT,new Node(Token.ASSIGN,new Node(Token.GETPROP,proto.cloneTree(),Node.newString(Token.STRING,nameInfo.name)),new Node(Token.CALL,Node.newString(Token.NAME,UNSTUB_METHOD_NAME),Node.newNumber(stubId),value))).copyInformationFromForTree(value));
+compiler.reportCodeChange();
+logger.fine("Moved method: "+proto.getQualifiedName());
+}
+
+Time : 19/09/02 17:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_79_buggy/src/com/google/javascript/jscomp/VarCheck.java=>134,140]
+if((parent.getType()==Token.VAR||NodeUtil.isFunctionDeclaration(parent))&&varsToDeclareInExterns.contains(varName)){
+createSynthesizedExternVar(varName);
+n.addSuppression("duplicate");
+}
+
+Time : 19/09/02 17:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/closure/closure_79_buggy/src/com/google/javascript/jscomp/VarCheck.java=>134,140]
+if((parent.getType()==Token.VAR||NodeUtil.isFunctionDeclaration(parent))&&varsToDeclareInExterns.contains(varName)){
+compiler.reportCodeChange();
+createSynthesizedExternVar(varName);
+n.addSuppression("duplicate");
+}
+
+Time : 19/09/02 17:33
+----------------------------------------
+Success time : 19/09/02 17:33
+Current failed test : com.google.javascript.jscomp.NormalizeTest::testIssue | 19/09/02 17:33
+Mon Sep 02 17:42:57 EDT 2019 com.google.javascript.rhino.Node,2043
+Mon Sep 02 17:43:01 EDT 2019 com.google.javascript.rhino.Node,2044
+Mon Sep 02 17:43:02 EDT 2019 com.google.javascript.rhino.Node,2046
+Mon Sep 02 17:43:40 EDT 2019 Mon Sep 02 17:43:40 EDT 2019 : com.google.javascript.rhino.Node,2047=>Find no block
+Mon Sep 02 17:43:41 EDT 2019 com.google.javascript.rhino.JSDocInfo,545
+Mon Sep 02 17:52:21 EDT 2019 com.google.javascript.rhino.JSDocInfo,547
+Mon Sep 02 17:53:00 EDT 2019 com.google.javascript.rhino.JSDocInfo,548
+Mon Sep 02 17:53:00 EDT 2019 com.google.javascript.rhino.JSDocInfo,550
+Mon Sep 02 17:53:01 EDT 2019 Mon Sep 02 17:53:01 EDT 2019 : com.google.javascript.rhino.JSDocInfo,551=>Find no block
+Mon Sep 02 17:53:02 EDT 2019 com.google.javascript.jscomp.VarCheck,137
+Mon Sep 02 18:19:17 EDT 2019 com.google.javascript.jscomp.VarCheck,139
+Mon Sep 02 18:19:18 EDT 2019 Mon Sep 02 18:19:18 EDT 2019 : com.google.javascript.jscomp.VarCheck,34=>Find no block
+Mon Sep 02 18:19:19 EDT 2019 com.google.javascript.jscomp.VarCheck,247
+Mon Sep 02 18:25:43 EDT 2019 com.google.javascript.jscomp.VarCheck,249
+Mon Sep 02 18:34:47 EDT 2019 com.google.javascript.jscomp.VarCheck,250
+Timeout time : 19/09/02 18:42
+Current failed test : com.google.javascript.jscomp.VarCheckTest::testPropReferenceInExterns1 | 19/09/02 18:42
+Already fixed : com.google.javascript.jscomp.VarCheckTest::testPropReferenceInExterns1
+Current failed test : com.google.javascript.jscomp.VarCheckTest::testVarReferenceInExterns | 19/09/02 18:42
+Already fixed : com.google.javascript.jscomp.VarCheckTest::testVarReferenceInExterns
+Current failed test : com.google.javascript.jscomp.VarCheckTest::testPropReferenceInExterns3 | 19/09/02 18:42
+Already fixed : com.google.javascript.jscomp.VarCheckTest::testPropReferenceInExterns3

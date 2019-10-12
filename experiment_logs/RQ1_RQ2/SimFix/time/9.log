@@ -1,0 +1,73 @@
+=================================================
+Project : time_9	start : 19/09/02 15:32
+Current failed test : org.joda.time.TestDateTimeZone::testForOffsetHoursMinutes_int_int_purify_1 | 19/09/02 15:35
+Mon Sep 02 15:37:21 EDT 2019 org.joda.time.DateTimeZone,259
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(minutesOffset<0||minutesOffset>0){
+throw new IllegalArgumentException("Minutes out of range: "+minutesOffset);
+}
+
+Time : 19/09/02 15:38
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(minutesOffset<0||minutesOffset>59){
+if(hoursOffset==0&&minutesOffset==0){
+return DateTimeZone.UTC;
+}
+throw new IllegalArgumentException("Minutes out of range: "+minutesOffset);
+}
+
+Time : 19/09/02 15:39
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 2.1467292624062573 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/time/time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java=>0,0]
+if(hoursOffset==0&&minutesOffset==0){
+return DateTimeZone.UTC;
+}
+
+Time : 19/09/02 15:40
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/time/time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java=>258,260]
+if(minutesOffset<0||minutesOffset>59){
+throw new IllegalArgumentException("Minutes out of range: "+minutesOffset);
+}
+
+Time : 19/09/02 15:40
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/time/time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java=>258,260]
+if(minutesOffset<0||minutesOffset>59){
+if(hoursOffset==0&&minutesOffset==0){
+return DateTimeZone.UTC;
+}
+throw new IllegalArgumentException("Minutes out of range: "+minutesOffset);
+}
+
+Time : 19/09/02 15:40
+----------------------------------------
+Success time : 19/09/02 15:40
+Current failed test : org.joda.time.TestDateTimeZone::testForOffsetHoursMinutes_int_int_purify_11 | 19/09/02 15:40
+Mon Sep 02 15:42:33 EDT 2019 org.joda.time.DateTimeZone,259
+Mon Sep 02 15:45:12 EDT 2019 org.joda.time.DateTimeZone,256
+Mon Sep 02 15:45:14 EDT 2019 org.joda.time.DateTimeZone,265
+Mon Sep 02 15:49:40 EDT 2019 org.joda.time.DateTimeZone,636
+Timeout time : 19/09/02 17:23
+Current failed test : org.joda.time.TestDateTimeZone::testForOffsetHoursMinutes_int_int_purify_12 | 19/09/02 17:23
+Mon Sep 02 17:26:24 EDT 2019 org.joda.time.DateTimeZone,259
+Mon Sep 02 17:29:40 EDT 2019 org.joda.time.DateTimeZone,256
+Mon Sep 02 17:29:47 EDT 2019 org.joda.time.DateTimeZone,265
+Mon Sep 02 17:34:53 EDT 2019 org.joda.time.DateTimeZone,636
+Timeout time : 19/09/02 19:06

@@ -1,0 +1,188 @@
+=================================================
+Project : lang_50	start : 19/09/02 15:24
+Current failed test : org.apache.commons.lang.time.FastDateFormatTest::test_changeDefault_Locale_DateTimeInstance | 19/09/02 15:25
+Mon Sep 02 15:26:32 EDT 2019 org.apache.commons.lang.time.FastDateFormat,620
+Mon Sep 02 15:29:45 EDT 2019 Mon Sep 02 15:29:45 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1708=>Find no block
+Mon Sep 02 15:29:45 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1709
+Mon Sep 02 15:29:48 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1710
+Mon Sep 02 15:29:48 EDT 2019 Mon Sep 02 15:29:48 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1711=>Find no block
+Mon Sep 02 15:29:49 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1738
+Mon Sep 02 15:29:51 EDT 2019 org.apache.commons.lang.time.FastDateFormat,234
+Mon Sep 02 15:30:27 EDT 2019 org.apache.commons.lang.time.FastDateFormat,293
+Mon Sep 02 15:30:56 EDT 2019 org.apache.commons.lang.time.FastDateFormat,408
+Mon Sep 02 15:31:08 EDT 2019 org.apache.commons.lang.time.FastDateFormat,425
+Mon Sep 02 15:31:51 EDT 2019 org.apache.commons.lang.time.FastDateFormat,461
+Mon Sep 02 15:32:19 EDT 2019 org.apache.commons.lang.time.FastDateFormat,462
+Mon Sep 02 15:32:40 EDT 2019 org.apache.commons.lang.time.FastDateFormat,465
+Mon Sep 02 15:33:05 EDT 2019 org.apache.commons.lang.time.FastDateFormat,466
+Mon Sep 02 15:33:05 EDT 2019 org.apache.commons.lang.time.FastDateFormat,469
+Mon Sep 02 15:33:44 EDT 2019 org.apache.commons.lang.time.FastDateFormat,470
+Mon Sep 02 15:34:20 EDT 2019 org.apache.commons.lang.time.FastDateFormat,471
+Mon Sep 02 15:34:21 EDT 2019 org.apache.commons.lang.time.FastDateFormat,472
+Mon Sep 02 15:34:21 EDT 2019 org.apache.commons.lang.time.FastDateFormat,475
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(locale!=null){
+key=new Pair(key,locale);
+}
+SimpleDateFormat formatter=(SimpleDateFormat)DateFormat.getDateTimeInstance(dateStyle,timeStyle,locale);
+String pattern=formatter.toPattern();
+format=getInstance(pattern,timeZone,locale);
+
+Time : 19/09/02 15:35
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.3354214422411372 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java=>0,0]
+if(timeZone!=null){
+key=new Pair(key,timeZone);
+}
+if(locale!=null){
+key=new Pair(key,locale);
+}
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(key);
+
+Time : 19/09/02 15:35
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java=>475,478]
+SimpleDateFormat formatter=(SimpleDateFormat)DateFormat.getDateTimeInstance(dateStyle,timeStyle,locale);
+String pattern=formatter.toPattern();
+format=getInstance(pattern,timeZone,locale);
+
+Time : 19/09/02 15:35
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java=>475,478]
+if(locale!=null){
+key=new Pair(key,locale);
+}
+SimpleDateFormat formatter=(SimpleDateFormat)DateFormat.getDateTimeInstance(dateStyle,timeStyle,locale);
+String pattern=formatter.toPattern();
+format=getInstance(pattern,timeZone,locale);
+
+Time : 19/09/02 15:35
+----------------------------------------
+Success time : 19/09/02 15:35
+Current failed test : org.apache.commons.lang.time.FastDateFormatTest::test_changeDefault_Locale_DateInstance | 19/09/02 15:35
+Mon Sep 02 15:36:29 EDT 2019 org.apache.commons.lang.time.FastDateFormat,620
+Mon Sep 02 15:39:48 EDT 2019 Mon Sep 02 15:39:48 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1708=>Find no block
+Mon Sep 02 15:39:49 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1709
+Mon Sep 02 15:39:51 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1710
+Mon Sep 02 15:39:52 EDT 2019 Mon Sep 02 15:39:52 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1711=>Find no block
+Mon Sep 02 15:39:52 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1738
+Mon Sep 02 15:39:54 EDT 2019 org.apache.commons.lang.time.FastDateFormat,234
+Mon Sep 02 15:40:28 EDT 2019 org.apache.commons.lang.time.FastDateFormat,293
+Mon Sep 02 15:40:54 EDT 2019 org.apache.commons.lang.time.FastDateFormat,408
+Mon Sep 02 15:41:06 EDT 2019 org.apache.commons.lang.time.FastDateFormat,425
+Mon Sep 02 15:41:50 EDT 2019 org.apache.commons.lang.time.FastDateFormat,461
+Mon Sep 02 15:42:14 EDT 2019 org.apache.commons.lang.time.FastDateFormat,462
+Mon Sep 02 15:42:40 EDT 2019 org.apache.commons.lang.time.FastDateFormat,465
+Mon Sep 02 15:43:11 EDT 2019 org.apache.commons.lang.time.FastDateFormat,466
+Mon Sep 02 15:43:15 EDT 2019 org.apache.commons.lang.time.FastDateFormat,469
+Mon Sep 02 15:44:00 EDT 2019 org.apache.commons.lang.time.FastDateFormat,470
+Mon Sep 02 15:44:50 EDT 2019 org.apache.commons.lang.time.FastDateFormat,471
+Mon Sep 02 15:44:51 EDT 2019 org.apache.commons.lang.time.FastDateFormat,472
+Mon Sep 02 15:44:51 EDT 2019 org.apache.commons.lang.time.FastDateFormat,475
+Mon Sep 02 15:46:54 EDT 2019 org.apache.commons.lang.time.FastDateFormat,477
+Mon Sep 02 15:46:54 EDT 2019 org.apache.commons.lang.time.FastDateFormat,478
+Mon Sep 02 15:50:37 EDT 2019 org.apache.commons.lang.time.FastDateFormat,479
+Mon Sep 02 15:50:38 EDT 2019 Mon Sep 02 15:50:38 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,483=>Find no block
+Mon Sep 02 15:50:38 EDT 2019 org.apache.commons.lang.time.FastDateFormat,485
+Mon Sep 02 15:50:56 EDT 2019 org.apache.commons.lang.time.FastDateFormat,672
+Mon Sep 02 15:51:59 EDT 2019 org.apache.commons.lang.time.FastDateFormat,675
+Mon Sep 02 15:52:00 EDT 2019 org.apache.commons.lang.time.FastDateFormat,677
+Mon Sep 02 15:55:07 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1717
+Mon Sep 02 15:56:29 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1721
+Mon Sep 02 15:56:34 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1725
+Mon Sep 02 15:58:35 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1727
+Mon Sep 02 15:58:39 EDT 2019 Mon Sep 02 15:58:39 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1538=>Find no block
+Mon Sep 02 15:58:43 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1539
+Mon Sep 02 15:59:03 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1540
+Mon Sep 02 15:59:04 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1541
+Mon Sep 02 15:59:34 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1542
+Mon Sep 02 16:00:35 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1544
+Mon Sep 02 16:00:51 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1548
+Mon Sep 02 16:00:53 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1549
+Mon Sep 02 16:00:53 EDT 2019 Mon Sep 02 16:00:53 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1551=>Find no block
+Mon Sep 02 16:00:54 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1557
+Mon Sep 02 16:03:37 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1559
+Mon Sep 02 16:03:37 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1560
+Mon Sep 02 16:03:38 EDT 2019 org.apache.commons.lang.time.FastDateFormat,772
+Mon Sep 02 16:03:55 EDT 2019 org.apache.commons.lang.time.FastDateFormat,954
+Mon Sep 02 16:03:58 EDT 2019 Mon Sep 02 16:03:58 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1185=>Find no block
+Mon Sep 02 16:03:59 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1186
+Mon Sep 02 16:04:15 EDT 2019 Mon Sep 02 16:04:15 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1187=>Find no block
+Mon Sep 02 16:04:15 EDT 2019 Mon Sep 02 16:04:15 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1176=>Find no block
+Mon Sep 02 16:04:17 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1193
+Mon Sep 02 16:04:20 EDT 2019 Mon Sep 02 16:04:20 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1447=>Find no block
+Mon Sep 02 16:04:20 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1448
+Mon Sep 02 16:04:22 EDT 2019 Mon Sep 02 16:04:22 EDT 2019 : org.apache.commons.lang.time.FastDateFormat,1449=>Find no block
+Mon Sep 02 16:04:24 EDT 2019 org.apache.commons.lang.time.FastDateFormat,1455
+Mon Sep 02 16:04:26 EDT 2019 org.apache.commons.lang.time.FastDateFormat,249
+Mon Sep 02 16:05:19 EDT 2019 org.apache.commons.lang.time.FastDateFormat,280
+Mon Sep 02 16:05:46 EDT 2019 org.apache.commons.lang.time.FastDateFormat,281
+Mon Sep 02 16:05:46 EDT 2019 org.apache.commons.lang.time.FastDateFormat,285
+Mon Sep 02 16:05:47 EDT 2019 org.apache.commons.lang.time.FastDateFormat,286
+Mon Sep 02 16:05:48 EDT 2019 org.apache.commons.lang.time.FastDateFormat,290
+Mon Sep 02 16:06:30 EDT 2019 org.apache.commons.lang.time.FastDateFormat,291
+Mon Sep 02 16:07:09 EDT 2019 org.apache.commons.lang.time.FastDateFormat,292
+Mon Sep 02 16:07:10 EDT 2019 org.apache.commons.lang.time.FastDateFormat,296
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(locale!=null){
+key=new Pair(key,locale);
+}
+SimpleDateFormat formatter=(SimpleDateFormat)DateFormat.getDateInstance(style,locale);
+String pattern=formatter.toPattern();
+format=getInstance(pattern,timeZone,locale);
+
+Time : 19/09/02 16:08
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.3548004166402725 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java=>0,0]
+if(timeZone!=null){
+key=new Pair(key,timeZone);
+}
+if(locale!=null){
+key=new Pair(key,locale);
+}
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(key);
+
+Time : 19/09/02 16:08
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java=>296,298]
+SimpleDateFormat formatter=(SimpleDateFormat)DateFormat.getDateInstance(style,locale);
+String pattern=formatter.toPattern();
+format=getInstance(pattern,timeZone,locale);
+
+Time : 19/09/02 16:08
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java=>296,298]
+if(locale!=null){
+key=new Pair(key,locale);
+}
+SimpleDateFormat formatter=(SimpleDateFormat)DateFormat.getDateInstance(style,locale);
+String pattern=formatter.toPattern();
+format=getInstance(pattern,timeZone,locale);
+
+Time : 19/09/02 16:08
+----------------------------------------
+Success time : 19/09/02 16:08

@@ -1,0 +1,89 @@
+=================================================
+Project : math_72	start : 19/09/02 13:43
+Current failed test : org.apache.commons.math.analysis.solvers.BrentSolverTest::testRootEndpoints_purify_3 | 19/09/02 13:43
+Mon Sep 02 13:44:41 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,115
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(Math.abs(yMin)<=functionValueAccuracy){
+setResult(min,0);
+return result;
+}
+
+Time : 19/09/02 13:45
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 2.452090549139009 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_72_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java=>0,0]
+if(Math.abs(yMin)<=functionValueAccuracy){
+setResult(min,0);
+ret=min;
+}else if(Math.abs(yMax)<=functionValueAccuracy){
+setResult(max,0);
+ret=max;
+}else {
+throw MathRuntimeException.createIllegalArgumentException(NON_BRACKETING_MESSAGE,min,max,yMin,yMax);
+}
+
+Time : 19/09/02 13:45
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_72_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java=>114,117]
+if(Math.abs(yMin)<=functionValueAccuracy){
+setResult(yMin,0);
+return result;
+}
+
+Time : 19/09/02 13:45
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_72_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java=>114,117]
+if(Math.abs(yMin)<=functionValueAccuracy){
+setResult(min,0);
+return result;
+}
+
+Time : 19/09/02 13:45
+----------------------------------------
+Success time : 19/09/02 13:45
+Current failed test : org.apache.commons.math.analysis.solvers.BrentSolverTest::testRootEndpoints_purify_4 | 19/09/02 13:45
+Mon Sep 02 13:46:40 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,115
+Mon Sep 02 13:50:06 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,116
+Mon Sep 02 13:50:07 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,184
+Mon Sep 02 14:10:33 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,185
+Mon Sep 02 14:10:34 EDT 2019 org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,196
+Mon Sep 02 14:10:37 EDT 2019 org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,225
+Mon Sep 02 14:11:26 EDT 2019 Mon Sep 02 14:11:26 EDT 2019 : org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,230=>Find no block
+Mon Sep 02 14:11:26 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,102
+Mon Sep 02 14:14:22 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,103
+Mon Sep 02 14:14:23 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,106
+Mon Sep 02 14:21:20 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,107
+Mon Sep 02 14:24:38 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,113
+Mon Sep 02 14:32:05 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,114
+Mon Sep 02 14:32:05 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,180
+Mon Sep 02 14:43:56 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,183
+Mon Sep 02 14:43:57 EDT 2019 org.apache.commons.math.ConvergingAlgorithmImpl,83
+Mon Sep 02 14:44:32 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,247
+Mon Sep 02 14:48:45 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,248
+Mon Sep 02 14:48:45 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,236
+Mon Sep 02 15:28:24 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,237
+Mon Sep 02 15:28:24 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,238
+Mon Sep 02 15:28:25 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,239
+Mon Sep 02 15:28:26 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,240
+Mon Sep 02 15:28:27 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,241
+Mon Sep 02 15:28:27 EDT 2019 org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,141
+Mon Sep 02 15:32:33 EDT 2019 org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,142
+Mon Sep 02 15:32:33 EDT 2019 org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,143
+Mon Sep 02 15:32:34 EDT 2019 Mon Sep 02 15:32:34 EDT 2019 : org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,144=>Find no block
+Mon Sep 02 15:32:35 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,193
+Mon Sep 02 15:36:53 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,229
+Mon Sep 02 15:45:02 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,230
+Mon Sep 02 15:45:03 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,232
+Mon Sep 02 15:45:07 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,233
+Timeout time : 19/09/02 16:16

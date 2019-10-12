@@ -1,0 +1,6044 @@
+=================================================
+Project : lang_19	start : 19/09/02 15:24
+Current failed test : org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest::testUnfinishedEntity | 19/09/02 15:25
+Mon Sep 02 15:26:31 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,41
+Mon Sep 02 15:28:19 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,42
+Mon Sep 02 15:28:20 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,44
+Mon Sep 02 15:32:08 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,46
+Mon Sep 02 15:32:48 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,47
+Mon Sep 02 15:32:49 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,82
+Mon Sep 02 15:51:49 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,38
+Mon Sep 02 15:51:59 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,40
+Mon Sep 02 15:51:59 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,89
+Mon Sep 02 16:16:35 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,54
+Mon Sep 02 16:16:39 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,58
+Mon Sep 02 16:17:20 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,59
+Mon Sep 02 16:17:21 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,45
+Mon Sep 02 16:17:21 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,52
+Mon Sep 02 16:21:46 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,54
+Mon Sep 02 16:21:47 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,56
+Mon Sep 02 16:21:48 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,76
+Mon Sep 02 16:21:51 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,79
+Mon Sep 02 16:22:00 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,82
+Mon Sep 02 16:23:20 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,83
+Mon Sep 02 16:27:23 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,86
+Timeout time : 19/09/02 16:41
+Current failed test : org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest::testOutOfBounds_purify_2 | 19/09/02 16:41
+Mon Sep 02 16:42:02 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,41
+Mon Sep 02 16:44:04 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,42
+Mon Sep 02 16:44:05 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,44
+Mon Sep 02 16:48:31 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,46
+Mon Sep 02 16:49:14 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,47
+Mon Sep 02 16:49:15 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,82
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 16:55
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 16:55
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 16:56
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 16:57
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 16:57
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 16:57
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 16:58
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 16:58
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 16:59
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 16:59
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 17:00
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 17:01
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 17:01
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 17:02
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 17:02
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 17:03
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='-'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:03
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='\''){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:04
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)==';'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:05
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:06
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:07
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&index==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:07
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:08
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input==null||input==null&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:09
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='f'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 17:10
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:10
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:10
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:12
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 17:12
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:12
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:13
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:13
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 17:14
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:14
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:15
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 17:16
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:16
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:17
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 17:17
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:18
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:18
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='-'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:19
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)==';'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:20
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:21
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:22
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&index==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:22
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:24
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input==null||input==null&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:24
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='f'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 17:25
+----------------------------------------
+Mon Sep 02 17:26:03 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,38
+Mon Sep 02 17:26:11 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,40
+Mon Sep 02 17:26:12 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,89
+Mon Sep 02 17:50:26 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,54
+Mon Sep 02 17:50:30 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,58
+Mon Sep 02 17:51:08 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,59
+Mon Sep 02 17:51:09 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,45
+Mon Sep 02 17:51:09 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,52
+Mon Sep 02 17:55:39 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,54
+Mon Sep 02 17:55:40 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,56
+Mon Sep 02 17:55:41 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,76
+Mon Sep 02 17:55:43 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,79
+Mon Sep 02 17:55:51 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,82
+Timeout time : 19/09/02 17:57
+Current failed test : org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest::testOutOfBounds_purify_3 | 19/09/02 17:57
+Mon Sep 02 17:57:34 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,41
+Mon Sep 02 17:59:20 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,42
+Mon Sep 02 17:59:20 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,44
+Mon Sep 02 18:03:14 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,46
+Mon Sep 02 18:03:53 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,47
+Mon Sep 02 18:03:53 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,82
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:09
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:09
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:11
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 18:11
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 18:11
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 18:12
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:12
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 18:13
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 18:13
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 18:13
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 18:15
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 18:15
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 18:16
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 18:16
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 18:16
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 18:17
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='-'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:18
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='\''){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:18
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)==';'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:20
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:20
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:21
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&index==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:21
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:22
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input==null||input==null&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:23
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='f'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 18:23
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:24
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:24
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:26
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 18:26
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:26
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:27
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:27
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 18:28
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:28
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:29
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 18:30
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:30
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:31
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 18:31
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='-'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)==';'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:34
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:35
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:35
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&index==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:36
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:37
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input==null||input==null&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:37
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='f'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 18:38
+----------------------------------------
+Mon Sep 02 18:39:13 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,38
+Mon Sep 02 18:39:20 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,40
+Mon Sep 02 18:39:21 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,89
+Mon Sep 02 19:01:34 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,54
+Mon Sep 02 19:01:36 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,58
+Mon Sep 02 19:02:07 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,59
+Mon Sep 02 19:02:07 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,45
+Mon Sep 02 19:02:08 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,52
+Mon Sep 02 19:05:39 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,54
+Mon Sep 02 19:05:39 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,56
+Mon Sep 02 19:05:40 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,76
+Mon Sep 02 19:05:42 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,79
+Mon Sep 02 19:05:49 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,82
+Mon Sep 02 19:06:57 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,83
+Mon Sep 02 19:10:27 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,86
+Timeout time : 19/09/02 19:12
+Current failed test : org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest::testOutOfBounds_purify_4 | 19/09/02 19:12
+Mon Sep 02 19:13:17 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,41
+Mon Sep 02 19:14:50 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,42
+Mon Sep 02 19:14:50 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,44
+Mon Sep 02 19:18:12 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,46
+Mon Sep 02 19:18:45 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,47
+Mon Sep 02 19:18:45 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,82
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:23
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:23
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:24
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 19:24
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 19:25
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 19:25
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:25
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 19:26
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 19:26
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 19:27
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 19:28
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 19:28
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 19:28
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+
+Time : 19/09/02 19:29
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+
+Time : 19/09/02 19:29
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+
+Time : 19/09/02 19:29
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='-'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:30
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='\''){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:31
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)==';'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:32
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&index==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:34
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input==null||input==null&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:34
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='f'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+
+Time : 19/09/02 19:35
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:36
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:36
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:37
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 19:37
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:38
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:38
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:38
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 19:39
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:39
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:39
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 19:40
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:41
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<(input.length()-1)&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:41
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+end-start;
+}
+return 0;
+
+Time : 19/09/02 19:42
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 1+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:42
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='\\'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+1;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return end+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:42
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)=='-'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:43
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&input.charAt(index+1)==';'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:44
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:45
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&seqEnd==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:45
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='&'&&index<seqEnd-1&&index==0){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:46
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(seqEnd==0&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:47
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input==null||input==null&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:47
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(input.charAt(index)=='f'&&index<seqEnd-1&&input.charAt(index+1)=='#'){
+int start=index+2;
+boolean isHex=false;
+char firstChar=input.charAt(start);
+if(firstChar=='x'||firstChar=='X'){
+start++;
+isHex=true;
+}
+int end=start;
+while(input.charAt(end)!=';'){
+end++;
+}
+int entityValue;
+try{
+if(isHex){
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),16);
+}else {
+entityValue=Integer.parseInt(input.subSequence(start,end).toString(),10);
+}
+}catch (NumberFormatException nfe) {
+  System.err.println("FAIL: " + input.subSequence(start,end) + "["+ start+ "]["+ end+ "]");
+  return 0;
+}
+
+if(entityValue>0xffff){
+char[] chrs=Character.toChars(entityValue);
+out.write(chrs[0]);
+out.write(chrs[1]);
+}else {
+out.write(entityValue);
+}
+return 2+(end-start);
+}
+return 0;
+
+Time : 19/09/02 19:48
+----------------------------------------
+Mon Sep 02 19:48:41 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,38
+Mon Sep 02 19:48:46 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,40
+Mon Sep 02 19:48:47 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,89
+Mon Sep 02 20:09:28 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,54
+Mon Sep 02 20:09:30 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,58
+Mon Sep 02 20:09:59 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,59
+Mon Sep 02 20:09:59 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,45
+Mon Sep 02 20:10:00 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,52
+Mon Sep 02 20:13:33 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,54
+Mon Sep 02 20:13:34 EDT 2019 org.apache.commons.lang3.text.translate.NumericEntityUnescaper,56
+Mon Sep 02 20:13:34 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,76
+Mon Sep 02 20:13:36 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,79
+Mon Sep 02 20:13:44 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,82
+Mon Sep 02 20:14:50 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,83
+Mon Sep 02 20:18:13 EDT 2019 org.apache.commons.lang3.text.translate.CharSequenceTranslator,86
+Timeout time : 19/09/02 20:28

@@ -1,0 +1,64 @@
+=================================================
+Project : math_80	start : 19/09/02 13:43
+Current failed test : org.apache.commons.math.linear.EigenDecompositionImplTest::testMathpbx02 | 19/09/02 13:43
+Mon Sep 02 13:44:11 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,871
+Mon Sep 02 13:50:00 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,872
+Mon Sep 02 13:50:01 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,944
+Mon Sep 02 14:03:37 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,945
+Mon Sep 02 14:03:38 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,957
+Mon Sep 02 14:16:25 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,958
+Mon Sep 02 14:16:26 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,959
+Mon Sep 02 14:32:38 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,960
+Mon Sep 02 14:32:39 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,1055
+Mon Sep 02 14:32:54 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,1056
+Mon Sep 02 14:32:55 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,1059
+Mon Sep 02 14:32:55 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,1062
+Mon Sep 02 14:32:56 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,1063
+Mon Sep 02 14:32:57 EDT 2019 org.apache.commons.math.linear.EigenDecompositionImpl,1135
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+for(int k=0;k<0;k+=step){
+ final double tmp=work[i+k];
+work[i+k]=work[j-k];
+work[j-k]=tmp;
+}
+
+Time : 19/09/02 14:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 1.507538440350735 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_80_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java=>0,0]
+for(int k=n;k>0;--k){
+value+=1.0/Math.pow(k,m);
+}
+
+Time : 19/09/02 14:34
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_80_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java=>1137,1141]
+for(int k=0;k<4;k+=step){
+ final double tmp=work[i+k];
+work[i+k]=work[j-k];
+work[j-k]=tmp;
+}
+
+Time : 19/09/02 14:34
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_80_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java=>1137,1141]
+for(int k=0;k<0;k+=step){
+ final double tmp=work[i+k];
+work[i+k]=work[j-k];
+work[j-k]=tmp;
+}
+
+Time : 19/09/02 14:34
+----------------------------------------
+Success time : 19/09/02 14:34

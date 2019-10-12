@@ -1,0 +1,92 @@
+=================================================
+Project : lang_45	start : 19/09/02 15:24
+Current failed test : org.apache.commons.lang.WordUtilsTest::testAbbreviate | 19/09/02 15:25
+Mon Sep 02 15:26:05 EDT 2019 org.apache.commons.lang.StringUtils,851
+Mon Sep 02 15:30:53 EDT 2019 org.apache.commons.lang.StringUtils,855
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(startPos==-1||startPos>str.length()){
+return str.length();
+}
+
+Time : 19/09/02 15:31
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(searchStr!=null&&startPos>=str.length()){
+return str.length();
+}
+
+Time : 19/09/02 15:35
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(startPos!=-1&&startPos>=str.length()){
+return str.length();
+}
+
+Time : 19/09/02 15:36
+----------------------------------------
+Mon Sep 02 15:39:07 EDT 2019 org.apache.commons.lang.StringUtils,858
+Mon Sep 02 15:53:48 EDT 2019 org.apache.commons.lang.WordUtils,607
+Mon Sep 02 15:56:56 EDT 2019 org.apache.commons.lang.WordUtils,608
+Mon Sep 02 15:56:56 EDT 2019 org.apache.commons.lang.WordUtils,610
+Mon Sep 02 16:01:04 EDT 2019 org.apache.commons.lang.WordUtils,611
+Mon Sep 02 16:01:06 EDT 2019 org.apache.commons.lang.WordUtils,618
+Mon Sep 02 16:10:34 EDT 2019 org.apache.commons.lang.WordUtils,619
+Mon Sep 02 16:10:35 EDT 2019 org.apache.commons.lang.WordUtils,622
+Mon Sep 02 16:10:42 EDT 2019 org.apache.commons.lang.WordUtils,623
+Mon Sep 02 16:10:43 EDT 2019 org.apache.commons.lang.WordUtils,626
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if((lower+(upper-3))<lower){
+upper=lower;
+}
+StringBuffer result=new StringBuffer();
+int index=StringUtils.indexOf(str," ",lower);
+
+Time : 19/09/02 16:17
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 0.9492690342163126 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_45_buggy/src/java/org/apache/commons/lang/WordUtils.java=>0,0]
+if((offset+(maxWidth-3))<str.length()){
+return "..."+abbreviate(str.substring(offset),maxWidth-3);
+}
+
+Time : 19/09/02 16:18
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_45_buggy/src/java/org/apache/commons/lang/WordUtils.java=>622,627]
+if(upper<lower){
+upper=lower;
+}
+StringBuffer result=new StringBuffer();
+int index=StringUtils.indexOf(str," ",lower);
+
+Time : 19/09/02 16:18
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_45_buggy/src/java/org/apache/commons/lang/WordUtils.java=>622,627]
+if((lower+(upper-3))<lower){
+upper=lower;
+}
+StringBuffer result=new StringBuffer();
+int index=StringUtils.indexOf(str," ",lower);
+
+Time : 19/09/02 16:18
+----------------------------------------
+Success time : 19/09/02 16:18

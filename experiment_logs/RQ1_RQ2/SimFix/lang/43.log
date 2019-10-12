@@ -1,0 +1,61 @@
+=================================================
+Project : lang_43	start : 19/09/02 15:25
+Current failed test : org.apache.commons.lang.text.ExtendedMessageFormatTest::testEscapedQuote_LANG_477 | 19/09/02 15:26
+Mon Sep 02 15:31:35 EDT 2019 org.apache.commons.lang.text.ExtendedMessageFormat,158
+Mon Sep 02 15:32:04 EDT 2019 org.apache.commons.lang.text.ExtendedMessageFormat,159
+Mon Sep 02 15:32:33 EDT 2019 org.apache.commons.lang.text.ExtendedMessageFormat,419
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+int start=pos.getIndex();
+char[] c=pattern.toCharArray();
+if(escapingOn&&c[start]==QUOTE){
+next(pos);
+return appendTo==null?null:appendTo.append(QUOTE);
+}
+
+Time : 19/09/02 15:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 2.0020093882692773 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java=>0,0]
+swtich (c[pos.getIndex()]){
+case QUOTE :
+next(pos);
+return appendTo==null?null:appendTo.append(c,lastHold,pos.getIndex()-lastHold);
+
+default :
+next(pos);
+
+}
+
+Time : 19/09/02 15:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java=>419,423]
+int start=pos.getIndex();
+char[] c=pattern.toCharArray();
+if(escapingOn&&c[start]==QUOTE){
+return appendTo==null?null:appendTo.append(QUOTE);
+}
+
+Time : 19/09/02 15:33
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/lang/lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java=>419,423]
+int start=pos.getIndex();
+char[] c=pattern.toCharArray();
+if(escapingOn&&c[start]==QUOTE){
+next(pos);
+return appendTo==null?null:appendTo.append(QUOTE);
+}
+
+Time : 19/09/02 15:33
+----------------------------------------
+Success time : 19/09/02 15:33

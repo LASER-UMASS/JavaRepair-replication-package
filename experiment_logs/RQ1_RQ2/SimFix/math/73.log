@@ -1,0 +1,87 @@
+=================================================
+Project : math_73	start : 19/09/02 13:43
+Current failed test : org.apache.commons.math.analysis.solvers.BrentSolverTest::testBadEndpoints | 19/09/02 13:43
+Mon Sep 02 13:44:12 EDT 2019 org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,209
+Mon Sep 02 13:52:09 EDT 2019 org.apache.commons.math.analysis.solvers.BrentSolver,138
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+verifySequence(min,initial,yMin);
+if(yInitial*yMax<0){
+return solve(f,initial,yInitial,max,yMax,initial,yInitial);
+}
+return solve(f,min,yMin,max,yMax,initial,yInitial);
+
+Time : 19/09/02 13:53
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+verifyBracketing(min,yMin,f);
+if(yInitial*yMax<0){
+return solve(f,initial,yInitial,max,yMax,initial,yInitial);
+}
+return solve(f,min,yMin,max,yMax,initial,yInitial);
+
+Time : 19/09/02 13:53
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+verifyInterval(min,yMin);
+if(yInitial*yMax<0){
+return solve(f,initial,yInitial,max,yMax,initial,yInitial);
+}
+return solve(f,min,yMin,max,yMax,initial,yInitial);
+
+Time : 19/09/02 13:54
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Pass Single Test : [=>0,0]
+if(yInitial*yMax<0){
+return solve(f,initial,yInitial,max,yMax,initial,yInitial);
+}
+return solve(f,min,initial);
+
+Time : 19/09/02 13:55
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Similar code block : 0.9714098402677674 : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java=>0,0]
+if(isBracketing(min,initial,f)){
+return solve(f,min,initial);
+}else {
+return solve(f,initial,max);
+}
+
+Time : 19/09/02 13:55
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Original source code : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java=>132,138]
+if(yInitial*yMax<0){
+return solve(f,initial,yInitial,max,yMax,initial,yInitial);
+}
+return solve(f,min,yMin,max,yMax,initial,yInitial);
+
+Time : 19/09/02 13:55
+----------------------------------------
+
+----------------------------------------
+----------------------------------------
+Find a patch : [/home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ1/math/math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java=>132,138]
+if(yInitial*yMax<0){
+return solve(f,initial,yInitial,max,yMax,initial,yInitial);
+}
+return solve(f,min,initial);
+
+Time : 19/09/02 13:55
+----------------------------------------
+Success time : 19/09/02 13:55
