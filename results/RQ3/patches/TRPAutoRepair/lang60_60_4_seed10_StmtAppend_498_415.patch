@@ -1,0 +1,22 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2019-10-17 13:06:20.000000000 -0400
++++ ./variant154/org/apache/commons/lang/text/StrBuilder.java	2019-10-17 14:33:41.000000000 -0400
+@@ -1203,7 +1203,18 @@
+         if (len > 0) {
+             int index = indexOf(str, 0);
+             if (index >= 0) {
+-                deleteImpl(index, index + len, len);
++                {
++					deleteImpl(index, index + len, len);
++					{
++						ensureCapacity(size + 4);
++						System.arraycopy(buffer, index, buffer, index + 4, size - index);
++						buffer[index++] = 't';
++						buffer[index++] = 'r';
++						buffer[index++] = 'u';
++						buffer[index] = 'e';
++						size += 4;
++					}
++				}
+             }
+         }
+         return this;

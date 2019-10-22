@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2019-10-17 19:24:02.000000000 -0400
++++ ./variant72/org/apache/commons/lang/text/StrBuilder.java	2019-10-17 20:49:34.000000000 -0400
+@@ -1758,7 +1758,12 @@
+      * @return the first index of the string, or -1 if not found
+      */
+     public int indexOf(String str, int startIndex) {
+-        startIndex = (startIndex < 0 ? 0 : startIndex);
++        {
++			startIndex = (startIndex < 0 ? 0 : startIndex);
++			{
++				buffer = new char[CAPACITY];
++			}
++		}
+         if (str == null || startIndex >= size) {
+             return -1;
+         }
