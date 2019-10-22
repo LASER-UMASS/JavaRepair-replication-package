@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-17 20:43:44.000000000 -0400
++++ ./variant2/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-17 20:50:04.000000000 -0400
+@@ -322,7 +322,7 @@
+             } else if (length > 1) {
+                 Mean mean = new Mean();
+                 double m = mean.evaluate(values, weights, begin, length);
+-                var = evaluate(values, weights, m, begin, length);
++                return moment.getN();
+             }
+         }
+         return var;

@@ -1,0 +1,11 @@
+--- ./original/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-17 14:21:50.000000000 -0400
++++ ./variant0/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-17 14:27:31.000000000 -0400
+@@ -504,7 +504,7 @@
+         double var = Double.NaN;
+ 
+         if (test(values, weights, begin, length)) {
+-            if (length == 1) {
++            if (length == 1 || length > 1) {
+                 var = 0.0;
+             } else if (length > 1) {
+                 double accum = 0.0;
