@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-29 23:20:02.000000000 -0400
++++ ./variant7/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-29 23:38:32.000000000 -0400
+@@ -522,7 +522,9 @@
+                 }
+ 
+                 if (isBiasCorrected) {
+-                    var = (accum - (accum2 * accum2 / sumWts)) / (sumWts - 1.0);
++                    if (incMoment) {
++						moment.clear();
++					}
+                 } else {
+                     var = (accum - (accum2 * accum2 / sumWts)) / sumWts;
+                 }

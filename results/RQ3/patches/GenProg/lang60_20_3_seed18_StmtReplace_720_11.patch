@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2019-10-29 23:09:52.000000000 -0400
++++ ./variant179/org/apache/commons/lang/text/StrBuilder.java	2019-10-30 07:55:34.000000000 -0400
+@@ -1763,9 +1763,9 @@
+             return -1;
+         }
+         int strLen = str.length();
+-        if (strLen == 1) {
+-            return indexOf(str.charAt(0), startIndex);
+-        }
++        {
++			buffer = new char[CAPACITY];
++		}
+         if (strLen == 0) {
+             return startIndex;
+         }

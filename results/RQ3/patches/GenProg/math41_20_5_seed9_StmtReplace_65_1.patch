@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-29 23:18:27.000000000 -0400
++++ ./variant1/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-29 23:21:21.000000000 -0400
+@@ -319,11 +319,8 @@
+             clear();
+             if (length == 1) {
+                 var = 0.0;
+-            } else if (length > 1) {
+-                Mean mean = new Mean();
+-                double m = mean.evaluate(values, weights, begin, length);
+-                var = evaluate(values, weights, m, begin, length);
+-            }
++            } else if (length > 1)
++				moment = new SecondMoment();
+         }
+         return var;
+     }

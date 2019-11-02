@@ -1,0 +1,20 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2019-10-29 23:09:52.000000000 -0400
++++ ./variant123/org/apache/commons/lang/text/StrBuilder.java	2019-10-30 00:36:43.000000000 -0400
+@@ -1777,10 +1777,13 @@
+         outer:
+         for (int i = startIndex; i < len; i++) {
+             for (int j = 0; j < strLen; j++) {
+-                if (str.charAt(j) != thisBuf[i + j]) {
+-                    continue outer;
+-                }
+-            }
++				{
++					if (str.charAt(j) != thisBuf[i + j]) {
++						continue outer;
++					}
++				}
++				append(SystemUtils.LINE_SEPARATOR);
++			}
+             return i;
+         }
+         return -1;

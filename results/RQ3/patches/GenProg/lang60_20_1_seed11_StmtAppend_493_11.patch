@@ -1,0 +1,26 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2019-10-29 23:09:14.000000000 -0400
++++ ./variant166/org/apache/commons/lang/text/StrBuilder.java	2019-10-30 03:15:02.000000000 -0400
+@@ -1200,12 +1200,17 @@
+      */
+     public StrBuilder deleteFirst(String str) {
+         int len = (str == null ? 0 : str.length());
+-        if (len > 0) {
+-            int index = indexOf(str, 0);
+-            if (index >= 0) {
+-                deleteImpl(index, index + len, len);
+-            }
+-        }
++        {
++			if (len > 0) {
++				int index = indexOf(str, 0);
++				if (index >= 0) {
++					deleteImpl(index, index + len, len);
++				}
++			}
++			{
++				buffer = new char[CAPACITY];
++			}
++		}
+         return this;
+     }
+ 
