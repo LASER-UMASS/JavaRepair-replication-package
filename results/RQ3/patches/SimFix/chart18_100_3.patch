@@ -1,0 +1,19 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ2_100_3/chart/chart_18_buggy/source/org/jfree/data/DefaultKeyedValues.java	2019-10-28 10:20:07.000000000 -0400
++++ patch_RQ3_100_3/chart/18/0/1_DefaultKeyedValues.java	2019-10-28 10:29:32.000000000 -0400
+@@ -315,9 +315,16 @@
+     public void removeValue(int index) {
+         this.keys.remove(index);
+         this.values.remove(index);
++// start of generated patch
++if(index<=this.keys.size()){
++rebuildIndex();
++}
++// end of generated patch
++/* start of original code
+         if (index < this.keys.size()) {
+         rebuildIndex();
+         }
++ end of original code*/
+     }
+ 
+     /**

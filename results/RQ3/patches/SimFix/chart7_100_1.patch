@@ -1,0 +1,30 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ2_100_1/chart/chart_7_buggy/source/org/jfree/data/time/TimePeriodValues.java	2019-10-25 17:29:31.000000000 -0400
++++ patch_RQ3_100_1/chart/7/0/1_TimePeriodValues.java	2019-10-25 18:55:46.000000000 -0400
+@@ -296,6 +296,19 @@
+             this.minMiddleIndex = index;
+         }
+         
++// start of generated patch
++if(this.maxMiddleIndex>=0){
++long s=getDataItem(this.maxMiddleIndex).getPeriod().getStart().getTime();
++long e=getDataItem(this.maxMiddleIndex).getPeriod().getEnd().getTime();
++long maxMiddle=s+(e-s)/2;
++if(middle>maxMiddle){
++this.maxMiddleIndex=index;
++}
++}else {
++this.maxMiddleIndex=index;
++}
++// end of generated patch
++/* start of original code
+         if (this.maxMiddleIndex >= 0) {
+             long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
+                 .getTime();
+@@ -309,6 +322,7 @@
+         else {
+             this.maxMiddleIndex = index;
+         }
++ end of original code*/
+         
+         if (this.minEndIndex >= 0) {
+             long minEnd = getDataItem(this.minEndIndex).getPeriod().getEnd()
