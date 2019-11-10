@@ -1,0 +1,23 @@
+--- src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2019-10-19 20:45:16.000000000 -0400
++++ math/85/0/1_UnivariateRealSolverUtils.java	2019-10-19 21:39:27.000000000 -0400
+@@ -195,6 +195,12 @@
+         } while ((fa * fb > 0.0) && (numIterations < maximumIterations) && 
+                 ((a > lowerBound) || (b < upperBound)));
+    
++// start of generated patch
++if(fa*upperBound>=0.0){
++throw new ConvergenceException("number of iterations={0}, maximum iterations={1}, "+"initial={2}, lower bound={3}, upper bound={4}, final a value={5}, ",numIterations,maximumIterations,initial,lowerBound,upperBound,a,b,fa,fb);
++}
++// end of generated patch
++/* start of original code
+         if (fa * fb >= 0.0 ) {
+             throw new ConvergenceException(
+                       "number of iterations={0}, maximum iterations={1}, " +
+@@ -203,6 +209,7 @@
+                       numIterations, maximumIterations, initial,
+                       lowerBound, upperBound, a, b, fa, fb);
+         }
++ end of original code*/
+         
+         return new double[]{a, b};
+     }

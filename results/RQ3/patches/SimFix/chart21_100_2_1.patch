@@ -1,0 +1,23 @@
+--- source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java	2019-10-27 17:44:51.000000000 -0400
++++ chart/21/1/1_DefaultBoxAndWhiskerCategoryDataset.java	2019-10-27 18:00:51.000000000 -0400
+@@ -169,11 +169,20 @@
+                 this.maximumRangeValueRow = r;
+                 this.maximumRangeValueColumn = c;
+             }
++// start of generated patch
++if(Double.isNaN(this.maximumRangeValue)||maxval>this.maximumRangeValue){
++this.maximumRangeValue=maxval;
++this.maximumRangeValueRow=r;
++this.maximumRangeValueColumn=c;
++}
++// end of generated patch
++/* start of original code
+             else if (maxval > this.maximumRangeValue) {
+                 this.maximumRangeValue = maxval;
+                 this.maximumRangeValueRow = r;
+                 this.maximumRangeValueColumn = c;
+             }
++ end of original code*/
+         
+             if (Double.isNaN(this.minimumRangeValue)) {
+                 this.minimumRangeValue = minval;

@@ -1,0 +1,24 @@
+--- java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-10-17 18:41:53.000000000 -0400
++++ math/81/0/1_EigenDecompositionImpl.java	2019-10-17 23:36:53.000000000 -0400
+@@ -1505,11 +1505,21 @@
+                             break;
+                         }
+                         b1 = b2;
++// start of generated patch
++b2=work[np-2];
+                         if (work[i4]  >  work[i4 - 2]) {
+                             return;
+                         }
+                         b2 = b2 * (work[i4] / work[i4 - 2]);
+                         a2 = a2 + b2;
++// end of generated patch
++/* start of original code
++                        if (work[i4]  >  work[i4 - 2]) {
++                            return;
++                        }
++                        b2 = b2 * (work[i4] / work[i4 - 2]);
++                        a2 = a2 + b2;
++ end of original code*/
+                         if (100 * Math.max(b2, b1) < a2 || cnst1 < a2) {
+                             break;
+                         }

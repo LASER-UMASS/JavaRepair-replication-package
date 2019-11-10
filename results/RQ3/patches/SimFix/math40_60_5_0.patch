@@ -1,0 +1,32 @@
+--- java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2019-10-22 08:28:38.000000000 -0400
++++ math/40/0/1_BracketingNthOrderBrentSolver.java	2019-10-22 12:17:04.000000000 -0400
+@@ -245,6 +245,22 @@
+             double nextX;
+             int start = 0;
+             int end   = nbPoints;
++// start of generated patch
++do {
++signChangeIndex=2;
++System.arraycopy(x,start,tmpX,start,end-start);
++nextX=guessX(targetY,tmpX,y,start,end);
++if(!((nextX>xA)&&(nextX<xB))){
++if(signChangeIndex-start>=end-signChangeIndex){
++++ +}else {
++--end;
++}
++nextX=Double.NaN;
++}
++} while(Double.isNaN(nextX)&&(end-start>1));
++// end of generated patch
++/* start of original code
+             do {
+ 
+                 // guess a value for current target, using inverse polynomial interpolation
+@@ -271,6 +287,7 @@
+                 }
+ 
+             } while (Double.isNaN(nextX) && (end - start > 1));
++ end of original code*/
+ 
+             if (Double.isNaN(nextX)) {
+                 // fall back to bisection

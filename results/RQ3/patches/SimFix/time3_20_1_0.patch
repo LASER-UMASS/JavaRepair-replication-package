@@ -1,0 +1,19 @@
+--- java/org/joda/time/chrono/ZonedChronology.java	2019-10-15 16:34:52.000000000 -0400
++++ time/3/0/1_ZonedChronology.java	2019-10-15 16:44:13.000000000 -0400
+@@ -312,9 +312,16 @@
+         }
+ 
+         public long add(long instant, int value) {
++// start of generated patch
++long offset=getOffsetToAdd(instant);
++instant=iField.add(instant+offset,value);
++return instant-(iTimeField?offset:getOffsetFromLocalToSubtract(instant));
++// end of generated patch
++/* start of original code
+             int offset = getOffsetToAdd(instant);
+             instant = iField.add(instant + offset, value);
+             return instant - (iTimeField ? offset : getOffsetFromLocalToSubtract(instant));
++ end of original code*/
+         }
+ 
+         public long add(long instant, long value) {

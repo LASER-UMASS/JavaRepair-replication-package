@@ -1,0 +1,22 @@
+--- java/org/joda/time/Period.java	2019-10-28 10:16:42.000000000 -0400
++++ time/13/0/1_Period.java	2019-10-28 10:32:11.000000000 -0400
+@@ -964,9 +964,19 @@
+      * @throws UnsupportedOperationException if the field is not supported
+      */
+     public Period withMillis(int millis) {
++// start of generated patch
++if(millis==0){
++return this;
++}
++int[] values=getValues();
++getPeriodType().setIndexedField(this,PeriodType.MILLI_INDEX,values,millis);
++return new Period(values,getPeriodType());
++// end of generated patch
++/* start of original code
+         int[] values = getValues();  // cloned
+         getPeriodType().setIndexedField(this, PeriodType.MILLI_INDEX, values, millis);
+         return new Period(values, getPeriodType());
++ end of original code*/
+     }
+ 
+     //-----------------------------------------------------------------------
