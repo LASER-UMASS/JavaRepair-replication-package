@@ -1,0 +1,31 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ3_chart22_6_0/chart/chart_22_buggy/source/org/jfree/data/KeyedObjects2D.java	2019-11-08 15:22:01.000000000 -0500
++++ patch_RQ4_5_0/chart/22/9/1_KeyedObjects2D.java	2019-11-08 17:17:11.000000000 -0500
+@@ -367,6 +367,20 @@
+      * @see #removeRow(Comparable)
+      */
+     public void removeColumn(Comparable columnKey) {
++// start of generated patch
++int index=getColumnIndex(columnKey);
++if(index<0){
++throw new UnknownKeyException("Column key ("+columnKey);
++}
++Iterator iterator=this.rows.iterator();
++while(iterator.hasNext()){
++KeyedObjects rowData=(KeyedObjects)iterator.next();
++this.rows.remove(index);
++rowData.removeValue(columnKey);
++}
++this.columnKeys.remove(columnKey);
++// end of generated patch
++/* start of original code
+         int index = getColumnIndex(columnKey);
+         if (index < 0) {
+             throw new UnknownKeyException("Column key (" + columnKey 
+@@ -378,6 +392,7 @@
+                 rowData.removeValue(columnKey);
+         }
+         this.columnKeys.remove(columnKey);
++ end of original code*/
+     }
+ 
+     /**
