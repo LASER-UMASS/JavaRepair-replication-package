@@ -1,0 +1,22 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ3_chart22_6_0/chart/chart_22_buggy/source/org/jfree/data/KeyedObjects2D.java	2019-11-08 15:22:01.000000000 -0500
++++ patch_RQ4_5_0/chart/22/5/1_KeyedObjects2D.java	2019-11-08 17:09:31.000000000 -0500
+@@ -373,10 +373,19 @@
+                     + ") not recognised.");
+         }
+         Iterator iterator = this.rows.iterator();
++// start of generated patch
++iterator.next();
+         while (iterator.hasNext()) {
+             KeyedObjects rowData = (KeyedObjects) iterator.next();
+                 rowData.removeValue(columnKey);
+         }
++// end of generated patch
++/* start of original code
++        while (iterator.hasNext()) {
++            KeyedObjects rowData = (KeyedObjects) iterator.next();
++                rowData.removeValue(columnKey);
++        }
++ end of original code*/
+         this.columnKeys.remove(columnKey);
+     }
+ 

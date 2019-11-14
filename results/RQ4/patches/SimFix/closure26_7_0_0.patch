@@ -1,0 +1,17 @@
+--- /home/mmotwani/mywork1dir/Defects4Java7/defects4j/SIMFIX_RQ3_closure26_7_0/closure/closure_26_buggy/src/com/google/javascript/jscomp/ProcessCommonJSModules.java	2019-11-08 15:20:56.000000000 -0500
++++ patch_RQ4_5_0/closure/26/0/1_ProcessCommonJSModules.java	2019-11-08 15:32:06.000000000 -0500
+@@ -62,8 +62,14 @@
+ 
+   @Override
+   public void process(Node externs, Node root) {
++// start of generated patch
++Preconditions.checkNotNull(root);
++NodeTraversal.traverse(compiler,root,new ProcessCommonJsModulesCallback());
++// end of generated patch
++/* start of original code
+     NodeTraversal
+         .traverse(compiler, root, new ProcessCommonJsModulesCallback());
++ end of original code*/
+   }
+ 
+   String guessCJSModuleName(String filename) {
