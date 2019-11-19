@@ -57,5 +57,22 @@ rm par_rq3_es6_consolidated.csv
 rm par_rq3_es3_es6_consolidated.csv
 rm par_rq3_es3_es6_consolidated_sorted.csv
 
+python addCoverage.py $DIRPATH/sim_rq3_es3_quality.csv SampledCoverage.csv
+python addCoverage.py $DIRPATH/sim_rq3_es6_quality.csv SampledCoverage.csv
+python consolidate.py sim_rq3_es3_quality_coverage.csv 4 > sim_rq3_es3_consolidated.csv
+python consolidate.py sim_rq3_es6_quality_coverage.csv 4 > sim_rq3_es6_consolidated.csv
+cat sim_rq3_es3_consolidated.csv > sim_rq3_es3_es6_consolidated.csv
+cat sim_rq3_es6_consolidated.csv >> sim_rq3_es3_es6_consolidated.csv
+sort sim_rq3_es3_es6_consolidated.csv > sim_rq3_es3_es6_consolidated_sorted.csv
+python combineresults.py sim_rq3_es3_es6_consolidated_sorted.csv
+mv results.csv sim_rq3_overall.csv
+rm sim_rq3_es3_quality_coverage.csv
+rm sim_rq3_es6_quality_coverage.csv
+rm sim_rq3_es3_consolidated.csv
+rm sim_rq3_es6_consolidated.csv
+rm sim_rq3_es3_es6_consolidated.csv
+rm sim_rq3_es3_es6_consolidated_sorted.csv
+
+
 Rscript freq-distribution.R
 Rscript computeMLR.R
