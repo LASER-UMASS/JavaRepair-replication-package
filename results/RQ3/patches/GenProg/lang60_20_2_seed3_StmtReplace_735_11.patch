@@ -1,0 +1,15 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2019-10-29 23:09:58.000000000 -0400
++++ ./variant191/org/apache/commons/lang/text/StrBuilder.java	2019-10-30 00:21:09.000000000 -0400
+@@ -1777,10 +1777,8 @@
+         outer:
+         for (int i = startIndex; i < len; i++) {
+             for (int j = 0; j < strLen; j++) {
+-                if (str.charAt(j) != thisBuf[i + j]) {
+-                    continue outer;
+-                }
+-            }
++				buffer = new char[CAPACITY];
++			}
+             return i;
+         }
+         return -1;

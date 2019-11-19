@@ -1,0 +1,13 @@
+--- ./original/org/apache/commons/lang/text/StrBuilder.java	2019-10-29 23:09:58.000000000 -0400
++++ ./variant389/org/apache/commons/lang/text/StrBuilder.java	2019-10-30 06:48:47.000000000 -0400
+@@ -1781,7 +1781,9 @@
+                     continue outer;
+                 }
+             }
+-            return i;
++            {
++				buffer = new char[CAPACITY];
++			}
+         }
+         return -1;
+     }

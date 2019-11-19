@@ -8,14 +8,16 @@ evaluatedpatches = []
 
 defect = {}
 filepath = sys.argv[1]		# file generated using Mau's script to evaluate quality on each sub suite
-technique = int(sys.argv[2]) 	# input 1 GenProg, 2 PAR, 3 TRPAutoRepair
+technique = int(sys.argv[2]) 	# input 1 GenProg, 2 PAR, 3 TrpAutoRepair, 4 SimFix
 techname = ""
 if technique == 1:
 	techname = "GenProg"
 elif technique == 2:
 	techname = "PAR"
 elif technique == 3:
-	techname = "TRPAutoRepair"
+	techname = "TrpAutoRepair"
+elif technique == 4:
+	techname = "SimFix"
 
 f = open(filepath)
 totaltests = 0.0
@@ -35,7 +37,11 @@ for line in f:
 		continue
 	project = record[0]
 	bug = record[1]
-	datapoint = record[2].split("_seed")[0]
+	datapoint = ""
+	if "seed" in line:
+		datapoint = record[2].split("_seed")[0]
+	else:
+                datapoint = '_'.join(record[2].split(".")[0].split("_")[:-1])
 	patch = record[2]
 	TSSeed = int(record[3].strip())
 	NumberOfTests = float(record[4].strip())

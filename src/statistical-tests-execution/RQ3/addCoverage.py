@@ -25,7 +25,12 @@ for line in fr:
 	if "Patch" in line:
 		continue
 	row = line.split(",") # Project,Bug,Patch,TSSeed,NumberOfTests,NumberOfFailingTests
-	defect = row[2].split("_seed")[0]
+	defect = ""
+	if "seed" in line:
+		defect = row[2].split("_seed")[0]
+	else:
+		defect = '_'.join(row[2].split(".")[0].split("_")[:-1])
+	
 	targetcov = defectCoverage[defect][0]
 	realcov = defectCoverage[defect][1]
 	samplesize = defectCoverage[defect][2]

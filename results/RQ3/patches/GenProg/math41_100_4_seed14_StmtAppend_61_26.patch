@@ -1,0 +1,30 @@
+--- ./original/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-29 23:21:40.000000000 -0400
++++ ./variant19/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-29 23:38:43.000000000 -0400
+@@ -317,13 +317,20 @@
+ 
+         if (test(values, weights,begin, length)) {
+             clear();
+-            if (length == 1) {
+-                var = 0.0;
+-            } else if (length > 1) {
+-                Mean mean = new Mean();
+-                double m = mean.evaluate(values, weights, begin, length);
+-                var = evaluate(values, weights, m, begin, length);
+-            }
++            {
++				if (length == 1) {
++					var = 0.0;
++				} else if (length > 1) {
++					Mean mean = new Mean();
++					double m = mean.evaluate(values, weights, begin, length);
++					var = evaluate(values, weights, m, begin, length);
++				}
++				if (isBiasCorrected) {
++					return moment.m2 / (moment.n - 1d);
++				} else {
++					return moment.m2 / (moment.n);
++				}
++			}
+         }
+         return var;
+     }

@@ -1,0 +1,19 @@
+--- java/org/apache/commons/math3/complex/Complex.java	2019-10-16 17:31:27.000000000 -0400
++++ math/5/0/1_Complex.java	2019-10-16 17:35:31.000000000 -0400
+@@ -301,9 +301,16 @@
+             return NaN;
+         }
+ 
++// start of generated patch
++if(real==0.0&&imaginary==0.0){
++return INF;
++}
++// end of generated patch
++/* start of original code
+         if (real == 0.0 && imaginary == 0.0) {
+             return NaN;
+         }
++ end of original code*/
+ 
+         if (isInfinite) {
+             return ZERO;

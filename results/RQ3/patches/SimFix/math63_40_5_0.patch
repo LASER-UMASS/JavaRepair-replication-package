@@ -1,0 +1,15 @@
+--- java/org/apache/commons/math/util/MathUtils.java	2019-10-19 14:21:48.000000000 -0400
++++ math/63/0/1_MathUtils.java	2019-10-19 14:27:49.000000000 -0400
+@@ -414,7 +414,12 @@
+      * @return {@code true} if the values are equal.
+      */
+     public static boolean equals(double x, double y) {
++// start of generated patch
++return equals(x,y,1)||FastMath.abs(y-x)<=SAFE_MIN;
++// end of generated patch
++/* start of original code
+         return (Double.isNaN(x) && Double.isNaN(y)) || x == y;
++ end of original code*/
+     }
+ 
+     /**

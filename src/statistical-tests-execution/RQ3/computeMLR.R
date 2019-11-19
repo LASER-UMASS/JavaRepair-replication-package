@@ -5,24 +5,29 @@
 gp_rq3_all <- read.csv(file="gp_rq3_overall.csv", head=TRUE, sep=",", stringsAsFactors=FALSE)
 trp_rq3_all <- read.csv(file="trp_rq3_overall.csv", head=TRUE, sep=",", stringsAsFactors=FALSE)
 par_rq3_all <- read.csv(file="par_rq3_overall.csv", head=TRUE, sep=",", stringsAsFactors=FALSE)
+sim_rq3_all <- read.csv(file="sim_rq3_overall.csv", head=TRUE, sep=",", stringsAsFactors=FALSE)
 eval_defects <- read.csv(file = "../evaluation-defects.txt")
 
 ## comment following block of code to consider all defects and remove _all from above 3 variables
 evaldefectsgp <- intersect(gp_rq3_all$defect, eval_defects$defect)
 evaldefectspar <- intersect(par_rq3_all$defect, eval_defects$defect)
 evaldefectstrp <- intersect(trp_rq3_all$defect, eval_defects$defect)
+evaldefectssim <- intersect(sim_rq3_all$defect, eval_defects$defect)
 gp_rq3 <- subset(gp_rq3_all, gp_rq3_all$defect%in%evaldefectsgp == TRUE)
 par_rq3 <- subset(par_rq3_all, par_rq3_all$defect%in%evaldefectspar == TRUE)
 trp_rq3 <- subset(trp_rq3_all, trp_rq3_all$defect%in%evaldefectstrp == TRUE)
+sim_rq3 <- subset(sim_rq3_all, sim_rq3_all$defect%in%evaldefectssim == TRUE)
 ###############################################################
 
 gp_rq3_data <- gp_rq3[,c(5,6,11)]
 par_rq3_data <- par_rq3[,c(5,6,11)]
 trp_rq3_data <- trp_rq3[,c(5,6,11)]
+sim_rq3_data <- sim_rq3[,c(5,6,11)]
 
 names(gp_rq3_data) <- c("coverage", "size", "patch quality")
 names(par_rq3_data) <- c("coverage", "size", "patch quality")
 names(trp_rq3_data) <- c("coverage", "size", "patch quality")
+names(sim_rq3_data) <- c("coverage", "size", "patch quality")
 
 gp_cov = scale(gp_rq3_data$coverage, center=TRUE, scale=FALSE)
 gp_size = scale(gp_rq3_data$size, center=TRUE, scale=FALSE)
@@ -42,6 +47,12 @@ trp_new_vars = cbind(trp_cov,trp_size)
 trp_rq3_data = cbind(trp_rq3_data, trp_new_vars)
 names(trp_rq3_data) <- c("coverage", "size", "quality", "coverage_s", "size_s")
 
+sim_cov = scale(sim_rq3_data$coverage, center=TRUE, scale=FALSE)
+sim_size = scale(sim_rq3_data$size, center=TRUE, scale=FALSE)
+sim_new_vars = cbind(sim_cov,sim_size)
+sim_rq3_data = cbind(sim_rq3_data, sim_new_vars)
+names(sim_rq3_data) <- c("coverage", "size", "quality", "coverage_s", "size_s")
+
 gp_mlr = lm(quality ~ coverage_s + size_s, data=gp_rq3_data)
 summary(gp_mlr)
 
@@ -51,3 +62,5 @@ summary(par_mlr)
 trp_mlr = lm(quality ~ coverage_s + size_s, data=trp_rq3_data)
 summary(trp_mlr)
 
+sim_mlr = lm(quality ~ coverage_s + size_s, data=sim_rq3_data)
+summary(sim_mlr)

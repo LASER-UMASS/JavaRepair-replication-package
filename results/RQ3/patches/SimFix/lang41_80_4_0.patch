@@ -1,0 +1,21 @@
+--- java/org/apache/commons/lang/ClassUtils.java	2019-10-24 13:19:07.000000000 -0400
++++ lang/41/0/1_ClassUtils.java	2019-10-24 13:29:57.000000000 -0400
+@@ -166,10 +166,18 @@
+      * @return the class name without the package name or an empty string
+      */
+     public static String getShortClassName(Class<?> cls) {
++// start of generated patch
++if(cls==null){
++return StringUtils.EMPTY;
++}
++return getShortCanonicalName(cls.getName());
++// end of generated patch
++/* start of original code
+         if (cls == null) {
+             return StringUtils.EMPTY;
+         }
+         return getShortClassName(cls.getName());
++ end of original code*/
+     }
+ 
+     /**

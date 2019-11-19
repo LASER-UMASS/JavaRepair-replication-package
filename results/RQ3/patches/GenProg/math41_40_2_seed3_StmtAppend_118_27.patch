@@ -1,0 +1,16 @@
+--- ./original/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-29 23:18:49.000000000 -0400
++++ ./variant2/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-10-29 23:20:46.000000000 -0400
+@@ -518,7 +518,12 @@
+ 
+                 double sumWts = 0;
+                 for (int i = 0; i < weights.length; i++) {
+-                    sumWts += weights[i];
++                    {
++						sumWts += weights[i];
++						{
++							return moment.m2 / (moment.n - 1d);
++						}
++					}
+                 }
+ 
+                 if (isBiasCorrected) {

@@ -45,6 +45,18 @@ rm par_rq2_es6_consolidated.csv
 rm par_rq2_es3_es6_consolidated.csv
 rm par_rq2_es3_es6_consolidated_sorted.csv
 
+python consolidate.py $DIRPATH/sim_rq2_es3_quality.csv > sim_rq2_es3_consolidated.csv 
+python consolidate.py $DIRPATH/sim_rq2_es6_quality.csv > sim_rq2_es6_consolidated.csv 
+cat sim_rq2_es3_consolidated.csv > sim_rq2_es3_es6_consolidated.csv
+cat sim_rq2_es6_consolidated.csv >> sim_rq2_es3_es6_consolidated.csv
+sort sim_rq2_es3_es6_consolidated.csv > sim_rq2_es3_es6_consolidated_sorted.csv
+python combineresults.py sim_rq2_es3_es6_consolidated_sorted.csv
+mv results.csv sim_rq2_overall.csv
+rm sim_rq2_es3_consolidated.csv
+rm sim_rq2_es6_consolidated.csv
+rm sim_rq2_es3_es6_consolidated.csv
+rm sim_rq2_es3_es6_consolidated_sorted.csv
+
 python consolidate-defective.py $DIRPATH/defective_rq2_es3_quality.csv > defective_rq2_es3_consolidated.csv 
 python consolidate-defective.py $DIRPATH/defective_rq2_es6_quality.csv > defective_rq2_es6_consolidated.csv 
 cat defective_rq2_es3_consolidated.csv > defective_rq2_es3_es6_consolidated.csv
@@ -60,10 +72,10 @@ rm defective_rq2_es3_es6_consolidated_sorted.csv
 Rscript quality-stats.R
 Rscript compare-quality-with-defective.R
 
-
-rm gp_rq2_overall.csv
-rm par_rq2_overall.csv
-rm trp_rq2_overall.csv
-rm defective_rq2_overall.csv
+#rm gp_rq2_overall.csv
+#rm par_rq2_overall.csv
+#rm trp_rq2_overall.csv
+#rm sim_rq2_overall.csv
+#rm defective_rq2_overall.csv
 
 

@@ -1,0 +1,21 @@
+--- java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2019-10-27 16:16:43.000000000 -0400
++++ math/72/2/1_BrentSolver.java	2019-10-27 17:50:44.000000000 -0400
+@@ -111,10 +111,18 @@
+ 
+         // return the first endpoint if it is good enough
+         double yMin = f.value(min);
++// start of generated patch
++if(Math.abs(yMin)<=functionValueAccuracy){
++setResult(min,0);
++return result;
++}
++// end of generated patch
++/* start of original code
+         if (Math.abs(yMin) <= functionValueAccuracy) {
+             setResult(yMin, 0);
+             return result;
+         }
++ end of original code*/
+ 
+         // reduce interval if min and initial bracket the root
+         if (yInitial * yMin < 0) {

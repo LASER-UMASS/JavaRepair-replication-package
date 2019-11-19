@@ -1,0 +1,19 @@
+--- java/org/joda/time/chrono/ZonedChronology.java	2019-10-18 18:54:40.000000000 -0400
++++ time/3/0/1_ZonedChronology.java	2019-10-18 19:01:58.000000000 -0400
+@@ -351,9 +351,16 @@
+             int offset = this.iZone.getOffsetFromLocal(instant);
+             long diff = instant - offset;
+             // If there is a sign change, but the two values have different signs...
++// start of generated patch
++if((instant^diff)<0&&(instant^offset)<0){
++throw new ArithmeticException("Adding time zone offset caused overflow");
++}
++// end of generated patch
++/* start of original code
+             if ((instant ^ diff) < 0 && (instant ^ offset) < 0) {
+                 throw new ArithmeticException("Subtracting time zone offset caused overflow");
+             }
++ end of original code*/
+             return offset;
+         }
+ 

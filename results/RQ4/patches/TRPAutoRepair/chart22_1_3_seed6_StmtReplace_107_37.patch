@@ -1,0 +1,16 @@
+--- ./original/org/jfree/data/KeyedObjects2D.java	2019-10-29 14:06:58.000000000 -0400
++++ ./variant51/org/jfree/data/KeyedObjects2D.java	2019-10-29 14:23:26.000000000 -0400
+@@ -373,10 +373,9 @@
+                     + ") not recognised.");
+         }
+         Iterator iterator = this.rows.iterator();
+-        while (iterator.hasNext()) {
+-            KeyedObjects rowData = (KeyedObjects) iterator.next();
+-                rowData.removeValue(columnKey);
+-        }
++        if (columnKey == null) {
++			throw new IllegalArgumentException("Null 'columnKey' argument.");
++		}
+         this.columnKeys.remove(columnKey);
+     }
+ 

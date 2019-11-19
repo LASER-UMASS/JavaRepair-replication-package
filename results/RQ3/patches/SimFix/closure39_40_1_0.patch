@@ -1,0 +1,15 @@
+--- src/com/google/javascript/rhino/jstype/RecordTypeBuilder.java	2019-10-17 18:41:34.000000000 -0400
++++ closure/39/0/1_RecordTypeBuilder.java	2019-10-17 19:51:11.000000000 -0400
+@@ -99,7 +99,12 @@
+     }
+ 
+     public JSType getType() {
++// start of generated patch
++return type.getGreatestSubtype(type);
++// end of generated patch
++/* start of original code
+       return type;
++ end of original code*/
+     }
+ 
+     public Node getPropertyNode() {

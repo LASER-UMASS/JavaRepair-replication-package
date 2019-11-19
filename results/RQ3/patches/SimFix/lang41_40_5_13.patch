@@ -1,0 +1,21 @@
+--- java/org/apache/commons/lang/ClassUtils.java	2019-10-19 14:21:52.000000000 -0400
++++ lang/41/13/1_ClassUtils.java	2019-10-19 14:34:31.000000000 -0400
+@@ -226,10 +226,18 @@
+      * @return the package name or an empty string
+      */
+     public static String getPackageName(Class<?> cls) {
++// start of generated patch
++if(cls==null){
++return StringUtils.EMPTY;
++}
++return getPackageCanonicalName(cls.getName());
++// end of generated patch
++/* start of original code
+         if (cls == null) {
+             return StringUtils.EMPTY;
+         }
+         return getPackageName(cls.getName());
++ end of original code*/
+     }
+ 
+     /**

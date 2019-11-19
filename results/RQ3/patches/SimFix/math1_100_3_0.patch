@@ -1,0 +1,31 @@
+--- java/org/apache/commons/math3/exception/util/LocalizedFormats.java	2019-10-28 10:16:32.000000000 -0400
++++ math/1/0/1_LocalizedFormats.java	2019-10-28 10:36:59.000000000 -0400
+@@ -378,6 +378,20 @@
+ 
+     /** {@inheritDoc} */
+     public String getLocalizedString(final Locale locale) {
++// start of generated patch
++try{
++ final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
++ResourceBundle bundle=ResourceBundle.getBundle("assets/"+path,locale);
++if(bundle.getLocale().getLanguage().equals(locale.getLanguage())){
++return bundle.getString(toString());
++}
++}catch (MissingResourceException mre) {
++}
++
++new StringBuffer().append("StatisticalSummaryValues:").append("\n");
++return sourceFormat;
++// end of generated patch
++/* start of original code
+         try {
+             final String path = LocalizedFormats.class.getName().replaceAll("\\.", "/");
+             ResourceBundle bundle =
+@@ -394,6 +408,7 @@
+         // either the locale is not supported or the resource is unknown
+         // don't translate and fall back to using the source format
+         return sourceFormat;
++ end of original code*/
+ 
+     }
+ 
