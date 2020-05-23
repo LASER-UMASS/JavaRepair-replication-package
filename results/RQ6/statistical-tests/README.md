@@ -5,6 +5,6 @@ repair techniques.
 
 `gp_nversion_boxplot.pdf`, `par_nversion_boxplot.pdf`, and `trp_nversion_boxplot.pdf` 
 show the boxplots comparing the quality of the individual patches against the combined ones 
-for the in-common defects patched by GenProg, Par, and TRPAutoRepair respectively.
+for the in-common defects patched by GenProg, Par, and TrpAutoRepair respectively.
 
 **This replicates results described in Figure 9 of the paper.**
