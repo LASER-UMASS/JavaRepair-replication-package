@@ -1,6 +1,11 @@
 ### Artifact Replication Repository for the study on Quality of Automated Program Repair on Real-World Defects 
 
-This repository contains the data and scripts to replicate the results of the paper "Quality of Automated Program Repair on Real-World Defects". It also contains the pre-computed results and experiment logs for easy reference. 
+This repository contains the data and scripts to replicate the results 
+of the paper "Quality of Automated Program Repair on Real-World Defects".
+
+The JaRFly framework implenentation is availabe at [jarfly.cs.umass.edu](http://jarfly.cs.umass.edu)
+
+The repository also contains the pre-computed results and experiment logs for easy reference. 
 
 Please use the following links to access the desired information. 
 
