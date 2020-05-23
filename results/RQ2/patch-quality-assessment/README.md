@@ -10,7 +10,8 @@ File naming convention:
 where \<technique\> can be:
 - gp (GenProg)
 - par (Par)
-- trp (TRPAutoRepair)
+- sim (SimFix)
+- trp (TrpAutoRepair)
 
 OR
 
