@@ -17,7 +17,7 @@ sort gp_rq4_es3_es6_consolidated.csv > gp_rq4_es3_es6_consolidated_sorted.csv
 python combineresults.py gp_rq4_es3_es6_consolidated_sorted.csv
 mv results.txt gp_rq4_overall.csv
 python addFailingTest.py gp_rq4_overall.csv 
-mv triggering_test_results.csv gp_rq4_overall_failingtests.csv 
+mv triggering_test_results.csv gp_rq4_overall.csv 
 rm gp_rq4_es3_consolidated.csv
 rm gp_rq4_es6_consolidated.csv
 rm gp_rq4_es3_es6_consolidated.csv
@@ -31,7 +31,7 @@ sort par_rq4_es3_es6_consolidated.csv > par_rq4_es3_es6_consolidated_sorted.csv
 python combineresults.py par_rq4_es3_es6_consolidated_sorted.csv
 mv results.txt par_rq4_overall.csv
 python addFailingTest.py par_rq4_overall.csv 
-mv triggering_test_results.csv par_rq4_overall_failingtests.csv 
+mv triggering_test_results.csv par_rq4_overall.csv 
 rm par_rq4_es3_consolidated.csv
 rm par_rq4_es6_consolidated.csv
 rm par_rq4_es3_es6_consolidated.csv
@@ -45,7 +45,7 @@ sort trp_rq4_es3_es6_consolidated.csv > trp_rq4_es3_es6_consolidated_sorted.csv
 python combineresults.py trp_rq4_es3_es6_consolidated_sorted.csv
 mv results.txt trp_rq4_overall.csv
 python addFailingTest.py trp_rq4_overall.csv
-mv triggering_test_results.csv trp_rq4_overall_failingtests.csv
+mv triggering_test_results.csv trp_rq4_overall.csv
 rm trp_rq4_es3_consolidated.csv
 rm trp_rq4_es6_consolidated.csv
 rm trp_rq4_es3_es6_consolidated.csv
