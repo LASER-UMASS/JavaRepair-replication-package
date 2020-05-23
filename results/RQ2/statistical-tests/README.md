@@ -1,7 +1,7 @@
-* `gp_rq1_overall.csv` shows the patch quality results (fraction of tests passed in held-out evaluation test suite) of GenProg-produced patches while attempting to repair 357 defects of Defects4J. 
-* `par_rq1_overall.csv` shows the patch quality results of Par-produced patches while attempting to repair 357 defects of Defects4J. 
-* `trp_rq1_overall.csv` shows the patch quality results of TRPAutoRepair-produced patches while attempting to repair 357 defects of Defects4J. 
-* `defective_rq1_overall.csv` shows the patch quality results for the defective version of the program. 
+* `gp_rq2_overall.csv` shows the patch quality results (fraction of tests passed in held-out evaluation test suite) of GenProg-produced patches while attempting to repair 357 defects of Defects4J. 
+* `par_rq2_overall.csv` shows the patch quality results of Par-produced patches while attempting to repair 357 defects of Defects4J. 
+* `trp_rq2_overall.csv` shows the patch quality results of TRPAutoRepair-produced patches while attempting to repair 357 defects of Defects4J. 
+* `defective_rq2_overall.csv` shows the patch quality results for the defective version of the program. 
  	compare-quality-with-defective.log 	
 * `quality-stats-results.log` shows the patch quality statistics for each of the repair techniques and 
 `gp_patchquality_subset.pdf, `par_patchquality_subset.pdf ,`trp_patchquality_subset.pdf show the plots 
