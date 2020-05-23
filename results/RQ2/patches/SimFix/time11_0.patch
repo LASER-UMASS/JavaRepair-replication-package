@@ -1,0 +1,22 @@
+--- java/org/joda/time/tz/DateTimeZoneBuilder.java	2019-09-02 15:30:55.000000000 -0400
++++ ./time/11/0/1_DateTimeZoneBuilder.java	2019-09-02 17:51:47.000000000 -0400
+@@ -368,12 +368,19 @@
+                 }
+                 millis = next.getMillis();
+                 saveMillis = next.getSaveMillis();
++// start of generated patch
++if(transitions.size()==1&&i==ruleSetCount-1){
++tailZone=rs.buildTailZone(id);
++}
++// end of generated patch
++/* start of original code
+                 if (tailZone == null && i == ruleSetCount - 1) {
+                     tailZone = rs.buildTailZone(id);
+                     // If tailZone is not null, don't break out of main loop until
+                     // at least one more transition is calculated. This ensures a
+                     // correct 'seam' to the DSTZone.
+                 }
++ end of original code*/
+             }
+ 
+             millis = rs.getUpperLimit(saveMillis);
