@@ -51,9 +51,9 @@ rm trp_rq4_es6_consolidated.csv
 rm trp_rq4_es3_es6_consolidated.csv
 rm trp_rq4_es3_es6_consolidated_sorted.csv
 
-cat gp_rq4_overall_failingtests.csv > rq4_results.csv
-tail --lines=+2 par_rq4_overall_failingtests.csv >> rq4_results.csv
-tail --lines=+2 trp_rq4_overall_failingtests.csv >> rq4_results.csv
+cat gp_rq4_overall.csv > rq4_results.csv
+tail --lines=+2 par_rq4_overall.csv >> rq4_results.csv
+tail --lines=+2 trp_rq4_overall.csv >> rq4_results.csv
 rm gp_rq4_overall.csv
 rm par_rq4_overall.csv
 rm trp_rq4_overall.csv
