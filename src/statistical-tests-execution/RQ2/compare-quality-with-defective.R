@@ -114,8 +114,6 @@ cat("%defects with improvement = 0:", length(which(sim_improvement==0.0))*100/le
 cat("%defects with improvement < 0:", length(which(sim_improvement<0.0))*100/length(sim_improvement),"\n")
 cat("#patches with improvement < 0:", length(which(sim_improvement<0.0)), "\n")
 cat("#patches with improvement = 0:", length(which(sim_improvement==0.0)), "\n")
-cat("number of defects evaluated:", length(unique(def_sim$defect)), "\n")
-cat("defects evaluated:", unique(def_sim$defect), "\n")
 cat("total #patches:", length(sim_improvement), "\n")
 pdf("sim_quality_improvement_subset.pdf", width=12, height=6)
 dtf <- data.frame(x = sim_quality$defect,y = sim_improvement)
