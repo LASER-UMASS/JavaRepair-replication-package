@@ -1,5 +1,5 @@
 `RQ3-results.log` shows the frequency distribution of the patched produced by each repair technique over the five programs. 
-`gp_coverage_patchcount.pdf`, `par_coverage_patchcount.pdf`, and `trp_coverage_patchcount.pdf` plot these distributions. 
+`gp_coverage_patchcount.pdf`, `par_coverage_patchcount.pdf`, `sim_coverage_patchcount.pdf` and `trp_coverage_patchcount.pdf` plot these distributions. 
 `RQ3-results.log` also shows the patch quality statistics for each of the repair techniques. 
 
 `MLR.log` contains the results obtained by fitting a multi linear regression model to predict the quality 
