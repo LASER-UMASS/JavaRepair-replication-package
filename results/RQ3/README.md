@@ -4,7 +4,7 @@ RQ3: How do the coverage and size of the test suite used to produce
 the patch affect patch quality?
 
 The **patches** folder contains the patches produced using 
-the three repair techniques---GenProg, Par, and TRPAutoRepair
+the three repair techniques---GenProg, Par, SimFix, and TrpAutoRepair
 for the 45 defects of Defects4J dataset (listed in file `defects-RQ3.txt`) for which we could 
 sample five test suites of varying code coverage.  
 
