@@ -3,7 +3,7 @@
 This repository contains the data and scripts to replicate the results 
 of the paper "Quality of Automated Program Repair on Real-World Defects".
 
-The JaRFly framework implenentation is availabe at [jarfly.cs.umass.edu](http://jarfly.cs.umass.edu)
+The JaRFly framework implementation is availabe at [jarfly.cs.umass.edu](http://jarfly.cs.umass.edu)
 
 The repository also contains the pre-computed results and experiment logs for easy reference. 
 
