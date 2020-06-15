@@ -1,7 +1,7 @@
 ### Artifact Replication Repository for the study on Quality of Automated Program Repair on Real-World Defects 
 
 This repository contains the data and scripts to replicate the results 
-of the paper "Quality of Automated Program Repair on Real-World Defects".
+of the paper "Quality of Automated Program Repair on Real-World Defects", Manish Motwani, Mauricio Soto, Yuriy Brun, René Just, and Claire Le Goues, IEEE Transactions on Software Engineering (TSE), 2020.
 
 The JaRFly framework implementation is availabe at [jarfly.cs.umass.edu](http://jarfly.cs.umass.edu)
 
